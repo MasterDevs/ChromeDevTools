@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{36138327-0A72-44E3-B9DB-C4E6155AAFD5}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AutoWebPerf</RootNamespace>
+    <AssemblyName>AutoWebPerf</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebSocket4Net">
+      <HintPath>packages\WebSocket4Net.0.12\lib\net45\WebSocket4Net.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ChromeWrapper.cs" />
+    <Compile Include="ChromeProcessInfo.cs" />
+    <Compile Include="Chrome\IChromeProxy.cs" />
+    <Compile Include="Chrome\MessageContractResolver.cs" />
+    <Compile Include="Chrome\Messages\ChromeProxy.cs" />
+    <Compile Include="Chrome\Messages\ErrorResponse.cs" />
+    <Compile Include="Chrome\Messages\IdResponse.cs" />
+    <Compile Include="Chrome\Messages\IError.cs" />
+    <Compile Include="Chrome\Messages\IRequest.cs" />
+    <Compile Include="Chrome\Messages\IRequestFactory.cs" />
+    <Compile Include="Chrome\Messages\IResponse.cs" />
+    <Compile Include="Chrome\Messages\IResponseFactory.cs" />
+    <Compile Include="Chrome\Messages\MethodName.cs" />
+    <Compile Include="Chrome\Messages\MethodNameAttribute.cs" />
+    <Compile Include="Chrome\Messages\Network\DataReceivedResponse.cs" />
+    <Compile Include="Chrome\Messages\Network\EnableRequest.cs" />
+    <Compile Include="Chrome\Messages\Network\EnableResponse.cs" />
+    <Compile Include="Chrome\Messages\Network\LoadingFinishedResponse.cs" />
+    <Compile Include="Chrome\Messages\Network\RequestServedFromCacheResponse.cs" />
+    <Compile Include="Chrome\Messages\Network\RequestWillBeSentResponse.cs" />
+    <Compile Include="Chrome\Messages\Network\ResponseReceivedResponse.cs" />
+    <Compile Include="Chrome\Messages\Page\NavigateRequest.cs" />
+    <Compile Include="Chrome\Messages\Page\NavigateRequestParams.cs" />
+    <Compile Include="Chrome\Messages\Page\NavigateResponse.cs" />
+    <Compile Include="Chrome\Messages\Page\NavigateResponseResult.cs" />
+    <Compile Include="Chrome\Messages\Request.cs" />
+    <Compile Include="Chrome\Messages\RequestFactory.cs" />
+    <Compile Include="Chrome\Messages\ResponseFactory.cs" />
+    <Compile Include="Chrome\Messages\ResponseHandler.cs" />
+    <Compile Include="Chrome\Messages\Response.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RemoveSessions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
