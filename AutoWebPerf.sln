@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoWebPerf", "AutoWebPerf.csproj", "{36138327-0A72-44E3-B9DB-C4E6155AAFD5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoWebPerf", "AutoWebPerf\AutoWebPerf.csproj", "{36138327-0A72-44E3-B9DB-C4E6155AAFD5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChromeDevTools", "..\ChromeDevTools\ChromeDevTools.csproj", "{C2508EE5-AAB2-4275-88C9-7DA9D1961336}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChromeDevTools", "ChromeDevTools\ChromeDevTools.csproj", "{C2508EE5-AAB2-4275-88C9-7DA9D1961336}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChromeDevToolsProtocolParser", "ChromeDevToolsProtocolParser\ChromeDevToolsProtocolParser.csproj", "{97C7FCF5-1964-4878-B7CD-63448CA403B1}"
 EndProject
