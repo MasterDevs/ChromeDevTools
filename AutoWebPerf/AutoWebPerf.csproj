@@ -11,6 +11,21 @@
     <AssemblyName>AutoWebPerf</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -49,35 +64,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChromeWrapper.cs" />
-    <Compile Include="ChromeProcessInfo.cs" />
-    <Compile Include="Chrome\IChromeProxy.cs" />
-    <Compile Include="Chrome\MessageContractResolver.cs" />
-    <Compile Include="Chrome\Messages\ChromeProxy.cs" />
-    <Compile Include="Chrome\Messages\ErrorResponse.cs" />
-    <Compile Include="Chrome\Messages\IdResponse.cs" />
-    <Compile Include="Chrome\Messages\IError.cs" />
-    <Compile Include="Chrome\Messages\IRequest.cs" />
-    <Compile Include="Chrome\Messages\IRequestFactory.cs" />
-    <Compile Include="Chrome\Messages\IResponse.cs" />
-    <Compile Include="Chrome\Messages\IResponseFactory.cs" />
-    <Compile Include="Chrome\Messages\MethodName.cs" />
-    <Compile Include="Chrome\Messages\MethodNameAttribute.cs" />
-    <Compile Include="Chrome\Messages\Network\DataReceivedResponse.cs" />
-    <Compile Include="Chrome\Messages\Network\EnableRequest.cs" />
-    <Compile Include="Chrome\Messages\Network\EnableResponse.cs" />
-    <Compile Include="Chrome\Messages\Network\LoadingFinishedResponse.cs" />
-    <Compile Include="Chrome\Messages\Network\RequestServedFromCacheResponse.cs" />
-    <Compile Include="Chrome\Messages\Network\RequestWillBeSentResponse.cs" />
-    <Compile Include="Chrome\Messages\Network\ResponseReceivedResponse.cs" />
-    <Compile Include="Chrome\Messages\Page\NavigateRequest.cs" />
-    <Compile Include="Chrome\Messages\Page\NavigateRequestParams.cs" />
-    <Compile Include="Chrome\Messages\Page\NavigateResponse.cs" />
-    <Compile Include="Chrome\Messages\Page\NavigateResponseResult.cs" />
-    <Compile Include="Chrome\Messages\Request.cs" />
-    <Compile Include="Chrome\Messages\RequestFactory.cs" />
-    <Compile Include="Chrome\Messages\ResponseFactory.cs" />
-    <Compile Include="Chrome\Messages\ResponseHandler.cs" />
-    <Compile Include="Chrome\Messages\Response.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RemoveSessions.cs" />
@@ -86,7 +72,29 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ChromeDevTools\ChromeDevTools.csproj">
+      <Project>{c2508ee5-aab2-4275-88c9-7da9d1961336}</Project>
+      <Name>ChromeDevTools</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

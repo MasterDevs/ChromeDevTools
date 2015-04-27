@@ -1,0 +1,17 @@
+using ChromeDevTools;using Newtonsoft.Json;
+using System.Collections.Generic;
+
+namespace ChromeDevTools.Protocol.IndexedDB
+{
+	/// <summary>
+	/// Requests database names for given security origin.
+	/// </summary>
+	[Command(ProtocolName.IndexedDB.RequestDatabaseNames)]
+	public class RequestDatabaseNamesCommand
+	{
+		/// <summary>
+		/// Gets or sets Security origin.
+		/// </summary>
+		public string SecurityOrigin { get; set; }
+	}
+}
