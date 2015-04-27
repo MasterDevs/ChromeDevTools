@@ -9,6 +9,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using ChromeDevTools.Protocol;
 using WebSocket4Net;
+using ChromeDevTools.Protocol.Page;
 
 namespace AutoWebPerf
 {
@@ -30,6 +31,10 @@ namespace AutoWebPerf
                 chromeSession.Subscribe<ChromeDevTools.Protocol.Network.ResponseReceivedEvent>((o, e) =>
                     {
                         Console.WriteLine("Response Received");
+                    });
+                chromeSession.SendAsync(new NavigateCommand
+                    {
+                        Url = "http://www.google.com"
                     });
 
                 Console.ReadLine();
