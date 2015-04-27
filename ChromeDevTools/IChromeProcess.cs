@@ -13,7 +13,9 @@ namespace ChromeDevTools
         Task<string[]> GetSessions();
 
         DirectoryInfo UserDirectory { get; }
+
         Process Process { get; }
+
         string RemoteDebuggingUri { get; }
     }
 }

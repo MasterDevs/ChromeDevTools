@@ -26,7 +26,7 @@ namespace AutoWebPerf
                 var chromeSessionFactory = new ChromeSessionFactory();
 
                 var chromeSession = chromeSessionFactory.Create(endpointUrl);
-                var pageEnableResult = chromeSession.SendAsync<ChromeDevTools.Protocol.Page.EnableCommand>().Result;
+                var pageEnableResult = chromeSession.SendAsync<ChromeDevTools.Protocol.Network.EnableCommand>().Result;
                 chromeSession.Subscribe<ChromeDevTools.Protocol.Network.ResponseReceivedEvent>((o, e) =>
                     {
                         Console.WriteLine("Response Received");
