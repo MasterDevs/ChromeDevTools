@@ -131,6 +131,18 @@ namespace ChromeDevTools
                 _responses.AddOrUpdate(response.Id, id => response, (key, value) => response);
                 requestMre.Set();
             }
+            else
+            {
+                // in the case of an error, we don't always get the request Id back :(
+                // if there is only one pending requests, we know what to do ... otherwise
+                if (1 == _requestWaitHandles.Count)
+                {
+                    var requestId = _requestWaitHandles.Keys.First();
+                    _requestWaitHandles.TryGetValue(requestId, out requestMre);
+                    _responses.AddOrUpdate(requestId, id => response, (key, value) => response);
+                    requestMre.Set();
+                }
+            }
         }
 
         private Task<ICommandResponse> SendCommand(Command command)

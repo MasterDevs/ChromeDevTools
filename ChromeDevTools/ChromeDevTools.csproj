@@ -64,7 +64,7 @@
     <Compile Include="CommandResponse.cs" />
     <Compile Include="CommandResponseAttribute.cs" />
     <Compile Include="CommandResponseFactory.cs" />
-    <Compile Include="CommandResponseHandler.cs" />
+    <Compile Include="EventHandler.cs" />
     <Compile Include="ErrorResponse.cs" />
     <Compile Include="Event.cs" />
     <Compile Include="EventAttribute.cs" />
