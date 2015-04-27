@@ -232,6 +232,7 @@ namespace ChromeDevToolsProtocolParser
             var className = ToCamelCase(commandName) + CommandResponseSubclass;
             var sb = new StringBuilder();
             sb.AppendFormat("using ChromeDevTools;");
+            sb.AppendLine();
             sb.AppendLine("using Newtonsoft.Json;");
             sb.AppendLine("using System.Collections.Generic;");
             sb.AppendLine();
@@ -264,6 +265,7 @@ namespace ChromeDevToolsProtocolParser
             var className = ToCamelCase(commandName) + CommandSubclass;
             var sb = new StringBuilder();
             sb.AppendFormat("using ChromeDevTools;");
+            sb.AppendLine();
             sb.AppendLine("using Newtonsoft.Json;");
             sb.AppendLine("using System.Collections.Generic;");
             sb.AppendLine();
@@ -310,6 +312,7 @@ namespace ChromeDevToolsProtocolParser
             var className = type["id"].ToString();
             var sb = new StringBuilder();
             sb.AppendFormat("using ChromeDevTools;");
+            sb.AppendLine();
             sb.AppendLine("using Newtonsoft.Json;");
             sb.AppendLine("using System.Collections.Generic;");
             sb.AppendLine();

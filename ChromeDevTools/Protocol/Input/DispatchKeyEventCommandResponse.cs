@@ -1,4 +1,5 @@
-using ChromeDevTools;using Newtonsoft.Json;
+using ChromeDevTools;
+using Newtonsoft.Json;
 using System.Collections.Generic;
 
 namespace ChromeDevTools.Protocol.Input

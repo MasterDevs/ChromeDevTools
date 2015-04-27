@@ -18,11 +18,9 @@ namespace AutoWebPerf
         static void Main(string[] args)
         {
 
-            IChromeProcess chromeProcess = null;
-            try
+            var chromeProcessFactory = new ChromeProcessFactory();
+            using (var chromeProcess = chromeProcessFactory.Create(9222))
             {
-                var chromeProcessFactory = new ChromeProcessFactory();
-                chromeProcess = chromeProcessFactory.Create(9222);
                 var endpointUrl = chromeProcess.GetSessions().Result.LastOrDefault();
                 var chromeSessionFactory = new ChromeSessionFactory();
 
@@ -38,13 +36,6 @@ namespace AutoWebPerf
                     });
 
                 Console.ReadLine();
-            }
-            finally
-            {
-                if (null != chromeProcess)
-                { 
-                    chromeProcess.Dispose();
-                }
             }
 
         }
