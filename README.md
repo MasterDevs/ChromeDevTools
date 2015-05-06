@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/MasterDevs/ChromeDevTools.svg?branch=master)](https://travis-ci.org/MasterDevs/ChromeDevTools)
+
 # ChromeDevTools
 C# Library to interact with the Chrome Debugger
 
