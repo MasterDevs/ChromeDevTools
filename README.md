@@ -3,6 +3,19 @@
 # ChromeDevTools
 C# Library to interact with the Chrome Developer Tools.
 
+```c#
+    chromeSession.Subscribe<Protocol.Page.DomContentEventFiredEvent>((o, e) =>
+    {
+        var domContentEvent = (Event<DomContentEventFiredEvent>)e;
+        Console.WriteLine("DomContentEvent: " + domContentEvent.Params.Timestamp);
+    });
+    
+    chromeSession.SendAsync(new NavigateCommand
+    {
+        Url = "http://www.google.com"
+    }).Wait();
+```
+
 ## About
 This library is C# API that enabled interaction with the Chrome Developer Tools.  When the Chrome Developer Tools are started, the chrome process starts a server.  The Chrome Developer Tools UI communicates with this server via Web Sockets.  So can you.  In fact, everything in the Chrome Developers Tools UI is available to you via JSON, by default.  This library makes it available to you in C#.
 
