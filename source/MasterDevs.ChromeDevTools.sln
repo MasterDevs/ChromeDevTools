@@ -12,7 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{0D43D2
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionFiles", "SolutionFiles", "{9E670137-8739-4C9C-8693-797A230F38EB}"
 	ProjectSection(SolutionItems) = preProject
-		.travis.yml = .travis.yml
+		..\.travis.yml = ..\.travis.yml
+		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterDevs.ChromeDevTools", "ChromeDevTools\MasterDevs.ChromeDevTools.csproj", "{C2508EE5-AAB2-4275-88C9-7DA9D1961336}"
