@@ -1,2 +1,2 @@
 language: csharp
-solution: MasterDevs.ChromeDevTools.sln
+solution: source/MasterDevs.ChromeDevTools.sln
