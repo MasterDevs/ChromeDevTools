@@ -93,7 +93,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MasterDevs.ChromeDevTools\MasterDevs.ChromeDevTools.csproj">
+    <ProjectReference Include="..\ChromeDevTools\MasterDevs.ChromeDevTools.csproj">
       <Project>{c2508ee5-aab2-4275-88c9-7da9d1961336}</Project>
       <Name>MasterDevs.ChromeDevTools</Name>
     </ProjectReference>
