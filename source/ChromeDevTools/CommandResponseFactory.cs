@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json.Linq;
+using System;
 
 namespace MasterDevs.ChromeDevTools
 {
@@ -32,12 +27,12 @@ namespace MasterDevs.ChromeDevTools
                 return jObject.ToObject<ErrorResponse>();
             }
             var methodString = GetMethod(jObject);
-            if(null == methodString)
+            if (null == methodString)
             {
                 return null;
             }
             var typeInferredFromMethod = _methodTypeMap.GetCommandResponse(methodString);
-            if(null == typeInferredFromMethod)
+            if (null == typeInferredFromMethod)
             {
                 return null;
             }

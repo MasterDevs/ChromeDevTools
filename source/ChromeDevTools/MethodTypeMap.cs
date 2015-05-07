@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MasterDevs.ChromeDevTools
 {
@@ -17,14 +15,15 @@ namespace MasterDevs.ChromeDevTools
         {
             LoadMethodTypeMap();
         }
+
         private void LoadMethodTypeMap()
         {
             var assembly = Assembly.GetExecutingAssembly();
             var assemblyTypes = assembly.GetTypes();
-            foreach(var type in assemblyTypes)
+            foreach (var type in assemblyTypes)
             {
-                if(!type.IsClass) continue;
-                if(type.Name.EndsWith("CommandResponse"))
+                if (!type.IsClass) continue;
+                if (type.Name.EndsWith("CommandResponse"))
                 {
                     var methodName = GetMethodName<CommandResponseAttribute>(type);
                     if (null == methodName) continue;

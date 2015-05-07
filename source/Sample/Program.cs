@@ -1,21 +1,12 @@
-﻿using MasterDevs.ChromeDevTools;
+﻿using MasterDevs.ChromeDevTools.Protocol.Page;
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using MasterDevs.ChromeDevTools.Protocol;
-using WebSocket4Net;
-using MasterDevs.ChromeDevTools.Protocol.Page;
 
 namespace MasterDevs.ChromeDevTools.Sample
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             // STEP 1 - Run Chrome
             var chromeProcessFactory = new ChromeProcessFactory();
@@ -27,7 +18,7 @@ namespace MasterDevs.ChromeDevTools.Sample
                 var chromeSession = chromeSessionFactory.Create(endpointUrl);
 
                 // STEP 3 - Send a command
-                // 
+                //
                 // Here we are sending a command to tell chrome to navigate to
                 // the specified URL
                 var navigateResponse = chromeSession.SendAsync(new NavigateCommand
@@ -56,8 +47,6 @@ namespace MasterDevs.ChromeDevTools.Sample
 
                 Console.ReadLine();
             }
-
         }
-
     }
 }

@@ -5,37 +5,35 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace MasterDevs.ChromeDevTools.ProtocolGenerator
 {
-    class Program
+    internal class Program
     {
-        const string CommandAttribute = "Command";
-        const string CommandResponseAttribute = "CommandResponse";
-        const string EventAttribute = "Event";
-        const string ProtocolNameClass = "ProtocolName";
-        const string RootNamespace = "MasterDevs.ChromeDevTools.Protocol";
-        const string CommandSubclass = "Command";
-        const string CommandResponseSubclass = CommandSubclass + "Response";
-        const string EventSubclass = "Event";
-        private static Dictionary<string, Dictionary<string, string>> _DomainPropertyTypes = new Dictionary<string,Dictionary<string,string>>();
+        private const string CommandAttribute = "Command";
+        private const string CommandResponseAttribute = "CommandResponse";
+        private const string EventAttribute = "Event";
+        private const string ProtocolNameClass = "ProtocolName";
+        private const string RootNamespace = "MasterDevs.ChromeDevTools.Protocol";
+        private const string CommandSubclass = "Command";
+        private const string CommandResponseSubclass = CommandSubclass + "Response";
+        private const string EventSubclass = "Event";
+        private static Dictionary<string, Dictionary<string, string>> _DomainPropertyTypes = new Dictionary<string, Dictionary<string, string>>();
         private static Dictionary<string, List<string>> _DomainCommands = new Dictionary<string, List<string>>();
         private static Dictionary<string, List<string>> _DomainEvents = new Dictionary<string, List<string>>();
         private static Dictionary<string, string> _SimpleTypes = new Dictionary<string, string>();
 
-
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             var filePath = "protocol.json";
             JObject protocolObject = null;
-            using(var fileStream = File.OpenText(filePath))
-            using(var reader = new JsonTextReader(fileStream))
+            using (var fileStream = File.OpenText(filePath))
+            using (var reader = new JsonTextReader(fileStream))
             {
                 protocolObject = (JObject)JToken.ReadFrom(reader);
             }
             var outputFolder = "OutputProtocol";
-            if(Directory.Exists(outputFolder))
+            if (Directory.Exists(outputFolder))
             {
                 Directory.Delete(outputFolder, true);
             }
@@ -50,7 +48,7 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
             {
                 AddPropertyTypes(domain["domain"].ToString(), domain["types"] as JArray);
             }
-            foreach(var domain in domains)
+            foreach (var domain in domains)
             {
                 var domainName = domain["domain"].ToString();
                 var types = domain["types"] as JArray;
@@ -71,8 +69,8 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
             {
                 var propertyType = type["type"].ToString();
                 var typeName = GetString(type["id"]);
-                if (null != type["enum"] 
-                    || null != type["properties"] 
+                if (null != type["enum"]
+                    || null != type["properties"]
                     || "object" == propertyType)
                 {
                     propertyType = domain + "." + typeName;
@@ -107,7 +105,7 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
         private static void WriteProtocolClasses(DirectoryInfo directory, string domainName, JArray types, JArray commands, JArray events)
         {
             var domainDirectoryInfo = CreateDomainFolder(directory, domainName);
-            foreach(var type in types ?? new JArray())
+            foreach (var type in types ?? new JArray())
             {
                 WriteType(domainDirectoryInfo, type as JObject);
             }
@@ -120,7 +118,7 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
                 WriteEvent(domainDirectoryInfo, evnt as JObject);
             }
         }
-        
+
         private static void WriteMethodConstants(DirectoryInfo domainDirectoryInfo)
         {
             var sb = new StringBuilder();
@@ -135,24 +133,24 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
             sb.AppendLine("\t{");
 
             var domains = _DomainCommands.Keys.Union(_DomainEvents.Keys).Distinct();
-            foreach(var domain in domains)
+            foreach (var domain in domains)
             {
                 sb.AppendFormat("\t\tpublic static class {0}", domain);
                 sb.AppendLine();
                 sb.AppendLine("\t\t{");
                 List<string> commands;
-                if(_DomainCommands.TryGetValue(domain, out commands))
+                if (_DomainCommands.TryGetValue(domain, out commands))
                 {
-                    foreach(var commandName in commands)
+                    foreach (var commandName in commands)
                     {
                         sb.AppendFormat("\t\t\tpublic const string {0} = \"{1}.{2}\";", ToCamelCase(commandName), domain, commandName);
                         sb.AppendLine();
                     }
                 }
                 List<string> events;
-                if(_DomainEvents.TryGetValue(domain, out events))
+                if (_DomainEvents.TryGetValue(domain, out events))
                 {
-                    foreach(var eventName in events)
+                    foreach (var eventName in events)
                     {
                         sb.AppendFormat("\t\t\tpublic const string {0} = \"{1}.{2}\";", ToCamelCase(eventName), domain, eventName);
                         sb.AppendLine();
@@ -161,7 +159,6 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
                 sb.AppendLine("\t\t}");
                 sb.AppendLine();
             }
-
 
             sb.AppendLine("\t}");
             sb.AppendLine("}");
@@ -238,8 +235,8 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
             sb.AppendFormat("namespace {0}.{1}", RootNamespace, domainDirectoryInfo.Name);
             sb.AppendLine();
             sb.AppendLine("{");
-            if(!String.IsNullOrEmpty(description))
-            { 
+            if (!String.IsNullOrEmpty(description))
+            {
                 sb.AppendLine("\t/// <summary>");
                 sb.AppendFormat("\t/// {0}", description);
                 sb.AppendLine();
@@ -338,49 +335,49 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
         {
             var propertyName = GeneratePropertyName(property["name"].ToString());
             string propertyType = GetString(property["type"]);
-            if(null != property["$ref"])
+            if (null != property["$ref"])
             {
                 propertyType = GeneratePropertyTypeFromReference(domain, property["$ref"].ToString());
             }
-            else if("array" == propertyType)
+            else if ("array" == propertyType)
             {
                 var arrayDescription = property["items"] as JObject;
-                if(null != arrayDescription["$ref"])
+                if (null != arrayDescription["$ref"])
                 {
                     propertyType = GeneratePropertyTypeFromReference(domain, arrayDescription["$ref"].ToString()) + "[]";
-                } 
+                }
                 else
                 {
                     var arrayType = GetString(arrayDescription["type"]);
-                    if("object" == arrayType)
+                    if ("object" == arrayType)
                     {
                         var internalClassName = ToCamelCase(propertyName) + "Array";
                         propertyType = internalClassName + "[]";
                         sb.AppendFormat("\t\tpublic class {0}", internalClassName);
                         sb.AppendLine();
                         sb.AppendLine("\t\t{");
-                        foreach(var internalProperty in arrayDescription["properties"] as JArray ?? new JArray())
+                        foreach (var internalProperty in arrayDescription["properties"] as JArray ?? new JArray())
                         {
                             WriteProperty(sb, domain, internalClassName, internalProperty as JObject);
                         }
                         sb.AppendLine("\t\t}");
                         sb.AppendLine();
-                    } 
-                    else 
+                    }
+                    else
                     {
                         propertyType = GeneratePropertyType(GetString(arrayDescription["type"])) + "[]";
                     }
                 }
-            } 
+            }
             else
             {
                 propertyType = GeneratePropertyType(propertyType.ToString());
-            } 
+            }
             sb.AppendLine("\t\t/// <summary>");
             sb.AppendFormat("\t\t/// Gets or sets {0}", property["description"] ?? propertyName);
             sb.AppendLine();
             sb.AppendLine("\t\t/// </summary>");
-            if(className == propertyName)
+            if (className == propertyName)
             {
                 sb.AppendFormat("\t\t[JsonProperty(\"{0}\")]", property["name"]);
                 sb.AppendLine();
@@ -398,10 +395,10 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
             {
                 Dictionary<string, string> domainDictionary;
                 string inDomainType;
-                if(_DomainPropertyTypes.TryGetValue(domain, out domainDictionary)
+                if (_DomainPropertyTypes.TryGetValue(domain, out domainDictionary)
                     && domainDictionary.TryGetValue(propertyPaths[0], out inDomainType))
                 {
-                    if(inDomainType.StartsWith(domain + "."))
+                    if (inDomainType.StartsWith(domain + "."))
                     {
                         return inDomainType.Substring(inDomainType.IndexOf('.') + 1);
                     }
@@ -419,7 +416,7 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
 
         private static string GeneratePropertyType(string propertyType)
         {
-            switch(propertyType)
+            switch (propertyType)
             {
                 case "number": return "double";
                 case "integer": return "long";
@@ -455,7 +452,7 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
             sb.AppendFormat("\tpublic enum {0}", enumName);
             sb.AppendLine();
             sb.AppendLine("\t{");
-            foreach(var enumValueName in type["enum"] as JArray ?? new JArray())
+            foreach (var enumValueName in type["enum"] as JArray ?? new JArray())
             {
                 sb.AppendFormat("\t\t\t{0},", ToCamelCase(enumValueName.ToString().Replace("-", "_")));
                 sb.AppendLine();
@@ -474,7 +471,7 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
 
         private static DirectoryInfo CreateDomainFolder(DirectoryInfo parentDirectory, string domainName)
         {
-            return parentDirectory.CreateSubdirectory(domainName);            
+            return parentDirectory.CreateSubdirectory(domainName);
         }
     }
 }

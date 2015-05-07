@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MasterDevs.ChromeDevTools
 {
@@ -26,9 +23,9 @@ namespace MasterDevs.ChromeDevTools
             var commandResponseAttribute = type.GetCustomAttributes(typeof(CommandResponseAttribute), true)
                 .FirstOrDefault() as CommandResponseAttribute;
             if (null != commandResponseAttribute) return commandResponseAttribute.MethodName;
-            
+
             // maybe it's generic parameter has a method
-            if(type.IsGenericType)
+            if (type.IsGenericType)
             {
                 return type.GenericTypeArguments
                     .FirstOrDefault()

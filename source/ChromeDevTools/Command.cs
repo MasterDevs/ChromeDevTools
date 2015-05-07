@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MasterDevs.ChromeDevTools
+﻿namespace MasterDevs.ChromeDevTools
 {
     public interface ICommand
     {
@@ -12,6 +6,7 @@ namespace MasterDevs.ChromeDevTools
 
         string Method { get; }
     }
+
     public class Command : ICommand
     {
         public long Id
@@ -29,10 +24,10 @@ namespace MasterDevs.ChromeDevTools
 
     public class Command<T> : Command
     {
-        public T Params 
-        { 
-            get; 
-            set; 
+        public T Params
+        {
+            get;
+            set;
         }
     }
 }

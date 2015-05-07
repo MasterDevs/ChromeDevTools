@@ -43,11 +43,11 @@ namespace MasterDevs.ChromeDevTools
 
         private void EnsureInit()
         {
-            if(null == _webSocket)
+            if (null == _webSocket)
             {
-                lock(_Lock)
+                lock (_Lock)
                 {
-                    if(null == _webSocket)
+                    if (null == _webSocket)
                     {
                         Init().Wait();
                     }
@@ -72,7 +72,6 @@ namespace MasterDevs.ChromeDevTools
                 _openEvent.WaitOne();
             });
         }
-
 
         public Task<ICommandResponse> SendAsync<T>()
         {
@@ -157,7 +156,7 @@ namespace MasterDevs.ChromeDevTools
             _requestWaitHandles.AddOrUpdate(command.Id, requestResetEvent, (id, r) => requestResetEvent);
             return Task.Run(() =>
             {
-                EnsureInit();            
+                EnsureInit();
                 _webSocket.Send(requestString);
                 requestResetEvent.WaitOne();
                 ICommandResponse response = null;
@@ -166,6 +165,7 @@ namespace MasterDevs.ChromeDevTools
                 return response;
             });
         }
+
         private bool TryGetCommandResponse(byte[] data, out ICommandResponse response)
         {
             response = _responseFactory.Create(data);
