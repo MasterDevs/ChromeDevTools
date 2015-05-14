@@ -65,6 +65,7 @@ If you didn't read the entire README (I don't blame you, I wouldn't), I've inclu
 
 ## Resources
 
+  * Obligatory [blog post](http://blog.masterdevs.com/chrome-debugging-api/)
   * Here's what the Chrome Team has to say about the Developer Tools protocol (it's not much)
     * [https://developer.chrome.com/devtools/docs/debugger-protocol](https://developer.chrome.com/devtools/docs/debugger-protocol)
   * Some cool apps that other developers have built using the Chrome Debugging Protocol
