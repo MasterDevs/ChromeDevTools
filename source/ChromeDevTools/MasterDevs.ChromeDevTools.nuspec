@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <licenseUrl>https://raw.githubusercontent.com/MasterDevs/ChromeDevTools/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/MasterDevs/ChromeDevTools</projectUrl>
+    <iconUrl>http://masterdevs.com/images/FavIcon_144.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes>Initial release of the Chrome Dev Tools API for C#</releaseNotes>
+    <copyright>Copyright 2015</copyright>
+    <tags>chrome web performance debugging</tags>
+    <dependencies>
+      <dependency id="Newtonsoft.Json" version="6.0.8" />
+      <dependency id="WebSocket4Net" version="0.12" />
+    </dependencies>
+  </metadata>
+</package>
