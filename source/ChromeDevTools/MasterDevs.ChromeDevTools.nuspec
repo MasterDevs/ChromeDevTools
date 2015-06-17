@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>$id$</id>
-    <version>$version$</version>
+    <version>1.0.1</version>
     <title>$title$</title>
     <authors>$author$</authors>
     <owners>$author$</owners>
@@ -11,7 +11,7 @@
     <iconUrl>http://masterdevs.com/images/FavIcon_144.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <releaseNotes>Initial release of the Chrome Dev Tools API for C#</releaseNotes>
+    <releaseNotes>Chrome Developer Tools for .NET</releaseNotes>
     <copyright>Copyright 2015</copyright>
     <tags>chrome web performance debugging</tags>
     <dependencies>
