@@ -4,10 +4,9 @@
 C# Library to interact with the Chrome Developer Tools.
 
 ```c#
-    chromeSession.Subscribe<Protocol.Page.DomContentEventFiredEvent>((o, e) =>
+    chromeSession.Subscribe<Protocol.Page.DomContentEventFiredEvent>(domContentEvent =>
     {
-        var domContentEvent = (Event<DomContentEventFiredEvent>)e;
-        Console.WriteLine("DomContentEvent: " + domContentEvent.Params.Timestamp);
+        Console.WriteLine("DomContentEvent: " + domContentEvent.Timestamp);
     });
     
     chromeSession.SendAsync(new NavigateCommand
