@@ -33,16 +33,14 @@ namespace MasterDevs.ChromeDevTools.Sample
                 // but we only subscribe to certain events in this session
                 var pageEnableResult = chromeSession.SendAsync<ChromeDevTools.Protocol.Page.EnableCommand>().Result;
                 Console.WriteLine("PageEnable: " + pageEnableResult.Id);
-                chromeSession.Subscribe<Protocol.Page.DomContentEventFiredEvent>((o, e) =>
+                chromeSession.Subscribe<Protocol.Page.DomContentEventFiredEvent>(domContentEvent =>
                     {
-                        var domContentEvent = (Event<DomContentEventFiredEvent>)e;
-                        Console.WriteLine("DomContentEvent: " + domContentEvent.Params.Timestamp);
+                        Console.WriteLine("DomContentEvent: " + domContentEvent.Timestamp);
                     });
                 // you might never see this, but that's what an event is ... right?
-                chromeSession.Subscribe<Protocol.Page.FrameStartedLoadingEvent>((o, e) =>
+                chromeSession.Subscribe<Protocol.Page.FrameStartedLoadingEvent>(frameStartedLoadingEvent =>
                     {
-                        var frameStartedLoadingEvent = (Event<FrameStartedLoadingEvent>)e;
-                        Console.WriteLine("FrameStartedLoading: " + frameStartedLoadingEvent.Params.FrameId);
+                        Console.WriteLine("FrameStartedLoading: " + frameStartedLoadingEvent.FrameId);
                     });
 
                 Console.ReadLine();

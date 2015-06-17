@@ -12,7 +12,7 @@ namespace MasterDevs.ChromeDevTools
     public class ChromeSession : IChromeSession
     {
         private readonly string _endpoint;
-        private readonly ConcurrentDictionary<string, ConcurrentBag<EventHandler>> _handlers = new ConcurrentDictionary<string, ConcurrentBag<EventHandler>>();
+        private readonly ConcurrentDictionary<string, ConcurrentBag<Action<object>>> _handlers = new ConcurrentDictionary<string, ConcurrentBag<Action<object>>>();
         private ICommandFactory _commandFactory;
         private IEventFactory _eventFactory;
         private ManualResetEvent _openEvent = new ManualResetEvent(false);
@@ -85,14 +85,15 @@ namespace MasterDevs.ChromeDevTools
             return SendCommand(command);
         }
 
-        public void Subscribe<T>(EventHandler handler)
+        public void Subscribe<T>(Action<T> handler) where T : class
         {
             var handlerType = typeof(T);
+            var handlerForBag = new Action<object>(obj => handler((T)obj));
             _handlers.AddOrUpdate(handlerType.FullName,
-                (m) => new ConcurrentBag<EventHandler>(new[] { handler }),
+                (m) => new ConcurrentBag<Action<object>>(new [] { handlerForBag }),
                 (m, currentBag) =>
                 {
-                    currentBag.Add(handler);
+                    currentBag.Add(handlerForBag);
                     return currentBag;
                 });
         }
@@ -110,14 +111,25 @@ namespace MasterDevs.ChromeDevTools
                 return;
             }
             var handlerKey = type.FullName;
-            ConcurrentBag<EventHandler> handlers = null;
+            ConcurrentBag<Action<object>> handlers = null;
             if (_handlers.TryGetValue(handlerKey, out handlers))
             {
                 var localHandlers = handlers.ToArray();
                 foreach (var handler in localHandlers)
                 {
-                    handler(this, evnt);
+                    ExecuteHandler(handler, evnt);
                 }
+            }
+        }
+
+        private void ExecuteHandler(Action<object> handler, dynamic evnt)
+        {
+            if (evnt.GetType().GetGenericTypeDefinition() == typeof(Event<>))
+            {
+                handler(evnt.Params);
+            } else
+            {
+                handler(evnt);
             }
         }
 

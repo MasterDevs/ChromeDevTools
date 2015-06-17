@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 
 namespace MasterDevs.ChromeDevTools
 {
@@ -8,6 +9,6 @@ namespace MasterDevs.ChromeDevTools
 
         Task<ICommandResponse> SendAsync<T>();
 
-        void Subscribe<T>(EventHandler handler);
+        void Subscribe<T>(Action<T> handler) where T : class;
     }
 }
