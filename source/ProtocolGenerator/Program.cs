@@ -23,6 +23,16 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
         private static Dictionary<string, List<string>> _DomainEvents = new Dictionary<string, List<string>>();
         private static Dictionary<string, string> _SimpleTypes = new Dictionary<string, string>();
 
+        private static Protocol LoadProtocol(string path)
+        {
+            string json = File.ReadAllText(path);
+            JsonSerializerSettings settings = new JsonSerializerSettings();
+            settings.MissingMemberHandling = MissingMemberHandling.Error;
+            settings.MetadataPropertyHandling = MetadataPropertyHandling.Ignore;
+            Protocol p = JsonConvert.DeserializeObject<Protocol>(json, settings);
+            return p;
+        }
+
         private static void Main(string[] args)
         {
             var filePath = "protocol.json";
