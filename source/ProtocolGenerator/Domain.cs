@@ -5,6 +5,13 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
 {
     class Domain : ProtocolItem
     {
+        public Domain()
+        {
+            this.Types = new Collection<Type>();
+            this.Events = new Collection<Event>();
+            this.Commands = new Collection<Command>();
+        }
+
         [JsonProperty(PropertyName = "domain")]
         public override string Name
         {

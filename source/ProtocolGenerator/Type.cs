@@ -5,6 +5,12 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
 {
     class Type : ProtocolItem
     {
+        public Type()
+        {
+            this.Enum = new Collection<string>();
+            this.Properties = new Collection<Property>();
+        }
+
         [JsonProperty(PropertyName = "Id")]
         public override string Name
         {

@@ -4,6 +4,13 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
 {
     class Command : ProtocolItem
     {
+        public Command()
+        {
+            this.Returns = new Collection<Property>();
+            this.Handlers = new Collection<string>();
+            this.Parameters = new Collection<Property>();
+        }
+
         public Collection<Property> Returns
         {
             get;
