@@ -13,7 +13,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionFiles", "SolutionFiles", "{9E670137-8739-4C9C-8693-797A230F38EB}"
 	ProjectSection(SolutionItems) = preProject
 		..\appveyor.yml = ..\appveyor.yml
-		ChromeDevTools\MasterDevs.ChromeDevTools.nuspec = ChromeDevTools\MasterDevs.ChromeDevTools.nuspec
 		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
