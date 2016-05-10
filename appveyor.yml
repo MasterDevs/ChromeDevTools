@@ -71,7 +71,7 @@ artifacts:
 - path: source\ChromeDevTools\bin\$(configuration)
   name: MasterDevs.ChromeDevTools
 - path: '*.nupkg'
-  name: ChromeDevToolsPackage
+  name: MasterDevs.ChromeDevTools
 deploy:
 - provider: GitHub
   auth_token:
@@ -84,7 +84,7 @@ deploy:
 - provider: NuGet
   api_key:
     secure: leT7MLGh5JT4dC5wyCb7wrg5ocQrHljDoSZiuSQO+vF0icNX1OUgjhI7m2qHlxh1
-  artifact: 
+  artifact: MasterDevs.ChromeDevTools
   on:
     branch: master
     IsGithubRelease: true
