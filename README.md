@@ -31,7 +31,7 @@ Contained in this repo are 3 projects.
     * [An implementation of a messenger (a chrome session)](source/ChromeDevTools/ChromeSession.cs)
     * Other supporting classes including class to manage the chrome process, startup args, etc.
   * [MasterDevs.ChromeDevTools.ProtocolParser](source/ProtocolParser)
-    * A really ugly (seriously, one of my more ugly works of art) console application which parses the `protocol.json` file and generates all of the classes in the [Protocol](source/ChromeDevTools/Protocol)
+    * A really ugly (it used to be more ugly, but @qmfrederik did some cleaning) console application which parses the `protocol.json` file and generates all of the classes in the [Protocol](source/ChromeDevTools/Protocol)
   * [MasterDevs.ChromeDevTools.Sample](source/Sample)
     * While the sample on this page is great and all, you want something you can just fire off and dig right in.  That's what the sample is for.
 
