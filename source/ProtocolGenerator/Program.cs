@@ -38,7 +38,11 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
             var filePath = "protocol.json";
             var protocolObject = LoadProtocol(filePath);
 
-            var outputFolder = args[0];
+            var outputFolder = "OutputProtocol";
+            if (args.Length > 0)
+            {
+                outputFolder = args[0];
+            }
             if (Directory.Exists(outputFolder))
             {
                 Directory.Delete(outputFolder, true);
