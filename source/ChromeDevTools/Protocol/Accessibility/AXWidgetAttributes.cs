@@ -2,7 +2,7 @@ using MasterDevs.ChromeDevTools;
 
 namespace MasterDevs.ChromeDevTools.Protocol.Accessibility{
 	/// <summary>
-	/// 
+	/// Attributes which apply to widgets.
 	/// </summary>
 	public enum AXWidgetAttributes
 	{
