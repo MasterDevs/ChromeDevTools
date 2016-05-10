@@ -68,8 +68,6 @@ build:
   publish_nuget_symbols: true
   verbosity: minimal
 artifacts:
-- path: source\ChromeDevTools\bin\$(configuration)
-  name: MasterDevs.ChromeDevTools
 - path: '*.nupkg'
   name: MasterDevs.ChromeDevTools
 deploy:
