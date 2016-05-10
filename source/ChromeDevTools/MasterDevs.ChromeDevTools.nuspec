@@ -2,21 +2,16 @@
 <package >
   <metadata>
     <id>$id$</id>
-    <version>1.0.1</version>
+    <version>$version$</version>
     <title>$title$</title>
     <authors>$author$</authors>
     <owners>$author$</owners>
-    <licenseUrl>https://raw.githubusercontent.com/MasterDevs/ChromeDevTools/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/MasterDevs/ChromeDevTools</projectUrl>
+    <licenseUrl>https://github.com/MasterDevs/ChromeDevTools/blob/master/LICENSE</licenseUrl>
     <iconUrl>http://masterdevs.com/images/FavIcon_144.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <releaseNotes>Chrome Developer Tools for .NET</releaseNotes>
+    <releaseNotes></releaseNotes>
     <copyright>Copyright 2015</copyright>
-    <tags>chrome web performance debugging</tags>
-    <dependencies>
-      <dependency id="Newtonsoft.Json" version="6.0.8" />
-      <dependency id="WebSocket4Net" version="0.12" />
-    </dependencies>
   </metadata>
 </package>
