@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/MasterDevs/ChromeDevTools.svg?branch=master)](https://travis-ci.org/MasterDevs/ChromeDevTools) [![NuGet version](https://badge.fury.io/nu/masterdevs.chromedevtools.svg)](http://badge.fury.io/nu/masterdevs.chromedevtools)
+[![Build status](https://ci.appveyor.com/api/projects/status/49o50p7fbn5hv6x1?svg=true)](https://ci.appveyor.com/project/brewdente/chromedevtools) [![NuGet version](https://badge.fury.io/nu/masterdevs.chromedevtools.svg)](http://badge.fury.io/nu/masterdevs.chromedevtools)
 
 # ChromeDevTools
 C# Library to interact with the Chrome Developer Tools.
