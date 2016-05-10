@@ -19,7 +19,7 @@ init:
     Write-Host "Build Version: " $env:BuildVersion
     
     Write-Host "appveyor_build_version Variable: " $env:appveyor_build_version
-	
+    
 install:
 - ps: >-
     try
