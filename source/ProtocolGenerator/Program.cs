@@ -2,6 +2,7 @@
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -23,20 +24,61 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
         private static Dictionary<string, List<string>> _DomainEvents = new Dictionary<string, List<string>>();
         private static Dictionary<string, string> _SimpleTypes = new Dictionary<string, string>();
 
-        private static Protocol LoadProtocol(string path)
+        private static Protocol LoadProtocol(string path, string alias)
         {
             string json = File.ReadAllText(path);
             JsonSerializerSettings settings = new JsonSerializerSettings();
             settings.MissingMemberHandling = MissingMemberHandling.Error;
             settings.MetadataPropertyHandling = MetadataPropertyHandling.Ignore;
             Protocol p = JsonConvert.DeserializeObject<Protocol>(json, settings);
+            p.SourceFile = path;
+            p.Alias = alias;
+
+            foreach(var domain in p.Domains)
+            {
+                foreach(var command in domain.Commands)
+                {
+                    command.SupportedBy.Add(alias);
+                }
+
+                foreach(var @event in domain.Events)
+                {
+                    @event.SupportedBy.Add(alias);
+                }
+
+                foreach(var type in domain.Types)
+                {
+                    type.SupportedBy.Add(alias);
+                }
+            }
+
             return p;
         }
 
         private static void Main(string[] args)
         {
-            var filePath = "protocol.json";
-            var protocolObject = LoadProtocol(filePath);
+            Dictionary<string, string> protocolFiles = new Dictionary<string, string>();
+            protocolFiles.Add("Chrome-0.1", "Inspector-0.1.json");
+            protocolFiles.Add("Chrome-1.0", "Inspector-1.0.json");
+            protocolFiles.Add("Chrome-1.1", "Inspector-1.1.json");
+            protocolFiles.Add("Chrome-Tip", "protocol.json");
+            protocolFiles.Add("iOS-7.0", "Inspector-iOS-7.0.json");
+            protocolFiles.Add("iOS-8.0", "Inspector-iOS-8.0.json");
+            protocolFiles.Add("iOS-9.0", "Inspector-iOS-9.0.json");
+            protocolFiles.Add("iOS-9.3", "Inspector-iOS-9.3.json");
+
+            Collection<Protocol> protocols = new Collection<Protocol>();
+            
+            foreach(var protocolFile in protocolFiles)
+            {
+                protocols.Add(LoadProtocol(protocolFile.Value, protocolFile.Key));
+            }
+
+            Protocol protocolObject = new Protocol();
+            foreach(var protocol in protocols)
+            {
+                ProtocolMerger.Merge(protocol, protocolObject);
+            }
 
             var outputFolder = "OutputProtocol";
             if (args.Length > 0)

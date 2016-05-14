@@ -1,4 +1,7 @@
-﻿using System.Collections.ObjectModel;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Text;
+using System.Linq;
 
 namespace MasterDevs.ChromeDevTools.ProtocolGenerator
 {
@@ -45,6 +48,99 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
         {
             get;
             set;
+        }
+
+        public override bool Equals(object obj)
+        {
+            var other = obj as Command;
+
+            if (other == null)
+            {
+                return false;
+            }
+
+            bool equals = base.Equals(obj);
+            equals &= this.Returns.SequenceEqual(other.Returns);
+            equals &= Property.Equals(this.Error, other.Error);
+            equals &= this.Handlers.CollectionEqual(other.Handlers);
+            equals &= this.Parameters.SequenceEqual(other.Parameters);
+            return equals;
+        }
+
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                int hash = base.GetHashCode();
+                hash = hash * 23 + this.Redirect.GetHashCode();
+
+                if (this.Error != null)
+                {
+                    hash = hash * 23 + this.Error.GetHashCode();
+                }
+
+                hash = hash * 23 + this.Handlers.GetCollectionHashCode();
+                hash = hash * 23 + this.Parameters.GetCollectionHashCode();
+                return hash;
+            }
+        }
+
+        public override string ToString()
+        {
+            StringBuilder name = new StringBuilder();
+
+            if (this.Returns.Count > 0)
+            {
+                name.Append("(");
+                bool isFirst = true;
+
+                foreach (var p in this.Returns)
+                {
+                    if (isFirst)
+                    {
+                        isFirst = false;
+                    }
+                    else
+                    {
+                        name.Append(", ");
+                    }
+
+                    name.Append(p.TypeName);
+                    name.Append(" ");
+                    name.Append(p.Name);
+                }
+
+                name.Append(") ");
+            }
+            else
+            {
+                name.Append("void ");
+            }
+
+            name.Append(this.Name);
+
+            name.Append("(");
+
+            bool isFirstParam = true;
+            foreach (var p in this.Parameters)
+            {
+                if (isFirstParam)
+                {
+                    isFirstParam = false;
+                }
+                else
+                {
+                    name.Append(", ");
+                }
+
+                name.Append(p.TypeName);
+                name.Append(" ");
+                name.Append(p.Name);
+            }
+
+            name.Append(")");
+
+            return name.ToString();
         }
     }
 }
