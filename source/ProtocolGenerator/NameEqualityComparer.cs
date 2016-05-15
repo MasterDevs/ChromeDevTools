@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace MasterDevs.ChromeDevTools.ProtocolGenerator
 {
-    class NameEqualityComparer : EqualityComparer<ProtocolItem>
+    class NameEqualityComparer<T> : EqualityComparer<T>
+        where T : ProtocolItem
     {
-        public static NameEqualityComparer Instance
-        { get; } = new NameEqualityComparer();
+        public static NameEqualityComparer<T> Instance
+        { get; } = new NameEqualityComparer<T>();
 
-        public override bool Equals(ProtocolItem x, ProtocolItem y)
+        public override bool Equals(T x, T y)
         {
             if (x == null || y == null)
             {
@@ -21,7 +22,7 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
             return string.Equals(x.Name, y.Name, StringComparison.OrdinalIgnoreCase);
         }
 
-        public override int GetHashCode(ProtocolItem obj)
+        public override int GetHashCode(T obj)
         {
             if (obj == null)
             {

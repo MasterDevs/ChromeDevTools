@@ -24,7 +24,6 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
         private static Dictionary<string, List<string>> _DomainEvents = new Dictionary<string, List<string>>();
         private static Dictionary<string, string> _SimpleTypes = new Dictionary<string, string>();
 
-
         private static void Main(string[] args)
         {
             // At this point in time, we only process the most recent Chrome
@@ -208,10 +207,10 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
             var parameters = evnt.Parameters;
             // ignoreing "handlers" ... i'm not sure what they are for yet
             _DomainEvents[domainDirectoryInfo.Name].Add(eventName);
-            WriteEvent(domainDirectoryInfo, eventName, description, parameters);
+            WriteEvent(domainDirectoryInfo, eventName, description, parameters, evnt.SupportedBy);
         }
 
-        private static void WriteEvent(DirectoryInfo domainDirectoryInfo, string eventName, string description, IEnumerable<Property> parameters)
+        private static void WriteEvent(DirectoryInfo domainDirectoryInfo, string eventName, string description, IEnumerable<Property> parameters, IEnumerable<string> supportedBy)
         {
             var className = ToCamelCase(eventName) + EventSubclass;
             var sb = new StringBuilder();
@@ -230,6 +229,7 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
             }
             sb.AppendFormat("\t[{0}({1}.{2}.{3})]", EventAttribute, ProtocolNameClass, domainDirectoryInfo.Name, ToCamelCase(eventName));
             sb.AppendLine();
+            WriteSupportedBy(sb, supportedBy);
             sb.AppendFormat("\tpublic class {0}", className);
             sb.AppendLine();
             sb.AppendLine("\t{");
@@ -250,11 +250,11 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
             var parameters = command.Parameters;
             var returnObject = command.Returns;
             _DomainCommands[domainDirectoryInfo.Name].Add(commandName);
-            WriteCommand(domainDirectoryInfo, commandName, description, parameters);
-            WriteCommandResponse(domainDirectoryInfo, commandName, description, returnObject);
+            WriteCommand(domainDirectoryInfo, commandName, description, parameters, command.SupportedBy);
+            WriteCommandResponse(domainDirectoryInfo, commandName, description, returnObject, command.SupportedBy);
         }
 
-        private static void WriteCommandResponse(DirectoryInfo domainDirectoryInfo, string commandName, string description, IEnumerable<Property> returnObject)
+        private static void WriteCommandResponse(DirectoryInfo domainDirectoryInfo, string commandName, string description, IEnumerable<Property> returnObject, IEnumerable<string> supportedBy)
         {
             var className = ToCamelCase(commandName) + CommandResponseSubclass;
             var sb = new StringBuilder();
@@ -274,6 +274,7 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
             }
             sb.AppendFormat("\t[{0}({1}.{2}.{3})]", CommandResponseAttribute, ProtocolNameClass, domainDirectoryInfo.Name, ToCamelCase(commandName));
             sb.AppendLine();
+            WriteSupportedBy(sb, supportedBy);
             sb.AppendFormat("\tpublic class {0}", className);
             sb.AppendLine();
             sb.AppendLine("\t{");
@@ -286,7 +287,7 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
             WriteToFile(domainDirectoryInfo, className, sb.ToString());
         }
 
-        private static void WriteCommand(DirectoryInfo domainDirectoryInfo, string commandName, string description, IEnumerable<Property> parameters)
+        private static void WriteCommand(DirectoryInfo domainDirectoryInfo, string commandName, string description, IEnumerable<Property> parameters, IEnumerable<string> supportedBy)
         {
             var className = ToCamelCase(commandName) + CommandSubclass;
             var sb = new StringBuilder();
@@ -307,6 +308,7 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
             }
             sb.AppendFormat("\t[{0}({1}.{2}.{3})]", CommandAttribute, ProtocolNameClass, domainDirectoryInfo.Name, ToCamelCase(commandName));
             sb.AppendLine();
+            WriteSupportedBy(sb, supportedBy);
             sb.AppendFormat("\tpublic class {0}", className);
             sb.AppendLine();
             sb.AppendLine("\t{");
@@ -349,6 +351,7 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
             sb.AppendFormat("\t/// {0}", type.Description);
             sb.AppendLine();
             sb.AppendLine("\t/// </summary>");
+            WriteSupportedBy(sb, type);
             sb.AppendFormat("\tpublic class {0}", className);
             sb.AppendLine();
             sb.AppendLine("\t{");
@@ -479,6 +482,7 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
             sb.AppendFormat("\t/// {0}", type.Description);
             sb.AppendLine();
             sb.AppendLine("\t/// </summary>");
+            WriteSupportedBy(sb, type);
             sb.AppendFormat("\tpublic enum {0}", enumName);
             sb.AppendLine();
             sb.AppendLine("\t{");
@@ -490,6 +494,19 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
             sb.AppendLine("\t}");
             sb.AppendLine("}");
             WriteToFile(domainDirectoryInfo, enumName, sb.ToString());
+        }
+
+        private static void WriteSupportedBy(StringBuilder sb, ProtocolItem type)
+        {
+            WriteSupportedBy(sb, type.SupportedBy);
+        }
+
+        private static void WriteSupportedBy(StringBuilder sb, IEnumerable<string> supportedBy)
+        {
+            foreach(var browser in supportedBy)
+            {
+                sb.AppendLine($"\t[SupportedBy(\"{browser}\")");
+            }
         }
 
         private static void WriteToFile(DirectoryInfo domainDirectoryInfo, string fileName, string fileContents)

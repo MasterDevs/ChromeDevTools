@@ -880,6 +880,7 @@
     <Compile Include="Protocol\Worker\WorkerCreatedEvent.cs" />
     <Compile Include="Protocol\Worker\WorkerTerminatedEvent.cs" />
     <Compile Include="Serialization\MessageContractResolver.cs" />
+    <Compile Include="SupportedByAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

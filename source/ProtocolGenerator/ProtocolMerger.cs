@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,62 +13,48 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
         {
             foreach (var domain in source.Domains)
             {
-                if (!target.Domains.Contains(domain, NameEqualityComparer.Instance))
+                if (!target.Domains.Contains(domain, NameEqualityComparer<Domain>.Instance))
                 {
                     target.Domains.Add(domain);
                 }
                 else
                 {
-                    Merge(source, domain, target.Domains.Single(t => NameEqualityComparer.Instance.Equals(domain, t)));
+                    Merge(source, domain, target.Domains.Single(t => NameEqualityComparer<Domain>.Instance.Equals(domain, t)));
                 }
             }
         }
 
         static void Merge(Protocol protocol, Domain source, Domain target)
         {
-            foreach (var command in source.Commands)
+            Merge(protocol, source, source.Commands, target.Commands);
+            Merge(protocol, source, source.Events, target.Events);
+            Merge(protocol, source, source.Types, target.Types);
+        }
+
+        static void Merge<T>(Protocol protocol, Domain domain, Collection<T> source, Collection<T> target)
+            where T : ProtocolItem
+        {
+            foreach (var item in source)
             {
-                if (!target.Commands.Contains(command, NameEqualityComparer.Instance))
+                if (!target.Contains(item, NameEqualityComparer<T>.Instance))
                 {
-                    target.Commands.Add(command);
+                    target.Add(item);
                 }
                 else
                 {
-                    var targetCommand = target.Commands.Single(t => NameEqualityComparer.Instance.Equals(command, t));
+                    var targetItem = target.Single(t => NameEqualityComparer<T>.Instance.Equals(item, t));
 
-                    if(!targetCommand.Equals(command))
+                    if (!targetItem.Equals(item))
                     {
-                        Console.WriteLine($"{protocol.Alias};{source.Name};{command.Name};{command};{targetCommand}");
+                        Console.WriteLine($"{protocol.Alias};{domain.Name};{item.Name};{item};{targetItem};{typeof(T).Name}");
                     }
                     else
                     {
-                        foreach (var v in command.SupportedBy)
+                        foreach (var v in item.SupportedBy)
                         {
-                            targetCommand.SupportedBy.Add(v);
+                            targetItem.SupportedBy.Add(v);
                         }
                     }
-                }
-            }
-
-            foreach (var @event in source.Events)
-            {
-                if (!target.Events.Contains(@event, NameEqualityComparer.Instance))
-                {
-                    target.Events.Add(@event);
-                }
-                else
-                {
-                }
-            }
-
-            foreach (var type in source.Types)
-            {
-                if (!target.Types.Contains(type, NameEqualityComparer.Instance))
-                {
-                    target.Types.Add(type);
-                }
-                else
-                {
                 }
             }
         }
