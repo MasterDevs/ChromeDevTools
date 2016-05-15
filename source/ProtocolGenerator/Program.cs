@@ -27,22 +27,33 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
 
         private static void Main(string[] args)
         {
+            // At this point in time, we only process the most recent Chrome
+            // and iOS (Safari) protocols.
             Dictionary<string, string> protocolFiles = new Dictionary<string, string>();
-            protocolFiles.Add("Chrome-0.1", "Inspector-0.1.json");
-            protocolFiles.Add("Chrome-1.0", "Inspector-1.0.json");
-            protocolFiles.Add("Chrome-1.1", "Inspector-1.1.json");
+            //protocolFiles.Add("Chrome-0.1", "Inspector-0.1.json");
+            //protocolFiles.Add("Chrome-1.0", "Inspector-1.0.json");
+            //protocolFiles.Add("Chrome-1.1", "Inspector-1.1.json");
             protocolFiles.Add("Chrome-Tip", "protocol.json");
-            protocolFiles.Add("iOS-7.0", "Inspector-iOS-7.0.json");
-            protocolFiles.Add("iOS-8.0", "Inspector-iOS-8.0.json");
-            protocolFiles.Add("iOS-9.0", "Inspector-iOS-9.0.json");
+            //protocolFiles.Add("iOS-7.0", "Inspector-iOS-7.0.json");
+            //protocolFiles.Add("iOS-8.0", "Inspector-iOS-8.0.json");
+            //protocolFiles.Add("iOS-9.0", "Inspector-iOS-9.0.json");
             protocolFiles.Add("iOS-9.3", "Inspector-iOS-9.3.json");
 
             Collection<Protocol> protocols = new Collection<Protocol>();
-            
-            foreach(var protocolFile in protocolFiles)
+
+            // "Explicit mappings" allow us to map one type reference to another. This is a
+            // rather hard-coded way of doing things, and is only used when the same type
+            // has different names accross different versions of the dev tools - e.g. the RGBA
+            // type which is named RGBAColor for Safari.
+            Dictionary<string, string> explicitMappings = new Dictionary<string, string>();
+            explicitMappings.Add("DOM.RGBAColor", "RGBA");
+            explicitMappings.Add("Page.Cookie", "Network.Cookie");
+            explicitMappings.Add("GenericTypes.SearchMatch", "Debugger.SearchMatch");
+
+            foreach (var protocolFile in protocolFiles)
             {
                 Protocol p = ProtocolProcessor.LoadProtocol(protocolFile.Value, protocolFile.Key);
-                ProtocolProcessor.ResolveTypeReferences(p);
+                ProtocolProcessor.ResolveTypeReferences(p, explicitMappings);
                 protocols.Add(p);
             }
 

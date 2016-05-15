@@ -18,8 +18,8 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator.Tests
             var inspector11 = ProtocolProcessor.LoadProtocol(DeploymentItems.Inspector11, "inspector-1.1");
             var protocol = ProtocolProcessor.LoadProtocol(DeploymentItems.Protocol, "protocol");
 
-            ProtocolProcessor.ResolveTypeReferences(inspector11);
-            ProtocolProcessor.ResolveTypeReferences(protocol);
+            ProtocolProcessor.ResolveTypeReferences(inspector11, new Dictionary<string, string>());
+            ProtocolProcessor.ResolveTypeReferences(protocol, new Dictionary<string, string>());
 
             var stopScreencast10 = inspector11.GetDomain("Page").GetCommand("stopScreencast");
             var stopScreencastTip = protocol.GetDomain("Page").GetCommand("stopScreencast");

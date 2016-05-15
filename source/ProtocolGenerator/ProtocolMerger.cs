@@ -18,12 +18,12 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
                 }
                 else
                 {
-                    Merge(domain, target.Domains.Single(t => NameEqualityComparer.Instance.Equals(domain, t)));
+                    Merge(source, domain, target.Domains.Single(t => NameEqualityComparer.Instance.Equals(domain, t)));
                 }
             }
         }
 
-        static void Merge(Domain source, Domain target)
+        static void Merge(Protocol protocol, Domain source, Domain target)
         {
             foreach (var command in source.Commands)
             {
@@ -37,7 +37,7 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
 
                     if(!targetCommand.Equals(command))
                     {
-                        Console.WriteLine($"{source.Name}:{command},{targetCommand}");
+                        Console.WriteLine($"{protocol.Alias};{source.Name};{command.Name};{command};{targetCommand}");
                     }
                     else
                     {

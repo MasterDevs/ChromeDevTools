@@ -10,36 +10,36 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
 {
     public class ProtocolProcessor
     {
-        public static void ResolveTypeReferences(Protocol protocol)
+        public static void ResolveTypeReferences(Protocol protocol, Dictionary<string, string> explicitMappings)
         {
             foreach (var domain in protocol.Domains)
             {
-                ResolveTypeReferences(protocol, domain);
+                ResolveTypeReferences(protocol, domain, explicitMappings);
             }
         }
 
-        public static void ResolveTypeReferences(Protocol protocol, Domain domain)
+        public static void ResolveTypeReferences(Protocol protocol, Domain domain, Dictionary<string, string> explicitMappings)
         {
             foreach (var command in domain.Commands)
             {
-                ResolveTypeReferences(protocol, domain, command);
+                ResolveTypeReferences(protocol, domain, command, explicitMappings);
             }
         }
 
-        public static void ResolveTypeReferences(Protocol protocol, Domain domain, Command command)
+        public static void ResolveTypeReferences(Protocol protocol, Domain domain, Command command, Dictionary<string, string> explicitMappings)
         {
             foreach (var parameter in command.Parameters)
             {
-                ResolveTypeReferences(protocol, domain, parameter);
+                ResolveTypeReferences(protocol, domain, parameter, explicitMappings);
             }
 
             foreach (var returnValue in command.Returns)
             {
-                ResolveTypeReferences(protocol, domain, returnValue);
+                ResolveTypeReferences(protocol, domain, returnValue, explicitMappings);
             }
         }
 
-        public static void ResolveTypeReferences(Protocol protocol, Domain domain, Property property)
+        public static void ResolveTypeReferences(Protocol protocol, Domain domain, Type property, Dictionary<string, string> explicitMappings)
         {
             if (property.TypeReference != null)
             {
@@ -64,12 +64,27 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
                     throw new ArgumentOutOfRangeException();
                 }
 
+                string fullReferenceName = $"{referencedDomain.Name}.{referencedType.Name}";
+
                 // If it is a string, it can be resolved easily
-                if(referencedType.IsString())
+                if (referencedType.IsString())
                 {
                     property.Kind = "string";
                     property.TypeReference = null;
                 }
+                else if (referencedType.IsInteger())
+                {
+                    property.Kind = "integer";
+                    property.TypeReference = null;
+                }
+                else if (explicitMappings.ContainsKey(fullReferenceName))
+                {
+                    property.TypeReference = explicitMappings[fullReferenceName];
+                }
+            }
+            else if(property.Items != null)
+            {
+                ResolveTypeReferences(protocol, domain, property.Items, explicitMappings);
             }
         }
 

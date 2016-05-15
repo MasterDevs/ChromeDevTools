@@ -144,6 +144,11 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
             return string.Equals(this.Kind, "string", StringComparison.OrdinalIgnoreCase);
         }
 
+        public bool IsInteger()
+        {
+            return string.Equals(this.Kind, "integer", StringComparison.OrdinalIgnoreCase);
+        }
+
         public bool IsEnum()
         {
             return this.Enum.Any();
