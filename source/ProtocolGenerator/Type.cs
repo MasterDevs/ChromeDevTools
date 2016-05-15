@@ -75,7 +75,7 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
                 }
                 else if (this.Items != null)
                 {
-                    return this.Items.Name + "[]";
+                    return this.Items.TypeName + "[]";
                 }
                 else if (this.Kind != null && this.Kind != "object")
                 {
@@ -157,6 +157,11 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
         public bool IsObject()
         {
             return string.Equals(this.Kind, "object", StringComparison.OrdinalIgnoreCase);
+        }
+
+        public override string ToString()
+        {
+            return this.TypeName;
         }
     }
 }
