@@ -2,7 +2,7 @@
 
 namespace MasterDevs.ChromeDevTools.ProtocolGenerator
 {
-    class Property : Type
+    public class Property : Type
     {
         [JsonProperty("name")]
         public override string Name

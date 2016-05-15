@@ -1,8 +1,9 @@
 ﻿using System.Collections.ObjectModel;
+using System.Linq;
 
 namespace MasterDevs.ChromeDevTools.ProtocolGenerator
 {
-    class Protocol
+    public class Protocol
     {
         public Protocol()
         {
@@ -38,6 +39,23 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
         {
             get;
             set;
+        }
+
+        public Domain GetDomain(string name)
+        {
+            return this.Domains.SingleOrDefault(d => string.Equals(d.Name, name, System.StringComparison.OrdinalIgnoreCase));
+        }
+
+        public override string ToString()
+        {
+            if(this.SourceFile != null)
+            {
+                return $"{this.Alias} ({this.SourceFile})";
+            }
+            else
+            {
+                return this.Alias;
+            }
         }
     }
 }

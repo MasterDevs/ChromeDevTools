@@ -2,10 +2,11 @@
 using System.Collections.ObjectModel;
 using System.Text;
 using System.Linq;
+using System;
 
 namespace MasterDevs.ChromeDevTools.ProtocolGenerator
 {
-    class Command : ProtocolItem
+    public class Command : ProtocolItem
     {
         public Command()
         {
@@ -141,6 +142,11 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
             name.Append(")");
 
             return name.ToString();
+        }
+
+        public Property GetParameter(string name)
+        {
+            return this.Parameters.SingleOrDefault(p => string.Equals(p.Name, name, StringComparison.OrdinalIgnoreCase));
         }
     }
 }

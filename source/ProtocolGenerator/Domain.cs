@@ -1,9 +1,11 @@
 ﻿using Newtonsoft.Json;
+using System;
 using System.Collections.ObjectModel;
+using System.Linq;
 
 namespace MasterDevs.ChromeDevTools.ProtocolGenerator
 {
-    class Domain : ProtocolItem
+    public class Domain : ProtocolItem
     {
         public Domain()
         {
@@ -47,6 +49,16 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
         {
             get;
             set;
+        }
+
+        public Command GetCommand(string name)
+        {
+            return this.Commands.SingleOrDefault(c => string.Equals(c.Name, name, StringComparison.OrdinalIgnoreCase));
+        }
+
+        public Type GetType(string name)
+        {
+            return this.Types.SingleOrDefault(t => string.Equals(t.Name, name, StringComparison.OrdinalIgnoreCase));
         }
     }
 }

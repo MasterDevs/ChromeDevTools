@@ -4,7 +4,7 @@ using System.Collections.ObjectModel;
 
 namespace MasterDevs.ChromeDevTools.ProtocolGenerator
 {
-    abstract class ProtocolItem
+    public abstract class ProtocolItem
     {
         public ProtocolItem()
         {

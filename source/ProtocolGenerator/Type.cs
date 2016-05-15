@@ -2,10 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 
 namespace MasterDevs.ChromeDevTools.ProtocolGenerator
 {
-    class Type : ProtocolItem
+    public class Type : ProtocolItem
     {
         public Type()
         {
@@ -76,7 +77,7 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
                 {
                     return this.Items.Name + "[]";
                 }
-                else if(this.Kind != null && this.Kind != "object")
+                else if (this.Kind != null && this.Kind != "object")
                 {
                     return this.Kind;
                 }
@@ -95,14 +96,16 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
                 return false;
             }
 
-            return base.Equals(obj)
-                && string.Equals(this.Kind, other.Kind, StringComparison.OrdinalIgnoreCase)
-                && this.Enum.SetEquals(other.Enum)
-                && this.Properties.SetEquals(other.Properties)
-                && Type.Equals(this.Items, other.Items)
-                && this.MinItems == other.MinItems
-                && this.MaxItems == other.MaxItems
-                && string.Equals(this.TypeReference, other.TypeReference, StringComparison.OrdinalIgnoreCase);
+            bool equals = base.Equals(obj);
+            equals &= string.Equals(this.Kind, other.Kind, StringComparison.OrdinalIgnoreCase);
+            equals &= this.Enum.SetEquals(other.Enum);
+            equals &= this.Properties.SetEquals(other.Properties);
+            equals &= Type.Equals(this.Items, other.Items);
+            equals &= this.MinItems == other.MinItems;
+            equals &= this.MaxItems == other.MaxItems;
+            equals &= string.Equals(this.TypeReference, other.TypeReference, StringComparison.OrdinalIgnoreCase);
+
+            return equals;
         }
 
         public override int GetHashCode()
@@ -134,6 +137,26 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
 
                 return hash;
             }
+        }
+
+        public bool IsString()
+        {
+            return string.Equals(this.Kind, "string", StringComparison.OrdinalIgnoreCase);
+        }
+
+        public bool IsEnum()
+        {
+            return this.Enum.Any();
+        }
+
+        public bool IsClass()
+        {
+            return this.Properties.Any();
+        }
+
+        public bool IsObject()
+        {
+            return string.Equals(this.Kind, "object", StringComparison.OrdinalIgnoreCase);
         }
     }
 }

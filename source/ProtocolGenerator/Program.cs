@@ -24,36 +24,6 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
         private static Dictionary<string, List<string>> _DomainEvents = new Dictionary<string, List<string>>();
         private static Dictionary<string, string> _SimpleTypes = new Dictionary<string, string>();
 
-        private static Protocol LoadProtocol(string path, string alias)
-        {
-            string json = File.ReadAllText(path);
-            JsonSerializerSettings settings = new JsonSerializerSettings();
-            settings.MissingMemberHandling = MissingMemberHandling.Error;
-            settings.MetadataPropertyHandling = MetadataPropertyHandling.Ignore;
-            Protocol p = JsonConvert.DeserializeObject<Protocol>(json, settings);
-            p.SourceFile = path;
-            p.Alias = alias;
-
-            foreach(var domain in p.Domains)
-            {
-                foreach(var command in domain.Commands)
-                {
-                    command.SupportedBy.Add(alias);
-                }
-
-                foreach(var @event in domain.Events)
-                {
-                    @event.SupportedBy.Add(alias);
-                }
-
-                foreach(var type in domain.Types)
-                {
-                    type.SupportedBy.Add(alias);
-                }
-            }
-
-            return p;
-        }
 
         private static void Main(string[] args)
         {
@@ -71,7 +41,9 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
             
             foreach(var protocolFile in protocolFiles)
             {
-                protocols.Add(LoadProtocol(protocolFile.Value, protocolFile.Key));
+                Protocol p = ProtocolProcessor.LoadProtocol(protocolFile.Value, protocolFile.Key);
+                ProtocolProcessor.ResolveTypeReferences(p);
+                protocols.Add(p);
             }
 
             Protocol protocolObject = new Protocol();
@@ -121,9 +93,9 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
             {
                 var propertyType = type.Kind;
                 var typeName = type.Name;
-                if (type.Enum.Any()
-                    || type.Properties.Any()
-                    || "object" == propertyType)
+                if (type.IsEnum()
+                    || type.IsClass()
+                    || type.IsObject())
                 {
                     propertyType = domain + "." + typeName;
                 }

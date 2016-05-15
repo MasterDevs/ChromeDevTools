@@ -61,6 +61,7 @@
     <Compile Include="Protocol.cs" />
     <Compile Include="ProtocolItem.cs" />
     <Compile Include="ProtocolMerger.cs" />
+    <Compile Include="ProtocolProcessor.cs" />
     <Compile Include="Type.cs" />
     <Compile Include="Version.cs" />
   </ItemGroup>
