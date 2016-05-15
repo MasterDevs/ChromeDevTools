@@ -27,6 +27,9 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
             set;
         }
 
+        /// <remarks>
+        /// This property is currently ignored.
+        /// </remarks>
         public Collection<string> Handlers
         {
             get;
@@ -63,7 +66,6 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
             bool equals = base.Equals(obj);
             equals &= this.Returns.SequenceEqual(other.Returns);
             equals &= Property.Equals(this.Error, other.Error);
-            equals &= this.Handlers.CollectionEqual(other.Handlers);
             equals &= this.Parameters.SequenceEqual(other.Parameters);
             return equals;
         }
@@ -79,8 +81,7 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
                 {
                     hash = hash * 23 + this.Error.GetHashCode();
                 }
-
-                hash = hash * 23 + this.Handlers.GetCollectionHashCode();
+                
                 hash = hash * 23 + this.Parameters.GetCollectionHashCode();
                 return hash;
             }

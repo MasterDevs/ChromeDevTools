@@ -11,31 +11,25 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator.Tests
     public class CommandTests
     {
         [TestMethod]
-        [DeploymentItem(DeploymentItems.Inspector10)]
+        [DeploymentItem(DeploymentItems.Inspector11)]
         [DeploymentItem(DeploymentItems.Protocol)]
         public void EqualsTest()
         {
-            var inspector10 = ProtocolProcessor.LoadProtocol(DeploymentItems.Inspector10, "inspector-1.0");
+            var inspector11 = ProtocolProcessor.LoadProtocol(DeploymentItems.Inspector11, "inspector-1.1");
             var protocol = ProtocolProcessor.LoadProtocol(DeploymentItems.Protocol, "protocol");
 
-            ProtocolProcessor.ResolveTypeReferences(inspector10);
+            ProtocolProcessor.ResolveTypeReferences(inspector11);
             ProtocolProcessor.ResolveTypeReferences(protocol);
 
-            var searchInResource10 = inspector10.GetDomain("Page").GetCommand("searchInResource");
-            var searchInResourceTip = protocol.GetDomain("Page").GetCommand("searchInResource");
+            var stopScreencast10 = inspector11.GetDomain("Page").GetCommand("stopScreencast");
+            var stopScreencastTip = protocol.GetDomain("Page").GetCommand("stopScreencast");
 
             // Quick fact check: both methods have the same string equivalent,
-            // ([] result) searchInResource(string frameId, string url, string query, boolean caseSensitive, boolean isRegex)
-            Assert.AreEqual<string>(searchInResource10.ToString(), searchInResourceTip.ToString());
+            // void stopScreencast()
+            Assert.AreEqual<string>(stopScreencast10.ToString(), stopScreencastTip.ToString());
 
-            // The result is a type, check whether the type has the same properties
-            var result10 = searchInResource10.Returns.Single();
-            var resultTip = searchInResourceTip.Returns.Single();
-
-            Assert.IsTrue(result10.Equals(resultTip));
-
-            Assert.IsTrue(searchInResource10.Equals(searchInResourceTip));
-            Assert.IsTrue(searchInResourceTip.Equals(searchInResource10));
+            Assert.IsTrue(stopScreencast10.Equals(stopScreencastTip));
+            Assert.IsTrue(stopScreencastTip.Equals(stopScreencast10));
         }
     }
 }
