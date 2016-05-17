@@ -2,7 +2,7 @@
 
 namespace MasterDevs.ChromeDevTools.ProtocolGenerator
 {
-    class Event : ProtocolItem
+    public class Event : ProtocolItem
     {
         public Event()
         {

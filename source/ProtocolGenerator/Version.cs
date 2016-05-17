@@ -1,6 +1,6 @@
 ﻿namespace MasterDevs.ChromeDevTools.ProtocolGenerator
 {
-    class Version
+    public class Version
     {
         public string Major
         {
