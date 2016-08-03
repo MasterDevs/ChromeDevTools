@@ -12,17 +12,25 @@ namespace MasterDevs.ChromeDevTools
         private readonly Dictionary<string, Type> _eventTypes = new Dictionary<string, Type>();
 
         public MethodTypeMap()
+            : this("Chrome")
         {
-            LoadMethodTypeMap();
         }
 
-        private void LoadMethodTypeMap()
+        public MethodTypeMap(string alias)
+        {
+            LoadMethodTypeMap(alias);
+        }
+
+        private void LoadMethodTypeMap(string alias)
         {
             var assembly = Assembly.GetExecutingAssembly();
             var assemblyTypes = assembly.GetTypes();
             foreach (var type in assemblyTypes)
             {
                 if (!type.IsClass) continue;
+
+                if (!type.Namespace.StartsWith($"MasterDevs.ChromeDevTools.Protocol.{alias}")) continue;
+
                 if (type.Name.EndsWith("CommandResponse"))
                 {
                     var methodName = GetMethodName<CommandResponseAttribute>(type);
