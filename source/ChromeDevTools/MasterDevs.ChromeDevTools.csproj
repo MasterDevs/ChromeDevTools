@@ -50,6 +50,7 @@
     <Compile Include="ChromeProcessFactory.cs" />
     <Compile Include="ChromeProcess.cs" />
     <Compile Include="ChromeSession.cs" />
+    <Compile Include="ChromeSessionExtensions.cs" />
     <Compile Include="ChromeSessionFactory.cs" />
     <Compile Include="Command.cs" />
     <Compile Include="CommandAttribute.cs" />
