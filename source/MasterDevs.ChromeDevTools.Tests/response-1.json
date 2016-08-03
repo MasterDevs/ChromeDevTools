@@ -1,0 +1,61 @@
+﻿{
+  "result": {
+    "root": {
+      "nodeId": 16,
+      "nodeType": 9,
+      "nodeName": "#document",
+      "localName": "",
+      "nodeValue": "",
+      "childNodeCount": 2,
+      "children": [
+        {
+          "nodeId": 17,
+          "nodeType": 10,
+          "nodeName": "html",
+          "localName": "",
+          "nodeValue": "",
+          "publicId": "",
+          "systemId": "",
+          "internalSubset": ""
+        },
+        {
+          "nodeId": 18,
+          "nodeType": 1,
+          "nodeName": "HTML",
+          "localName": "html",
+          "nodeValue": "",
+          "childNodeCount": 2,
+          "children": [
+            {
+              "nodeId": 19,
+              "nodeType": 1,
+              "nodeName": "HEAD",
+              "localName": "head",
+              "nodeValue": "",
+              "childNodeCount": 4,
+              "attributes": []
+            },
+            {
+              "nodeId": 20,
+              "nodeType": 1,
+              "nodeName": "BODY",
+              "localName": "body",
+              "nodeValue": "",
+              "childNodeCount": 2,
+              "attributes": [ "class", "transitions-on ios" ],
+              "role": "group"
+            }
+          ],
+          "attributes": [ "manifest", "manifest.appcache" ],
+          "role": ""
+        }
+      ],
+      "frameId": "0.1",
+      "documentURL": "https://mycompany/25/ios/v3.2.14/",
+      "baseURL": "https://mycompany/25/ios/v3.2.14/",
+      "xmlVersion": "",
+      "role": ""
+    }
+  },
+  "id": 1
+}

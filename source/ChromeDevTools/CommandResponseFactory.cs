@@ -1,4 +1,7 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using MasterDevs.ChromeDevTools.Serialization;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json.Serialization;
 using System;
 
 namespace MasterDevs.ChromeDevTools
@@ -8,10 +11,21 @@ namespace MasterDevs.ChromeDevTools
         private readonly IMethodTypeMap _methodTypeMap;
         private readonly ICommandFactory _commandFactory;
 
+        /// <summary>
+        /// Used to deserialize command responses from JSON to .NET objects.
+        /// </summary>
+        private readonly JsonSerializer _serializer;
+
         public CommandResponseFactory(IMethodTypeMap methodTypeMap, ICommandFactory commandFactory)
+            : this(methodTypeMap, commandFactory, new JsonSerializer() { ContractResolver = new MessageContractResolver() })
+        {
+        }
+
+        public CommandResponseFactory(IMethodTypeMap methodTypeMap, ICommandFactory commandFactory, JsonSerializer serializer)
         {
             _methodTypeMap = methodTypeMap;
             _commandFactory = commandFactory;
+            _serializer = serializer;
         }
 
         public ICommandResponse Create(byte[] responseBytes)
@@ -38,7 +52,7 @@ namespace MasterDevs.ChromeDevTools
             }
             var genericEventType = typeof(CommandResponse<>);
             var commandResponseType = genericEventType.MakeGenericType(typeInferredFromMethod);
-            var result = jObject.ToObject(commandResponseType);
+            var result = jObject.ToObject(commandResponseType, _serializer);
             return result as ICommandResponse;
         }
 
