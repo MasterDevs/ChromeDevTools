@@ -1,0 +1,15 @@
+using MasterDevs.ChromeDevTools;
+using Newtonsoft.Json;
+using System.Collections.Generic;
+
+namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Emulation
+{
+	/// <summary>
+	/// Clears the overriden Geolocation Position and Error.
+	/// </summary>
+	[Command(ProtocolName.Emulation.ClearGeolocationOverride)]
+	[SupportedBy("Chrome")]
+	public class ClearGeolocationOverrideCommand
+	{
+	}
+}

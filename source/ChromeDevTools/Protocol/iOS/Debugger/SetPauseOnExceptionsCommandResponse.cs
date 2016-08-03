@@ -1,0 +1,15 @@
+using MasterDevs.ChromeDevTools;
+using Newtonsoft.Json;
+using System.Collections.Generic;
+
+namespace MasterDevs.ChromeDevTools.Protocol.iOS.Debugger
+{
+	/// <summary>
+	/// Defines pause on exceptions state. Can be set to stop on all exceptions, uncaught exceptions or no exceptions. Initial pause on exceptions state is <code>none</code>.
+	/// </summary>
+	[CommandResponse(ProtocolName.Debugger.SetPauseOnExceptions)]
+	[SupportedBy("iOS")]
+	public class SetPauseOnExceptionsCommandResponse
+	{
+	}
+}
