@@ -17,7 +17,7 @@ namespace MasterDevs.ChromeDevTools
         private IEventFactory _eventFactory;
         private ManualResetEvent _openEvent = new ManualResetEvent(false);
         private ManualResetEvent _publishEvent = new ManualResetEvent(false);
-        private ConcurrentDictionary<long, ManualResetEvent> _requestWaitHandles = new ConcurrentDictionary<long, ManualResetEvent>();
+        private ConcurrentDictionary<long, ManualResetEventSlim> _requestWaitHandles = new ConcurrentDictionary<long, ManualResetEventSlim>();
         private ICommandResponseFactory _responseFactory;
         private ConcurrentDictionary<long, ICommandResponse> _responses = new ConcurrentDictionary<long, ICommandResponse>();
         private WebSocket _webSocket;
@@ -73,16 +73,16 @@ namespace MasterDevs.ChromeDevTools
             });
         }
 
-        public Task<ICommandResponse> SendAsync<T>()
+        public Task<ICommandResponse> SendAsync<T>(CancellationToken cancellationToken)
         {
             var command = _commandFactory.Create<T>();
-            return SendCommand(command);
+            return SendCommand(command, cancellationToken);
         }
 
-        public Task<ICommandResponse> SendAsync<T>(T parameter)
+        public Task<ICommandResponse> SendAsync<T>(T parameter, CancellationToken cancellationToken)
         {
             var command = _commandFactory.Create(parameter);
-            return SendCommand(command);
+            return SendCommand(command, cancellationToken);
         }
 
         public void Subscribe<T>(Action<T> handler) where T : class
@@ -136,7 +136,7 @@ namespace MasterDevs.ChromeDevTools
         private void HandleResponse(ICommandResponse response)
         {
             if (null == response) return;
-            ManualResetEvent requestMre;
+            ManualResetEventSlim requestMre;
             if (_requestWaitHandles.TryGetValue(response.Id, out requestMre))
             {
                 _responses.AddOrUpdate(response.Id, id => response, (key, value) => response);
@@ -156,7 +156,7 @@ namespace MasterDevs.ChromeDevTools
             }
         }
 
-        private Task<ICommandResponse> SendCommand(Command command)
+        private Task<ICommandResponse> SendCommand(Command command, CancellationToken cancellationToken)
         {
             var settings = new JsonSerializerSettings
             {
@@ -164,13 +164,13 @@ namespace MasterDevs.ChromeDevTools
                 NullValueHandling = NullValueHandling.Ignore,
             };
             var requestString = JsonConvert.SerializeObject(command, settings);
-            var requestResetEvent = new ManualResetEvent(false);
+            var requestResetEvent = new ManualResetEventSlim(false);
             _requestWaitHandles.AddOrUpdate(command.Id, requestResetEvent, (id, r) => requestResetEvent);
             return Task.Run(() =>
             {
                 EnsureInit();
                 _webSocket.Send(requestString);
-                requestResetEvent.WaitOne();
+                requestResetEvent.Wait(cancellationToken);
                 ICommandResponse response = null;
                 _responses.TryRemove(command.Id, out response);
                 _requestWaitHandles.TryRemove(command.Id, out requestResetEvent);
