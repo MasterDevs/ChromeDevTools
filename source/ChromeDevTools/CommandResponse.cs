@@ -24,6 +24,15 @@
 
     public class CommandResponse<T> : CommandResponse
     {
+        public CommandResponse()
+        {
+        }
+
+        public CommandResponse(T result)
+        {
+            this.Result = result;
+        }
+
         public T Result
         {
             get;
