@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Net;
+using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -35,10 +36,10 @@ namespace MasterDevs.ChromeDevTools
         public async Task<string[]> GetSessions()
         {
             var remoteSessionUrls = new List<string>();
-            var webClient = new WebClient();
+            var webClient = new HttpClient();
             var uriBuilder = new UriBuilder(RemoteDebuggingUri);
             uriBuilder.Path = "/json";
-            var remoteSessions = await webClient.DownloadStringTaskAsync(uriBuilder.Uri);
+            var remoteSessions = await webClient.GetStringAsync(uriBuilder.Uri);
             using (var stringReader = new StringReader(remoteSessions))
             using (var jsonReader = new JsonTextReader(stringReader))
             {

@@ -1,0 +1,36 @@
+{
+  "version": "1.0.3-*",
+  "description": "Contains the classes and utilities used to interact with the Chrome Developer Tools",
+  "authors": [ "MasterDevs" ],
+  "packOptions": {
+    "projectUrl": "https://github.com/MasterDevs/ChromeDevTools",
+    "licenseUrl": "https://github.com/MasterDevs/ChromeDevTools/blob/master/LICENSE",
+    "iconUrl": "http://masterdevs.com/images/FavIcon_144.png"
+  },
+  "buildOptions": {},
+  "dependencies": {
+    "Newtonsoft.Json": "9.0.1"
+  },
+  "frameworks": {
+    "netstandard15": {
+      "dependencies": {
+        "System.Reflection": "4.1.0",
+        "System.Runtime": "4.1.0",
+        "System.Collections.Concurrent": "4.0.12",
+        "System.IO.FileSystem": "4.0.1",
+        "System.Diagnostics.Process": "4.1.0",
+        "System.Runtime.InteropServices": "4.1.0",
+        "System.Net.Http": "4.1.0",
+        "System.Threading.Thread": "4.0.0"
+      }
+    },
+    "net45": {
+      "dependencies": {
+        "WebSocket4Net": "0.14.1"
+      },
+      "frameworkAssemblies": {
+        "System.Net.Http": "4.0.0.0"
+      }
+    }
+  }
+}

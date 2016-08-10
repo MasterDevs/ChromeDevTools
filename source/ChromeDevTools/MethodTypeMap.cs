@@ -23,11 +23,11 @@ namespace MasterDevs.ChromeDevTools
 
         private void LoadMethodTypeMap(string alias)
         {
-            var assembly = Assembly.GetExecutingAssembly();
+            var assembly = typeof(MethodTypeMap).GetTypeInfo().Assembly;
             var assemblyTypes = assembly.GetTypes();
             foreach (var type in assemblyTypes)
             {
-                if (!type.IsClass) continue;
+                if (!type.GetTypeInfo().IsClass) continue;
 
                 if (!type.Namespace.StartsWith($"MasterDevs.ChromeDevTools.Protocol.{alias}")) continue;
 
@@ -54,7 +54,7 @@ namespace MasterDevs.ChromeDevTools
 
         private string GetMethodName<T>(Type type) where T : IMethodNameAttribute
         {
-            var attribute = type.GetCustomAttributes(typeof(T))
+            var attribute = type.GetTypeInfo().GetCustomAttributes(typeof(T))
                 .FirstOrDefault();
             if (null == attribute) return null;
             var methodNameAttribute = attribute as IMethodNameAttribute;
