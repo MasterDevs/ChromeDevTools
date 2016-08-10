@@ -62,6 +62,8 @@ nuget:
   project_feed: true
 before_build:
 - nuget restore source\MasterDevs.ChromeDevTools.sln
+- dotnet restore source\ChromeDevTools\project.json
+- dotnet pack source\ChromeDevTools\project.json
 build:
   project: source\MasterDevs.ChromeDevTools.sln
   publish_nuget: true
