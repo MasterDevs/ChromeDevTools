@@ -63,7 +63,7 @@ nuget:
 before_build:
 - nuget restore source\MasterDevs.ChromeDevTools.sln
 - dotnet restore source\ChromeDevTools\project.json
-- dotnet pack source\ChromeDevTools\project.json
+- dotnet pack source\ChromeDevTools\project.json --version-suffix r%APPVEYOR_BUILD_NUMBER%
 build:
   project: source\MasterDevs.ChromeDevTools.sln
   publish_nuget: true
@@ -71,6 +71,7 @@ build:
   verbosity: minimal
 artifacts:
 - path: '*.nupkg'
+- path: 'source\ChromeDevTools\bin\Debug\*.nupkg'
 deploy:
 - provider: GitHub
   auth_token:
