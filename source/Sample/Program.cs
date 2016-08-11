@@ -1,4 +1,4 @@
-﻿using MasterDevs.ChromeDevTools.Protocol.Page;
+﻿using MasterDevs.ChromeDevTools.Protocol.Chrome.Page;
 using System;
 using System.Linq;
 
@@ -31,14 +31,14 @@ namespace MasterDevs.ChromeDevTools.Sample
                 // STEP 4 - Register for events (in this case, "Page" domain events)
                 // send an event to tell chrome to send us all Page events
                 // but we only subscribe to certain events in this session
-                var pageEnableResult = chromeSession.SendAsync<ChromeDevTools.Protocol.Page.EnableCommand>().Result;
+                var pageEnableResult = chromeSession.SendAsync<ChromeDevTools.Protocol.Chrome.Page.EnableCommand>().Result;
                 Console.WriteLine("PageEnable: " + pageEnableResult.Id);
-                chromeSession.Subscribe<Protocol.Page.DomContentEventFiredEvent>(domContentEvent =>
+                chromeSession.Subscribe<Protocol.Chrome.Page.DomContentEventFiredEvent>(domContentEvent =>
                     {
                         Console.WriteLine("DomContentEvent: " + domContentEvent.Timestamp);
                     });
                 // you might never see this, but that's what an event is ... right?
-                chromeSession.Subscribe<Protocol.Page.FrameStartedLoadingEvent>(frameStartedLoadingEvent =>
+                chromeSession.Subscribe<Protocol.Chrome.Page.FrameStartedLoadingEvent>(frameStartedLoadingEvent =>
                     {
                         Console.WriteLine("FrameStartedLoading: " + frameStartedLoadingEvent.FrameId);
                     });
