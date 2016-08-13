@@ -1,4 +1,5 @@
-﻿using MasterDevs.ChromeDevTools.Serialization;
+﻿#if !NETSTANDARD1_5
+using MasterDevs.ChromeDevTools.Serialization;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Concurrent;
@@ -251,3 +252,4 @@ namespace MasterDevs.ChromeDevTools
         }
     }
 }
+#endif
