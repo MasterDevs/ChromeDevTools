@@ -21,7 +21,8 @@
         "System.Diagnostics.Process": "4.1.0",
         "System.Runtime.InteropServices": "4.1.0",
         "System.Net.Http": "4.1.0",
-        "System.Threading.Thread": "4.0.0"
+        "System.Threading.Thread": "4.0.0",
+        "System.Runtime.Serialization.Primitives": "4.1.1"
       }
     },
     "net45": {
@@ -29,7 +30,8 @@
         "WebSocket4Net": "0.14.1"
       },
       "frameworkAssemblies": {
-        "System.Net.Http": "4.0.0.0"
+        "System.Net.Http": "4.0.0.0",
+        "System.Runtime.Serialization": "4.0.0.0"
       }
     }
   }
