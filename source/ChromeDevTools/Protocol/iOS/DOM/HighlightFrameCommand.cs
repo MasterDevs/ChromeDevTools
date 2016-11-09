@@ -18,10 +18,12 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.DOM
 		/// <summary>
 		/// Gets or sets The content box highlight fill color (default: transparent).
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public RGBAColor ContentColor { get; set; }
 		/// <summary>
 		/// Gets or sets The content box highlight outline color (default: transparent).
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public RGBAColor ContentOutlineColor { get; set; }
 	}
 }

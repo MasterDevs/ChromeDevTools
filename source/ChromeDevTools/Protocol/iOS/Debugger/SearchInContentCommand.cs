@@ -22,10 +22,12 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Debugger
 		/// <summary>
 		/// Gets or sets If true, search is case sensitive.
 		/// </summary>
-		public bool CaseSensitive { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? CaseSensitive { get; set; }
 		/// <summary>
 		/// Gets or sets If true, treats string parameter as regex.
 		/// </summary>
-		public bool IsRegex { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? IsRegex { get; set; }
 	}
 }

@@ -21,6 +21,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Network
 		/// <summary>
 		/// Gets or sets Cached response data.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public Response Response { get; set; }
 		/// <summary>
 		/// Gets or sets Cached response body size.
@@ -29,6 +30,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Network
 		/// <summary>
 		/// Gets or sets URL of source map associated with this resource (if any).
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string SourceMapURL { get; set; }
 	}
 }

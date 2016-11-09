@@ -21,10 +21,12 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 		/// <summary>
 		/// Gets or sets Stack trace where async operation was scheduled.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public Console.CallFrame[] StackTrace { get; set; }
 		/// <summary>
 		/// Gets or sets Asynchronous stack trace where async operation was scheduled, if available.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public Console.AsyncStackTrace AsyncStackTrace { get; set; }
 	}
 }

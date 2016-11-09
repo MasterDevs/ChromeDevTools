@@ -15,10 +15,12 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Canvas
 		/// <summary>
 		/// Gets or sets StartOffset
 		/// </summary>
-		public long StartOffset { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? StartOffset { get; set; }
 		/// <summary>
 		/// Gets or sets MaxLength
 		/// </summary>
-		public long MaxLength { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? MaxLength { get; set; }
 	}
 }

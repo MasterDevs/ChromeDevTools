@@ -18,14 +18,17 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Runtime
 		/// <summary>
 		/// Gets or sets Symbolic group name that can be used to release multiple. If not provided, it will be the same objectGroup as the RemoteObject determined from <code>objectId</code>. This is useful for WeakMap to release the collection entries.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string ObjectGroup { get; set; }
 		/// <summary>
 		/// Gets or sets If provided skip to this index before collecting values. Otherwise, 0.
 		/// </summary>
-		public long StartIndex { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? StartIndex { get; set; }
 		/// <summary>
 		/// Gets or sets If provided only return <code>numberToFetch</code> values. Otherwise, return values all the way to the end.
 		/// </summary>
-		public long NumberToFetch { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? NumberToFetch { get; set; }
 	}
 }

@@ -17,10 +17,12 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.OverlayTypes
 		/// <summary>
 		/// Gets or sets Path for the element's shape.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public object[] Shape { get; set; }
 		/// <summary>
 		/// Gets or sets Path for the element's margin shape.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public object[] MarginShape { get; set; }
 	}
 }

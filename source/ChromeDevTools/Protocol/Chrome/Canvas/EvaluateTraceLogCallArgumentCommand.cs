@@ -26,6 +26,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Canvas
 		/// <summary>
 		/// Gets or sets String object group name to put result into (allows rapid releasing resulting object handles using <code>Runtime.releaseObjectGroup</code>).
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string ObjectGroup { get; set; }
 	}
 }

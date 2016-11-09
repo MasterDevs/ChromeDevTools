@@ -25,6 +25,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Network
 		/// <summary>
 		/// Gets or sets HTTP POST request data.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string PostData { get; set; }
 	}
 }

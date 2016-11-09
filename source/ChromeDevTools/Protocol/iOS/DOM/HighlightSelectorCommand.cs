@@ -22,6 +22,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.DOM
 		/// <summary>
 		/// Gets or sets Identifier of the frame which will be searched using the selector.  If not provided, the main frame will be used.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string FrameId { get; set; }
 	}
 }

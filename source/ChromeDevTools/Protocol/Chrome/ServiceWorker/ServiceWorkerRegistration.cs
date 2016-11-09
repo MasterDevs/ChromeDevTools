@@ -21,6 +21,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.ServiceWorker
 		/// <summary>
 		/// Gets or sets IsDeleted
 		/// </summary>
-		public bool IsDeleted { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? IsDeleted { get; set; }
 	}
 }

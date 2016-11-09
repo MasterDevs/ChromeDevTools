@@ -18,6 +18,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Page
 		/// <summary>
 		/// Gets or sets The text to enter into the dialog prompt before accepting. Used only if this is a prompt dialog.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string PromptText { get; set; }
 	}
 }

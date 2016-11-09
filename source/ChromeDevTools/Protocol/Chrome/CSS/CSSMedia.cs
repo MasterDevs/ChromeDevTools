@@ -21,18 +21,22 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CSS
 		/// <summary>
 		/// Gets or sets URL of the document containing the media query description.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string SourceURL { get; set; }
 		/// <summary>
 		/// Gets or sets The associated rule (@media or @import) header range in the enclosing stylesheet (if available).
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public SourceRange Range { get; set; }
 		/// <summary>
 		/// Gets or sets Identifier of the stylesheet containing this object (if exists).
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string ParentStyleSheetId { get; set; }
 		/// <summary>
 		/// Gets or sets Array of media queries.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public MediaQuery[] MediaList { get; set; }
 	}
 }

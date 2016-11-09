@@ -22,14 +22,17 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.FileSystem
 		/// <summary>
 		/// Gets or sets Specifies the start of range to read.
 		/// </summary>
-		public long Start { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? Start { get; set; }
 		/// <summary>
 		/// Gets or sets Specifies the end of range to read exclusively.
 		/// </summary>
-		public long End { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? End { get; set; }
 		/// <summary>
 		/// Gets or sets Overrides charset of the content when content is served as text.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string Charset { get; set; }
 	}
 }

@@ -17,6 +17,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 		/// <summary>
 		/// Gets or sets Parent frame identifier.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string ParentId { get; set; }
 		/// <summary>
 		/// Gets or sets Identifier of the loader associated with this frame.
@@ -25,6 +26,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 		/// <summary>
 		/// Gets or sets Frame's name as specified in the tag.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string Name { get; set; }
 		/// <summary>
 		/// Gets or sets Frame document's URL.

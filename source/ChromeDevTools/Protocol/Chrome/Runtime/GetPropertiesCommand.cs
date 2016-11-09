@@ -18,14 +18,17 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 		/// <summary>
 		/// Gets or sets If true, returns properties belonging only to the element itself, not to its prototype chain.
 		/// </summary>
-		public bool OwnProperties { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? OwnProperties { get; set; }
 		/// <summary>
 		/// Gets or sets If true, returns accessor properties (with getter/setter) only; internal properties are not returned either.
 		/// </summary>
-		public bool AccessorPropertiesOnly { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? AccessorPropertiesOnly { get; set; }
 		/// <summary>
 		/// Gets or sets Whether preview should be generated for the results.
 		/// </summary>
-		public bool GeneratePreview { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? GeneratePreview { get; set; }
 	}
 }

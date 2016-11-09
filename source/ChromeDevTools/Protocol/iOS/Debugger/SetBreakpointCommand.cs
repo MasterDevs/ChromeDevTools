@@ -18,6 +18,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Debugger
 		/// <summary>
 		/// Gets or sets Options to apply to this breakpoint to modify its behavior.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public BreakpointOptions Options { get; set; }
 	}
 }

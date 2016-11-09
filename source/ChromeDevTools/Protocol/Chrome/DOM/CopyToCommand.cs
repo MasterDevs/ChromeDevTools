@@ -22,6 +22,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 		/// <summary>
 		/// Gets or sets Drop the copy before this node (if absent, the copy becomes the last child of <code>targetNodeId</code>).
 		/// </summary>
-		public long InsertBeforeNodeId { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? InsertBeforeNodeId { get; set; }
 	}
 }

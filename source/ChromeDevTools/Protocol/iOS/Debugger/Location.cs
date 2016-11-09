@@ -21,6 +21,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Debugger
 		/// <summary>
 		/// Gets or sets Column number in the script.
 		/// </summary>
-		public long ColumnNumber { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? ColumnNumber { get; set; }
 	}
 }

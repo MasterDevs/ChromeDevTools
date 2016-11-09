@@ -34,14 +34,17 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Emulation
 		/// <summary>
 		/// Gets or sets Scale to apply to resulting view image. Ignored in |fitWindow| mode.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public double Scale { get; set; }
 		/// <summary>
 		/// Gets or sets X offset to shift resulting view image by. Ignored in |fitWindow| mode.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public double OffsetX { get; set; }
 		/// <summary>
 		/// Gets or sets Y offset to shift resulting view image by. Ignored in |fitWindow| mode.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public double OffsetY { get; set; }
 	}
 }

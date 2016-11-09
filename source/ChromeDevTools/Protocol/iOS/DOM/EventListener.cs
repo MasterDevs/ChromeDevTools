@@ -33,14 +33,17 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.DOM
 		/// <summary>
 		/// Gets or sets Handler code location.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public Debugger.Location Location { get; set; }
 		/// <summary>
 		/// Gets or sets Source script URL.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string SourceName { get; set; }
 		/// <summary>
 		/// Gets or sets Event handler function value.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public Runtime.RemoteObject Handler { get; set; }
 	}
 }

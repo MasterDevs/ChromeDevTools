@@ -21,22 +21,27 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Timeline
 		/// <summary>
 		/// Gets or sets Function name.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string FunctionName { get; set; }
 		/// <summary>
 		/// Gets or sets URL.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string Url { get; set; }
 		/// <summary>
 		/// Gets or sets Line number.
 		/// </summary>
-		public long LineNumber { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? LineNumber { get; set; }
 		/// <summary>
 		/// Gets or sets Column number.
 		/// </summary>
-		public long ColumnNumber { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? ColumnNumber { get; set; }
 		/// <summary>
 		/// Gets or sets Child nodes.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public CPUProfileNode[] Children { get; set; }
 	}
 }

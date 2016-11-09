@@ -14,10 +14,12 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.CSS
 		/// <summary>
 		/// Gets or sets Inline style for the specified DOM node.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public CSSStyle InlineStyle { get; set; }
 		/// <summary>
 		/// Gets or sets Attribute-defined element style (e.g. resulting from "width=20 height=100%").
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public CSSStyle AttributesStyle { get; set; }
 	}
 }

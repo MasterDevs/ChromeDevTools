@@ -17,6 +17,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Timeline
 		/// <summary>
 		/// Gets or sets IdleTime
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public double IdleTime { get; set; }
 	}
 }

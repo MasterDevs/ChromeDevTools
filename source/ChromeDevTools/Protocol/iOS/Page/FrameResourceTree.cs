@@ -17,6 +17,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Page
 		/// <summary>
 		/// Gets or sets Child frames.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public FrameResourceTree[] ChildFrames { get; set; }
 		/// <summary>
 		/// Gets or sets Information about frame resources.

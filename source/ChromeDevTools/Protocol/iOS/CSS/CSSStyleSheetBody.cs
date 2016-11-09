@@ -21,6 +21,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.CSS
 		/// <summary>
 		/// Gets or sets Stylesheet resource contents (if available).
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string Text { get; set; }
 	}
 }

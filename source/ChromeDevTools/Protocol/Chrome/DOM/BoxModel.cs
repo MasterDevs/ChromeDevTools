@@ -37,6 +37,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 		/// <summary>
 		/// Gets or sets Shape outside coordinates
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public ShapeOutsideInfo ShapeOutside { get; set; }
 	}
 }

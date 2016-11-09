@@ -14,10 +14,12 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Page
 		/// <summary>
 		/// Gets or sets If true, browser cache is ignored (as if the user pressed Shift+refresh).
 		/// </summary>
-		public bool IgnoreCache { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? IgnoreCache { get; set; }
 		/// <summary>
 		/// Gets or sets If set, the script will be injected into all frames of the inspected page after reload.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string ScriptToEvaluateOnLoad { get; set; }
 	}
 }

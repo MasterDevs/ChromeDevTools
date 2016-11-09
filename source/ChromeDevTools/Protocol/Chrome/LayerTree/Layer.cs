@@ -17,11 +17,13 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.LayerTree
 		/// <summary>
 		/// Gets or sets The id of parent (not present for root).
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string ParentLayerId { get; set; }
 		/// <summary>
 		/// Gets or sets The backend id for the node associated with this layer.
 		/// </summary>
-		public long BackendNodeId { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? BackendNodeId { get; set; }
 		/// <summary>
 		/// Gets or sets Offset from parent layer, X coordinate.
 		/// </summary>
@@ -41,18 +43,22 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.LayerTree
 		/// <summary>
 		/// Gets or sets Transformation matrix for layer, default is identity matrix
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public double[] Transform { get; set; }
 		/// <summary>
 		/// Gets or sets Transform anchor point X, absent if no transform specified
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public double AnchorX { get; set; }
 		/// <summary>
 		/// Gets or sets Transform anchor point Y, absent if no transform specified
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public double AnchorY { get; set; }
 		/// <summary>
 		/// Gets or sets Transform anchor point Z, absent if no transform specified
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public double AnchorZ { get; set; }
 		/// <summary>
 		/// Gets or sets Indicates how many time this layer has painted.
@@ -65,10 +71,12 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.LayerTree
 		/// <summary>
 		/// Gets or sets Set if layer is not visible.
 		/// </summary>
-		public bool Invisible { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? Invisible { get; set; }
 		/// <summary>
 		/// Gets or sets Rectangles scrolling on main thread only.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public ScrollRect[] ScrollRects { get; set; }
 	}
 }

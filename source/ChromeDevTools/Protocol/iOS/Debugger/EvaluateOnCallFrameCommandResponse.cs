@@ -18,10 +18,12 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Debugger
 		/// <summary>
 		/// Gets or sets True if the result was thrown during the evaluation.
 		/// </summary>
-		public bool WasThrown { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? WasThrown { get; set; }
 		/// <summary>
 		/// Gets or sets If the result was saved, this is the $n index that can be used to access the value.
 		/// </summary>
-		public long SavedResultIndex { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? SavedResultIndex { get; set; }
 	}
 }

@@ -25,14 +25,17 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.FileSystem
 		/// <summary>
 		/// Gets or sets MIME type of the entry, available for a file only.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string MimeType { get; set; }
 		/// <summary>
 		/// Gets or sets ResourceType of the entry, available for a file only.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public Page.ResourceType ResourceType { get; set; }
 		/// <summary>
 		/// Gets or sets True if the entry is a text file.
 		/// </summary>
-		public bool IsTextFile { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? IsTextFile { get; set; }
 	}
 }

@@ -17,10 +17,12 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.IndexedDB
 		/// <summary>
 		/// Gets or sets String value.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string String { get; set; }
 		/// <summary>
 		/// Gets or sets Array value.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string[] Array { get; set; }
 	}
 }

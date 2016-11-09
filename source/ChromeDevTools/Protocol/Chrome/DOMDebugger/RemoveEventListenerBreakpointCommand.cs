@@ -18,6 +18,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOMDebugger
 		/// <summary>
 		/// Gets or sets EventTarget interface name.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string TargetName { get; set; }
 	}
 }

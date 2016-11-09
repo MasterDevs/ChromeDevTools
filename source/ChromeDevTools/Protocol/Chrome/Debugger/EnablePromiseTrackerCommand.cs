@@ -14,6 +14,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 		/// <summary>
 		/// Gets or sets Whether to capture stack traces for promise creation and settlement events (default: false).
 		/// </summary>
-		public bool CaptureStacks { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? CaptureStacks { get; set; }
 	}
 }

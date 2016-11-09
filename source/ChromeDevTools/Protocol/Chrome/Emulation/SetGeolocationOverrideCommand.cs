@@ -14,14 +14,17 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Emulation
 		/// <summary>
 		/// Gets or sets Mock latitude
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public double Latitude { get; set; }
 		/// <summary>
 		/// Gets or sets Mock longitude
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public double Longitude { get; set; }
 		/// <summary>
 		/// Gets or sets Mock accuracy
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public double Accuracy { get; set; }
 	}
 }

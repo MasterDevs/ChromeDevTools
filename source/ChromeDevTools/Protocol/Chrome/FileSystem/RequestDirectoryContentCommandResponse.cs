@@ -18,6 +18,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.FileSystem
 		/// <summary>
 		/// Gets or sets Contains all entries on directory if the command completed successfully.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public Entry[] Entries { get; set; }
 	}
 }

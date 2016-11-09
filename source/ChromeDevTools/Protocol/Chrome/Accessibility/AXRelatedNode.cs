@@ -13,6 +13,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Accessibility
 		/// <summary>
 		/// Gets or sets The IDRef value provided, if any.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string Idref { get; set; }
 		/// <summary>
 		/// Gets or sets The BackendNodeId of the related node.

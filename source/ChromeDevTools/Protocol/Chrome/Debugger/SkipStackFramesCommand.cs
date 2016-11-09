@@ -14,10 +14,12 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 		/// <summary>
 		/// Gets or sets Regular expression defining the scripts to ignore while stepping.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string Script { get; set; }
 		/// <summary>
 		/// Gets or sets True, if all content scripts should be ignored.
 		/// </summary>
-		public bool SkipContentScripts { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? SkipContentScripts { get; set; }
 	}
 }

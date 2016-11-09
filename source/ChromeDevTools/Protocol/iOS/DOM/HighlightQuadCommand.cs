@@ -18,14 +18,17 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.DOM
 		/// <summary>
 		/// Gets or sets The highlight fill color (default: transparent).
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public RGBAColor Color { get; set; }
 		/// <summary>
 		/// Gets or sets The highlight outline color (default: transparent).
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public RGBAColor OutlineColor { get; set; }
 		/// <summary>
 		/// Gets or sets Indicates whether the provided parameters are in page coordinates or in viewport coordinates (the default).
 		/// </summary>
-		public bool UsePageCoordinates { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? UsePageCoordinates { get; set; }
 	}
 }

@@ -18,10 +18,12 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 		/// <summary>
 		/// Gets or sets True if the result was thrown during the evaluation.
 		/// </summary>
-		public bool WasThrown { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? WasThrown { get; set; }
 		/// <summary>
 		/// Gets or sets Exception details.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public ExceptionDetails ExceptionDetails { get; set; }
 	}
 }

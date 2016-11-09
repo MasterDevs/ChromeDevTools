@@ -21,6 +21,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 		/// <summary>
 		/// Gets or sets Location in the source code.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public Location FunctionLocation { get; set; }
 		/// <summary>
 		/// Gets or sets Location in the source code.
@@ -37,6 +38,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 		/// <summary>
 		/// Gets or sets The value being returned, if the function is at return point.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public Runtime.RemoteObject ReturnValue { get; set; }
 	}
 }

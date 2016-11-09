@@ -18,6 +18,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOMDebugger
 		/// <summary>
 		/// Gets or sets EventTarget interface name to stop on. If equal to <code>"*"</code> or not provided, will stop on any EventTarget.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string TargetName { get; set; }
 	}
 }

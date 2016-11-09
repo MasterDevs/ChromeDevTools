@@ -216,6 +216,7 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
             var className = ToCamelCase(eventName) + EventSubclass;
             var sb = new StringBuilder();
             sb.AppendFormat("using MasterDevs.ChromeDevTools;");
+            sb.AppendFormat("using Newtonsoft.Json;");
             sb.AppendLine();
             sb.AppendLine();
             sb.AppendFormat("namespace {0}.{1}.{2}", RootNamespace, ns, domainDirectoryInfo.Name);
@@ -407,6 +408,16 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
             {
                 propertyType = GeneratePropertyType(propertyType.ToString());
             }
+
+            string[] referenceTypes = new string[] { "long", "bool" };
+
+            // If the property is optional, but a value type in .NET, make it nullable,
+            // so that the property becomes optional.
+            if (property.Optional && referenceTypes.Contains(propertyType))
+            {
+                propertyType += "?";
+            }
+
             sb.AppendLine("\t\t/// <summary>");
             sb.AppendFormat("\t\t/// Gets or sets {0}", property.Description ?? propertyName);
             sb.AppendLine();
@@ -416,6 +427,10 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
                 sb.AppendFormat("\t\t[JsonProperty(\"{0}\")]", property.Name);
                 sb.AppendLine();
                 propertyName += "Child";
+            }
+            else if (property.Optional)
+            {
+                sb.AppendLine("\t\t[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]");
             }
             sb.AppendFormat("\t\tpublic {0} {1} {{ get; set; }}", propertyType, propertyName);
             sb.AppendLine();

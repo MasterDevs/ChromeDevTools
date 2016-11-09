@@ -18,6 +18,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 		/// <summary>
 		/// Gets or sets Whether to paint grid as well.
 		/// </summary>
-		public bool ShowGrid { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? ShowGrid { get; set; }
 	}
 }

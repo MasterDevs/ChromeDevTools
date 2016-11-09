@@ -18,14 +18,17 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.LayerTree
 		/// <summary>
 		/// Gets or sets The first step to replay from (replay from the very start if not specified).
 		/// </summary>
-		public long FromStep { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? FromStep { get; set; }
 		/// <summary>
 		/// Gets or sets The last step to replay to (replay till the end if not specified).
 		/// </summary>
-		public long ToStep { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? ToStep { get; set; }
 		/// <summary>
 		/// Gets or sets The scale to apply while replaying (defaults to 1).
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public double Scale { get; set; }
 	}
 }

@@ -17,10 +17,12 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 		/// <summary>
 		/// Gets or sets Object subtype hint. Specified for <code>object</code> type values only.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string Subtype { get; set; }
 		/// <summary>
 		/// Gets or sets String representation of the object.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string Description { get; set; }
 		/// <summary>
 		/// Gets or sets Determines whether preview is lossless (contains all information of the original object).
@@ -37,6 +39,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 		/// <summary>
 		/// Gets or sets List of the entries. Specified for <code>map</code> and <code>set</code> subtype values only.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public EntryPreview[] Entries { get; set; }
 	}
 }

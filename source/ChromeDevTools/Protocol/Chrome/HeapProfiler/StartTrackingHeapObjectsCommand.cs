@@ -11,6 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.HeapProfiler
 		/// <summary>
 		/// Gets or sets TrackAllocations
 		/// </summary>
-		public bool TrackAllocations { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? TrackAllocations { get; set; }
 	}
 }

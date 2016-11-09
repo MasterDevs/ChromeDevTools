@@ -53,6 +53,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Animation
 		/// <summary>
 		/// Gets or sets <code>AnimationNode</code>'s keyframes.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public KeyframesRule KeyframesRule { get; set; }
 		/// <summary>
 		/// Gets or sets <code>AnimationNode</code>'s timing function.

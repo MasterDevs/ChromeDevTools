@@ -37,6 +37,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.OverlayTypes
 		/// <summary>
 		/// Gets or sets RegionClippingArea
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public Point[] RegionClippingArea { get; set; }
 	}
 }

@@ -13,6 +13,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Runtime
 		/// <summary>
 		/// Gets or sets Entry key. Specified for map-like collection entries.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public ObjectPreview Key { get; set; }
 		/// <summary>
 		/// Gets or sets Entry value.

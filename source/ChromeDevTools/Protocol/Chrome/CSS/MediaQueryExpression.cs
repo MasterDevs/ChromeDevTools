@@ -25,10 +25,12 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CSS
 		/// <summary>
 		/// Gets or sets The associated range of the value text in the enclosing stylesheet (if available).
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public SourceRange ValueRange { get; set; }
 		/// <summary>
 		/// Gets or sets Computed length of media query expression (if applicable).
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public double ComputedLength { get; set; }
 	}
 }

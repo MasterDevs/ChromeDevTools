@@ -13,6 +13,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Animation
 		/// <summary>
 		/// Gets or sets CSS keyframed animation's name.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string Name { get; set; }
 		/// <summary>
 		/// Gets or sets List of animation keyframes.

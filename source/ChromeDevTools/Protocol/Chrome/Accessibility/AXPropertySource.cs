@@ -29,10 +29,12 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Accessibility
 		/// <summary>
 		/// Gets or sets Whether the value for this property is invalid.
 		/// </summary>
-		public bool Invalid { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? Invalid { get; set; }
 		/// <summary>
 		/// Gets or sets Reason for the value being invalid, if it is.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string InvalidReason { get; set; }
 	}
 }

@@ -1,4 +1,4 @@
-using MasterDevs.ChromeDevTools;
+using MasterDevs.ChromeDevTools;using Newtonsoft.Json;
 
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.LayerTree
 {
@@ -9,6 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.LayerTree
 		/// <summary>
 		/// Gets or sets Layer tree, absent if not in the comspositing mode.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public Layer[] Layers { get; set; }
 	}
 }

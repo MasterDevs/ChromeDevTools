@@ -22,6 +22,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 		/// <summary>
 		/// Gets or sets  If true the change will not actually be applied. Preview mode may be used to get result description without actually modifying the code.
 		/// </summary>
-		public bool Preview { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? Preview { get; set; }
 	}
 }

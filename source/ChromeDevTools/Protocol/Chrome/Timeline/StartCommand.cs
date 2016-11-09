@@ -14,22 +14,27 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Timeline
 		/// <summary>
 		/// Gets or sets Samples JavaScript stack traces up to <code>maxCallStackDepth</code>, defaults to 5.
 		/// </summary>
-		public long MaxCallStackDepth { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? MaxCallStackDepth { get; set; }
 		/// <summary>
 		/// Gets or sets Whether instrumentation events should be buffered and returned upon <code>stop</code> call.
 		/// </summary>
-		public bool BufferEvents { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? BufferEvents { get; set; }
 		/// <summary>
 		/// Gets or sets Coma separated event types to issue although bufferEvents is set.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string LiveEvents { get; set; }
 		/// <summary>
 		/// Gets or sets Whether counters data should be included into timeline events.
 		/// </summary>
-		public bool IncludeCounters { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? IncludeCounters { get; set; }
 		/// <summary>
 		/// Gets or sets Whether events from GPU process should be collected.
 		/// </summary>
-		public bool IncludeGPUEvents { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? IncludeGPUEvents { get; set; }
 	}
 }

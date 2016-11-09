@@ -25,14 +25,17 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 		/// <summary>
 		/// Gets or sets HTTP response headers text.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string HeadersText { get; set; }
 		/// <summary>
 		/// Gets or sets HTTP request headers.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public Dictionary<string, string> RequestHeaders { get; set; }
 		/// <summary>
 		/// Gets or sets HTTP request headers text.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string RequestHeadersText { get; set; }
 	}
 }

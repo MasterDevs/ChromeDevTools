@@ -21,18 +21,22 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Accessibility
 		/// <summary>
 		/// Gets or sets The accessible name for this <code>Node</code>.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public AXValue Name { get; set; }
 		/// <summary>
 		/// Gets or sets The accessible description for this <code>Node</code>.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public AXValue Description { get; set; }
 		/// <summary>
 		/// Gets or sets The value for this <code>Node</code>.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public AXValue Value { get; set; }
 		/// <summary>
 		/// Gets or sets Help.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public AXValue Help { get; set; }
 		/// <summary>
 		/// Gets or sets All other properties

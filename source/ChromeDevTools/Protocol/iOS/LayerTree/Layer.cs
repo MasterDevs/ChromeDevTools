@@ -37,26 +37,32 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.LayerTree
 		/// <summary>
 		/// Gets or sets Indicates whether this layer is associated with an element hosted in a shadow tree.
 		/// </summary>
-		public bool IsInShadowTree { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? IsInShadowTree { get; set; }
 		/// <summary>
 		/// Gets or sets Indicates whether this layer was used to provide a reflection for the element.
 		/// </summary>
-		public bool IsReflection { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? IsReflection { get; set; }
 		/// <summary>
 		/// Gets or sets Indicates whether the layer is attached to a pseudo element that is CSS generated content.
 		/// </summary>
-		public bool IsGeneratedContent { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? IsGeneratedContent { get; set; }
 		/// <summary>
 		/// Gets or sets Indicates whether the layer was created for a CSS anonymous block or box.
 		/// </summary>
-		public bool IsAnonymous { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? IsAnonymous { get; set; }
 		/// <summary>
 		/// Gets or sets The id for the pseudo element associated with this layer.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string PseudoElementId { get; set; }
 		/// <summary>
 		/// Gets or sets The name of the CSS pseudo-element that prompted the layer to be generated.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string PseudoElement { get; set; }
 	}
 }
