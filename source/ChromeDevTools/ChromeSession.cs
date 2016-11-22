@@ -61,6 +61,7 @@ namespace MasterDevs.ChromeDevTools
             _openEvent.Reset();
 
             _webSocket = new WebSocket(_endpoint);
+            _webSocket.EnableAutoSendPing = false;
             _webSocket.Opened += WebSocket_Opened;
             _webSocket.MessageReceived += WebSocket_MessageReceived;
             _webSocket.Error += WebSocket_Error;
