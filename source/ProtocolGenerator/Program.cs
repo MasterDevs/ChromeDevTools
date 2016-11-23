@@ -474,7 +474,10 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
         {
             var enumName = type.Name;
             StringBuilder sb = new StringBuilder();
-            sb.AppendFormat("using MasterDevs.ChromeDevTools;");
+            sb.AppendLine("using MasterDevs.ChromeDevTools;");
+            sb.AppendLine("using Newtonsoft.Json;");
+            sb.AppendLine("using Newtonsoft.Json.Converters;");
+            sb.AppendLine("using System.Runtime.Serialization;");
             sb.AppendLine();
             sb.AppendLine();
             sb.AppendFormat("namespace {0}.{1}.{2}", RootNamespace, ns, domainDirectoryInfo.Name);
@@ -483,11 +486,18 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
             sb.AppendFormat("\t/// {0}", type.Description);
             sb.AppendLine();
             sb.AppendLine("\t/// </summary>");
+            sb.AppendLine("\t[JsonConverter(typeof(StringEnumConverter))]");
             sb.AppendFormat("\tpublic enum {0}", enumName);
             sb.AppendLine();
             sb.AppendLine("\t{");
             foreach (var enumValueName in type.Enum)
             {
+                if (enumValueName.Contains("-"))
+                {
+                    sb.AppendFormat("\t\t\t[EnumMember(Value = \"{0}\")]", enumValueName);
+                    sb.AppendLine();
+                }
+
                 sb.AppendFormat("\t\t\t{0},", ToCamelCase(enumValueName.Replace("-", "_")));
                 sb.AppendLine();
             }
