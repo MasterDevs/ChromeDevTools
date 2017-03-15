@@ -32,7 +32,8 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
             //protocolFiles.Add("Chrome-0.1", "Inspector-0.1.json");
             //protocolFiles.Add("Chrome-1.0", "Inspector-1.0.json");
             //protocolFiles.Add("Chrome", "Inspector-1.1.json");
-            protocolFiles.Add("Chrome", "protocol.json");
+            protocolFiles.Add("Chrome", "browser_protocol.json");
+            protocolFiles.Add("ChromeJS", "js_protocol.json");
             //protocolFiles.Add("iOS-7.0", "Inspector-iOS-7.0.json");
             //protocolFiles.Add("iOS-8.0", "Inspector-iOS-8.0.json");
             //protocolFiles.Add("iOS-9.0", "Inspector-iOS-9.0.json");
