@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using Newtonsoft.Json;
 
 namespace MasterDevs.ChromeDevTools.ProtocolGenerator
 {
@@ -27,5 +28,8 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
             get;
             set;
         }
+
+        [JsonProperty("experimental")]
+        public bool IsExperimental { get; set; }
     }
 }

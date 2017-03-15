@@ -16,5 +16,8 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
             get;
             set;
         }
+
+        [JsonProperty("deprecated")]
+        public bool IsDeprecated { get; set; }
     }
 }

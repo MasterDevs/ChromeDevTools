@@ -2,6 +2,7 @@
 using System;
 using System.Collections.ObjectModel;
 using System.Linq;
+using Newtonsoft.Json.Linq;
 
 namespace MasterDevs.ChromeDevTools.ProtocolGenerator
 {
@@ -50,6 +51,11 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
             get;
             set;
         }
+
+        [JsonProperty("experimental")]
+        public bool IsExperimental { get; set; }
+
+        public string[] Dependencies { get; set; }
 
         public Command GetCommand(string name)
         {
