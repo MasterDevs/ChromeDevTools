@@ -55,6 +55,10 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
         [JsonProperty("experimental")]
         public bool IsExperimental { get; set; }
 
+        [JsonProperty("deprecated")]
+        public bool IsDeprecated { get; set; }
+
+
         public string[] Dependencies { get; set; }
 
         public Command GetCommand(string name)
