@@ -3,6 +3,11 @@ namespace MasterDevs.ChromeDevTools
 {
     public class ChromeSessionFactory : IChromeSessionFactory
     {
+        public IChromeSession Create(ChromeSessionInfo sessionInfo)
+        {
+            return Create(sessionInfo.WebSocketDebuggerUrl);
+        }
+
         public IChromeSession Create(string endpointUrl)
         {
             // Sometimes binding to localhost might resolve wrong AddressFamily, force IPv4

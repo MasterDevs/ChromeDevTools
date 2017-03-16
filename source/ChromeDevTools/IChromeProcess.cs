@@ -5,7 +5,9 @@ namespace MasterDevs.ChromeDevTools
 {
     public interface IChromeProcess : IDisposable
     {
-        Task<ChromeSessionInfo[]> GetSessions();
+        Task<ChromeSessionInfo[]> GetSessionInfo();
+
+        Task<ChromeSessionInfo> StartNewSession();
 
         Uri RemoteDebuggingUri { get; }
     }
