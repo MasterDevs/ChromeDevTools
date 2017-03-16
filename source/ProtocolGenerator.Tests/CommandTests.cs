@@ -15,8 +15,8 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator.Tests
         [DeploymentItem(DeploymentItems.Protocol)]
         public void EqualsTest()
         {
-            var inspector11 = ProtocolProcessor.LoadProtocol(DeploymentItems.Inspector11, "inspector-1.1");
-            var protocol = ProtocolProcessor.LoadProtocol(DeploymentItems.Protocol, "protocol");
+            var inspector11 = ProtocolProcessor.LoadProtocol(new[] { DeploymentItems.Inspector11 }, "inspector-1.1");
+            var protocol = ProtocolProcessor.LoadProtocol(new[] { DeploymentItems.Protocol }, "protocol");
 
             ProtocolProcessor.ResolveTypeReferences(inspector11, new Dictionary<string, string>());
             ProtocolProcessor.ResolveTypeReferences(protocol, new Dictionary<string, string>());
