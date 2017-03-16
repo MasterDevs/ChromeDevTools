@@ -26,10 +26,12 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Input
 		/// <summary>
 		/// Gets or sets Relative pointer speed in pixels per second (default: 800).
 		/// </summary>
-		public long RelativeSpeed { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? RelativeSpeed { get; set; }
 		/// <summary>
 		/// Gets or sets Which type of input events to be generated (default: 'default', which queries the platform for the preferred input type).
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string GestureSourceType { get; set; }
 	}
 }

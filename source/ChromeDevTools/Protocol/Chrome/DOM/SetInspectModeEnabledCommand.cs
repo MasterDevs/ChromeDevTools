@@ -18,10 +18,12 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 		/// <summary>
 		/// Gets or sets True to enable inspection mode for user agent shadow DOM.
 		/// </summary>
-		public bool InspectUAShadowDOM { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? InspectUAShadowDOM { get; set; }
 		/// <summary>
 		/// Gets or sets A descriptor for the highlight appearance of hovered-over nodes. May be omitted if <code>enabled == false</code>.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public HighlightConfig HighlightConfig { get; set; }
 	}
 }

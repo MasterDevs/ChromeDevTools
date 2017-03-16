@@ -14,6 +14,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 		/// <summary>
 		/// Gets or sets experimental
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public Location[] StepInPositions { get; set; }
 	}
 }

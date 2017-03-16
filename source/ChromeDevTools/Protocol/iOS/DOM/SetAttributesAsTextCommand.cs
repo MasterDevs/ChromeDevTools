@@ -22,6 +22,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.DOM
 		/// <summary>
 		/// Gets or sets Attribute name to replace with new attributes derived from text in case text parsed successfully.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string Name { get; set; }
 	}
 }

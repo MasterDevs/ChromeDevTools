@@ -25,6 +25,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CSS
 		/// <summary>
 		/// Gets or sets URL of source map associated with the stylesheet (if any).
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string SourceMapURL { get; set; }
 		/// <summary>
 		/// Gets or sets Stylesheet origin.
@@ -37,7 +38,8 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CSS
 		/// <summary>
 		/// Gets or sets The backend id for the owner node of the stylesheet.
 		/// </summary>
-		public long OwnerNode { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? OwnerNode { get; set; }
 		/// <summary>
 		/// Gets or sets Denotes whether the stylesheet is disabled.
 		/// </summary>
@@ -45,7 +47,8 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CSS
 		/// <summary>
 		/// Gets or sets Whether the sourceURL field value comes from the sourceURL comment.
 		/// </summary>
-		public bool HasSourceURL { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? HasSourceURL { get; set; }
 		/// <summary>
 		/// Gets or sets Whether this stylesheet is created for STYLE tag by parser. This flag is not set for document.written STYLE tags.
 		/// </summary>

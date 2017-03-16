@@ -18,6 +18,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 		/// <summary>
 		/// Gets or sets The maximum depth at which children should be retrieved, defaults to 1. Use -1 for the entire subtree or provide an integer larger than 0.
 		/// </summary>
-		public long Depth { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? Depth { get; set; }
 	}
 }

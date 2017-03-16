@@ -1,4 +1,4 @@
-using MasterDevs.ChromeDevTools;
+using MasterDevs.ChromeDevTools;using Newtonsoft.Json;
 
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Profiler
 {
@@ -20,6 +20,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Profiler
 		/// <summary>
 		/// Gets or sets Profile title passed as argument to console.profile().
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string Title { get; set; }
 	}
 }

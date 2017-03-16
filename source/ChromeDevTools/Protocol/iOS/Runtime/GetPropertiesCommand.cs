@@ -18,10 +18,12 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Runtime
 		/// <summary>
 		/// Gets or sets If true, returns properties belonging only to the object itself, not to its prototype chain.
 		/// </summary>
-		public bool OwnProperties { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? OwnProperties { get; set; }
 		/// <summary>
 		/// Gets or sets Whether preview should be generated for property values.
 		/// </summary>
-		public bool GeneratePreview { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? GeneratePreview { get; set; }
 	}
 }

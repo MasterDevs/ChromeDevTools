@@ -21,6 +21,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Timeline
 		/// <summary>
 		/// Gets or sets Nested records.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public TimelineEvent[] Children { get; set; }
 	}
 }

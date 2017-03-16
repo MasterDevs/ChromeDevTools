@@ -13,10 +13,12 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.IndexedDB
 		/// <summary>
 		/// Gets or sets Lower bound.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public Key Lower { get; set; }
 		/// <summary>
 		/// Gets or sets Upper bound.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public Key Upper { get; set; }
 		/// <summary>
 		/// Gets or sets If true lower bound is open.

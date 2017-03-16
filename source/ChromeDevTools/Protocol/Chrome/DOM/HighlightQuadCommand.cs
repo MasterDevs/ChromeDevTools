@@ -18,10 +18,12 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 		/// <summary>
 		/// Gets or sets The highlight fill color (default: transparent).
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public RGBA Color { get; set; }
 		/// <summary>
 		/// Gets or sets The highlight outline color (default: transparent).
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public RGBA OutlineColor { get; set; }
 	}
 }

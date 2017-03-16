@@ -1,4 +1,4 @@
-using MasterDevs.ChromeDevTools;
+using MasterDevs.ChromeDevTools;using Newtonsoft.Json;
 
 namespace MasterDevs.ChromeDevTools.Protocol.iOS.Network
 {
@@ -40,10 +40,12 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Network
 		/// <summary>
 		/// Gets or sets Redirect response data.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public Response RedirectResponse { get; set; }
 		/// <summary>
 		/// Gets or sets Resource type.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public Page.ResourceType Type { get; set; }
 	}
 }

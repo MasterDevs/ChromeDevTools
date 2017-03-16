@@ -17,22 +17,27 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 		/// <summary>
 		/// Gets or sets URL of the message origin.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string Url { get; set; }
 		/// <summary>
 		/// Gets or sets Script ID of the message origin.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string ScriptId { get; set; }
 		/// <summary>
 		/// Gets or sets Line number in the resource that generated this message.
 		/// </summary>
-		public long Line { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? Line { get; set; }
 		/// <summary>
 		/// Gets or sets Column number in the resource that generated this message.
 		/// </summary>
-		public long Column { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? Column { get; set; }
 		/// <summary>
 		/// Gets or sets JavaScript stack trace for assertions and error messages.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public Console.CallFrame[] StackTrace { get; set; }
 	}
 }

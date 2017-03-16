@@ -11,14 +11,17 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Database
 		/// <summary>
 		/// Gets or sets ColumnNames
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string[] ColumnNames { get; set; }
 		/// <summary>
 		/// Gets or sets Values
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public object[] Values { get; set; }
 		/// <summary>
 		/// Gets or sets SqlError
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public Error SqlError { get; set; }
 	}
 }

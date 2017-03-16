@@ -25,10 +25,12 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Profiler
 		/// <summary>
 		/// Gets or sets Ids of samples top nodes.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public long[] Samples { get; set; }
 		/// <summary>
 		/// Gets or sets Timestamps of the samples in microseconds.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public double[] Timestamps { get; set; }
 	}
 }

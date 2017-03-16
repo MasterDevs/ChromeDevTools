@@ -18,10 +18,12 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.FileSystem
 		/// <summary>
 		/// Gets or sets Content of the file.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string Content { get; set; }
 		/// <summary>
 		/// Gets or sets Charset of the content if it is served as text.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string Charset { get; set; }
 	}
 }

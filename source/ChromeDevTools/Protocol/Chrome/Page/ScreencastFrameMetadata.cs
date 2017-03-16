@@ -37,6 +37,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 		/// <summary>
 		/// Gets or sets Frame swap timestamp.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public double Timestamp { get; set; }
 	}
 }

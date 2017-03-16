@@ -26,10 +26,12 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 		/// <summary>
 		/// Gets or sets Id of callframe that holds variable.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string CallFrameId { get; set; }
 		/// <summary>
 		/// Gets or sets Object id of closure (function) that holds variable.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string FunctionObjectId { get; set; }
 	}
 }

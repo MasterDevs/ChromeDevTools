@@ -14,6 +14,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 		/// <summary>
 		/// Gets or sets Overlay message to display when paused in debugger.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string Message { get; set; }
 	}
 }

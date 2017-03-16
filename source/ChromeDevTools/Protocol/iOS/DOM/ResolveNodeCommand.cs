@@ -18,6 +18,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.DOM
 		/// <summary>
 		/// Gets or sets Symbolic group name that can be used to release multiple objects.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string ObjectGroup { get; set; }
 	}
 }

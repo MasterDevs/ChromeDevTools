@@ -18,6 +18,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.DOM
 		/// <summary>
 		/// Gets or sets Symbolic group name for handler value. Handler value is not returned without this parameter specified.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string ObjectGroup { get; set; }
 	}
 }

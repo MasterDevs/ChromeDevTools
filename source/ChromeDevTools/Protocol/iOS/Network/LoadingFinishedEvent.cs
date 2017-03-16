@@ -1,4 +1,4 @@
-using MasterDevs.ChromeDevTools;
+using MasterDevs.ChromeDevTools;using Newtonsoft.Json;
 
 namespace MasterDevs.ChromeDevTools.Protocol.iOS.Network
 {
@@ -20,6 +20,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Network
 		/// <summary>
 		/// Gets or sets URL of source map associated with this resource (if any).
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string SourceMapURL { get; set; }
 	}
 }

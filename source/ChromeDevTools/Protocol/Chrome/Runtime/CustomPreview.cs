@@ -25,6 +25,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 		/// <summary>
 		/// Gets or sets ConfigObjectId
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string ConfigObjectId { get; set; }
 	}
 }

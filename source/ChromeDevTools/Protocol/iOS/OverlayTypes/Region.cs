@@ -25,6 +25,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.OverlayTypes
 		/// <summary>
 		/// Gets or sets IsHighlighted
 		/// </summary>
-		public bool IsHighlighted { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? IsHighlighted { get; set; }
 	}
 }

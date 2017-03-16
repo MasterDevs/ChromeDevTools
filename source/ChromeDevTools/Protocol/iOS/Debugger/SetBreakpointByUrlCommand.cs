@@ -18,18 +18,22 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Debugger
 		/// <summary>
 		/// Gets or sets URL of the resources to set breakpoint on.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string Url { get; set; }
 		/// <summary>
 		/// Gets or sets Regex pattern for the URLs of the resources to set breakpoints on. Either <code>url</code> or <code>urlRegex</code> must be specified.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string UrlRegex { get; set; }
 		/// <summary>
 		/// Gets or sets Offset in the line to set breakpoint at.
 		/// </summary>
-		public long ColumnNumber { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? ColumnNumber { get; set; }
 		/// <summary>
 		/// Gets or sets Options to apply to this breakpoint to modify its behavior.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public BreakpointOptions Options { get; set; }
 	}
 }

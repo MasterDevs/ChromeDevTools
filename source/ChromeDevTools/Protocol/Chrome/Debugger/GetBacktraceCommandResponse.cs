@@ -18,6 +18,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 		/// <summary>
 		/// Gets or sets Async stack trace, if any.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public StackTrace AsyncStackTrace { get; set; }
 	}
 }

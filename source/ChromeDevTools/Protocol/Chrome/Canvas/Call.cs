@@ -17,42 +17,52 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Canvas
 		/// <summary>
 		/// Gets or sets FunctionName
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string FunctionName { get; set; }
 		/// <summary>
 		/// Gets or sets Arguments
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public CallArgument[] Arguments { get; set; }
 		/// <summary>
 		/// Gets or sets Result
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public CallArgument Result { get; set; }
 		/// <summary>
 		/// Gets or sets IsDrawingCall
 		/// </summary>
-		public bool IsDrawingCall { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? IsDrawingCall { get; set; }
 		/// <summary>
 		/// Gets or sets IsFrameEndCall
 		/// </summary>
-		public bool IsFrameEndCall { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? IsFrameEndCall { get; set; }
 		/// <summary>
 		/// Gets or sets Property
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string Property { get; set; }
 		/// <summary>
 		/// Gets or sets Value
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public CallArgument Value { get; set; }
 		/// <summary>
 		/// Gets or sets SourceURL
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string SourceURL { get; set; }
 		/// <summary>
 		/// Gets or sets LineNumber
 		/// </summary>
-		public long LineNumber { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? LineNumber { get; set; }
 		/// <summary>
 		/// Gets or sets ColumnNumber
 		/// </summary>
-		public long ColumnNumber { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? ColumnNumber { get; set; }
 	}
 }

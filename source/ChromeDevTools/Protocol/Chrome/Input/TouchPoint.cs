@@ -25,22 +25,27 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Input
 		/// <summary>
 		/// Gets or sets X radius of the touch area (default: 1).
 		/// </summary>
-		public long RadiusX { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? RadiusX { get; set; }
 		/// <summary>
 		/// Gets or sets Y radius of the touch area (default: 1).
 		/// </summary>
-		public long RadiusY { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? RadiusY { get; set; }
 		/// <summary>
 		/// Gets or sets Rotation angle (default: 0.0).
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public double RotationAngle { get; set; }
 		/// <summary>
 		/// Gets or sets Force (default: 1.0).
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public double Force { get; set; }
 		/// <summary>
 		/// Gets or sets Identifier used to track touch sources between events, must be unique within an event.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public double Id { get; set; }
 	}
 }

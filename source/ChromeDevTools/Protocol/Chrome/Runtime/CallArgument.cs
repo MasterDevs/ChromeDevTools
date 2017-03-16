@@ -13,14 +13,17 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 		/// <summary>
 		/// Gets or sets Primitive value, or description string if the value can not be JSON-stringified (like NaN, Infinity, -Infinity, -0).
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public object Value { get; set; }
 		/// <summary>
 		/// Gets or sets Remote object handle.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string ObjectId { get; set; }
 		/// <summary>
 		/// Gets or sets Object type.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string Type { get; set; }
 	}
 }

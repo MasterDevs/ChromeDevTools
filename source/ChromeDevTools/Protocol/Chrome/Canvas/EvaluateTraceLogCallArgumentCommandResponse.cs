@@ -14,10 +14,12 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Canvas
 		/// <summary>
 		/// Gets or sets Object wrapper for the evaluation result.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public Runtime.RemoteObject Result { get; set; }
 		/// <summary>
 		/// Gets or sets State of the <code>Resource</code> object.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public ResourceState ResourceState { get; set; }
 	}
 }

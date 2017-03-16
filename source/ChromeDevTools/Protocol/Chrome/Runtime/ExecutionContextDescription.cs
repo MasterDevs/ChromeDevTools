@@ -17,7 +17,8 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 		/// <summary>
 		/// Gets or sets True if this is a context where inpspected web page scripts run. False if it is a content script isolated context.
 		/// </summary>
-		public bool IsPageContext { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? IsPageContext { get; set; }
 		/// <summary>
 		/// Gets or sets Execution context origin.
 		/// </summary>

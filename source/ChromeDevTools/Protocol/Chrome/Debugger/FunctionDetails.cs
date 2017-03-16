@@ -13,6 +13,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 		/// <summary>
 		/// Gets or sets Location of the function, none for native functions.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public Location Location { get; set; }
 		/// <summary>
 		/// Gets or sets Name of the function.
@@ -25,6 +26,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 		/// <summary>
 		/// Gets or sets Scope chain for this closure.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public Scope[] ScopeChain { get; set; }
 	}
 }

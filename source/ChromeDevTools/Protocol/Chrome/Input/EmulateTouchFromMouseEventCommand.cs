@@ -34,18 +34,22 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Input
 		/// <summary>
 		/// Gets or sets X delta in DIP for mouse wheel event (default: 0).
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public double DeltaX { get; set; }
 		/// <summary>
 		/// Gets or sets Y delta in DIP for mouse wheel event (default: 0).
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public double DeltaY { get; set; }
 		/// <summary>
 		/// Gets or sets Bit field representing pressed modifier keys. Alt=1, Ctrl=2, Meta/Command=4, Shift=8 (default: 0).
 		/// </summary>
-		public long Modifiers { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? Modifiers { get; set; }
 		/// <summary>
 		/// Gets or sets Number of times the mouse button was clicked (default: 0).
 		/// </summary>
-		public long ClickCount { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? ClickCount { get; set; }
 	}
 }

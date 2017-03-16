@@ -18,10 +18,12 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.CSS
 		/// <summary>
 		/// Gets or sets Whether to include pseudo styles (default: true).
 		/// </summary>
-		public bool IncludePseudo { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? IncludePseudo { get; set; }
 		/// <summary>
 		/// Gets or sets Whether to include inherited styles (default: true).
 		/// </summary>
-		public bool IncludeInherited { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? IncludeInherited { get; set; }
 	}
 }

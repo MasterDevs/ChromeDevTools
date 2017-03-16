@@ -38,6 +38,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.IndexedDB
 		/// <summary>
 		/// Gets or sets Key range.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public KeyRange KeyRange { get; set; }
 	}
 }

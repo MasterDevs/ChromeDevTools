@@ -21,26 +21,32 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.CSS
 		/// <summary>
 		/// Gets or sets The property priority (implies "" if absent).
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string Priority { get; set; }
 		/// <summary>
 		/// Gets or sets Whether the property is implicit (implies <code>false</code> if absent).
 		/// </summary>
-		public bool Implicit { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? Implicit { get; set; }
 		/// <summary>
 		/// Gets or sets The full property text as specified in the style.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string Text { get; set; }
 		/// <summary>
 		/// Gets or sets Whether the property is understood by the browser (implies <code>true</code> if absent).
 		/// </summary>
-		public bool ParsedOk { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? ParsedOk { get; set; }
 		/// <summary>
 		/// Gets or sets Whether the property is active or disabled.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public CSSPropertyStatus Status { get; set; }
 		/// <summary>
 		/// Gets or sets The entire property range in the enclosing style declaration (if available).
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public SourceRange Range { get; set; }
 	}
 }

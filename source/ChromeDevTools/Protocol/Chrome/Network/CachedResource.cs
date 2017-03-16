@@ -21,6 +21,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 		/// <summary>
 		/// Gets or sets Cached response data.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public Response Response { get; set; }
 		/// <summary>
 		/// Gets or sets Cached response body size.

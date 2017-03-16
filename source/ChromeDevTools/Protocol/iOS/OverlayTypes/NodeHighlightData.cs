@@ -21,6 +21,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.OverlayTypes
 		/// <summary>
 		/// Gets or sets ElementData
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public ElementData ElementData { get; set; }
 	}
 }

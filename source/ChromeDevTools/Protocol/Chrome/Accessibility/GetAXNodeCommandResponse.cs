@@ -14,6 +14,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Accessibility
 		/// <summary>
 		/// Gets or sets The <code>Accessibility.AXNode</code> for this DOM node, if it exists.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public AXNode AccessibilityNode { get; set; }
 	}
 }

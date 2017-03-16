@@ -1,4 +1,4 @@
-using MasterDevs.ChromeDevTools;
+using MasterDevs.ChromeDevTools;using Newtonsoft.Json;
 
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 {
@@ -20,6 +20,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 		/// <summary>
 		/// Gets or sets Frame number.
 		/// </summary>
-		public long FrameNumber { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? FrameNumber { get; set; }
 	}
 }

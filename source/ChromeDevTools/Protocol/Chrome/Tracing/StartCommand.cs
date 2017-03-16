@@ -14,14 +14,17 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Tracing
 		/// <summary>
 		/// Gets or sets Category/tag filter
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string Categories { get; set; }
 		/// <summary>
 		/// Gets or sets Tracing options
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string Options { get; set; }
 		/// <summary>
 		/// Gets or sets If set, the agent will issue bufferUsage events at this interval, specified in milliseconds
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public double BufferUsageReportingInterval { get; set; }
 	}
 }

@@ -18,14 +18,17 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 		/// <summary>
 		/// Gets or sets Specifies in which isolated context to perform script run. Each content script lives in an isolated context and this parameter may be used to specify one of those contexts. If the parameter is omitted or 0 the evaluation will be performed in the context of the inspected page.
 		/// </summary>
-		public long ExecutionContextId { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? ExecutionContextId { get; set; }
 		/// <summary>
 		/// Gets or sets Symbolic group name that can be used to release multiple objects.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string ObjectGroup { get; set; }
 		/// <summary>
 		/// Gets or sets Specifies whether script run should stop on exceptions and mute console. Overrides setPauseOnException state.
 		/// </summary>
-		public bool DoNotPauseOnExceptionsAndMuteConsole { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? DoNotPauseOnExceptionsAndMuteConsole { get; set; }
 	}
 }

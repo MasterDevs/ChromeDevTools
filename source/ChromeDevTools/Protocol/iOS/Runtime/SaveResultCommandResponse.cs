@@ -14,6 +14,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Runtime
 		/// <summary>
 		/// Gets or sets If the value was saved, this is the $n index that can be used to access the value.
 		/// </summary>
-		public long SavedResultIndex { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? SavedResultIndex { get; set; }
 	}
 }

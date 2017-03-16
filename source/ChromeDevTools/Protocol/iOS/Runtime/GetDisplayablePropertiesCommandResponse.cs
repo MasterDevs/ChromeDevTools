@@ -18,6 +18,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Runtime
 		/// <summary>
 		/// Gets or sets Internal object properties.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public InternalPropertyDescriptor[] InternalProperties { get; set; }
 	}
 }

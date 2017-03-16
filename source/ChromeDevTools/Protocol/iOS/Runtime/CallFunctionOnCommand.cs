@@ -22,18 +22,22 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Runtime
 		/// <summary>
 		/// Gets or sets Call arguments. All call arguments must belong to the same JavaScript world as the target object.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public CallArgument[] Arguments { get; set; }
 		/// <summary>
 		/// Gets or sets Specifies whether function call should stop on exceptions and mute console. Overrides setPauseOnException state.
 		/// </summary>
-		public bool DoNotPauseOnExceptionsAndMuteConsole { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? DoNotPauseOnExceptionsAndMuteConsole { get; set; }
 		/// <summary>
 		/// Gets or sets Whether the result is expected to be a JSON object which should be sent by value.
 		/// </summary>
-		public bool ReturnByValue { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? ReturnByValue { get; set; }
 		/// <summary>
 		/// Gets or sets Whether preview should be generated for the result.
 		/// </summary>
-		public bool GeneratePreview { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? GeneratePreview { get; set; }
 	}
 }

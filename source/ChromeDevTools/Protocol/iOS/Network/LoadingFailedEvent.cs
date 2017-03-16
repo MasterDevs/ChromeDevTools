@@ -1,4 +1,4 @@
-using MasterDevs.ChromeDevTools;
+using MasterDevs.ChromeDevTools;using Newtonsoft.Json;
 
 namespace MasterDevs.ChromeDevTools.Protocol.iOS.Network
 {
@@ -24,6 +24,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Network
 		/// <summary>
 		/// Gets or sets True if loading was canceled.
 		/// </summary>
-		public bool Canceled { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? Canceled { get; set; }
 	}
 }

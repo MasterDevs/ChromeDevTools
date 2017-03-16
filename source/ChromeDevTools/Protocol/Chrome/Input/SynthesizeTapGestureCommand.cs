@@ -22,14 +22,17 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Input
 		/// <summary>
 		/// Gets or sets Duration between touchdown and touchup events in ms (default: 50).
 		/// </summary>
-		public long Duration { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? Duration { get; set; }
 		/// <summary>
 		/// Gets or sets Number of times to perform the tap (e.g. 2 for double tap, default: 1).
 		/// </summary>
-		public long TapCount { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? TapCount { get; set; }
 		/// <summary>
 		/// Gets or sets Which type of input events to be generated (default: 'default', which queries the platform for the preferred input type).
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string GestureSourceType { get; set; }
 	}
 }

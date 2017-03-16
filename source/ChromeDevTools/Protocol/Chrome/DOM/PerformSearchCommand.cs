@@ -18,6 +18,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 		/// <summary>
 		/// Gets or sets True to search in user agent shadow DOM.
 		/// </summary>
-		public bool IncludeUserAgentShadowDOM { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? IncludeUserAgentShadowDOM { get; set; }
 	}
 }

@@ -22,6 +22,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 		/// <summary>
 		/// Gets or sets Drop node before this one (if absent, the moved node becomes the last child of <code>targetNodeId</code>).
 		/// </summary>
-		public long InsertBeforeNodeId { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? InsertBeforeNodeId { get; set; }
 	}
 }

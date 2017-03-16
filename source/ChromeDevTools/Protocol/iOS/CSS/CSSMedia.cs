@@ -21,10 +21,12 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.CSS
 		/// <summary>
 		/// Gets or sets URL of the document containing the media query description.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string SourceURL { get; set; }
 		/// <summary>
 		/// Gets or sets Line in the document containing the media query (not defined for the "stylesheet" source).
 		/// </summary>
-		public long SourceLine { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? SourceLine { get; set; }
 	}
 }

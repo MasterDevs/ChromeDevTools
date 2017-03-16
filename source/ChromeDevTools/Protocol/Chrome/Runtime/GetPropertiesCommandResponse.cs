@@ -18,6 +18,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 		/// <summary>
 		/// Gets or sets Internal object properties (only of the element itself).
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public InternalPropertyDescriptor[] InternalProperties { get; set; }
 	}
 }

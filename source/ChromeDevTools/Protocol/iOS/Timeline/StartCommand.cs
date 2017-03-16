@@ -14,6 +14,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Timeline
 		/// <summary>
 		/// Gets or sets Samples JavaScript stack traces up to <code>maxCallStackDepth</code>, defaults to 5.
 		/// </summary>
-		public long MaxCallStackDepth { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? MaxCallStackDepth { get; set; }
 	}
 }

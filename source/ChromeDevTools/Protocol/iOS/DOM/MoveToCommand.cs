@@ -22,6 +22,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.DOM
 		/// <summary>
 		/// Gets or sets Drop node before given one.
 		/// </summary>
-		public long InsertBeforeNodeId { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? InsertBeforeNodeId { get; set; }
 	}
 }

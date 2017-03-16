@@ -25,6 +25,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 		/// <summary>
 		/// Gets or sets The alpha component, in the [0-1] range (default: 1).
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public double A { get; set; }
 	}
 }

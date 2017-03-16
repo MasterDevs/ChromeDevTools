@@ -1,4 +1,4 @@
-using MasterDevs.ChromeDevTools;
+using MasterDevs.ChromeDevTools;using Newtonsoft.Json;
 
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 {
@@ -36,18 +36,22 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 		/// <summary>
 		/// Gets or sets Determines whether this script is a user extension script.
 		/// </summary>
-		public bool IsContentScript { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? IsContentScript { get; set; }
 		/// <summary>
 		/// Gets or sets Determines whether this script is an internal script.
 		/// </summary>
-		public bool IsInternalScript { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? IsInternalScript { get; set; }
 		/// <summary>
 		/// Gets or sets URL of source map associated with script (if any).
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string SourceMapURL { get; set; }
 		/// <summary>
 		/// Gets or sets True, if this script has sourceURL.
 		/// </summary>
-		public bool HasSourceURL { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? HasSourceURL { get; set; }
 	}
 }

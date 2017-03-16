@@ -17,10 +17,12 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 		/// <summary>
 		/// Gets or sets String label of this stack trace. For async traces this may be a name of the function that initiated the async call.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string Description { get; set; }
 		/// <summary>
 		/// Gets or sets Async stack trace, if any.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public StackTrace AsyncStackTrace { get; set; }
 	}
 }

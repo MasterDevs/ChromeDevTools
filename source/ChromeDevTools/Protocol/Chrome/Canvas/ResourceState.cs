@@ -21,10 +21,12 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Canvas
 		/// <summary>
 		/// Gets or sets Describes current <code>Resource</code> state.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public ResourceStateDescriptor[] Descriptors { get; set; }
 		/// <summary>
 		/// Gets or sets Screenshot image data URL.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string ImageURL { get; set; }
 	}
 }

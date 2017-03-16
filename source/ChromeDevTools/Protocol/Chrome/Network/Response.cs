@@ -29,6 +29,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 		/// <summary>
 		/// Gets or sets HTTP response headers text.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string HeadersText { get; set; }
 		/// <summary>
 		/// Gets or sets Resource mimeType as determined by the browser.
@@ -37,10 +38,12 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 		/// <summary>
 		/// Gets or sets Refined HTTP request headers that were actually transmitted over the network.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public Dictionary<string, string> RequestHeaders { get; set; }
 		/// <summary>
 		/// Gets or sets HTTP request headers text.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string RequestHeadersText { get; set; }
 		/// <summary>
 		/// Gets or sets Specifies whether physical connection was actually reused for this request.
@@ -53,19 +56,23 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 		/// <summary>
 		/// Gets or sets Remote IP address.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string RemoteIPAddress { get; set; }
 		/// <summary>
 		/// Gets or sets Remote port.
 		/// </summary>
-		public long RemotePort { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? RemotePort { get; set; }
 		/// <summary>
 		/// Gets or sets Specifies that the request was served from the disk cache.
 		/// </summary>
-		public bool FromDiskCache { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? FromDiskCache { get; set; }
 		/// <summary>
 		/// Gets or sets Specifies that the request was served from the ServiceWorker.
 		/// </summary>
-		public bool FromServiceWorker { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? FromServiceWorker { get; set; }
 		/// <summary>
 		/// Gets or sets Total number of bytes received for this request so far.
 		/// </summary>
@@ -73,10 +80,12 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 		/// <summary>
 		/// Gets or sets Timing information for the given request.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public ResourceTiming Timing { get; set; }
 		/// <summary>
 		/// Gets or sets Protocol used to fetch this resquest.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string Protocol { get; set; }
 	}
 }

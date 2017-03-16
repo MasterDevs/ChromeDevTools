@@ -17,6 +17,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 		/// <summary>
 		/// Gets or sets Child frames.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public FrameResourceTree[] ChildFrames { get; set; }
 		public class ResourcesArray
 		{
@@ -35,11 +36,13 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 		/// <summary>
 		/// Gets or sets True if the resource failed to load.
 		/// </summary>
-		public bool Failed { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? Failed { get; set; }
 		/// <summary>
 		/// Gets or sets True if the resource was canceled during loading.
 		/// </summary>
-		public bool Canceled { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? Canceled { get; set; }
 		}
 
 		/// <summary>

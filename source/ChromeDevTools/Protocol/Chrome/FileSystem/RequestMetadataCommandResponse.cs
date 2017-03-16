@@ -18,6 +18,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.FileSystem
 		/// <summary>
 		/// Gets or sets Contains metadata of the entry if the command completed successfully.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public Metadata Metadata { get; set; }
 	}
 }

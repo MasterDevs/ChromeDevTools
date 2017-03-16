@@ -25,6 +25,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 		/// <summary>
 		/// Gets or sets Event handler function value.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public Runtime.RemoteObject Handler { get; set; }
 	}
 }

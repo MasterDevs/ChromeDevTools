@@ -18,6 +18,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Runtime
 		/// <summary>
 		/// Gets or sets Unique id of the execution context. To specify in which execution context script evaluation should be performed. If not provided, determine from the CallArgument's objectId.
 		/// </summary>
-		public long ContextId { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? ContextId { get; set; }
 	}
 }

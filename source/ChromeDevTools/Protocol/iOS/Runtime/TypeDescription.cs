@@ -17,18 +17,22 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Runtime
 		/// <summary>
 		/// Gets or sets Least common ancestor of all Constructors if the TypeDescription has seen any structures. This string is the display name of the shared constructor function.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string LeastCommonAncestor { get; set; }
 		/// <summary>
 		/// Gets or sets Set of booleans for determining the aggregate type of this type description.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public TypeSet TypeSet { get; set; }
 		/// <summary>
 		/// Gets or sets Array of descriptions for all structures seen for this variable.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public StructureDescription[] Structures { get; set; }
 		/// <summary>
 		/// Gets or sets If true, this indicates that no more structures are being profiled because some maximum threshold has been reached and profiling has stopped because of memory pressure.
 		/// </summary>
-		public bool IsTruncated { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? IsTruncated { get; set; }
 	}
 }

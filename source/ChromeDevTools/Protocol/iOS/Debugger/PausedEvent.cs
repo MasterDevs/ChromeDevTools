@@ -1,4 +1,4 @@
-using MasterDevs.ChromeDevTools;
+using MasterDevs.ChromeDevTools;using Newtonsoft.Json;
 
 namespace MasterDevs.ChromeDevTools.Protocol.iOS.Debugger
 {
@@ -20,6 +20,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Debugger
 		/// <summary>
 		/// Gets or sets Object containing break-specific auxiliary properties.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public object Data { get; set; }
 	}
 }

@@ -18,10 +18,12 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CSS
 		/// <summary>
 		/// Gets or sets Whether to exclude pseudo styles (default: false).
 		/// </summary>
-		public bool ExcludePseudo { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? ExcludePseudo { get; set; }
 		/// <summary>
 		/// Gets or sets Whether to exclude inherited styles (default: false).
 		/// </summary>
-		public bool ExcludeInherited { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? ExcludeInherited { get; set; }
 	}
 }

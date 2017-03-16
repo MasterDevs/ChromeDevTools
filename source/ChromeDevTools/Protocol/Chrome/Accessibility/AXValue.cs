@@ -17,18 +17,22 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Accessibility
 		/// <summary>
 		/// Gets or sets The computed value of this property.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public object Value { get; set; }
 		/// <summary>
 		/// Gets or sets The related node value, if any.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public AXRelatedNode RelatedNodeValue { get; set; }
 		/// <summary>
 		/// Gets or sets Multiple relted nodes, if applicable.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public AXRelatedNode[] RelatedNodeArrayValue { get; set; }
 		/// <summary>
 		/// Gets or sets The sources which contributed to the computation of this property.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public AXPropertySource[] Sources { get; set; }
 	}
 }

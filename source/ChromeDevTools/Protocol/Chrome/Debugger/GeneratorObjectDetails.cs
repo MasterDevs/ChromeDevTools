@@ -25,6 +25,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 		/// <summary>
 		/// Gets or sets If suspended, location where generator function was suspended (e.g. location of the last 'yield'). Otherwise, location of the generator function.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public Location Location { get; set; }
 	}
 }

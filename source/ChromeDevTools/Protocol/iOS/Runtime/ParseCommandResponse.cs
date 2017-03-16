@@ -18,10 +18,12 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Runtime
 		/// <summary>
 		/// Gets or sets Parse error message.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string Message { get; set; }
 		/// <summary>
 		/// Gets or sets Range in the source where the error occurred.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public ErrorRange Range { get; set; }
 	}
 }

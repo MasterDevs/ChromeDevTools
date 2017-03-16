@@ -18,6 +18,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Runtime
 		/// <summary>
 		/// Gets or sets Whether preview should be generated for property values.
 		/// </summary>
-		public bool GeneratePreview { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? GeneratePreview { get; set; }
 	}
 }

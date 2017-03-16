@@ -13,6 +13,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 		/// <summary>
 		/// Gets or sets Entry key of a map-like collection, otherwise not provided.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public Runtime.RemoteObject Key { get; set; }
 		/// <summary>
 		/// Gets or sets Entry value.

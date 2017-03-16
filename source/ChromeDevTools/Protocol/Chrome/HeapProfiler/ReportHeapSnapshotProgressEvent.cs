@@ -1,4 +1,4 @@
-using MasterDevs.ChromeDevTools;
+using MasterDevs.ChromeDevTools;using Newtonsoft.Json;
 
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.HeapProfiler
 {
@@ -17,6 +17,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.HeapProfiler
 		/// <summary>
 		/// Gets or sets Finished
 		/// </summary>
-		public bool Finished { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? Finished { get; set; }
 	}
 }
