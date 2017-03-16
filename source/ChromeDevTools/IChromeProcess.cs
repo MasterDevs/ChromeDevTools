@@ -1,18 +1,12 @@
 ﻿using System;
-using System.Diagnostics;
-using System.IO;
 using System.Threading.Tasks;
 
 namespace MasterDevs.ChromeDevTools
 {
     public interface IChromeProcess : IDisposable
     {
-        Task<string[]> GetSessions();
+        Task<ChromeSessionInfo[]> GetSessions();
 
-        DirectoryInfo UserDirectory { get; }
-
-        Process Process { get; }
-
-        string RemoteDebuggingUri { get; }
+        Uri RemoteDebuggingUri { get; }
     }
 }

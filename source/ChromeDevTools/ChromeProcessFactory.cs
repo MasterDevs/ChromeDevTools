@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using System.IO;
 
 namespace MasterDevs.ChromeDevTools
@@ -14,12 +15,9 @@ namespace MasterDevs.ChromeDevTools
             var chromeProcessArgs = remoteDebuggingArg + " " + userDirectoryArg + " --bwsi --no-first-run";
             var processStartInfo = new ProcessStartInfo(@"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe", chromeProcessArgs);
             var chromeProcess = Process.Start(processStartInfo);
-            return new ChromeProcess
-            {
-                Process = chromeProcess,
-                UserDirectory = directoryInfo,
-                RemoteDebuggingUri = "http://localhost:" + port
-            };
+
+            string remoteDebuggingUrl = "http://localhost:" + port;
+            return new LocalChromeProcess(new Uri(remoteDebuggingUrl), directoryInfo, chromeProcess);
         }
     }
 }
