@@ -331,7 +331,8 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
         {
             if (null == type) return;
             if (type.Enum.Any()) WriteTypeEnum(domainDirectoryInfo, ns, type);
-            if (type.Properties.Any()) WriteTypeClass(domainDirectoryInfo, ns, type);
+            /*if (type.Properties.Any())*/
+            WriteTypeClass(domainDirectoryInfo, ns, type);
             WriteTypeSimple(domainDirectoryInfo, type);
         }
 
