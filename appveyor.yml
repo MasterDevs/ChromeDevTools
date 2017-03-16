@@ -61,9 +61,13 @@ nuget:
   account_feed: true
   project_feed: true
 before_build:
+- cmd: choco install wget
+- wget -q https://download.microsoft.com/download/8/F/9/8F9659B9-E628-4D1A-B6BF-C3004C8C954B/dotnet-1.1.1-sdk-win-x64.exe
+- dotnet-1.1.1-sdk-win-x64.exe /install /quiet /log dotnetinstall.log
+- ps: Push-AppveyorArtifact "dotnetinstall.log"
 - nuget restore source\MasterDevs.ChromeDevTools.sln
-- dotnet restore source\ChromeDevTools\project.json
-- dotnet pack source\ChromeDevTools\project.json --version-suffix r%APPVEYOR_BUILD_NUMBER%
+- dotnet restore source\ChromeDevTools\MasterDevs.ChromeDevTools.Core.csproj
+- dotnet pack source\ChromeDevTools\MasterDevs.ChromeDevTools.Core.csproj --version-suffix r%APPVEYOR_BUILD_NUMBER%
 build:
   project: source\MasterDevs.ChromeDevTools.sln
   publish_nuget: true
