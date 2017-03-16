@@ -12,10 +12,6 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CSS
 	public class GetPlatformFontsForNodeCommandResponse
 	{
 		/// <summary>
-		/// Gets or sets Font family name which is determined by computed style.
-		/// </summary>
-		public string CssFamilyName { get; set; }
-		/// <summary>
 		/// Gets or sets Usage statistics for every employed platform font.
 		/// </summary>
 		public PlatformFontUsage[] Fonts { get; set; }

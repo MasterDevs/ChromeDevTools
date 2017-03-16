@@ -11,16 +11,16 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.IndexedDB
 	public class DataEntry
 	{
 		/// <summary>
-		/// Gets or sets JSON-stringified key object.
+		/// Gets or sets Key object.
 		/// </summary>
-		public string Key { get; set; }
+		public Runtime.RemoteObject Key { get; set; }
 		/// <summary>
-		/// Gets or sets JSON-stringified primary key object.
+		/// Gets or sets Primary key object.
 		/// </summary>
-		public string PrimaryKey { get; set; }
+		public Runtime.RemoteObject PrimaryKey { get; set; }
 		/// <summary>
-		/// Gets or sets JSON-stringified value object.
+		/// Gets or sets Value object.
 		/// </summary>
-		public string Value { get; set; }
+		public Runtime.RemoteObject Value { get; set; }
 	}
 }

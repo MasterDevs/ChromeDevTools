@@ -18,7 +18,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Profiler
 		/// </summary>
 		public Debugger.Location Location { get; set; }
 		/// <summary>
-		/// Gets or sets Profile title passed as argument to console.profile().
+		/// Gets or sets Profile title passed as an argument to console.profile().
 		/// </summary>
 		public string Title { get; set; }
 	}

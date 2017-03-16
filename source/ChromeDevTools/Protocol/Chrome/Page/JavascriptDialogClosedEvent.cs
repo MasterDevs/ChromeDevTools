@@ -9,5 +9,9 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 	[SupportedBy("Chrome")]
 	public class JavascriptDialogClosedEvent
 	{
+		/// <summary>
+		/// Gets or sets Whether dialog was confirmed.
+		/// </summary>
+		public bool Result { get; set; }
 	}
 }

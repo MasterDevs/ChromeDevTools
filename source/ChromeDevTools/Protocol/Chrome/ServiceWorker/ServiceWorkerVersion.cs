@@ -38,5 +38,13 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.ServiceWorker
 		/// Gets or sets The time at which the response headers of the main script were received from the server.  For cached script it is the last time the cache entry was validated.
 		/// </summary>
 		public double ScriptResponseTime { get; set; }
+		/// <summary>
+		/// Gets or sets ControlledClients
+		/// </summary>
+		public string[] ControlledClients { get; set; }
+		/// <summary>
+		/// Gets or sets TargetId
+		/// </summary>
+		public string TargetId { get; set; }
 	}
 }

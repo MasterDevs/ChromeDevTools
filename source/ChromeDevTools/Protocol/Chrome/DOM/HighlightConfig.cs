@@ -23,6 +23,10 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 		/// </summary>
 		public bool ShowExtensionLines { get; set; }
 		/// <summary>
+		/// Gets or sets DisplayAsMaterial
+		/// </summary>
+		public bool DisplayAsMaterial { get; set; }
+		/// <summary>
 		/// Gets or sets The content box highlight fill color (default: transparent).
 		/// </summary>
 		public RGBA ContentColor { get; set; }
@@ -50,5 +54,9 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 		/// Gets or sets The shape margin fill color (default: transparent).
 		/// </summary>
 		public RGBA ShapeMarginColor { get; set; }
+		/// <summary>
+		/// Gets or sets Selectors to highlight relevant nodes.
+		/// </summary>
+		public string SelectorList { get; set; }
 	}
 }

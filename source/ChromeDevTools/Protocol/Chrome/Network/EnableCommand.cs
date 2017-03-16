@@ -11,5 +11,13 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 	[SupportedBy("Chrome")]
 	public class EnableCommand
 	{
+		/// <summary>
+		/// Gets or sets Buffer size in bytes to use when preserving network payloads (XHRs, etc).
+		/// </summary>
+		public long MaxTotalBufferSize { get; set; }
+		/// <summary>
+		/// Gets or sets Per-resource buffer size in bytes to use when preserving network payloads (XHRs, etc).
+		/// </summary>
+		public long MaxResourceBufferSize { get; set; }
 	}
 }

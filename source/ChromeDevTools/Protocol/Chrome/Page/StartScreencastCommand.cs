@@ -27,5 +27,9 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 		/// Gets or sets Maximum screenshot height.
 		/// </summary>
 		public long MaxHeight { get; set; }
+		/// <summary>
+		/// Gets or sets Send every n-th frame.
+		/// </summary>
+		public long EveryNthFrame { get; set; }
 	}
 }

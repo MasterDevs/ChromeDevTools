@@ -47,17 +47,13 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 		/// </summary>
 		public double SslEnd { get; set; }
 		/// <summary>
-		/// Gets or sets Started fetching via ServiceWorker.
+		/// Gets or sets Started running ServiceWorker.
 		/// </summary>
-		public double ServiceWorkerFetchStart { get; set; }
+		public double WorkerStart { get; set; }
 		/// <summary>
-		/// Gets or sets Prepared a ServiceWorker.
+		/// Gets or sets Finished Starting ServiceWorker.
 		/// </summary>
-		public double ServiceWorkerFetchReady { get; set; }
-		/// <summary>
-		/// Gets or sets Finished fetching via ServiceWorker.
-		/// </summary>
-		public double ServiceWorkerFetchEnd { get; set; }
+		public double WorkerReady { get; set; }
 		/// <summary>
 		/// Gets or sets Started sending request.
 		/// </summary>
@@ -66,6 +62,14 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 		/// Gets or sets Finished sending request.
 		/// </summary>
 		public double SendEnd { get; set; }
+		/// <summary>
+		/// Gets or sets Time the server started pushing request.
+		/// </summary>
+		public double PushStart { get; set; }
+		/// <summary>
+		/// Gets or sets Time the server finished pushing request.
+		/// </summary>
+		public double PushEnd { get; set; }
 		/// <summary>
 		/// Gets or sets Finished receiving response headers.
 		/// </summary>

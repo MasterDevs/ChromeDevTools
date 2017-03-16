@@ -28,9 +28,9 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 		/// </summary>
 		public bool IncludeCommandLineAPI { get; set; }
 		/// <summary>
-		/// Gets or sets Specifies whether evaluation should stop on exceptions and mute console. Overrides setPauseOnException state.
+		/// Gets or sets In silent mode exceptions thrown during evaluation are not reported and do not pause execution. Overrides <code>setPauseOnException</code> state.
 		/// </summary>
-		public bool DoNotPauseOnExceptionsAndMuteConsole { get; set; }
+		public bool Silent { get; set; }
 		/// <summary>
 		/// Gets or sets Whether the result is expected to be a JSON object that should be sent by value.
 		/// </summary>
@@ -39,5 +39,9 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 		/// Gets or sets Whether preview should be generated for the result.
 		/// </summary>
 		public bool GeneratePreview { get; set; }
+		/// <summary>
+		/// Gets or sets Whether to throw an exception if side effect cannot be ruled out during evaluation.
+		/// </summary>
+		public bool ThrowOnSideEffect { get; set; }
 	}
 }

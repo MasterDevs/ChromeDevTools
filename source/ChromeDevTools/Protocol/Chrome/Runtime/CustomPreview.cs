@@ -23,6 +23,10 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 		/// </summary>
 		public string FormatterObjectId { get; set; }
 		/// <summary>
+		/// Gets or sets BindRemoteObjectFunctionId
+		/// </summary>
+		public string BindRemoteObjectFunctionId { get; set; }
+		/// <summary>
 		/// Gets or sets ConfigObjectId
 		/// </summary>
 		public string ConfigObjectId { get; set; }

@@ -27,5 +27,9 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 		/// Gets or sets Maximal aggregated upload throughput.
 		/// </summary>
 		public double UploadThroughput { get; set; }
+		/// <summary>
+		/// Gets or sets Connection type if known.
+		/// </summary>
+		public string ConnectionType { get; set; }
 	}
 }

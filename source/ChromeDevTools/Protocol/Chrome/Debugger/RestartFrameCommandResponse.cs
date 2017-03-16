@@ -16,12 +16,8 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 		/// </summary>
 		public CallFrame[] CallFrames { get; set; }
 		/// <summary>
-		/// Gets or sets VM-specific description.
-		/// </summary>
-		public object Result { get; set; }
-		/// <summary>
 		/// Gets or sets Async stack trace, if any.
 		/// </summary>
-		public StackTrace AsyncStackTrace { get; set; }
+		public Runtime.StackTrace AsyncStackTrace { get; set; }
 	}
 }

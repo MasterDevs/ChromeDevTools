@@ -19,16 +19,12 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Accessibility
 		/// </summary>
 		public object Value { get; set; }
 		/// <summary>
-		/// Gets or sets The related node value, if any.
+		/// Gets or sets One or more related nodes, if applicable.
 		/// </summary>
-		public AXRelatedNode RelatedNodeValue { get; set; }
-		/// <summary>
-		/// Gets or sets Multiple relted nodes, if applicable.
-		/// </summary>
-		public AXRelatedNode[] RelatedNodeArrayValue { get; set; }
+		public AXRelatedNode[] RelatedNodes { get; set; }
 		/// <summary>
 		/// Gets or sets The sources which contributed to the computation of this property.
 		/// </summary>
-		public AXPropertySource[] Sources { get; set; }
+		public AXValueSource[] Sources { get; set; }
 	}
 }

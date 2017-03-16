@@ -3,7 +3,7 @@ using MasterDevs.ChromeDevTools;
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 {
 	/// <summary>
-	/// Fired when the node should be inspected. This happens after call to <code>setInspectModeEnabled</code>.
+	/// Fired when the node should be inspected. This happens after call to <code>setInspectMode</code>.
 	/// </summary>
 	[Event(ProtocolName.DOM.InspectNodeRequested)]
 	[SupportedBy("Chrome")]

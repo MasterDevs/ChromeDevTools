@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 {
 	/// <summary>
-	/// Returns the root DOM node to the caller.
+	/// Returns the root DOM node (and optionally the subtree) to the caller.
 	/// </summary>
 	[CommandResponse(ProtocolName.DOM.GetDocument)]
 	[SupportedBy("Chrome")]

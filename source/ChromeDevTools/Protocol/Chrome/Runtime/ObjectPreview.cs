@@ -23,10 +23,6 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 		/// </summary>
 		public string Description { get; set; }
 		/// <summary>
-		/// Gets or sets Determines whether preview is lossless (contains all information of the original object).
-		/// </summary>
-		public bool Lossless { get; set; }
-		/// <summary>
 		/// Gets or sets True iff some of the properties or entries of the original object did not fit.
 		/// </summary>
 		public bool Overflow { get; set; }

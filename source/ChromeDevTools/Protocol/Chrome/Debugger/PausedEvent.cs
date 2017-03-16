@@ -28,6 +28,6 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 		/// <summary>
 		/// Gets or sets Async stack trace, if any.
 		/// </summary>
-		public StackTrace AsyncStackTrace { get; set; }
+		public Runtime.StackTrace AsyncStackTrace { get; set; }
 	}
 }

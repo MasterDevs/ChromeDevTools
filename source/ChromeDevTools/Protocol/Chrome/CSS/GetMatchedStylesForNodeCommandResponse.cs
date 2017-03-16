@@ -12,16 +12,28 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CSS
 	public class GetMatchedStylesForNodeCommandResponse
 	{
 		/// <summary>
+		/// Gets or sets Inline style for the specified DOM node.
+		/// </summary>
+		public CSSStyle InlineStyle { get; set; }
+		/// <summary>
+		/// Gets or sets Attribute-defined element style (e.g. resulting from "width=20 height=100%").
+		/// </summary>
+		public CSSStyle AttributesStyle { get; set; }
+		/// <summary>
 		/// Gets or sets CSS rules matching this node, from all applicable stylesheets.
 		/// </summary>
 		public RuleMatch[] MatchedCSSRules { get; set; }
 		/// <summary>
 		/// Gets or sets Pseudo style matches for this node.
 		/// </summary>
-		public PseudoIdMatches[] PseudoElements { get; set; }
+		public PseudoElementMatches[] PseudoElements { get; set; }
 		/// <summary>
 		/// Gets or sets A chain of inherited styles (from the immediate node parent up to the DOM tree root).
 		/// </summary>
 		public InheritedStyleEntry[] Inherited { get; set; }
+		/// <summary>
+		/// Gets or sets A list of CSS keyframed animations matching this node.
+		/// </summary>
+		public CSSKeyframesRule[] CssKeyframesRules { get; set; }
 	}
 }

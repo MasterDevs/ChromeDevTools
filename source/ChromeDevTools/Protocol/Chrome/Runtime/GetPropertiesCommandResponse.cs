@@ -19,5 +19,9 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 		/// Gets or sets Internal object properties (only of the element itself).
 		/// </summary>
 		public InternalPropertyDescriptor[] InternalProperties { get; set; }
+		/// <summary>
+		/// Gets or sets Exception details.
+		/// </summary>
+		public ExceptionDetails ExceptionDetails { get; set; }
 	}
 }

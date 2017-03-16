@@ -13,5 +13,9 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 		/// Gets or sets Message that will be displayed by the dialog.
 		/// </summary>
 		public string Message { get; set; }
+		/// <summary>
+		/// Gets or sets Dialog type.
+		/// </summary>
+		public DialogType Type { get; set; }
 	}
 }

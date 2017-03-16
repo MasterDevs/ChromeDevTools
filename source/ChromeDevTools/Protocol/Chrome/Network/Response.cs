@@ -75,8 +75,16 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 		/// </summary>
 		public ResourceTiming Timing { get; set; }
 		/// <summary>
-		/// Gets or sets Protocol used to fetch this resquest.
+		/// Gets or sets Protocol used to fetch this request.
 		/// </summary>
 		public string Protocol { get; set; }
+		/// <summary>
+		/// Gets or sets Security state of the request resource.
+		/// </summary>
+		public Security.SecurityState SecurityState { get; set; }
+		/// <summary>
+		/// Gets or sets Security details for the request.
+		/// </summary>
+		public SecurityDetails SecurityDetails { get; set; }
 	}
 }

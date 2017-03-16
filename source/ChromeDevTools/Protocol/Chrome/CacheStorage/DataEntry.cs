@@ -11,11 +11,11 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CacheStorage
 	public class DataEntry
 	{
 		/// <summary>
-		/// Gets or sets JSON-stringified request object.
+		/// Gets or sets Request url spec.
 		/// </summary>
 		public string Request { get; set; }
 		/// <summary>
-		/// Gets or sets JSON-stringified response object.
+		/// Gets or sets Response stataus text.
 		/// </summary>
 		public string Response { get; set; }
 	}

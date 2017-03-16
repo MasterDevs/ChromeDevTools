@@ -40,6 +40,10 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Input
 		/// </summary>
 		public string Code { get; set; }
 		/// <summary>
+		/// Gets or sets Unique DOM defined string value describing the meaning of the key in the context of active modifiers, keyboard layout, etc (e.g., 'AltGr') (default: "").
+		/// </summary>
+		public string Key { get; set; }
+		/// <summary>
 		/// Gets or sets Windows virtual key code (default: 0).
 		/// </summary>
 		public long WindowsVirtualKeyCode { get; set; }

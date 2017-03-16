@@ -15,6 +15,14 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 		/// </summary>
 		public long NodeId { get; set; }
 		/// <summary>
+		/// Gets or sets The id of the parent node if any.
+		/// </summary>
+		public long ParentId { get; set; }
+		/// <summary>
+		/// Gets or sets The BackendNodeId for this node.
+		/// </summary>
+		public long BackendNodeId { get; set; }
+		/// <summary>
 		/// Gets or sets <code>Node</code>'s nodeType.
 		/// </summary>
 		public long NodeType { get; set; }
@@ -110,5 +118,9 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 		/// Gets or sets Distributed nodes for given insertion point.
 		/// </summary>
 		public BackendNode[] DistributedNodes { get; set; }
+		/// <summary>
+		/// Gets or sets Whether the node is SVG.
+		/// </summary>
+		public bool IsSVG { get; set; }
 	}
 }

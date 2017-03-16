@@ -19,5 +19,9 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 		/// Gets or sets The maximum depth at which children should be retrieved, defaults to 1. Use -1 for the entire subtree or provide an integer larger than 0.
 		/// </summary>
 		public long Depth { get; set; }
+		/// <summary>
+		/// Gets or sets Whether or not iframes and shadow roots should be traversed when returning the sub-tree (default is false).
+		/// </summary>
+		public bool Pierce { get; set; }
 	}
 }

@@ -11,5 +11,9 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CSS
 	[SupportedBy("Chrome")]
 	public class SetStyleSheetTextCommandResponse
 	{
+		/// <summary>
+		/// Gets or sets URL of source map associated with script (if any).
+		/// </summary>
+		public string SourceMapURL { get; set; }
 	}
 }

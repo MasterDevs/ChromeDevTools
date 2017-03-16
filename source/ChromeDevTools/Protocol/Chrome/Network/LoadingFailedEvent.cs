@@ -29,5 +29,9 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 		/// Gets or sets True if loading was canceled.
 		/// </summary>
 		public bool Canceled { get; set; }
+		/// <summary>
+		/// Gets or sets The reason why loading was blocked, if any.
+		/// </summary>
+		public BlockedReason BlockedReason { get; set; }
 	}
 }

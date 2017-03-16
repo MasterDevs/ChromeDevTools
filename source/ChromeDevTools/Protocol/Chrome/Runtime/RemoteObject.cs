@@ -23,9 +23,13 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 		/// </summary>
 		public string ClassName { get; set; }
 		/// <summary>
-		/// Gets or sets Remote object value in case of primitive values or JSON values (if it was requested), or description string if the value can not be JSON-stringified (like NaN, Infinity, -Infinity, -0).
+		/// Gets or sets Remote object value in case of primitive values or JSON values (if it was requested).
 		/// </summary>
 		public object Value { get; set; }
+		/// <summary>
+		/// Gets or sets Primitive value which can not be JSON-stringified does not have <code>value</code>, but gets this property.
+		/// </summary>
+		public UnserializableValue UnserializableValue { get; set; }
 		/// <summary>
 		/// Gets or sets String representation of the object.
 		/// </summary>

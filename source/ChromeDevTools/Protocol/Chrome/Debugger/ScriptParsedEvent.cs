@@ -34,13 +34,21 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 		/// </summary>
 		public long EndColumn { get; set; }
 		/// <summary>
-		/// Gets or sets Determines whether this script is a user extension script.
+		/// Gets or sets Specifies script creation context.
 		/// </summary>
-		public bool IsContentScript { get; set; }
+		public long ExecutionContextId { get; set; }
 		/// <summary>
-		/// Gets or sets Determines whether this script is an internal script.
+		/// Gets or sets Content hash of the script.
 		/// </summary>
-		public bool IsInternalScript { get; set; }
+		public string Hash { get; set; }
+		/// <summary>
+		/// Gets or sets Embedder-specific auxiliary data.
+		/// </summary>
+		public object ExecutionContextAuxData { get; set; }
+		/// <summary>
+		/// Gets or sets True, if this script is generated as a result of the live edit operation.
+		/// </summary>
+		public bool IsLiveEdit { get; set; }
 		/// <summary>
 		/// Gets or sets URL of source map associated with script (if any).
 		/// </summary>
@@ -49,5 +57,13 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 		/// Gets or sets True, if this script has sourceURL.
 		/// </summary>
 		public bool HasSourceURL { get; set; }
+		/// <summary>
+		/// Gets or sets True, if this script is ES6 module.
+		/// </summary>
+		public bool IsModule { get; set; }
+		/// <summary>
+		/// Gets or sets This script length.
+		/// </summary>
+		public long Length { get; set; }
 	}
 }

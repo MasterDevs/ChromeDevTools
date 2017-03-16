@@ -26,5 +26,17 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 		/// Gets or sets HTTP POST request data.
 		/// </summary>
 		public string PostData { get; set; }
+		/// <summary>
+		/// Gets or sets The mixed content status of the request, as defined in http://www.w3.org/TR/mixed-content/
+		/// </summary>
+		public string MixedContentType { get; set; }
+		/// <summary>
+		/// Gets or sets Priority of the resource request at the time request is sent.
+		/// </summary>
+		public ResourcePriority InitialPriority { get; set; }
+		/// <summary>
+		/// Gets or sets The referrer policy of the request, as defined in https://www.w3.org/TR/referrer-policy/
+		/// </summary>
+		public string ReferrerPolicy { get; set; }
 	}
 }

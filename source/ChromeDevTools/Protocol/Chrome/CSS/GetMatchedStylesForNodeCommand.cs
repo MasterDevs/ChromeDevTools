@@ -15,13 +15,5 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CSS
 		/// Gets or sets NodeId
 		/// </summary>
 		public long NodeId { get; set; }
-		/// <summary>
-		/// Gets or sets Whether to exclude pseudo styles (default: false).
-		/// </summary>
-		public bool ExcludePseudo { get; set; }
-		/// <summary>
-		/// Gets or sets Whether to exclude inherited styles (default: false).
-		/// </summary>
-		public bool ExcludeInherited { get; set; }
 	}
 }

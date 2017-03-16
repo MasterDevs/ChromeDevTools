@@ -16,12 +16,8 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 		/// </summary>
 		public RemoteObject Result { get; set; }
 		/// <summary>
-		/// Gets or sets True if the result was thrown during the evaluation.
-		/// </summary>
-		public bool WasThrown { get; set; }
-		/// <summary>
 		/// Gets or sets Exception details.
 		/// </summary>
-		public Debugger.ExceptionDetails ExceptionDetails { get; set; }
+		public ExceptionDetails ExceptionDetails { get; set; }
 	}
 }

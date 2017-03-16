@@ -20,6 +20,6 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 		/// <summary>
 		/// Gets or sets Frame number.
 		/// </summary>
-		public long FrameNumber { get; set; }
+		public long SessionId { get; set; }
 	}
 }

@@ -17,12 +17,16 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Accessibility{
 			Idref,
 			IdrefList,
 			Integer,
+			Node,
+			NodeList,
 			Number,
 			String,
+			ComputedString,
 			Token,
 			TokenList,
 			DomRelation,
 			Role,
 			InternalRole,
+			ValueUndefined,
 	}
 }

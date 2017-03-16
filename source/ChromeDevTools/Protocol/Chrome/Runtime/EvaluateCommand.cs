@@ -24,11 +24,11 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 		/// </summary>
 		public bool IncludeCommandLineAPI { get; set; }
 		/// <summary>
-		/// Gets or sets Specifies whether evaluation should stop on exceptions and mute console. Overrides setPauseOnException state.
+		/// Gets or sets In silent mode exceptions thrown during evaluation are not reported and do not pause execution. Overrides <code>setPauseOnException</code> state.
 		/// </summary>
-		public bool DoNotPauseOnExceptionsAndMuteConsole { get; set; }
+		public bool Silent { get; set; }
 		/// <summary>
-		/// Gets or sets Specifies in which isolated context to perform evaluation. Each content script lives in an isolated context and this parameter may be used to specify one of those contexts. If the parameter is omitted or 0 the evaluation will be performed in the context of the inspected page.
+		/// Gets or sets Specifies in which execution context to perform evaluation. If the parameter is omitted the evaluation will be performed in the context of the inspected page.
 		/// </summary>
 		public long ContextId { get; set; }
 		/// <summary>
@@ -39,5 +39,13 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 		/// Gets or sets Whether preview should be generated for the result.
 		/// </summary>
 		public bool GeneratePreview { get; set; }
+		/// <summary>
+		/// Gets or sets Whether execution should be treated as initiated by user in the UI.
+		/// </summary>
+		public bool UserGesture { get; set; }
+		/// <summary>
+		/// Gets or sets Whether execution should wait for promise to be resolved. If the result of evaluation is not a Promise, it's considered to be an error.
+		/// </summary>
+		public bool AwaitPromise { get; set; }
 	}
 }

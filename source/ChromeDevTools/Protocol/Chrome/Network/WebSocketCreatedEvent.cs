@@ -17,5 +17,9 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 		/// Gets or sets WebSocket request URL.
 		/// </summary>
 		public string Url { get; set; }
+		/// <summary>
+		/// Gets or sets Request initiator.
+		/// </summary>
+		public Initiator Initiator { get; set; }
 	}
 }

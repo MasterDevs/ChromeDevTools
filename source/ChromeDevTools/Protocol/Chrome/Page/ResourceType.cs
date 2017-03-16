@@ -19,7 +19,10 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page{
 			Script,
 			TextTrack,
 			XHR,
+			Fetch,
+			EventSource,
 			WebSocket,
+			Manifest,
 			Other,
 	}
 }
