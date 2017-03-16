@@ -40,7 +40,7 @@ namespace MasterDevs.ChromeDevTools
 
         public async Task<ChromeSessionInfo> StartNewSession()
         {
-            string json = await http.GetStringAsync("/json");
+            string json = await http.GetStringAsync("/json/new");
             return JsonConvert.DeserializeObject<ChromeSessionInfo>(json);
         }
     }
