@@ -16,9 +16,9 @@ namespace MasterDevs.ChromeDevTools.Sample
                 using (var chromeProcess = chromeProcessFactory.Create(9222))
                 {
                     // STEP 2 - Create a debugging session
-                    var session = (await chromeProcess.GetSessions()).LastOrDefault();
+                    var sessionInfo = (await chromeProcess.GetSessionInfo()).LastOrDefault();
                     var chromeSessionFactory = new ChromeSessionFactory();
-                    var chromeSession = chromeSessionFactory.Create(session.WebSocketDebuggerUrl);
+                    var chromeSession = chromeSessionFactory.Create(sessionInfo.WebSocketDebuggerUrl);
 
                     // STEP 3 - Send a command
                     //
