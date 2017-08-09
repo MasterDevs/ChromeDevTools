@@ -67,12 +67,6 @@
       <Link>Inspector-1.0.json</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="..\ProtocolGenerator\Inspector-iOS-8.0.json">
-      <Link>Inspector-iOS-8.0.json</Link>
-    </None>
-    <None Include="..\ProtocolGenerator\protocol.json">
-      <Link>protocol.json</Link>
-    </None>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
