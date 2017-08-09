@@ -11,5 +11,13 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 	[SupportedBy("Chrome")]
 	public class CaptureScreenshotCommand
 	{
+		/// <summary>
+		/// Gets or sets Image compression format (defaults to png).
+		/// </summary>
+		public string Format { get; set; }
+		/// <summary>
+		/// Gets or sets Compression quality from range [0..100] (jpeg only).
+		/// </summary>
+		public long Quality { get; set; }
 	}
 }

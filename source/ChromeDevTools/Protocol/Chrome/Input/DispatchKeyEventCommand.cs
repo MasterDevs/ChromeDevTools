@@ -46,6 +46,10 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Input
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string Code { get; set; }
 		/// <summary>
+		/// Gets or sets Unique DOM defined string value describing the meaning of the key in the context of active modifiers, keyboard layout, etc (e.g., 'AltGr') (default: "").
+		/// </summary>
+		public string Key { get; set; }
+		/// <summary>
 		/// Gets or sets Windows virtual key code (default: 0).
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]

@@ -14,6 +14,6 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 		/// <summary>
 		/// Gets or sets New value for skip pauses state.
 		/// </summary>
-		public bool Skipped { get; set; }
+		public bool Skip { get; set; }
 	}
 }

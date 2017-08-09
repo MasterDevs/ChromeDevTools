@@ -3,6 +3,7 @@ using System.Collections.ObjectModel;
 using System.Text;
 using System.Linq;
 using System;
+using Newtonsoft.Json;
 
 namespace MasterDevs.ChromeDevTools.ProtocolGenerator
 {
@@ -54,6 +55,9 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
             set;
         }
 
+        [JsonProperty("experimental")]
+        public bool IsExperimental { get; set; }
+
         public override bool Equals(object obj)
         {
             var other = obj as Command;
@@ -81,7 +85,7 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
                 {
                     hash = hash * 23 + this.Error.GetHashCode();
                 }
-                
+
                 hash = hash * 23 + this.Parameters.GetCollectionHashCode();
                 return hash;
             }

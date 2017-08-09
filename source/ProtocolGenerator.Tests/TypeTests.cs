@@ -15,7 +15,7 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator.Tests
         [DeploymentItem(DeploymentItems.Inspector10)]
         public void TypeNameTest()
         {
-            Protocol p = ProtocolProcessor.LoadProtocol(DeploymentItems.Inspector10, "Chrome-1.0");
+            Protocol p = ProtocolProcessor.LoadProtocol(new[] { DeploymentItems.Inspector10 }, "Chrome-1.0");
 
             var evaluateCommand = p.GetDomain("Page").GetCommand("searchInResource");
             var result = evaluateCommand.Returns.Single();
@@ -27,7 +27,7 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator.Tests
         [DeploymentItem(DeploymentItems.Inspector10)]
         public void ToStringTest()
         {
-            Protocol p = ProtocolProcessor.LoadProtocol(DeploymentItems.Inspector10, "Chrome-1.0");
+            Protocol p = ProtocolProcessor.LoadProtocol(new[] { DeploymentItems.Inspector10 }, "Chrome-1.0");
 
             var evaluateCommand = p.GetDomain("Page").GetCommand("searchInResource");
             var result = evaluateCommand.Returns.Single();

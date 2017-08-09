@@ -11,6 +11,6 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Profiler
 		/// <summary>
 		/// Gets or sets Recorded profile.
 		/// </summary>
-		public CPUProfile Profile { get; set; }
+		public Profile Profile { get; set; }
 	}
 }

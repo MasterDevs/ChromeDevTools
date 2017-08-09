@@ -16,7 +16,7 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator.Tests
         [DeploymentItem(DeploymentItems.Inspector10)]
         public void ResolveTypeReferencesCommandParameterTest()
         {
-            Protocol p = ProtocolProcessor.LoadProtocol(DeploymentItems.Inspector10, "Chrome-1.0");
+            Protocol p = ProtocolProcessor.LoadProtocol(new[] { DeploymentItems.Inspector10 }, "Chrome-1.0");
             ProtocolProcessor.ResolveTypeReferences(p, new Dictionary<string, string>());
 
             var evaluateCommand = p.GetDomain("Runtime").GetCommand("evaluate");
@@ -29,7 +29,7 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator.Tests
         [DeploymentItem(DeploymentItems.Inspector10)]
         public void ResolveTypeReferencesCommandParameterTest2()
         {
-            Protocol p = ProtocolProcessor.LoadProtocol(DeploymentItems.Inspector10, "Chrome-1.0");
+            Protocol p = ProtocolProcessor.LoadProtocol(new[] { DeploymentItems.Inspector10 }, "Chrome-1.0");
             ProtocolProcessor.ResolveTypeReferences(p, new Dictionary<string, string>());
 
             var addInspectedNodeCommand = p.GetDomain("Console").GetCommand("addInspectedNode");
@@ -45,7 +45,7 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator.Tests
             Dictionary<string, string> explicitMappings = new Dictionary<string, string>();
             explicitMappings.Add("Page.Cookie", "Network.Cookie");
 
-            Protocol p = ProtocolProcessor.LoadProtocol(DeploymentItems.InspectoriOS8, "iOS-8.0");
+            Protocol p = ProtocolProcessor.LoadProtocol(new[] { DeploymentItems.InspectoriOS8 }, "iOS-8.0");
             ProtocolProcessor.ResolveTypeReferences(p, explicitMappings);
 
             var getCookiesCommand = p.GetDomain("Page").GetCommand("getCookies");
@@ -61,7 +61,7 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator.Tests
             Dictionary<string, string> explicitMappings = new Dictionary<string, string>();
             explicitMappings.Add("GenericTypes.SearchMatch", "Debugger.SearchMatch");
 
-            Protocol p = ProtocolProcessor.LoadProtocol(DeploymentItems.InspectoriOS8, "iOS-8.0");
+            Protocol p = ProtocolProcessor.LoadProtocol(new[] { DeploymentItems.InspectoriOS8 }, "iOS-8.0");
             ProtocolProcessor.ResolveTypeReferences(p, explicitMappings);
 
             var searchInResourceCommand = p.GetDomain("Page").GetCommand("searchInResource");

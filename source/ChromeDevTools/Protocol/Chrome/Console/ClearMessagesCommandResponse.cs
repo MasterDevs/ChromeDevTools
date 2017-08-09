@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Console
 {
 	/// <summary>
-	/// Clears console messages collected in the browser.
+	/// Does nothing.
 	/// </summary>
 	[CommandResponse(ProtocolName.Console.ClearMessages)]
 	[SupportedBy("Chrome")]

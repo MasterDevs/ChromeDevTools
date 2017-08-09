@@ -28,15 +28,20 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
         {
             // At this point in time, we only process the most recent Chrome
             // and iOS (Safari) protocols.
-            Dictionary<string, string> protocolFiles = new Dictionary<string, string>();
+            Dictionary<string, string[]> protocolFiles = new Dictionary<string, string[]>
+            {
+                {"Chrome", new [] { "js_protocol.json", "browser_protocol.json" } },
+                {"iOS", new [] { "Inspector-iOS-9.3.json" } }
+            };
+
+
             //protocolFiles.Add("Chrome-0.1", "Inspector-0.1.json");
             //protocolFiles.Add("Chrome-1.0", "Inspector-1.0.json");
             //protocolFiles.Add("Chrome", "Inspector-1.1.json");
-            protocolFiles.Add("Chrome", "protocol.json");
             //protocolFiles.Add("iOS-7.0", "Inspector-iOS-7.0.json");
             //protocolFiles.Add("iOS-8.0", "Inspector-iOS-8.0.json");
             //protocolFiles.Add("iOS-9.0", "Inspector-iOS-9.0.json");
-            protocolFiles.Add("iOS", "Inspector-iOS-9.3.json");
+
 
             Collection<Protocol> protocols = new Collection<Protocol>();
 
@@ -327,7 +332,8 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
         {
             if (null == type) return;
             if (type.Enum.Any()) WriteTypeEnum(domainDirectoryInfo, ns, type);
-            if (type.Properties.Any()) WriteTypeClass(domainDirectoryInfo, ns, type);
+            /*if (type.Properties.Any())*/
+            WriteTypeClass(domainDirectoryInfo, ns, type);
             WriteTypeSimple(domainDirectoryInfo, type);
         }
 

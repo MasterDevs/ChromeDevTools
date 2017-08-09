@@ -26,6 +26,10 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public bool? ShowExtensionLines { get; set; }
 		/// <summary>
+		/// Gets or sets DisplayAsMaterial
+		/// </summary>
+		public bool DisplayAsMaterial { get; set; }
+		/// <summary>
 		/// Gets or sets The content box highlight fill color (default: transparent).
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
@@ -60,5 +64,9 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public RGBA ShapeMarginColor { get; set; }
+		/// <summary>
+		/// Gets or sets Selectors to highlight relevant nodes.
+		/// </summary>
+		public string SelectorList { get; set; }
 	}
 }

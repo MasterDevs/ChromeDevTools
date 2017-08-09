@@ -54,5 +54,17 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Input
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string GestureSourceType { get; set; }
+		/// <summary>
+		/// Gets or sets The number of times to repeat the gesture (default: 0).
+		/// </summary>
+		public long RepeatCount { get; set; }
+		/// <summary>
+		/// Gets or sets The number of milliseconds delay between each repeat. (default: 250).
+		/// </summary>
+		public long RepeatDelayMs { get; set; }
+		/// <summary>
+		/// Gets or sets The name of the interaction markers to generate, if not empty (default: "").
+		/// </summary>
+		public string InteractionMarkerName { get; set; }
 	}
 }

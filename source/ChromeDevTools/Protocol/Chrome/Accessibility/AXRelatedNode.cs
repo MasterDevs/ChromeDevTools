@@ -11,13 +11,17 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Accessibility
 	public class AXRelatedNode
 	{
 		/// <summary>
+		/// Gets or sets The BackendNodeId of the related DOM node.
+		/// </summary>
+		public long BackendDOMNodeId { get; set; }
+		/// <summary>
 		/// Gets or sets The IDRef value provided, if any.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string Idref { get; set; }
 		/// <summary>
-		/// Gets or sets The BackendNodeId of the related node.
+		/// Gets or sets The text alternative of this node in the current context.
 		/// </summary>
-		public long BackendNodeId { get; set; }
+		public string Text { get; set; }
 	}
 }

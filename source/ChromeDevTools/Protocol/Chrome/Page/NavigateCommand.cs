@@ -15,5 +15,9 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 		/// Gets or sets URL to navigate the page to.
 		/// </summary>
 		public string Url { get; set; }
+		/// <summary>
+		/// Gets or sets Referrer URL.
+		/// </summary>
+		public string Referrer { get; set; }
 	}
 }

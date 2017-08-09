@@ -13,7 +13,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CSS
 		/// <summary>
 		/// Gets or sets Selectors in the list.
 		/// </summary>
-		public Selector[] Selectors { get; set; }
+		public Value[] Selectors { get; set; }
 		/// <summary>
 		/// Gets or sets Rule selector text.
 		/// </summary>
