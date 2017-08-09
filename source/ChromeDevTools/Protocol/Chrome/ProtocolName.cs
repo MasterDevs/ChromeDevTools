@@ -156,13 +156,12 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome
 			public const string StopScreencast = "Page.stopScreencast";
 			public const string ScreencastFrameAck = "Page.screencastFrameAck";
 			public const string HandleJavaScriptDialog = "Page.handleJavaScriptDialog";
-			public const string SetColorPickerEnabled = "Page.setColorPickerEnabled";
-			public const string ConfigureOverlay = "Page.configureOverlay";
 			public const string GetAppManifest = "Page.getAppManifest";
 			public const string RequestAppBanner = "Page.requestAppBanner";
 			public const string SetControlNavigations = "Page.setControlNavigations";
 			public const string ProcessNavigation = "Page.processNavigation";
 			public const string GetLayoutMetrics = "Page.getLayoutMetrics";
+			public const string CreateIsolatedWorld = "Page.createIsolatedWorld";
 			public const string DomContentEventFired = "Page.domContentEventFired";
 			public const string LoadEventFired = "Page.loadEventFired";
 			public const string FrameAttached = "Page.frameAttached";
@@ -177,19 +176,31 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome
 			public const string JavascriptDialogClosed = "Page.javascriptDialogClosed";
 			public const string ScreencastFrame = "Page.screencastFrame";
 			public const string ScreencastVisibilityChanged = "Page.screencastVisibilityChanged";
-			public const string ColorPicked = "Page.colorPicked";
 			public const string InterstitialShown = "Page.interstitialShown";
 			public const string InterstitialHidden = "Page.interstitialHidden";
 			public const string NavigationRequested = "Page.navigationRequested";
 		}
 
-		public static class Rendering
+		public static class Overlay
 		{
-			public const string SetShowPaintRects = "Rendering.setShowPaintRects";
-			public const string SetShowDebugBorders = "Rendering.setShowDebugBorders";
-			public const string SetShowFPSCounter = "Rendering.setShowFPSCounter";
-			public const string SetShowScrollBottleneckRects = "Rendering.setShowScrollBottleneckRects";
-			public const string SetShowViewportSizeOnResize = "Rendering.setShowViewportSizeOnResize";
+			public const string Enable = "Overlay.enable";
+			public const string Disable = "Overlay.disable";
+			public const string SetShowPaintRects = "Overlay.setShowPaintRects";
+			public const string SetShowDebugBorders = "Overlay.setShowDebugBorders";
+			public const string SetShowFPSCounter = "Overlay.setShowFPSCounter";
+			public const string SetShowScrollBottleneckRects = "Overlay.setShowScrollBottleneckRects";
+			public const string SetShowViewportSizeOnResize = "Overlay.setShowViewportSizeOnResize";
+			public const string SetPausedInDebuggerMessage = "Overlay.setPausedInDebuggerMessage";
+			public const string SetSuspended = "Overlay.setSuspended";
+			public const string SetInspectMode = "Overlay.setInspectMode";
+			public const string HighlightRect = "Overlay.highlightRect";
+			public const string HighlightQuad = "Overlay.highlightQuad";
+			public const string HighlightNode = "Overlay.highlightNode";
+			public const string HighlightFrame = "Overlay.highlightFrame";
+			public const string HideHighlight = "Overlay.hideHighlight";
+			public const string GetHighlightObjectForTest = "Overlay.getHighlightObjectForTest";
+			public const string NodeHighlightRequested = "Overlay.nodeHighlightRequested";
+			public const string InspectNodeRequested = "Overlay.inspectNodeRequested";
 		}
 
 		public static class Emulation
@@ -218,7 +229,10 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome
 			public const string Enable = "Security.enable";
 			public const string Disable = "Security.disable";
 			public const string ShowCertificateViewer = "Security.showCertificateViewer";
+			public const string HandleCertificateError = "Security.handleCertificateError";
+			public const string SetOverrideCertificateErrors = "Security.setOverrideCertificateErrors";
 			public const string SecurityStateChanged = "Security.securityStateChanged";
+			public const string CertificateError = "Security.certificateError";
 		}
 
 		public static class Network
@@ -228,10 +242,8 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome
 			public const string SetUserAgentOverride = "Network.setUserAgentOverride";
 			public const string SetExtraHTTPHeaders = "Network.setExtraHTTPHeaders";
 			public const string GetResponseBody = "Network.getResponseBody";
-			public const string AddBlockedURL = "Network.addBlockedURL";
-			public const string RemoveBlockedURL = "Network.removeBlockedURL";
+			public const string SetBlockedURLs = "Network.setBlockedURLs";
 			public const string ReplayXHR = "Network.replayXHR";
-			public const string SetMonitoringXHREnabled = "Network.setMonitoringXHREnabled";
 			public const string CanClearBrowserCache = "Network.canClearBrowserCache";
 			public const string ClearBrowserCache = "Network.clearBrowserCache";
 			public const string CanClearBrowserCookies = "Network.canClearBrowserCookies";
@@ -337,12 +349,9 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome
 			public const string GetSearchResults = "DOM.getSearchResults";
 			public const string DiscardSearchResults = "DOM.discardSearchResults";
 			public const string RequestNode = "DOM.requestNode";
-			public const string SetInspectMode = "DOM.setInspectMode";
 			public const string HighlightRect = "DOM.highlightRect";
-			public const string HighlightQuad = "DOM.highlightQuad";
 			public const string HighlightNode = "DOM.highlightNode";
 			public const string HideHighlight = "DOM.hideHighlight";
-			public const string HighlightFrame = "DOM.highlightFrame";
 			public const string PushNodeByPathToFrontend = "DOM.pushNodeByPathToFrontend";
 			public const string PushNodesByBackendIdsToFrontend = "DOM.pushNodesByBackendIdsToFrontend";
 			public const string SetInspectedNode = "DOM.setInspectedNode";
@@ -358,9 +367,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome
 			public const string GetBoxModel = "DOM.getBoxModel";
 			public const string GetNodeForLocation = "DOM.getNodeForLocation";
 			public const string GetRelayoutBoundary = "DOM.getRelayoutBoundary";
-			public const string GetHighlightObjectForTest = "DOM.getHighlightObjectForTest";
 			public const string DocumentUpdated = "DOM.documentUpdated";
-			public const string InspectNodeRequested = "DOM.inspectNodeRequested";
 			public const string SetChildNodes = "DOM.setChildNodes";
 			public const string AttributeModified = "DOM.attributeModified";
 			public const string AttributeRemoved = "DOM.attributeRemoved";
@@ -374,7 +381,6 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome
 			public const string PseudoElementAdded = "DOM.pseudoElementAdded";
 			public const string PseudoElementRemoved = "DOM.pseudoElementRemoved";
 			public const string DistributedNodesUpdated = "DOM.distributedNodesUpdated";
-			public const string NodeHighlightRequested = "DOM.nodeHighlightRequested";
 		}
 
 		public static class CSS
@@ -400,6 +406,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome
 			public const string GetBackgroundColors = "CSS.getBackgroundColors";
 			public const string GetLayoutTreeAndStyles = "CSS.getLayoutTreeAndStyles";
 			public const string StartRuleUsageTracking = "CSS.startRuleUsageTracking";
+			public const string TakeCoverageDelta = "CSS.takeCoverageDelta";
 			public const string StopRuleUsageTracking = "CSS.stopRuleUsageTracking";
 			public const string MediaQueryResultChanged = "CSS.mediaQueryResultChanged";
 			public const string FontsUpdated = "CSS.fontsUpdated";
@@ -470,6 +477,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome
 
 		public static class Input
 		{
+			public const string SetIgnoreInputEvents = "Input.setIgnoreInputEvents";
 			public const string DispatchKeyEvent = "Input.dispatchKeyEvent";
 			public const string DispatchMouseEvent = "Input.dispatchMouseEvent";
 			public const string DispatchTouchEvent = "Input.dispatchTouchEvent";
@@ -559,6 +567,13 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome
 			public const string Bind = "Tethering.bind";
 			public const string Unbind = "Tethering.unbind";
 			public const string Accepted = "Tethering.accepted";
+		}
+
+		public static class Browser
+		{
+			public const string GetWindowForTarget = "Browser.getWindowForTarget";
+			public const string SetWindowBounds = "Browser.setWindowBounds";
+			public const string GetWindowBounds = "Browser.getWindowBounds";
 		}
 
 	}

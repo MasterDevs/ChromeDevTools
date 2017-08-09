@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CSS
 {
 	/// <summary>
-	/// CSS rule usage information.
+	/// CSS coverage information.
 	/// </summary>
 	[SupportedBy("Chrome")]
 	public class RuleUsage

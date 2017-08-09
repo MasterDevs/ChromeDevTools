@@ -11,5 +11,10 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Profiler
 	[SupportedBy("Chrome")]
 	public class StartPreciseCoverageCommand
 	{
+		/// <summary>
+		/// Gets or sets Collect accurate call counts beyond simple 'covered' or 'not covered'.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? CallCount { get; set; }
 	}
 }

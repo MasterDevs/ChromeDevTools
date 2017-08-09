@@ -15,5 +15,10 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 		/// Gets or sets Location to continue to.
 		/// </summary>
 		public Location Location { get; set; }
+		/// <summary>
+		/// Gets or sets TargetCallFrames
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public string TargetCallFrames { get; set; }
 	}
 }

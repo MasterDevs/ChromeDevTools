@@ -3,7 +3,7 @@ using MasterDevs.ChromeDevTools;using Newtonsoft.Json;
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Profiler
 {
 	/// <summary>
-	/// Sent when new profile recodring is started using console.profile() call.
+	/// Sent when new profile recording is started using console.profile() call.
 	/// </summary>
 	[Event(ProtocolName.Profiler.ConsoleProfileStarted)]
 	[SupportedBy("Chrome")]

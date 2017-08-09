@@ -19,6 +19,10 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Security
 		/// </summary>
 		public bool DisplayedMixedContent { get; set; }
 		/// <summary>
+		/// Gets or sets True if the page was loaded over HTTPS and contained a form targeting an insecure url.
+		/// </summary>
+		public bool ContainedMixedForm { get; set; }
+		/// <summary>
 		/// Gets or sets True if the page was loaded over HTTPS without certificate errors, and ran content such as scripts that were loaded with certificate errors.
 		/// </summary>
 		public bool RanContentWithCertErrors { get; set; }

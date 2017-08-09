@@ -11,22 +11,6 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Profiler
 	public class CoverageRange
 	{
 		/// <summary>
-		/// Gets or sets JavaScript script line number (0-based) for the range start.
-		/// </summary>
-		public long StartLineNumber { get; set; }
-		/// <summary>
-		/// Gets or sets JavaScript script column number (0-based) for the range start.
-		/// </summary>
-		public long StartColumnNumber { get; set; }
-		/// <summary>
-		/// Gets or sets JavaScript script line number (0-based) for the range end.
-		/// </summary>
-		public long EndLineNumber { get; set; }
-		/// <summary>
-		/// Gets or sets JavaScript script column number (0-based) for the range end.
-		/// </summary>
-		public long EndColumnNumber { get; set; }
-		/// <summary>
 		/// Gets or sets JavaScript script source offset for the range start.
 		/// </summary>
 		public long StartOffset { get; set; }

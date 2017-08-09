@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 {
 	/// <summary>
-	/// Print page as pdf.
+	/// Print page as PDF.
 	/// </summary>
 	[CommandResponse(ProtocolName.Page.PrintToPDF)]
 	[SupportedBy("Chrome")]

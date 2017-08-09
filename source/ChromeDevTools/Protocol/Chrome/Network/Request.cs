@@ -40,5 +40,10 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 		/// Gets or sets The referrer policy of the request, as defined in https://www.w3.org/TR/referrer-policy/
 		/// </summary>
 		public string ReferrerPolicy { get; set; }
+		/// <summary>
+		/// Gets or sets Whether is loaded via link preload.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? IsLinkPreload { get; set; }
 	}
 }

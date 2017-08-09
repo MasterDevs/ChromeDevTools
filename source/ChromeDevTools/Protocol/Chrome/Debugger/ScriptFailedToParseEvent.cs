@@ -66,5 +66,10 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public long? Length { get; set; }
+		/// <summary>
+		/// Gets or sets JavaScript top stack frame of where the script parsed event was triggered if available.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public Runtime.StackTrace StackTrace { get; set; }
 	}
 }

@@ -20,5 +20,10 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string Referrer { get; set; }
+		/// <summary>
+		/// Gets or sets Intended transition type.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public string TransitionType { get; set; }
 	}
 }
