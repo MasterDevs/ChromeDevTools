@@ -21,18 +21,22 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Profiler
 		/// <summary>
 		/// Gets or sets Number of samples where this node was on top of the call stack.
 		/// </summary>
-		public long HitCount { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? HitCount { get; set; }
 		/// <summary>
 		/// Gets or sets Child node ids.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public long[] Children { get; set; }
 		/// <summary>
 		/// Gets or sets The reason of being not optimized. The function may be deoptimized or marked as don't optimize.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string DeoptReason { get; set; }
 		/// <summary>
 		/// Gets or sets An array of source position ticks.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public PositionTickInfo[] PositionTicks { get; set; }
 	}
 }

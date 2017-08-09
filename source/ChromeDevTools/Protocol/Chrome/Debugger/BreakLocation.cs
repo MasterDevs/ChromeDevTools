@@ -21,10 +21,12 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 		/// <summary>
 		/// Gets or sets Column number in the script (0-based).
 		/// </summary>
-		public long ColumnNumber { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? ColumnNumber { get; set; }
 		/// <summary>
 		/// Gets or sets Type
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string Type { get; set; }
 	}
 }

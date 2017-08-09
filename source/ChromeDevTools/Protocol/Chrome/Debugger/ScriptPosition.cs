@@ -5,19 +5,18 @@ using System.Collections.Generic;
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 {
 	/// <summary>
-	/// Collection entry.
+	/// Location in the source code.
 	/// </summary>
 	[SupportedBy("Chrome")]
-	public class CollectionEntry
+	public class ScriptPosition
 	{
 		/// <summary>
-		/// Gets or sets Entry key of a map-like collection, otherwise not provided.
+		/// Gets or sets LineNumber
 		/// </summary>
-		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public Runtime.RemoteObject Key { get; set; }
+		public long LineNumber { get; set; }
 		/// <summary>
-		/// Gets or sets Entry value.
+		/// Gets or sets ColumnNumber
 		/// </summary>
-		public Runtime.RemoteObject Value { get; set; }
+		public long ColumnNumber { get; set; }
 	}
 }

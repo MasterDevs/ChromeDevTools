@@ -8,18 +8,18 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Profiler
 	/// Profile.
 	/// </summary>
 	[SupportedBy("Chrome")]
-	public class CPUProfile
+	public class Profile
 	{
 		/// <summary>
-		/// Gets or sets Head
+		/// Gets or sets The list of profile nodes. First item is the root node.
 		/// </summary>
-		public CPUProfileNode Head { get; set; }
+		public ProfileNode[] Nodes { get; set; }
 		/// <summary>
-		/// Gets or sets Profiling start time in seconds.
+		/// Gets or sets Profiling start timestamp in microseconds.
 		/// </summary>
 		public double StartTime { get; set; }
 		/// <summary>
-		/// Gets or sets Profiling end time in seconds.
+		/// Gets or sets Profiling end timestamp in microseconds.
 		/// </summary>
 		public double EndTime { get; set; }
 		/// <summary>
@@ -28,9 +28,9 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Profiler
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public long[] Samples { get; set; }
 		/// <summary>
-		/// Gets or sets Timestamps of the samples in microseconds.
+		/// Gets or sets Time intervals between adjacent samples in microseconds. The first delta is relative to the profile startTime.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double[] Timestamps { get; set; }
+		public long[] TimeDeltas { get; set; }
 	}
 }

@@ -30,6 +30,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 		/// <summary>
 		/// Gets or sets Connection type if known.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string ConnectionType { get; set; }
 	}
 }

@@ -28,7 +28,8 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 		/// <summary>
 		/// Gets or sets DisplayAsMaterial
 		/// </summary>
-		public bool DisplayAsMaterial { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? DisplayAsMaterial { get; set; }
 		/// <summary>
 		/// Gets or sets The content box highlight fill color (default: transparent).
 		/// </summary>
@@ -67,6 +68,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 		/// <summary>
 		/// Gets or sets Selectors to highlight relevant nodes.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string SelectorList { get; set; }
 	}
 }

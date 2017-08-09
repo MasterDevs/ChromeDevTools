@@ -14,10 +14,12 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 		/// <summary>
 		/// Gets or sets Buffer size in bytes to use when preserving network payloads (XHRs, etc).
 		/// </summary>
-		public long MaxTotalBufferSize { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? MaxTotalBufferSize { get; set; }
 		/// <summary>
 		/// Gets or sets Per-resource buffer size in bytes to use when preserving network payloads (XHRs, etc).
 		/// </summary>
-		public long MaxResourceBufferSize { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? MaxResourceBufferSize { get; set; }
 	}
 }

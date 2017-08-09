@@ -26,12 +26,12 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public bool? IncludeCommandLineAPI { get; set; }
 		/// <summary>
-		/// Gets or sets Specifies whether evaluation should stop on exceptions and mute console. Overrides setPauseOnException state.
+		/// Gets or sets In silent mode exceptions thrown during evaluation are not reported and do not pause execution. Overrides <code>setPauseOnException</code> state.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public bool? DoNotPauseOnExceptionsAndMuteConsole { get; set; }
+		public bool? Silent { get; set; }
 		/// <summary>
-		/// Gets or sets Specifies in which isolated context to perform evaluation. Each content script lives in an isolated context and this parameter may be used to specify one of those contexts. If the parameter is omitted or 0 the evaluation will be performed in the context of the inspected page.
+		/// Gets or sets Specifies in which execution context to perform evaluation. If the parameter is omitted the evaluation will be performed in the context of the inspected page.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public long? ContextId { get; set; }
@@ -45,5 +45,15 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public bool? GeneratePreview { get; set; }
+		/// <summary>
+		/// Gets or sets Whether execution should be treated as initiated by user in the UI.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? UserGesture { get; set; }
+		/// <summary>
+		/// Gets or sets Whether execution should wait for promise to be resolved. If the result of evaluation is not a Promise, it's considered to be an error.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? AwaitPromise { get; set; }
 	}
 }

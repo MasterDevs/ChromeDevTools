@@ -17,14 +17,19 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public CallFrame[] CallFrames { get; set; }
 		/// <summary>
-		/// Gets or sets VM-specific description of the changes applied.
+		/// Gets or sets Whether current call stack  was modified after applying the changes.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public object Result { get; set; }
+		public bool? StackChanged { get; set; }
 		/// <summary>
 		/// Gets or sets Async stack trace, if any.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public StackTrace AsyncStackTrace { get; set; }
+		public Runtime.StackTrace AsyncStackTrace { get; set; }
+		/// <summary>
+		/// Gets or sets Exception details if any.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public Runtime.ExceptionDetails ExceptionDetails { get; set; }
 	}
 }

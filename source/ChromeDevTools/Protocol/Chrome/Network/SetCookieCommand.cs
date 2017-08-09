@@ -26,26 +26,32 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 		/// <summary>
 		/// Gets or sets If omitted, the cookie becomes a host-only cookie.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string Domain { get; set; }
 		/// <summary>
 		/// Gets or sets Defaults to the path portion of the url parameter.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string Path { get; set; }
 		/// <summary>
 		/// Gets or sets Defaults ot false.
 		/// </summary>
-		public bool Secure { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? Secure { get; set; }
 		/// <summary>
 		/// Gets or sets Defaults to false.
 		/// </summary>
-		public bool HttpOnly { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? HttpOnly { get; set; }
 		/// <summary>
 		/// Gets or sets Defaults to browser default behavior.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string SameSite { get; set; }
 		/// <summary>
 		/// Gets or sets If omitted, the cookie becomes a session cookie.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public double ExpirationDate { get; set; }
 	}
 }

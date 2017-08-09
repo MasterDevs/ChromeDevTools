@@ -30,5 +30,10 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public bool? Canceled { get; set; }
+		/// <summary>
+		/// Gets or sets The reason why loading was blocked, if any.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public BlockedReason BlockedReason { get; set; }
 	}
 }

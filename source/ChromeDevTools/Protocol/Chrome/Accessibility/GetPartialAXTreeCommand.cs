@@ -18,6 +18,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Accessibility
 		/// <summary>
 		/// Gets or sets Whether to fetch this nodes ancestors, siblings and children. Defaults to true.
 		/// </summary>
-		public bool FetchRelatives { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? FetchRelatives { get; set; }
 	}
 }

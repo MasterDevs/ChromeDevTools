@@ -49,22 +49,27 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Emulation
 		/// <summary>
 		/// Gets or sets Overriding screen width value in pixels (minimum 0, maximum 10000000). Only used for |mobile==true|.
 		/// </summary>
-		public long ScreenWidth { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? ScreenWidth { get; set; }
 		/// <summary>
 		/// Gets or sets Overriding screen height value in pixels (minimum 0, maximum 10000000). Only used for |mobile==true|.
 		/// </summary>
-		public long ScreenHeight { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? ScreenHeight { get; set; }
 		/// <summary>
 		/// Gets or sets Overriding view X position on screen in pixels (minimum 0, maximum 10000000). Only used for |mobile==true|.
 		/// </summary>
-		public long PositionX { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? PositionX { get; set; }
 		/// <summary>
 		/// Gets or sets Overriding view Y position on screen in pixels (minimum 0, maximum 10000000). Only used for |mobile==true|.
 		/// </summary>
-		public long PositionY { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? PositionY { get; set; }
 		/// <summary>
 		/// Gets or sets Screen orientation override.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public ScreenOrientation ScreenOrientation { get; set; }
 	}
 }

@@ -17,7 +17,8 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 		/// <summary>
 		/// Gets or sets The id of the parent node if any.
 		/// </summary>
-		public long ParentId { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? ParentId { get; set; }
 		/// <summary>
 		/// Gets or sets The BackendNodeId for this node.
 		/// </summary>
@@ -141,6 +142,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 		/// <summary>
 		/// Gets or sets Whether the node is SVG.
 		/// </summary>
-		public bool IsSVG { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? IsSVG { get; set; }
 	}
 }

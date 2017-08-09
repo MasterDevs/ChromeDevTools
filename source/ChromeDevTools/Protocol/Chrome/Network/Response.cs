@@ -94,6 +94,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 		/// <summary>
 		/// Gets or sets Security details for the request.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public SecurityDetails SecurityDetails { get; set; }
 	}
 }

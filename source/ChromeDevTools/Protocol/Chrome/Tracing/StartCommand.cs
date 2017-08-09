@@ -29,10 +29,12 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Tracing
 		/// <summary>
 		/// Gets or sets Whether to report trace events as series of dataCollected events or to save trace to a stream (defaults to <code>ReportEvents</code>).
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string TransferMode { get; set; }
 		/// <summary>
 		/// Gets or sets 
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public TraceConfig TraceConfig { get; set; }
 	}
 }

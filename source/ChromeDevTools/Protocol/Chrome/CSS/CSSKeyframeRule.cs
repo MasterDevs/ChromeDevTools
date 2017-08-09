@@ -13,6 +13,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CSS
 		/// <summary>
 		/// Gets or sets The css style sheet identifier (absent for user agent stylesheet and user-specified stylesheet rules) this rule came from.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string StyleSheetId { get; set; }
 		/// <summary>
 		/// Gets or sets Parent stylesheet's origin.

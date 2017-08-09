@@ -18,10 +18,12 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 		/// <summary>
 		/// Gets or sets End of range to search possible breakpoint locations in (excluding). When not specifed, end of scripts is used as end of range.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public Location End { get; set; }
 		/// <summary>
 		/// Gets or sets Only consider locations which are in the same (non-nested) function as start.
 		/// </summary>
-		public bool RestrictToFunction { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? RestrictToFunction { get; set; }
 	}
 }

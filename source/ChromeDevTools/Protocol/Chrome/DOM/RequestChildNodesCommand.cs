@@ -20,5 +20,10 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public long? Depth { get; set; }
+		/// <summary>
+		/// Gets or sets Whether or not iframes and shadow roots should be traversed when returning the sub-tree (default is false).
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? Pierce { get; set; }
 	}
 }

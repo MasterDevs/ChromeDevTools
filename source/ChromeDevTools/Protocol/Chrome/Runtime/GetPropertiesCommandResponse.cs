@@ -23,6 +23,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 		/// <summary>
 		/// Gets or sets Exception details.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public ExceptionDetails ExceptionDetails { get; set; }
 	}
 }

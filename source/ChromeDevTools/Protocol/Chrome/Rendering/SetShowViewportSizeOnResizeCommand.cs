@@ -2,12 +2,12 @@ using MasterDevs.ChromeDevTools;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 
-namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
+namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Rendering
 {
 	/// <summary>
 	/// Paints viewport size upon main frame resize.
 	/// </summary>
-	[Command(ProtocolName.Page.SetShowViewportSizeOnResize)]
+	[Command(ProtocolName.Rendering.SetShowViewportSizeOnResize)]
 	[SupportedBy("Chrome")]
 	public class SetShowViewportSizeOnResizeCommand
 	{
@@ -15,10 +15,5 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 		/// Gets or sets Whether to paint size or not.
 		/// </summary>
 		public bool Show { get; set; }
-		/// <summary>
-		/// Gets or sets Whether to paint grid as well.
-		/// </summary>
-		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public bool? ShowGrid { get; set; }
 	}
 }

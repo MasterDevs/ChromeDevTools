@@ -18,30 +18,37 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 		/// <summary>
 		/// Gets or sets Specifies in which execution context to perform script run. If the parameter is omitted the evaluation will be performed in the context of the inspected page.
 		/// </summary>
-		public long ExecutionContextId { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? ExecutionContextId { get; set; }
 		/// <summary>
 		/// Gets or sets Symbolic group name that can be used to release multiple objects.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string ObjectGroup { get; set; }
 		/// <summary>
 		/// Gets or sets In silent mode exceptions thrown during evaluation are not reported and do not pause execution. Overrides <code>setPauseOnException</code> state.
 		/// </summary>
-		public bool Silent { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? Silent { get; set; }
 		/// <summary>
 		/// Gets or sets Determines whether Command Line API should be available during the evaluation.
 		/// </summary>
-		public bool IncludeCommandLineAPI { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? IncludeCommandLineAPI { get; set; }
 		/// <summary>
 		/// Gets or sets Whether the result is expected to be a JSON object which should be sent by value.
 		/// </summary>
-		public bool ReturnByValue { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? ReturnByValue { get; set; }
 		/// <summary>
 		/// Gets or sets Whether preview should be generated for the result.
 		/// </summary>
-		public bool GeneratePreview { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? GeneratePreview { get; set; }
 		/// <summary>
 		/// Gets or sets Whether execution should wait for promise to be resolved. If the result of evaluation is not a Promise, it's considered to be an error.
 		/// </summary>
-		public bool AwaitPromise { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? AwaitPromise { get; set; }
 	}
 }

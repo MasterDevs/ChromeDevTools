@@ -15,10 +15,5 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 		/// Gets or sets Location to continue to.
 		/// </summary>
 		public Location Location { get; set; }
-		/// <summary>
-		/// Gets or sets Allows breakpoints at the intemediate positions inside statements.
-		/// </summary>
-		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public bool? InterstatementLocation { get; set; }
 	}
 }

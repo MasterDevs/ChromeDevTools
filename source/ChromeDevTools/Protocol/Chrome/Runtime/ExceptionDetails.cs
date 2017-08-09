@@ -29,22 +29,27 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 		/// <summary>
 		/// Gets or sets Script ID of the exception location.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string ScriptId { get; set; }
 		/// <summary>
 		/// Gets or sets URL of the exception location, to be used when the script was not reported.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string Url { get; set; }
 		/// <summary>
 		/// Gets or sets JavaScript stack trace if available.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public StackTrace StackTrace { get; set; }
 		/// <summary>
 		/// Gets or sets Exception object if available.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public RemoteObject Exception { get; set; }
 		/// <summary>
 		/// Gets or sets Identifier of the context where exception happened.
 		/// </summary>
-		public long ExecutionContextId { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? ExecutionContextId { get; set; }
 	}
 }

@@ -14,6 +14,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CSS
 		/// <summary>
 		/// Gets or sets URL of source map associated with script (if any).
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string SourceMapURL { get; set; }
 	}
 }

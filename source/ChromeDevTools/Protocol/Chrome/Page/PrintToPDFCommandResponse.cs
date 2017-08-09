@@ -5,16 +5,15 @@ using System.Collections.Generic;
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 {
 	/// <summary>
-	/// Sets overlay message.
+	/// Print page as pdf.
 	/// </summary>
-	[Command(ProtocolName.Page.SetOverlayMessage)]
+	[CommandResponse(ProtocolName.Page.PrintToPDF)]
 	[SupportedBy("Chrome")]
-	public class SetOverlayMessageCommand
+	public class PrintToPDFCommandResponse
 	{
 		/// <summary>
-		/// Gets or sets Overlay message to display when paused in debugger.
+		/// Gets or sets Base64-encoded pdf data.
 		/// </summary>
-		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public string Message { get; set; }
+		public string Data { get; set; }
 	}
 }

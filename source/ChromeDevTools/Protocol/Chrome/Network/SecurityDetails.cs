@@ -21,6 +21,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 		/// <summary>
 		/// Gets or sets (EC)DH group used by the connection, if applicable.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string KeyExchangeGroup { get; set; }
 		/// <summary>
 		/// Gets or sets Cipher name.
@@ -29,6 +30,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 		/// <summary>
 		/// Gets or sets TLS MAC. Note that AEAD ciphers do not have separate MACs.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string Mac { get; set; }
 		/// <summary>
 		/// Gets or sets Certificate ID value.

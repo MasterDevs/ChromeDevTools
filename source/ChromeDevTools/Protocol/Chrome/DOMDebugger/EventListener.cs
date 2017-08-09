@@ -41,14 +41,17 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOMDebugger
 		/// <summary>
 		/// Gets or sets Event handler function value.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public Runtime.RemoteObject Handler { get; set; }
 		/// <summary>
 		/// Gets or sets Event original handler function value.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public Runtime.RemoteObject OriginalHandler { get; set; }
 		/// <summary>
 		/// Gets or sets Node the listener is added to (if any).
 		/// </summary>
-		public long BackendNodeId { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? BackendNodeId { get; set; }
 	}
 }

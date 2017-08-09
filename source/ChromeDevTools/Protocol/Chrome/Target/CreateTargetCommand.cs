@@ -18,14 +18,17 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Target
 		/// <summary>
 		/// Gets or sets Frame width in DIP (headless chrome only).
 		/// </summary>
-		public long Width { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? Width { get; set; }
 		/// <summary>
 		/// Gets or sets Frame height in DIP (headless chrome only).
 		/// </summary>
-		public long Height { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? Height { get; set; }
 		/// <summary>
 		/// Gets or sets The browser context to create the page in (headless chrome only).
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string BrowserContextId { get; set; }
 	}
 }

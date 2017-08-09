@@ -18,6 +18,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 		/// <summary>
 		/// Gets or sets Referrer URL.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string Referrer { get; set; }
 	}
 }

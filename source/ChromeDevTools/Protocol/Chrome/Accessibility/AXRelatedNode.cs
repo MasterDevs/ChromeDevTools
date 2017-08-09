@@ -22,6 +22,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Accessibility
 		/// <summary>
 		/// Gets or sets The text alternative of this node in the current context.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string Text { get; set; }
 	}
 }

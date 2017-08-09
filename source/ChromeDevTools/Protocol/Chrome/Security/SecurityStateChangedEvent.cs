@@ -1,4 +1,4 @@
-using MasterDevs.ChromeDevTools;
+using MasterDevs.ChromeDevTools;using Newtonsoft.Json;
 
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Security
 {
@@ -28,6 +28,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Security
 		/// <summary>
 		/// Gets or sets Overrides user-visible description of the state.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string Summary { get; set; }
 	}
 }

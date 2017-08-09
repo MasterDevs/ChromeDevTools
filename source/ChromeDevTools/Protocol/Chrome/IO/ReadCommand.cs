@@ -18,10 +18,12 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.IO
 		/// <summary>
 		/// Gets or sets Seek to the specified offset before reading (if not specificed, proceed with offset following the last read).
 		/// </summary>
-		public long Offset { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? Offset { get; set; }
 		/// <summary>
 		/// Gets or sets Maximum number of bytes to read (left upon the agent discretion if not specified).
 		/// </summary>
-		public long Size { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? Size { get; set; }
 	}
 }

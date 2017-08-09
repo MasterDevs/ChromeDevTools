@@ -18,10 +18,12 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOMDebugger
 		/// <summary>
 		/// Gets or sets The maximum depth at which Node children should be retrieved, defaults to 1. Use -1 for the entire subtree or provide an integer larger than 0.
 		/// </summary>
-		public long Depth { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? Depth { get; set; }
 		/// <summary>
 		/// Gets or sets Whether or not iframes and shadow roots should be traversed when returning the subtree (default is false). Reports listeners for all contexts if pierce is enabled.
 		/// </summary>
-		public bool Pierce { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? Pierce { get; set; }
 	}
 }

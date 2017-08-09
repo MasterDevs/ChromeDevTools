@@ -29,22 +29,27 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Log
 		/// <summary>
 		/// Gets or sets URL of the resource if known.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string Url { get; set; }
 		/// <summary>
 		/// Gets or sets Line number in the resource.
 		/// </summary>
-		public long LineNumber { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? LineNumber { get; set; }
 		/// <summary>
 		/// Gets or sets JavaScript stack trace.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public Runtime.StackTrace StackTrace { get; set; }
 		/// <summary>
 		/// Gets or sets Identifier of the network request associated with this entry.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string NetworkRequestId { get; set; }
 		/// <summary>
 		/// Gets or sets Identifier of the worker associated with this entry.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string WorkerId { get; set; }
 	}
 }

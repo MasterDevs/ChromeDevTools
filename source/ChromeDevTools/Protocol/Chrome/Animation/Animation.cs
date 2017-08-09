@@ -49,6 +49,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Animation
 		/// <summary>
 		/// Gets or sets A unique ID for <code>Animation</code> representing the sources that triggered this CSS animation/transition.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string CssId { get; set; }
 	}
 }

@@ -32,7 +32,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CSS
 		/// Gets or sets Identifier of the stylesheet containing this object (if exists).
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public string ParentStyleSheetId { get; set; }
+		public string StyleSheetId { get; set; }
 		/// <summary>
 		/// Gets or sets Array of media queries.
 		/// </summary>

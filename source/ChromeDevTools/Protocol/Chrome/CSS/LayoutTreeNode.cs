@@ -21,14 +21,17 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CSS
 		/// <summary>
 		/// Gets or sets Contents of the LayoutText if any
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string LayoutText { get; set; }
 		/// <summary>
 		/// Gets or sets The post layout inline text nodes, if any.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public InlineTextBox[] InlineTextNodes { get; set; }
 		/// <summary>
 		/// Gets or sets Index into the computedStyles array returned by getLayoutTreeAndStyles.
 		/// </summary>
-		public long StyleIndex { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? StyleIndex { get; set; }
 	}
 }

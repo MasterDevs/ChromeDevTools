@@ -31,5 +31,10 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public long? MaxHeight { get; set; }
+		/// <summary>
+		/// Gets or sets Send every n-th frame.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? EveryNthFrame { get; set; }
 	}
 }

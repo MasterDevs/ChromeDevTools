@@ -32,6 +32,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 		/// <summary>
 		/// Gets or sets Primitive value which can not be JSON-stringified does not have <code>value</code>, but gets this property.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public UnserializableValue UnserializableValue { get; set; }
 		/// <summary>
 		/// Gets or sets String representation of the object.

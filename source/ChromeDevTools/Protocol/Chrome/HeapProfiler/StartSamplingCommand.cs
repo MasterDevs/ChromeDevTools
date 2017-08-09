@@ -11,6 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.HeapProfiler
 		/// <summary>
 		/// Gets or sets Average sample interval in bytes. Poisson distribution is used for the intervals. The default value is 32768 bytes.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public double SamplingInterval { get; set; }
 	}
 }

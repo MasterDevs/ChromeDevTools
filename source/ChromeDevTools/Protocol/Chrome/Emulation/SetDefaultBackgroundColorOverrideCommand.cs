@@ -14,6 +14,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Emulation
 		/// <summary>
 		/// Gets or sets RGBA of the default background color. If not specified, any existing override will be cleared.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public DOM.RGBA Color { get; set; }
 	}
 }

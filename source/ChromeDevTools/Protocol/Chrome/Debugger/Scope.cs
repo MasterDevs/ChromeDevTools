@@ -21,14 +21,17 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 		/// <summary>
 		/// Gets or sets Name
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string Name { get; set; }
 		/// <summary>
 		/// Gets or sets Location in the source code where scope starts
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public Location StartLocation { get; set; }
 		/// <summary>
 		/// Gets or sets Location in the source code where scope ends
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public Location EndLocation { get; set; }
 	}
 }

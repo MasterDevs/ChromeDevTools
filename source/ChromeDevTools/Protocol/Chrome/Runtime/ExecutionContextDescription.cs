@@ -15,11 +15,6 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 		/// </summary>
 		public long Id { get; set; }
 		/// <summary>
-		/// Gets or sets True if this is a context where inpspected web page scripts run. False if it is a content script isolated context.
-		/// </summary>
-		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public bool? IsPageContext { get; set; }
-		/// <summary>
 		/// Gets or sets Execution context origin.
 		/// </summary>
 		public string Origin { get; set; }
@@ -28,8 +23,9 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 		/// </summary>
 		public string Name { get; set; }
 		/// <summary>
-		/// Gets or sets Id of the owning frame. May be an empty string if the context is not associated with a frame.
+		/// Gets or sets Embedder-specific auxiliary data.
 		/// </summary>
-		public string FrameId { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public object AuxData { get; set; }
 	}
 }

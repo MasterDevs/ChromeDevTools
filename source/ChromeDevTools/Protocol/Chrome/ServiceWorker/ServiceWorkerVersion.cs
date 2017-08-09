@@ -43,10 +43,12 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.ServiceWorker
 		/// <summary>
 		/// Gets or sets ControlledClients
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string[] ControlledClients { get; set; }
 		/// <summary>
 		/// Gets or sets TargetId
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string TargetId { get; set; }
 	}
 }

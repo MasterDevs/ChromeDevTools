@@ -21,6 +21,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CSS
 		/// <summary>
 		/// Gets or sets Whether the property has "!important" annotation (implies <code>false</code> if absent).
 		/// </summary>
-		public bool Important { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? Important { get; set; }
 	}
 }

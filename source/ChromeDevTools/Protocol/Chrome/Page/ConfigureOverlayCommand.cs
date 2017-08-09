@@ -14,10 +14,12 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 		/// <summary>
 		/// Gets or sets Whether overlay should be suspended and not consume any resources.
 		/// </summary>
-		public bool Suspended { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? Suspended { get; set; }
 		/// <summary>
 		/// Gets or sets Overlay message to display.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string Message { get; set; }
 	}
 }

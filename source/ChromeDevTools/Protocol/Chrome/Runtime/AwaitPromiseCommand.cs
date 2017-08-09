@@ -18,10 +18,12 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 		/// <summary>
 		/// Gets or sets Whether the result is expected to be a JSON object that should be sent by value.
 		/// </summary>
-		public bool ReturnByValue { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? ReturnByValue { get; set; }
 		/// <summary>
 		/// Gets or sets Whether preview should be generated for the result.
 		/// </summary>
-		public bool GeneratePreview { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? GeneratePreview { get; set; }
 	}
 }
