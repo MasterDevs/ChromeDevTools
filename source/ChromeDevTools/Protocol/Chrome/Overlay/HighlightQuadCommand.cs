@@ -14,7 +14,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Overlay
 		/// <summary>
 		/// Gets or sets Quad to highlight
 		/// </summary>
-		public DOM.double[] Quad { get; set; }
+		public double[] Quad { get; set; }
 		/// <summary>
 		/// Gets or sets The highlight fill color (default: transparent).
 		/// </summary>

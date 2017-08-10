@@ -1,6 +1,4 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
@@ -139,7 +137,10 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
             {
                 itemsType = items.TypeReference;
             }
-            domainDictionary[type.Name] = domain + "." + itemsType + "[]";
+            if (IsGeneratedNativeType(itemsType))
+                domainDictionary[type.Name] = itemsType + "[]";
+            else
+                domainDictionary[type.Name] = domain + "." + itemsType + "[]";
         }
 
         private static void WriteProtocolClasses(DirectoryInfo directory, string ns, string domainName, IEnumerable<Type> types, IEnumerable<Command> commands, IEnumerable<Event> events)
@@ -478,6 +479,20 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
                 case "boolean": return "bool";
                 case "any": return "object";
                 default: return propertyType;
+            }
+        }
+
+        private static bool IsGeneratedNativeType(string propertyType)
+        {
+            switch (propertyType)
+            {
+                case "double":
+                case "long":
+                case "bool":
+                case "object":
+                    return true;
+                default:
+                    return false;
             }
         }
 
