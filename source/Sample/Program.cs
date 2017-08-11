@@ -12,7 +12,7 @@ namespace MasterDevs.ChromeDevTools.Sample
             Task.Run(async () =>
             {
                 // STEP 1 - Run Chrome
-                var chromeProcessFactory = new ChromeProcessFactory();
+                var chromeProcessFactory = new ChromeProcessFactory(new StubbornDirectoryCleaner());
                 using (var chromeProcess = chromeProcessFactory.Create(9222))
                 {
                     // STEP 2 - Create a debugging session

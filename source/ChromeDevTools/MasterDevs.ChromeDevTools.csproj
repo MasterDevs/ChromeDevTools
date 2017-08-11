@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChromeProcessFactory.cs" />
+    <Compile Include="IDirectoryCleaner.cs" />
     <Compile Include="LocalChromeProcess.cs" />
     <Compile Include="ChromeSession.cs" />
     <Compile Include="ChromeSessionExtensions.cs" />
@@ -93,6 +94,7 @@
     <Compile Include="Protocol\**\*.cs" />
     <Compile Include="RemoteChromeProcess.cs" />
     <Compile Include="Serialization\MessageContractResolver.cs" />
+    <Compile Include="StubbornDirectoryCleaner.cs" />
     <Compile Include="SupportedByAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
