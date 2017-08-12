@@ -21,7 +21,7 @@ namespace MasterDevs.ChromeDevTools
 
             Process.Kill();
             Process.WaitForExit();
-            Process.Close();
+//            Process.Close();
             DisposeUserDirectory();
         }
     }
