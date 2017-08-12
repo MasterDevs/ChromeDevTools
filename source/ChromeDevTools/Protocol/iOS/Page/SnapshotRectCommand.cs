@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Page
 	/// </summary>
 	[Command(ProtocolName.Page.SnapshotRect)]
 	[SupportedBy("iOS")]
-	public class SnapshotRectCommand
+	public class SnapshotRectCommand: ICommand<SnapshotRectCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets X coordinate

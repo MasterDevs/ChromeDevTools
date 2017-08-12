@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Log
 	/// </summary>
 	[Command(ProtocolName.Log.Clear)]
 	[SupportedBy("Chrome")]
-	public class ClearCommand
+	public class ClearCommand: ICommand<ClearCommandResponse>
 	{
 	}
 }

@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 	/// </summary>
 	[Command(ProtocolName.Debugger.SetVariableValue)]
 	[SupportedBy("Chrome")]
-	public class SetVariableValueCommand
+	public class SetVariableValueCommand: ICommand<SetVariableValueCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets 0-based number of scope as was listed in scope chain. Only 'local', 'closure' and 'catch' scope types are allowed. Other scopes could be manipulated manually.

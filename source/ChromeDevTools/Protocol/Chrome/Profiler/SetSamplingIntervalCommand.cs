@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Profiler
 	/// </summary>
 	[Command(ProtocolName.Profiler.SetSamplingInterval)]
 	[SupportedBy("Chrome")]
-	public class SetSamplingIntervalCommand
+	public class SetSamplingIntervalCommand: ICommand<SetSamplingIntervalCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets New sampling interval in microseconds.

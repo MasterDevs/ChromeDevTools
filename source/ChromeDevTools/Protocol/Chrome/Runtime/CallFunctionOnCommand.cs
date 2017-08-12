@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 	/// </summary>
 	[Command(ProtocolName.Runtime.CallFunctionOn)]
 	[SupportedBy("Chrome")]
-	public class CallFunctionOnCommand
+	public class CallFunctionOnCommand: ICommand<CallFunctionOnCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Identifier of the object to call function on.

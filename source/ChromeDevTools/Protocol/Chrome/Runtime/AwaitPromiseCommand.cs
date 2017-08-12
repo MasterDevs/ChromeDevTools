@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 	/// </summary>
 	[Command(ProtocolName.Runtime.AwaitPromise)]
 	[SupportedBy("Chrome")]
-	public class AwaitPromiseCommand
+	public class AwaitPromiseCommand: ICommand<AwaitPromiseCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Identifier of the promise.

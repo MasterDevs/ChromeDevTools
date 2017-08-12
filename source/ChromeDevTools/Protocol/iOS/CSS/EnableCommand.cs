@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.CSS
 	/// </summary>
 	[Command(ProtocolName.CSS.Enable)]
 	[SupportedBy("iOS")]
-	public class EnableCommand
+	public class EnableCommand: ICommand<EnableCommandResponse>
 	{
 	}
 }

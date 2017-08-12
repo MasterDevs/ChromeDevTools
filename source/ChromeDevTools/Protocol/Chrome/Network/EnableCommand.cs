@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 	/// </summary>
 	[Command(ProtocolName.Network.Enable)]
 	[SupportedBy("Chrome")]
-	public class EnableCommand
+	public class EnableCommand: ICommand<EnableCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Buffer size in bytes to use when preserving network payloads (XHRs, etc).

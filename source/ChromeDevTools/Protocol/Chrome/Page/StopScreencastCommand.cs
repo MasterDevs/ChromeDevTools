@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 	/// </summary>
 	[Command(ProtocolName.Page.StopScreencast)]
 	[SupportedBy("Chrome")]
-	public class StopScreencastCommand
+	public class StopScreencastCommand: ICommand<StopScreencastCommandResponse>
 	{
 	}
 }

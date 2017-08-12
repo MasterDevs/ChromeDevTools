@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 	/// </summary>
 	[Command(ProtocolName.Runtime.Enable)]
 	[SupportedBy("Chrome")]
-	public class EnableCommand
+	public class EnableCommand: ICommand<EnableCommandResponse>
 	{
 	}
 }

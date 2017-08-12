@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Network
 	/// </summary>
 	[Command(ProtocolName.Network.Disable)]
 	[SupportedBy("iOS")]
-	public class DisableCommand
+	public class DisableCommand: ICommand<DisableCommandResponse>
 	{
 	}
 }

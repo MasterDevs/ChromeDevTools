@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 	/// </summary>
 	[Command(ProtocolName.Page.SetDocumentContent)]
 	[SupportedBy("Chrome")]
-	public class SetDocumentContentCommand
+	public class SetDocumentContentCommand: ICommand<SetDocumentContentCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Frame id to set HTML for.

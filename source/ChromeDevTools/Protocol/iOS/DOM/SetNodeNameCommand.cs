@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.SetNodeName)]
 	[SupportedBy("iOS")]
-	public class SetNodeNameCommand
+	public class SetNodeNameCommand: ICommand<SetNodeNameCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Id of the node to set name for.

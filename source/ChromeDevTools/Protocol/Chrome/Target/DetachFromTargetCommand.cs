@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Target
 	/// </summary>
 	[Command(ProtocolName.Target.DetachFromTarget)]
 	[SupportedBy("Chrome")]
-	public class DetachFromTargetCommand
+	public class DetachFromTargetCommand: ICommand<DetachFromTargetCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets TargetId

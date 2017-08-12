@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.DiscardSearchResults)]
 	[SupportedBy("iOS")]
-	public class DiscardSearchResultsCommand
+	public class DiscardSearchResultsCommand: ICommand<DiscardSearchResultsCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Unique search session identifier.

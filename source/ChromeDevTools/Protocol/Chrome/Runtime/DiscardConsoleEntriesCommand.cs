@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 	/// </summary>
 	[Command(ProtocolName.Runtime.DiscardConsoleEntries)]
 	[SupportedBy("Chrome")]
-	public class DiscardConsoleEntriesCommand
+	public class DiscardConsoleEntriesCommand: ICommand<DiscardConsoleEntriesCommandResponse>
 	{
 	}
 }

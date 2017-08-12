@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Overlay
 	/// </summary>
 	[Command(ProtocolName.Overlay.HideHighlight)]
 	[SupportedBy("Chrome")]
-	public class HideHighlightCommand
+	public class HideHighlightCommand: ICommand<HideHighlightCommandResponse>
 	{
 	}
 }

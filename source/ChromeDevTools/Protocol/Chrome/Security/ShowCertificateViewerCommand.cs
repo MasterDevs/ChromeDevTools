@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Security
 	/// </summary>
 	[Command(ProtocolName.Security.ShowCertificateViewer)]
 	[SupportedBy("Chrome")]
-	public class ShowCertificateViewerCommand
+	public class ShowCertificateViewerCommand: ICommand<ShowCertificateViewerCommandResponse>
 	{
 	}
 }

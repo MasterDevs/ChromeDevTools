@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Emulation
 	/// </summary>
 	[Command(ProtocolName.Emulation.ResetPageScaleFactor)]
 	[SupportedBy("Chrome")]
-	public class ResetPageScaleFactorCommand
+	public class ResetPageScaleFactorCommand: ICommand<ResetPageScaleFactorCommandResponse>
 	{
 	}
 }

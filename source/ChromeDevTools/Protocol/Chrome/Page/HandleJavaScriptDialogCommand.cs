@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 	/// </summary>
 	[Command(ProtocolName.Page.HandleJavaScriptDialog)]
 	[SupportedBy("Chrome")]
-	public class HandleJavaScriptDialogCommand
+	public class HandleJavaScriptDialogCommand: ICommand<HandleJavaScriptDialogCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Whether to accept or dismiss the dialog.

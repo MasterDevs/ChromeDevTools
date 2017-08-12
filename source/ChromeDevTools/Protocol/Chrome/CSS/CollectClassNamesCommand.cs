@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CSS
 	/// </summary>
 	[Command(ProtocolName.CSS.CollectClassNames)]
 	[SupportedBy("Chrome")]
-	public class CollectClassNamesCommand
+	public class CollectClassNamesCommand: ICommand<CollectClassNamesCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets StyleSheetId

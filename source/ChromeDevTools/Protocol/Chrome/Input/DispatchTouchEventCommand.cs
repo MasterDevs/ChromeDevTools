@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Input
 	/// </summary>
 	[Command(ProtocolName.Input.DispatchTouchEvent)]
 	[SupportedBy("Chrome")]
-	public class DispatchTouchEventCommand
+	public class DispatchTouchEventCommand: ICommand<DispatchTouchEventCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Type of the touch event.

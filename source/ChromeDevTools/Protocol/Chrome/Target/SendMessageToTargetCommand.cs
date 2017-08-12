@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Target
 	/// </summary>
 	[Command(ProtocolName.Target.SendMessageToTarget)]
 	[SupportedBy("Chrome")]
-	public class SendMessageToTargetCommand
+	public class SendMessageToTargetCommand: ICommand<SendMessageToTargetCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets TargetId

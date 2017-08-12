@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Inspector
 	/// </summary>
 	[Command(ProtocolName.Inspector.Disable)]
 	[SupportedBy("Chrome")]
-	public class DisableCommand
+	public class DisableCommand: ICommand<DisableCommandResponse>
 	{
 	}
 }

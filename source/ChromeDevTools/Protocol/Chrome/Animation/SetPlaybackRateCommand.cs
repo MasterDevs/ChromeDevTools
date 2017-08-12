@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Animation
 	/// </summary>
 	[Command(ProtocolName.Animation.SetPlaybackRate)]
 	[SupportedBy("Chrome")]
-	public class SetPlaybackRateCommand
+	public class SetPlaybackRateCommand: ICommand<SetPlaybackRateCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Playback rate for animations on page

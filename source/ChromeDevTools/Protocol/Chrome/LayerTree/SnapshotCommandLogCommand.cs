@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.LayerTree
 	/// </summary>
 	[Command(ProtocolName.LayerTree.SnapshotCommandLog)]
 	[SupportedBy("Chrome")]
-	public class SnapshotCommandLogCommand
+	public class SnapshotCommandLogCommand: ICommand<SnapshotCommandLogCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets The id of the layer snapshot.

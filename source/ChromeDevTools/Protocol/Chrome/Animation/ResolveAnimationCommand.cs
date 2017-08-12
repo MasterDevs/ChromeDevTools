@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Animation
 	/// </summary>
 	[Command(ProtocolName.Animation.ResolveAnimation)]
 	[SupportedBy("Chrome")]
-	public class ResolveAnimationCommand
+	public class ResolveAnimationCommand: ICommand<ResolveAnimationCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Animation id.

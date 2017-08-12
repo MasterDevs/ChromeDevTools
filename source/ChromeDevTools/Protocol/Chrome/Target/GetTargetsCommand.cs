@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Target
 	/// </summary>
 	[Command(ProtocolName.Target.GetTargets)]
 	[SupportedBy("Chrome")]
-	public class GetTargetsCommand
+	public class GetTargetsCommand: ICommand<GetTargetsCommandResponse>
 	{
 	}
 }

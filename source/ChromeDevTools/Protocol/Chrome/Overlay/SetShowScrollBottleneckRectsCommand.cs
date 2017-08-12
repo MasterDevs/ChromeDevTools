@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Overlay
 	/// </summary>
 	[Command(ProtocolName.Overlay.SetShowScrollBottleneckRects)]
 	[SupportedBy("Chrome")]
-	public class SetShowScrollBottleneckRectsCommand
+	public class SetShowScrollBottleneckRectsCommand: ICommand<SetShowScrollBottleneckRectsCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets True for showing scroll bottleneck rects

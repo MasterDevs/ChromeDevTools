@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 	/// </summary>
 	[Command(ProtocolName.Debugger.GetPossibleBreakpoints)]
 	[SupportedBy("Chrome")]
-	public class GetPossibleBreakpointsCommand
+	public class GetPossibleBreakpointsCommand: ICommand<GetPossibleBreakpointsCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Start of range to search possible breakpoint locations in.

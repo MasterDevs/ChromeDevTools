@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.GetDocument)]
 	[SupportedBy("Chrome")]
-	public class GetDocumentCommand
+	public class GetDocumentCommand: ICommand<GetDocumentCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets The maximum depth at which children should be retrieved, defaults to 1. Use -1 for the entire subtree or provide an integer larger than 0.

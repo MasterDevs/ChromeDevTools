@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 	/// </summary>
 	[Command(ProtocolName.Debugger.StepOut)]
 	[SupportedBy("Chrome")]
-	public class StepOutCommand
+	public class StepOutCommand: ICommand<StepOutCommandResponse>
 	{
 	}
 }

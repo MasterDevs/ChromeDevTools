@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DeviceOrientation
 	/// </summary>
 	[Command(ProtocolName.DeviceOrientation.ClearDeviceOrientationOverride)]
 	[SupportedBy("Chrome")]
-	public class ClearDeviceOrientationOverrideCommand
+	public class ClearDeviceOrientationOverrideCommand: ICommand<ClearDeviceOrientationOverrideCommandResponse>
 	{
 	}
 }

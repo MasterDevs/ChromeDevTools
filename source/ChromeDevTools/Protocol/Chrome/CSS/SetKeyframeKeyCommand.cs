@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CSS
 	/// </summary>
 	[Command(ProtocolName.CSS.SetKeyframeKey)]
 	[SupportedBy("Chrome")]
-	public class SetKeyframeKeyCommand
+	public class SetKeyframeKeyCommand: ICommand<SetKeyframeKeyCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets StyleSheetId

@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Emulation
 	/// </summary>
 	[Command(ProtocolName.Emulation.ForceViewport)]
 	[SupportedBy("Chrome")]
-	public class ForceViewportCommand
+	public class ForceViewportCommand: ICommand<ForceViewportCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets X coordinate of top-left corner of the area (CSS pixels).

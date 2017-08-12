@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.DOMDebugger
 	/// </summary>
 	[Command(ProtocolName.DOMDebugger.SetEventListenerBreakpoint)]
 	[SupportedBy("iOS")]
-	public class SetEventListenerBreakpointCommand
+	public class SetEventListenerBreakpointCommand: ICommand<SetEventListenerBreakpointCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets DOM Event name to stop on (any DOM event will do).

@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.RequestChildNodes)]
 	[SupportedBy("Chrome")]
-	public class RequestChildNodesCommand
+	public class RequestChildNodesCommand: ICommand<RequestChildNodesCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Id of the node to get children for.

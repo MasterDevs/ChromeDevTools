@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Runtime
 	/// </summary>
 	[Command(ProtocolName.Runtime.Evaluate)]
 	[SupportedBy("iOS")]
-	public class EvaluateCommand
+	public class EvaluateCommand: ICommand<EvaluateCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Expression to evaluate.

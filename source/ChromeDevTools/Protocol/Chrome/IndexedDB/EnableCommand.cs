@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.IndexedDB
 	/// </summary>
 	[Command(ProtocolName.IndexedDB.Enable)]
 	[SupportedBy("Chrome")]
-	public class EnableCommand
+	public class EnableCommand: ICommand<EnableCommandResponse>
 	{
 	}
 }

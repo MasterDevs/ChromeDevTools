@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.HeapProfiler
 	/// </summary>
 	[Command(ProtocolName.HeapProfiler.AddInspectedHeapObject)]
 	[SupportedBy("Chrome")]
-	public class AddInspectedHeapObjectCommand
+	public class AddInspectedHeapObjectCommand: ICommand<AddInspectedHeapObjectCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Heap snapshot object id to be accessible by means of $x command line API.

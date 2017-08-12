@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.HideHighlight)]
 	[SupportedBy("Chrome")]
-	public class HideHighlightCommand
+	public class HideHighlightCommand: ICommand<HideHighlightCommandResponse>
 	{
 	}
 }

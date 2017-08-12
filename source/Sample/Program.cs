@@ -58,27 +58,19 @@ namespace MasterDevs.ChromeDevTools.Sample
                         {
                             Console.WriteLine("LoadEventFiredEvent: " + loadEventFired.Timestamp);
 
-                            var documentNodeId =
-                                ((CommandResponse<GetDocumentCommandResponse>)
-                                    await chromeSession.SendAsync(new GetDocumentCommand())).Result.Root.NodeId;
+                            var documentNodeId = (await chromeSession.SendAsync(new GetDocumentCommand(), CancellationToken.None)).Result.Root.NodeId;
                             var bodyNodeId =
-                                ((CommandResponse<QuerySelectorCommandResponse>)
-                                    await chromeSession.SendAsync(new QuerySelectorCommand
-                                    {
-                                        NodeId = documentNodeId,
-                                        Selector = "body"
-                                    })).Result.NodeId;
-                            var height =
-                                ((CommandResponse<GetBoxModelCommandResponse>)
-                                    await chromeSession.SendAsync(new GetBoxModelCommand {NodeId = bodyNodeId})).Result
-                                    .Model.Height;
+                                (await chromeSession.SendAsync(new QuerySelectorCommand
+                                {
+                                    NodeId = documentNodeId,
+                                    Selector = "body"
+                                })).Result.NodeId;
+                            var height = (await chromeSession.SendAsync(new GetBoxModelCommand {NodeId = bodyNodeId})).Result.Model.Height;
 
                             await chromeSession.SendAsync(new SetVisibleSizeCommand {Width = ViewPortWidth, Height = height});
 
                             Console.WriteLine("Taking screenshot");
-                            var screenshot =
-                                (CommandResponse<CaptureScreenshotCommandResponse>)
-                                    await chromeSession.SendAsync(new CaptureScreenshotCommand {Format = "png"});
+                            var screenshot = await chromeSession.SendAsync(new CaptureScreenshotCommand {Format = "png"});
 
                             var data = Convert.FromBase64String(screenshot.Result.Data);
                             File.WriteAllBytes("output.png", data);

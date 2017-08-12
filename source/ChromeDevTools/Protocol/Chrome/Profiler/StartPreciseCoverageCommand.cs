@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Profiler
 	/// </summary>
 	[Command(ProtocolName.Profiler.StartPreciseCoverage)]
 	[SupportedBy("Chrome")]
-	public class StartPreciseCoverageCommand
+	public class StartPreciseCoverageCommand: ICommand<StartPreciseCoverageCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Collect accurate call counts beyond simple 'covered' or 'not covered'.

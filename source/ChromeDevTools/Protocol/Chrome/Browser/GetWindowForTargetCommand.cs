@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Browser
 	/// </summary>
 	[Command(ProtocolName.Browser.GetWindowForTarget)]
 	[SupportedBy("Chrome")]
-	public class GetWindowForTargetCommand
+	public class GetWindowForTargetCommand: ICommand<GetWindowForTargetCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Devtools agent host id.

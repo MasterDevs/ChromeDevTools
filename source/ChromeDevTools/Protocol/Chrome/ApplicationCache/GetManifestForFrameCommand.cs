@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.ApplicationCache
 	/// </summary>
 	[Command(ProtocolName.ApplicationCache.GetManifestForFrame)]
 	[SupportedBy("Chrome")]
-	public class GetManifestForFrameCommand
+	public class GetManifestForFrameCommand: ICommand<GetManifestForFrameCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Identifier of the frame containing document whose manifest is retrieved.

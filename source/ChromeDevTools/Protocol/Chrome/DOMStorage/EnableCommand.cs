@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOMStorage
 	/// </summary>
 	[Command(ProtocolName.DOMStorage.Enable)]
 	[SupportedBy("Chrome")]
-	public class EnableCommand
+	public class EnableCommand: ICommand<EnableCommandResponse>
 	{
 	}
 }

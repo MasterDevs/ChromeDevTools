@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 	/// </summary>
 	[Command(ProtocolName.Runtime.Evaluate)]
 	[SupportedBy("Chrome")]
-	public class EvaluateCommand
+	public class EvaluateCommand: ICommand<EvaluateCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Expression to evaluate.

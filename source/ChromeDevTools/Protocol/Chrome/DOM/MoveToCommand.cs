@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.MoveTo)]
 	[SupportedBy("Chrome")]
-	public class MoveToCommand
+	public class MoveToCommand: ICommand<MoveToCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Id of the node to move.

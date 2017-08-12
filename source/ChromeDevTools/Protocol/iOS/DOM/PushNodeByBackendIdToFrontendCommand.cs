@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.PushNodeByBackendIdToFrontend)]
 	[SupportedBy("iOS")]
-	public class PushNodeByBackendIdToFrontendCommand
+	public class PushNodeByBackendIdToFrontendCommand: ICommand<PushNodeByBackendIdToFrontendCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets The backend node id of the node.

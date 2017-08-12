@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 	/// </summary>
 	[Command(ProtocolName.Page.Disable)]
 	[SupportedBy("Chrome")]
-	public class DisableCommand
+	public class DisableCommand: ICommand<DisableCommandResponse>
 	{
 	}
 }

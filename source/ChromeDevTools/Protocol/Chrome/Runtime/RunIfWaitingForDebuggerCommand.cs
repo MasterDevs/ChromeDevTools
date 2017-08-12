@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 	/// </summary>
 	[Command(ProtocolName.Runtime.RunIfWaitingForDebugger)]
 	[SupportedBy("Chrome")]
-	public class RunIfWaitingForDebuggerCommand
+	public class RunIfWaitingForDebuggerCommand: ICommand<RunIfWaitingForDebuggerCommandResponse>
 	{
 	}
 }

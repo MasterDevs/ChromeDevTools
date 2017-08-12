@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Overlay
 	/// </summary>
 	[Command(ProtocolName.Overlay.HighlightFrame)]
 	[SupportedBy("Chrome")]
-	public class HighlightFrameCommand
+	public class HighlightFrameCommand: ICommand<HighlightFrameCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Identifier of the frame to highlight.

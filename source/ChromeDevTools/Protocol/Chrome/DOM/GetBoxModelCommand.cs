@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.GetBoxModel)]
 	[SupportedBy("Chrome")]
-	public class GetBoxModelCommand
+	public class GetBoxModelCommand: ICommand<GetBoxModelCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Id of the node to get box model for.

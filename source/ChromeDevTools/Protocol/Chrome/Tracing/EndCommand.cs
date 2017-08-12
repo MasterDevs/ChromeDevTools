@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Tracing
 	/// </summary>
 	[Command(ProtocolName.Tracing.End)]
 	[SupportedBy("Chrome")]
-	public class EndCommand
+	public class EndCommand: ICommand<EndCommandResponse>
 	{
 	}
 }

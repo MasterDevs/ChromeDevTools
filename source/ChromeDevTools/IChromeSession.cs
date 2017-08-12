@@ -4,9 +4,13 @@ using System.Threading.Tasks;
 
 namespace MasterDevs.ChromeDevTools
 {
+    public interface ICommand<T>
+    {
+
+    }
     public interface IChromeSession
     {
-        Task<ICommandResponse> SendAsync<T>(T parameter, CancellationToken cancellationToken);
+        Task<CommandResponse<TResponse>> SendAsync<TResponse>(ICommand<TResponse> parameter, CancellationToken cancellationToken);
 
         Task<ICommandResponse> SendAsync<T>(CancellationToken cancellationToken);
 

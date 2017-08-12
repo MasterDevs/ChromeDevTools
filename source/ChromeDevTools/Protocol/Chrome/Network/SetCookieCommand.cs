@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 	/// </summary>
 	[Command(ProtocolName.Network.SetCookie)]
 	[SupportedBy("Chrome")]
-	public class SetCookieCommand
+	public class SetCookieCommand: ICommand<SetCookieCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets The request-URI to associate with the setting of the cookie. This value can affect the default domain and path values of the created cookie.

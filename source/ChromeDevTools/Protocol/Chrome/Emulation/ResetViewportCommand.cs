@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Emulation
 	/// </summary>
 	[Command(ProtocolName.Emulation.ResetViewport)]
 	[SupportedBy("Chrome")]
-	public class ResetViewportCommand
+	public class ResetViewportCommand: ICommand<ResetViewportCommandResponse>
 	{
 	}
 }

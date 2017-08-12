@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Page
 	/// </summary>
 	[Command(ProtocolName.Page.SnapshotNode)]
 	[SupportedBy("iOS")]
-	public class SnapshotNodeCommand
+	public class SnapshotNodeCommand: ICommand<SnapshotNodeCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Id of the node to snapshot.

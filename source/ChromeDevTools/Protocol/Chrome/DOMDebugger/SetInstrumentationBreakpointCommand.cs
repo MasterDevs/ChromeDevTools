@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOMDebugger
 	/// </summary>
 	[Command(ProtocolName.DOMDebugger.SetInstrumentationBreakpoint)]
 	[SupportedBy("Chrome")]
-	public class SetInstrumentationBreakpointCommand
+	public class SetInstrumentationBreakpointCommand: ICommand<SetInstrumentationBreakpointCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Instrumentation name to stop on.

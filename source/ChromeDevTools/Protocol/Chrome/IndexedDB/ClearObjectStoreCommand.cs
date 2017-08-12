@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.IndexedDB
 	/// </summary>
 	[Command(ProtocolName.IndexedDB.ClearObjectStore)]
 	[SupportedBy("Chrome")]
-	public class ClearObjectStoreCommand
+	public class ClearObjectStoreCommand: ICommand<ClearObjectStoreCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Security origin.

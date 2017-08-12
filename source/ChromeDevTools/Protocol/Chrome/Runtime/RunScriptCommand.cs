@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 	/// </summary>
 	[Command(ProtocolName.Runtime.RunScript)]
 	[SupportedBy("Chrome")]
-	public class RunScriptCommand
+	public class RunScriptCommand: ICommand<RunScriptCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Id of the script to run.

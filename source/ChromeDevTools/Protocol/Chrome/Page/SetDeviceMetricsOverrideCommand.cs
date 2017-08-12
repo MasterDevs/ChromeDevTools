@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 	/// </summary>
 	[Command(ProtocolName.Page.SetDeviceMetricsOverride)]
 	[SupportedBy("Chrome")]
-	public class SetDeviceMetricsOverrideCommand
+	public class SetDeviceMetricsOverrideCommand: ICommand<SetDeviceMetricsOverrideCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Overriding width value in pixels (minimum 0, maximum 10000000). 0 disables the override.

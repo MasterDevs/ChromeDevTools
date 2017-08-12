@@ -6,7 +6,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Overlay
 {
 	[Command(ProtocolName.Overlay.SetSuspended)]
 	[SupportedBy("Chrome")]
-	public class SetSuspendedCommand
+	public class SetSuspendedCommand: ICommand<SetSuspendedCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Whether overlay should be suspended and not consume any resources until resumed.

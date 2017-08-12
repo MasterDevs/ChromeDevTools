@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Debugger
 	/// </summary>
 	[Command(ProtocolName.Debugger.RemoveBreakpoint)]
 	[SupportedBy("iOS")]
-	public class RemoveBreakpointCommand
+	public class RemoveBreakpointCommand: ICommand<RemoveBreakpointCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets BreakpointId

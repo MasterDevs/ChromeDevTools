@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 	/// </summary>
 	[Command(ProtocolName.Debugger.ScheduleStepIntoAsync)]
 	[SupportedBy("Chrome")]
-	public class ScheduleStepIntoAsyncCommand
+	public class ScheduleStepIntoAsyncCommand: ICommand<ScheduleStepIntoAsyncCommandResponse>
 	{
 	}
 }

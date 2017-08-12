@@ -298,6 +298,7 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
         private static void WriteCommand(DirectoryInfo domainDirectoryInfo, string ns, string commandName, string description, IEnumerable<Property> parameters, IEnumerable<string> supportedBy)
         {
             var className = ToCamelCase(commandName) + CommandSubclass;
+            var responseClassName = ToCamelCase(commandName) + CommandResponseSubclass;
             var sb = new StringBuilder();
             sb.AppendFormat("using MasterDevs.ChromeDevTools;");
             sb.AppendLine();
@@ -317,7 +318,7 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
             sb.AppendFormat("\t[{0}({1}.{2}.{3})]", CommandAttribute, ProtocolNameClass, domainDirectoryInfo.Name, ToCamelCase(commandName));
             sb.AppendLine();
             WriteSupportedBy(sb, supportedBy);
-            sb.AppendFormat("\tpublic class {0}", className);
+            sb.AppendFormat("\tpublic class {0}: ICommand<{1}>", className, responseClassName);
             sb.AppendLine();
             sb.AppendLine("\t{");
             foreach (var parameterProperty in parameters)

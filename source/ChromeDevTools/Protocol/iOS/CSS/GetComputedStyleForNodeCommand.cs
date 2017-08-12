@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.CSS
 	/// </summary>
 	[Command(ProtocolName.CSS.GetComputedStyleForNode)]
 	[SupportedBy("iOS")]
-	public class GetComputedStyleForNodeCommand
+	public class GetComputedStyleForNodeCommand: ICommand<GetComputedStyleForNodeCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets NodeId

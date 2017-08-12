@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.RemoveNode)]
 	[SupportedBy("iOS")]
-	public class RemoveNodeCommand
+	public class RemoveNodeCommand: ICommand<RemoveNodeCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Id of the node to remove.

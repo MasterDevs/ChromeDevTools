@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.DOMStorage
 	/// </summary>
 	[Command(ProtocolName.DOMStorage.Disable)]
 	[SupportedBy("iOS")]
-	public class DisableCommand
+	public class DisableCommand: ICommand<DisableCommandResponse>
 	{
 	}
 }

@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Animation
 	/// </summary>
 	[Command(ProtocolName.Animation.Disable)]
 	[SupportedBy("Chrome")]
-	public class DisableCommand
+	public class DisableCommand: ICommand<DisableCommandResponse>
 	{
 	}
 }

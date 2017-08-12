@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CSS
 	/// </summary>
 	[Command(ProtocolName.CSS.GetLayoutTreeAndStyles)]
 	[SupportedBy("Chrome")]
-	public class GetLayoutTreeAndStylesCommand
+	public class GetLayoutTreeAndStylesCommand: ICommand<GetLayoutTreeAndStylesCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Whitelist of computed styles to return.

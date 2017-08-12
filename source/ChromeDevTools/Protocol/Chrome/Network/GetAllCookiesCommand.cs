@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 	/// </summary>
 	[Command(ProtocolName.Network.GetAllCookies)]
 	[SupportedBy("Chrome")]
-	public class GetAllCookiesCommand
+	public class GetAllCookiesCommand: ICommand<GetAllCookiesCommandResponse>
 	{
 	}
 }

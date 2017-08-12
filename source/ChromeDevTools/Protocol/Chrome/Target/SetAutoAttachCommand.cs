@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Target
 	/// </summary>
 	[Command(ProtocolName.Target.SetAutoAttach)]
 	[SupportedBy("Chrome")]
-	public class SetAutoAttachCommand
+	public class SetAutoAttachCommand: ICommand<SetAutoAttachCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Whether to auto-attach to related targets.

@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.MarkUndoableState)]
 	[SupportedBy("Chrome")]
-	public class MarkUndoableStateCommand
+	public class MarkUndoableStateCommand: ICommand<MarkUndoableStateCommandResponse>
 	{
 	}
 }

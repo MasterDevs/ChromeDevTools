@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Memory
 	/// </summary>
 	[Command(ProtocolName.Memory.SimulatePressureNotification)]
 	[SupportedBy("Chrome")]
-	public class SimulatePressureNotificationCommand
+	public class SimulatePressureNotificationCommand: ICommand<SimulatePressureNotificationCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Memory pressure level of the notification.

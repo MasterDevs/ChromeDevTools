@@ -81,10 +81,23 @@ namespace MasterDevs.ChromeDevTools
             return SendCommand(command, cancellationToken);
         }
 
-        public Task<ICommandResponse> SendAsync<T>(T parameter, CancellationToken cancellationToken)
+        public Task<CommandResponse<T>> SendAsync<T>(ICommand<T> parameter, CancellationToken cancellationToken)
         {
             var command = _commandFactory.Create(parameter);
-            return SendCommand(command, cancellationToken);
+            var task = SendCommand(command, cancellationToken);
+            return CastTaskResult<ICommandResponse, CommandResponse<T>>(task);
+        }
+
+        private Task<TDerived> CastTaskResult<TBase, TDerived>(Task<TBase> task) where TDerived: TBase
+        {
+            var tcs = new TaskCompletionSource<TDerived>();
+            task.ContinueWith(t => tcs.SetResult((TDerived)t.Result),
+                TaskContinuationOptions.OnlyOnRanToCompletion);
+            task.ContinueWith(t => tcs.SetException(t.Exception.InnerExceptions),
+                TaskContinuationOptions.OnlyOnFaulted);
+            task.ContinueWith(t => tcs.SetCanceled(),
+                TaskContinuationOptions.OnlyOnCanceled);
+            return tcs.Task;
         }
 
         public void Subscribe<T>(Action<T> handler) where T : class

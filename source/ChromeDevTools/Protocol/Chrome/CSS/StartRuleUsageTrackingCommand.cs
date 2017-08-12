@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CSS
 	/// </summary>
 	[Command(ProtocolName.CSS.StartRuleUsageTracking)]
 	[SupportedBy("Chrome")]
-	public class StartRuleUsageTrackingCommand
+	public class StartRuleUsageTrackingCommand: ICommand<StartRuleUsageTrackingCommandResponse>
 	{
 	}
 }

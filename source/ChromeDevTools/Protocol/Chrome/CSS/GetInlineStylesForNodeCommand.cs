@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CSS
 	/// </summary>
 	[Command(ProtocolName.CSS.GetInlineStylesForNode)]
 	[SupportedBy("Chrome")]
-	public class GetInlineStylesForNodeCommand
+	public class GetInlineStylesForNodeCommand: ICommand<GetInlineStylesForNodeCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets NodeId

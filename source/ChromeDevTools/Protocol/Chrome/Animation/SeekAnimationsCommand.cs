@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Animation
 	/// </summary>
 	[Command(ProtocolName.Animation.SeekAnimations)]
 	[SupportedBy("Chrome")]
-	public class SeekAnimationsCommand
+	public class SeekAnimationsCommand: ICommand<SeekAnimationsCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets List of animation ids to seek.

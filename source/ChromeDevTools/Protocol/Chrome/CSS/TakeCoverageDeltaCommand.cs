@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CSS
 	/// </summary>
 	[Command(ProtocolName.CSS.TakeCoverageDelta)]
 	[SupportedBy("Chrome")]
-	public class TakeCoverageDeltaCommand
+	public class TakeCoverageDeltaCommand: ICommand<TakeCoverageDeltaCommandResponse>
 	{
 	}
 }

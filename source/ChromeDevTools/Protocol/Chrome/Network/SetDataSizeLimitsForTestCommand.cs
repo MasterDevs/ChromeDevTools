@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 	/// </summary>
 	[Command(ProtocolName.Network.SetDataSizeLimitsForTest)]
 	[SupportedBy("Chrome")]
-	public class SetDataSizeLimitsForTestCommand
+	public class SetDataSizeLimitsForTestCommand: ICommand<SetDataSizeLimitsForTestCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Maximum total buffer size.

@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Inspector
 	/// </summary>
 	[Command(ProtocolName.Inspector.Enable)]
 	[SupportedBy("iOS")]
-	public class EnableCommand
+	public class EnableCommand: ICommand<EnableCommandResponse>
 	{
 	}
 }

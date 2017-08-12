@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CacheStorage
 	/// </summary>
 	[Command(ProtocolName.CacheStorage.DeleteEntry)]
 	[SupportedBy("Chrome")]
-	public class DeleteEntryCommand
+	public class DeleteEntryCommand: ICommand<DeleteEntryCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Id of cache where the entry will be deleted.

@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CSS
 	/// </summary>
 	[Command(ProtocolName.CSS.GetMatchedStylesForNode)]
 	[SupportedBy("Chrome")]
-	public class GetMatchedStylesForNodeCommand
+	public class GetMatchedStylesForNodeCommand: ICommand<GetMatchedStylesForNodeCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets NodeId

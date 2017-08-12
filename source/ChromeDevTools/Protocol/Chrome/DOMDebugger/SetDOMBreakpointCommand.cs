@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOMDebugger
 	/// </summary>
 	[Command(ProtocolName.DOMDebugger.SetDOMBreakpoint)]
 	[SupportedBy("Chrome")]
-	public class SetDOMBreakpointCommand
+	public class SetDOMBreakpointCommand: ICommand<SetDOMBreakpointCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Identifier of the node to set breakpoint on.

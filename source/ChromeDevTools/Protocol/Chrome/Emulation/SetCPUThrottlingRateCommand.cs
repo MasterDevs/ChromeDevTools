@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Emulation
 	/// </summary>
 	[Command(ProtocolName.Emulation.SetCPUThrottlingRate)]
 	[SupportedBy("Chrome")]
-	public class SetCPUThrottlingRateCommand
+	public class SetCPUThrottlingRateCommand: ICommand<SetCPUThrottlingRateCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Throttling rate as a slowdown factor (1 is no throttle, 2 is 2x slowdown, etc).

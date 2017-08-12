@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CSS
 	/// </summary>
 	[Command(ProtocolName.CSS.GetPlatformFontsForNode)]
 	[SupportedBy("Chrome")]
-	public class GetPlatformFontsForNodeCommand
+	public class GetPlatformFontsForNodeCommand: ICommand<GetPlatformFontsForNodeCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets NodeId

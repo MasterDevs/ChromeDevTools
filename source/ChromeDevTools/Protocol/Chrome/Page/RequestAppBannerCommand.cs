@@ -6,7 +6,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 {
 	[Command(ProtocolName.Page.RequestAppBanner)]
 	[SupportedBy("Chrome")]
-	public class RequestAppBannerCommand
+	public class RequestAppBannerCommand: ICommand<RequestAppBannerCommandResponse>
 	{
 	}
 }

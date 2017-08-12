@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.GetDocument)]
 	[SupportedBy("iOS")]
-	public class GetDocumentCommand
+	public class GetDocumentCommand: ICommand<GetDocumentCommandResponse>
 	{
 	}
 }

@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.RequestNode)]
 	[SupportedBy("Chrome")]
-	public class RequestNodeCommand
+	public class RequestNodeCommand: ICommand<RequestNodeCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets JavaScript object id to convert into node.

@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 	/// </summary>
 	[Command(ProtocolName.Page.ProcessNavigation)]
 	[SupportedBy("Chrome")]
-	public class ProcessNavigationCommand
+	public class ProcessNavigationCommand: ICommand<ProcessNavigationCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Response

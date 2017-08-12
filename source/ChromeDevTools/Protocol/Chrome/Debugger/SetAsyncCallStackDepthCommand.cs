@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 	/// </summary>
 	[Command(ProtocolName.Debugger.SetAsyncCallStackDepth)]
 	[SupportedBy("Chrome")]
-	public class SetAsyncCallStackDepthCommand
+	public class SetAsyncCallStackDepthCommand: ICommand<SetAsyncCallStackDepthCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Maximum depth of async call stacks. Setting to <code>0</code> will effectively disable collecting async call stacks (default).

@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 	/// </summary>
 	[Command(ProtocolName.Page.GetResourceContent)]
 	[SupportedBy("Chrome")]
-	public class GetResourceContentCommand
+	public class GetResourceContentCommand: ICommand<GetResourceContentCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Frame id to get resource for.

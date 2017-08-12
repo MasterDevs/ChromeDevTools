@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Security
 	/// </summary>
 	[Command(ProtocolName.Security.Disable)]
 	[SupportedBy("Chrome")]
-	public class DisableCommand
+	public class DisableCommand: ICommand<DisableCommandResponse>
 	{
 	}
 }

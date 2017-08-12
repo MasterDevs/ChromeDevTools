@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 	/// </summary>
 	[Command(ProtocolName.Page.SetControlNavigations)]
 	[SupportedBy("Chrome")]
-	public class SetControlNavigationsCommand
+	public class SetControlNavigationsCommand: ICommand<SetControlNavigationsCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Enabled
