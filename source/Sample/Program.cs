@@ -58,7 +58,7 @@ namespace MasterDevs.ChromeDevTools.Sample
                         {
                             Console.WriteLine("LoadEventFiredEvent: " + loadEventFired.Timestamp);
 
-                            var documentNodeId = (await chromeSession.SendAsync(new GetDocumentCommand(), CancellationToken.None)).Result.Root.NodeId;
+                            var documentNodeId = (await chromeSession.SendAsync(new GetDocumentCommand())).Result.Root.NodeId;
                             var bodyNodeId =
                                 (await chromeSession.SendAsync(new QuerySelectorCommand
                                 {
