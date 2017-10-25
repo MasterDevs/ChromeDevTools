@@ -75,7 +75,7 @@ build:
   verbosity: minimal
 artifacts:
 - path: '*.nupkg'
-- path: 'source\ChromeDevTools\bin\Debug\*.nupkg'
+- path: 'source\ChromeDevTools\bin\Release\*.nupkg'
 deploy:
 - provider: GitHub
   auth_token:
