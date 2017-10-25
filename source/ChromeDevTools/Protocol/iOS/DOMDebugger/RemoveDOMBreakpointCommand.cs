@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.DOMDebugger
 	/// </summary>
 	[Command(ProtocolName.DOMDebugger.RemoveDOMBreakpoint)]
 	[SupportedBy("iOS")]
-	public class RemoveDOMBreakpointCommand
+	public class RemoveDOMBreakpointCommand: ICommand<RemoveDOMBreakpointCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Identifier of the node to remove breakpoint from.

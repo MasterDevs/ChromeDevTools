@@ -12,8 +12,8 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CSS
 	public class SetRuleSelectorCommandResponse
 	{
 		/// <summary>
-		/// Gets or sets The resulting rule after the selector modification.
+		/// Gets or sets The resulting selector list after modification.
 		/// </summary>
-		public CSSRule Rule { get; set; }
+		public SelectorList SelectorList { get; set; }
 	}
 }

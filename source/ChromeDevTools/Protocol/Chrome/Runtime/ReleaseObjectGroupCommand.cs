@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 	/// </summary>
 	[Command(ProtocolName.Runtime.ReleaseObjectGroup)]
 	[SupportedBy("Chrome")]
-	public class ReleaseObjectGroupCommand
+	public class ReleaseObjectGroupCommand: ICommand<ReleaseObjectGroupCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Symbolic object group name.

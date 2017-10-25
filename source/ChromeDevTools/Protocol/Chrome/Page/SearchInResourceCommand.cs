@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 	/// </summary>
 	[Command(ProtocolName.Page.SearchInResource)]
 	[SupportedBy("Chrome")]
-	public class SearchInResourceCommand
+	public class SearchInResourceCommand: ICommand<SearchInResourceCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Frame id for resource to search in.

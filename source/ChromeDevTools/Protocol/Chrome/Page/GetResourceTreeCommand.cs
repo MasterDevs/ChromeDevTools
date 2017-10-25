@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 	/// </summary>
 	[Command(ProtocolName.Page.GetResourceTree)]
 	[SupportedBy("Chrome")]
-	public class GetResourceTreeCommand
+	public class GetResourceTreeCommand: ICommand<GetResourceTreeCommandResponse>
 	{
 	}
 }

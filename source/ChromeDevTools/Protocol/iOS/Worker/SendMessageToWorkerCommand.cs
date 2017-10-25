@@ -6,7 +6,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Worker
 {
 	[Command(ProtocolName.Worker.SendMessageToWorker)]
 	[SupportedBy("iOS")]
-	public class SendMessageToWorkerCommand
+	public class SendMessageToWorkerCommand: ICommand<SendMessageToWorkerCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets WorkerId

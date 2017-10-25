@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.GetOuterHTML)]
 	[SupportedBy("Chrome")]
-	public class GetOuterHTMLCommand
+	public class GetOuterHTMLCommand: ICommand<GetOuterHTMLCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Id of the node to get markup for.

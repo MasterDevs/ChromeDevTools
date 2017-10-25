@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.CSS
 	/// </summary>
 	[Command(ProtocolName.CSS.AddRule)]
 	[SupportedBy("iOS")]
-	public class AddRuleCommand
+	public class AddRuleCommand: ICommand<AddRuleCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets StyleSheetId

@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 	public class ExecutionContextCreatedEvent
 	{
 		/// <summary>
-		/// Gets or sets A newly created execution contex.
+		/// Gets or sets A newly created execution context.
 		/// </summary>
 		public ExecutionContextDescription Context { get; set; }
 	}

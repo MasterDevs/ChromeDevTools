@@ -60,10 +60,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChromeProcessFactory.cs" />
-    <Compile Include="ChromeProcess.cs" />
+    <Compile Include="IDirectoryCleaner.cs" />
+    <Compile Include="LocalChromeProcess.cs" />
     <Compile Include="ChromeSession.cs" />
     <Compile Include="ChromeSessionExtensions.cs" />
     <Compile Include="ChromeSessionFactory.cs" />
+    <Compile Include="ChromeSessionInfo.cs" />
     <Compile Include="Command.cs" />
     <Compile Include="CommandAttribute.cs" />
     <Compile Include="Extensions\JTokenExtensions.cs" />
@@ -90,7 +92,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProtocolNameAttribute.cs" />
     <Compile Include="Protocol\**\*.cs" />
+    <Compile Include="RemoteChromeProcess.cs" />
     <Compile Include="Serialization\MessageContractResolver.cs" />
+    <Compile Include="StubbornDirectoryCleaner.cs" />
     <Compile Include="SupportedByAttribute.cs" />
   </ItemGroup>
   <ItemGroup>

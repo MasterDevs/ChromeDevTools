@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.SetAttributeValue)]
 	[SupportedBy("iOS")]
-	public class SetAttributeValueCommand
+	public class SetAttributeValueCommand: ICommand<SetAttributeValueCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Id of the element to set attribute for.

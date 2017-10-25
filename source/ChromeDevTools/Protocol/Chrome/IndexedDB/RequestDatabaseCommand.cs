@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.IndexedDB
 	/// </summary>
 	[Command(ProtocolName.IndexedDB.RequestDatabase)]
 	[SupportedBy("Chrome")]
-	public class RequestDatabaseCommand
+	public class RequestDatabaseCommand: ICommand<RequestDatabaseCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Security origin.

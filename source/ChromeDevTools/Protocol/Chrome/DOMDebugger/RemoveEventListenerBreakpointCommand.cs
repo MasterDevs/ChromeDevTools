@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOMDebugger
 	/// </summary>
 	[Command(ProtocolName.DOMDebugger.RemoveEventListenerBreakpoint)]
 	[SupportedBy("Chrome")]
-	public class RemoveEventListenerBreakpointCommand
+	public class RemoveEventListenerBreakpointCommand: ICommand<RemoveEventListenerBreakpointCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Event name.

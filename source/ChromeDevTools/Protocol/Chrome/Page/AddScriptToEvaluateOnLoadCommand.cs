@@ -6,7 +6,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 {
 	[Command(ProtocolName.Page.AddScriptToEvaluateOnLoad)]
 	[SupportedBy("Chrome")]
-	public class AddScriptToEvaluateOnLoadCommand
+	public class AddScriptToEvaluateOnLoadCommand: ICommand<AddScriptToEvaluateOnLoadCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets ScriptSource

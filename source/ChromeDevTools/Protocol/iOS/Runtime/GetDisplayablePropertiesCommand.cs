@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Runtime
 	/// </summary>
 	[Command(ProtocolName.Runtime.GetDisplayableProperties)]
 	[SupportedBy("iOS")]
-	public class GetDisplayablePropertiesCommand
+	public class GetDisplayablePropertiesCommand: ICommand<GetDisplayablePropertiesCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Identifier of the object to return properties for.

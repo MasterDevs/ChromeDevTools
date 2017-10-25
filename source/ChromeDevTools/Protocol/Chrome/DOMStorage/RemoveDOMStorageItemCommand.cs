@@ -6,7 +6,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOMStorage
 {
 	[Command(ProtocolName.DOMStorage.RemoveDOMStorageItem)]
 	[SupportedBy("Chrome")]
-	public class RemoveDOMStorageItemCommand
+	public class RemoveDOMStorageItemCommand: ICommand<RemoveDOMStorageItemCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets StorageId

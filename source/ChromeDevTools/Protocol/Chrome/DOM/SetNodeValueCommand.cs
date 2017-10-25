@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.SetNodeValue)]
 	[SupportedBy("Chrome")]
-	public class SetNodeValueCommand
+	public class SetNodeValueCommand: ICommand<SetNodeValueCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Id of the node to set value for.

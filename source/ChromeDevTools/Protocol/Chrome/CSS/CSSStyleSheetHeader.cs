@@ -61,5 +61,9 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CSS
 		/// Gets or sets Column offset of the stylesheet within the resource (zero based).
 		/// </summary>
 		public double StartColumn { get; set; }
+		/// <summary>
+		/// Gets or sets Size of the content (in characters).
+		/// </summary>
+		public double Length { get; set; }
 	}
 }

@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.SetFileInputFiles)]
 	[SupportedBy("Chrome")]
-	public class SetFileInputFilesCommand
+	public class SetFileInputFilesCommand: ICommand<SetFileInputFilesCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Id of the file input node to set files for.

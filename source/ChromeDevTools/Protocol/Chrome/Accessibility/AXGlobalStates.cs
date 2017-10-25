@@ -15,5 +15,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Accessibility{
 			Hidden,
 			HiddenRoot,
 			Invalid,
+			Keyshortcuts,
+			Roledescription,
 	}
 }

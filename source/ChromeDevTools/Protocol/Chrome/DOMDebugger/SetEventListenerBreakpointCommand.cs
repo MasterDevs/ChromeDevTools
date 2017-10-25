@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOMDebugger
 	/// </summary>
 	[Command(ProtocolName.DOMDebugger.SetEventListenerBreakpoint)]
 	[SupportedBy("Chrome")]
-	public class SetEventListenerBreakpointCommand
+	public class SetEventListenerBreakpointCommand: ICommand<SetEventListenerBreakpointCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets DOM Event name to stop on (any DOM event will do).

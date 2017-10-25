@@ -2,6 +2,6 @@
 {
     public interface IChromeProcessFactory
     {
-        IChromeProcess Create(int port);
+        IChromeProcess Create(int port, bool headless);
     }
 }

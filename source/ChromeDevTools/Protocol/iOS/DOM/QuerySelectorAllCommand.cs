@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.QuerySelectorAll)]
 	[SupportedBy("iOS")]
-	public class QuerySelectorAllCommand
+	public class QuerySelectorAllCommand: ICommand<QuerySelectorAllCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Id of the node to query upon.

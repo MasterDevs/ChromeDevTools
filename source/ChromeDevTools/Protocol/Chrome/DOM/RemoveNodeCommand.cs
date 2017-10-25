@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.RemoveNode)]
 	[SupportedBy("Chrome")]
-	public class RemoveNodeCommand
+	public class RemoveNodeCommand: ICommand<RemoveNodeCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Id of the node to remove.

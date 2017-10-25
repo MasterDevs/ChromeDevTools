@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Network
 	/// </summary>
 	[Command(ProtocolName.Network.SetCacheDisabled)]
 	[SupportedBy("iOS")]
-	public class SetCacheDisabledCommand
+	public class SetCacheDisabledCommand: ICommand<SetCacheDisabledCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Cache disabled state.

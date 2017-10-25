@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.GetAttributes)]
 	[SupportedBy("Chrome")]
-	public class GetAttributesCommand
+	public class GetAttributesCommand: ICommand<GetAttributesCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Id of the node to retrieve attibutes for.

@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CSS
 	/// </summary>
 	[Command(ProtocolName.CSS.CreateStyleSheet)]
 	[SupportedBy("Chrome")]
-	public class CreateStyleSheetCommand
+	public class CreateStyleSheetCommand: ICommand<CreateStyleSheetCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Identifier of the frame where "via-inspector" stylesheet should be created.

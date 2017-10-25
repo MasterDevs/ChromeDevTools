@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Inspector
 	/// </summary>
 	[Command(ProtocolName.Inspector.Initialized)]
 	[SupportedBy("iOS")]
-	public class InitializedCommand
+	public class InitializedCommand: ICommand<InitializedCommandResponse>
 	{
 	}
 }

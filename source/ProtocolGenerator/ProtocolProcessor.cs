@@ -3,8 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MasterDevs.ChromeDevTools.ProtocolGenerator
 {
@@ -82,21 +80,38 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
                     property.TypeReference = explicitMappings[fullReferenceName];
                 }
             }
-            else if(property.Items != null)
+            else if (property.Items != null)
             {
                 ResolveTypeReferences(protocol, domain, property.Items, explicitMappings);
             }
         }
 
-        public static Protocol LoadProtocol(string path, string alias)
+        public static Protocol LoadProtocol(string[] paths, string alias)
         {
-            string json = File.ReadAllText(path);
-            JsonSerializerSettings settings = new JsonSerializerSettings();
-            settings.MissingMemberHandling = MissingMemberHandling.Error;
-            settings.MetadataPropertyHandling = MetadataPropertyHandling.Ignore;
+            if (paths == null || paths.Length < 1)
+                throw new ArgumentException("Must specify at least one path", nameof(paths));
+
+            JsonSerializerSettings settings = new JsonSerializerSettings
+            {
+                MissingMemberHandling = MissingMemberHandling.Error,
+                MetadataPropertyHandling = MetadataPropertyHandling.Ignore
+            };
+
+            string json = File.ReadAllText(paths[0]);
             Protocol p = JsonConvert.DeserializeObject<Protocol>(json, settings);
-            p.SourceFile = path;
+            p.SourceFiles = paths;
             p.Alias = alias;
+
+            if (paths.Length > 1)
+            {
+                foreach (var path in paths.Skip(1))
+                {
+                    json = File.ReadAllText(path);
+                    Protocol partial = JsonConvert.DeserializeObject<Protocol>(json, settings);
+                    foreach (var domain in partial.Domains)
+                        p.Domains.Add(domain);
+                }
+            }
 
             foreach (var domain in p.Domains)
             {

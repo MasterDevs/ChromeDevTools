@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Runtime
 	/// </summary>
 	[Command(ProtocolName.Runtime.GetProperties)]
 	[SupportedBy("iOS")]
-	public class GetPropertiesCommand
+	public class GetPropertiesCommand: ICommand<GetPropertiesCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Identifier of the object to return properties for.

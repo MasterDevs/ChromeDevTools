@@ -17,5 +17,10 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 		/// Gets or sets Parent frame identifier.
 		/// </summary>
 		public string ParentFrameId { get; set; }
+		/// <summary>
+		/// Gets or sets JavaScript stack trace of when frame was attached, only set if frame initiated from script.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public Runtime.StackTrace Stack { get; set; }
 	}
 }

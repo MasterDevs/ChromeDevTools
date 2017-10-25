@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.DOMDebugger
 	/// </summary>
 	[Command(ProtocolName.DOMDebugger.RemoveXHRBreakpoint)]
 	[SupportedBy("iOS")]
-	public class RemoveXHRBreakpointCommand
+	public class RemoveXHRBreakpointCommand: ICommand<RemoveXHRBreakpointCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Resource URL substring.

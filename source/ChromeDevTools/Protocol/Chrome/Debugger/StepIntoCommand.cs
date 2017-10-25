@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 	/// </summary>
 	[Command(ProtocolName.Debugger.StepInto)]
 	[SupportedBy("Chrome")]
-	public class StepIntoCommand
+	public class StepIntoCommand: ICommand<StepIntoCommandResponse>
 	{
 	}
 }

@@ -13,6 +13,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Accessibility{
 	{
 			Checked,
 			Expanded,
+			Modal,
 			Pressed,
 			Selected,
 	}

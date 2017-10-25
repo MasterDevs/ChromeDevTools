@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 	/// </summary>
 	[Command(ProtocolName.Network.SetUserAgentOverride)]
 	[SupportedBy("Chrome")]
-	public class SetUserAgentOverrideCommand
+	public class SetUserAgentOverrideCommand: ICommand<SetUserAgentOverrideCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets User agent to use.

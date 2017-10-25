@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.ResolveNode)]
 	[SupportedBy("Chrome")]
-	public class ResolveNodeCommand
+	public class ResolveNodeCommand: ICommand<ResolveNodeCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Id of the node to resolve.

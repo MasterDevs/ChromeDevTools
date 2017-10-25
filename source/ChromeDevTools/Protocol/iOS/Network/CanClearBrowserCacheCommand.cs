@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Network
 	/// </summary>
 	[Command(ProtocolName.Network.CanClearBrowserCache)]
 	[SupportedBy("iOS")]
-	public class CanClearBrowserCacheCommand
+	public class CanClearBrowserCacheCommand: ICommand<CanClearBrowserCacheCommandResponse>
 	{
 	}
 }

@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.ApplicationCache
 	/// </summary>
 	[Command(ProtocolName.ApplicationCache.GetApplicationCacheForFrame)]
 	[SupportedBy("iOS")]
-	public class GetApplicationCacheForFrameCommand
+	public class GetApplicationCacheForFrameCommand: ICommand<GetApplicationCacheForFrameCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Identifier of the frame containing document whose application cache is retrieved.

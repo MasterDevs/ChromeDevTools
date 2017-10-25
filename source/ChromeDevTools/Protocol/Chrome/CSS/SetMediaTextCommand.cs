@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CSS
 	/// </summary>
 	[Command(ProtocolName.CSS.SetMediaText)]
 	[SupportedBy("Chrome")]
-	public class SetMediaTextCommand
+	public class SetMediaTextCommand: ICommand<SetMediaTextCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets StyleSheetId

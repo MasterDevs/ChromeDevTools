@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CSS
 	/// </summary>
 	[Command(ProtocolName.CSS.GetMediaQueries)]
 	[SupportedBy("Chrome")]
-	public class GetMediaQueriesCommand
+	public class GetMediaQueriesCommand: ICommand<GetMediaQueriesCommandResponse>
 	{
 	}
 }

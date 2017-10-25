@@ -19,8 +19,16 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 		/// </summary>
 		public string Url { get; set; }
 		/// <summary>
+		/// Gets or sets URL that the user typed in the url bar.
+		/// </summary>
+		public string UserTypedURL { get; set; }
+		/// <summary>
 		/// Gets or sets Title of the navigation history entry.
 		/// </summary>
 		public string Title { get; set; }
+		/// <summary>
+		/// Gets or sets Transition type.
+		/// </summary>
+		public TransitionType TransitionType { get; set; }
 	}
 }

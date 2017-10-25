@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Emulation
 	/// </summary>
 	[Command(ProtocolName.Emulation.ClearDeviceMetricsOverride)]
 	[SupportedBy("Chrome")]
-	public class ClearDeviceMetricsOverrideCommand
+	public class ClearDeviceMetricsOverrideCommand: ICommand<ClearDeviceMetricsOverrideCommandResponse>
 	{
 	}
 }

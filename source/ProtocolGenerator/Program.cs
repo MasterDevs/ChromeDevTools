@@ -1,6 +1,4 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
@@ -28,15 +26,20 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
         {
             // At this point in time, we only process the most recent Chrome
             // and iOS (Safari) protocols.
-            Dictionary<string, string> protocolFiles = new Dictionary<string, string>();
+            Dictionary<string, string[]> protocolFiles = new Dictionary<string, string[]>
+            {
+                {"Chrome", new [] { "js_protocol.json", "browser_protocol.json" } },
+                {"iOS", new [] { "Inspector-iOS-9.3.json" } }
+            };
+
+
             //protocolFiles.Add("Chrome-0.1", "Inspector-0.1.json");
             //protocolFiles.Add("Chrome-1.0", "Inspector-1.0.json");
             //protocolFiles.Add("Chrome", "Inspector-1.1.json");
-            protocolFiles.Add("Chrome", "protocol.json");
             //protocolFiles.Add("iOS-7.0", "Inspector-iOS-7.0.json");
             //protocolFiles.Add("iOS-8.0", "Inspector-iOS-8.0.json");
             //protocolFiles.Add("iOS-9.0", "Inspector-iOS-9.0.json");
-            protocolFiles.Add("iOS", "Inspector-iOS-9.3.json");
+
 
             Collection<Protocol> protocols = new Collection<Protocol>();
 
@@ -134,7 +137,10 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
             {
                 itemsType = items.TypeReference;
             }
-            domainDictionary[type.Name] = domain + "." + itemsType + "[]";
+            if (IsGeneratedNativeType(itemsType))
+                domainDictionary[type.Name] = itemsType + "[]";
+            else
+                domainDictionary[type.Name] = domain + "." + itemsType + "[]";
         }
 
         private static void WriteProtocolClasses(DirectoryInfo directory, string ns, string domainName, IEnumerable<Type> types, IEnumerable<Command> commands, IEnumerable<Event> events)
@@ -292,6 +298,7 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
         private static void WriteCommand(DirectoryInfo domainDirectoryInfo, string ns, string commandName, string description, IEnumerable<Property> parameters, IEnumerable<string> supportedBy)
         {
             var className = ToCamelCase(commandName) + CommandSubclass;
+            var responseClassName = ToCamelCase(commandName) + CommandResponseSubclass;
             var sb = new StringBuilder();
             sb.AppendFormat("using MasterDevs.ChromeDevTools;");
             sb.AppendLine();
@@ -311,7 +318,7 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
             sb.AppendFormat("\t[{0}({1}.{2}.{3})]", CommandAttribute, ProtocolNameClass, domainDirectoryInfo.Name, ToCamelCase(commandName));
             sb.AppendLine();
             WriteSupportedBy(sb, supportedBy);
-            sb.AppendFormat("\tpublic class {0}", className);
+            sb.AppendFormat("\tpublic class {0}: ICommand<{1}>", className, responseClassName);
             sb.AppendLine();
             sb.AppendLine("\t{");
             foreach (var parameterProperty in parameters)
@@ -327,7 +334,8 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
         {
             if (null == type) return;
             if (type.Enum.Any()) WriteTypeEnum(domainDirectoryInfo, ns, type);
-            if (type.Properties.Any()) WriteTypeClass(domainDirectoryInfo, ns, type);
+            /*if (type.Properties.Any())*/
+            WriteTypeClass(domainDirectoryInfo, ns, type);
             WriteTypeSimple(domainDirectoryInfo, type);
         }
 
@@ -472,6 +480,20 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
                 case "boolean": return "bool";
                 case "any": return "object";
                 default: return propertyType;
+            }
+        }
+
+        private static bool IsGeneratedNativeType(string propertyType)
+        {
+            switch (propertyType)
+            {
+                case "double":
+                case "long":
+                case "bool":
+                case "object":
+                    return true;
+                default:
+                    return false;
             }
         }
 

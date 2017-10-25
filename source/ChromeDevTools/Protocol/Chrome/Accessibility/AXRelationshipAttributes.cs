@@ -12,9 +12,11 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Accessibility{
 	public enum AXRelationshipAttributes
 	{
 			Activedescendant,
-			Flowto,
 			Controls,
 			Describedby,
+			Details,
+			Errormessage,
+			Flowto,
 			Labelledby,
 			Owns,
 	}

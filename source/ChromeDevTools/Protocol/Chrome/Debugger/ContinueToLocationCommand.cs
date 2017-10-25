@@ -9,16 +9,16 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 	/// </summary>
 	[Command(ProtocolName.Debugger.ContinueToLocation)]
 	[SupportedBy("Chrome")]
-	public class ContinueToLocationCommand
+	public class ContinueToLocationCommand: ICommand<ContinueToLocationCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Location to continue to.
 		/// </summary>
 		public Location Location { get; set; }
 		/// <summary>
-		/// Gets or sets Allows breakpoints at the intemediate positions inside statements.
+		/// Gets or sets TargetCallFrames
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public bool? InterstatementLocation { get; set; }
+		public string TargetCallFrames { get; set; }
 	}
 }

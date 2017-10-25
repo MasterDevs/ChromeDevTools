@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Tracing
 	/// </summary>
 	[Command(ProtocolName.Tracing.Start)]
 	[SupportedBy("Chrome")]
-	public class StartCommand
+	public class StartCommand: ICommand<StartCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Category/tag filter
@@ -26,5 +26,15 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Tracing
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public double BufferUsageReportingInterval { get; set; }
+		/// <summary>
+		/// Gets or sets Whether to report trace events as series of dataCollected events or to save trace to a stream (defaults to <code>ReportEvents</code>).
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public string TransferMode { get; set; }
+		/// <summary>
+		/// Gets or sets 
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public TraceConfig TraceConfig { get; set; }
 	}
 }

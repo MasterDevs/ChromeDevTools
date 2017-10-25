@@ -17,9 +17,9 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Profiler
 		/// <summary>
 		/// Gets or sets Profile
 		/// </summary>
-		public CPUProfile Profile { get; set; }
+		public Profile Profile { get; set; }
 		/// <summary>
-		/// Gets or sets Profile title passed as argunet to console.profile().
+		/// Gets or sets Profile title passed as an argument to console.profile().
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string Title { get; set; }

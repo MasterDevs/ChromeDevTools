@@ -9,5 +9,10 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Tracing
 	[SupportedBy("Chrome")]
 	public class TracingCompleteEvent
 	{
+		/// <summary>
+		/// Gets or sets A handle of the stream that holds resulting trace data.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public string Stream { get; set; }
 	}
 }

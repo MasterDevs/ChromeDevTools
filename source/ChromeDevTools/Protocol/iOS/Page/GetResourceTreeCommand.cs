@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Page
 	/// </summary>
 	[Command(ProtocolName.Page.GetResourceTree)]
 	[SupportedBy("iOS")]
-	public class GetResourceTreeCommand
+	public class GetResourceTreeCommand: ICommand<GetResourceTreeCommandResponse>
 	{
 	}
 }

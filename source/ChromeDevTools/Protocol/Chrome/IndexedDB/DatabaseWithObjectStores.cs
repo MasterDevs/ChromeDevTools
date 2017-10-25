@@ -15,13 +15,9 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.IndexedDB
 		/// </summary>
 		public string Name { get; set; }
 		/// <summary>
-		/// Gets or sets Deprecated string database version.
+		/// Gets or sets Database version.
 		/// </summary>
-		public string Version { get; set; }
-		/// <summary>
-		/// Gets or sets Integer database version.
-		/// </summary>
-		public long IntVersion { get; set; }
+		public long Version { get; set; }
 		/// <summary>
 		/// Gets or sets Object stores in this database.
 		/// </summary>

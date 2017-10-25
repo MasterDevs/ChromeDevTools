@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOMDebugger
 	/// </summary>
 	[Command(ProtocolName.DOMDebugger.RemoveXHRBreakpoint)]
 	[SupportedBy("Chrome")]
-	public class RemoveXHRBreakpointCommand
+	public class RemoveXHRBreakpointCommand: ICommand<RemoveXHRBreakpointCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Resource URL substring.

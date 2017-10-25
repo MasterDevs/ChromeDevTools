@@ -12,11 +12,12 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator.Tests
     {
         [TestMethod]
         [DeploymentItem(DeploymentItems.Inspector11)]
-        [DeploymentItem(DeploymentItems.Protocol)]
+        [DeploymentItem(DeploymentItems.BrowserProtocol)]
+        [DeploymentItem(DeploymentItems.JsProtocol)]
         public void EqualsTest()
         {
-            var inspector11 = ProtocolProcessor.LoadProtocol(DeploymentItems.Inspector11, "inspector-1.1");
-            var protocol = ProtocolProcessor.LoadProtocol(DeploymentItems.Protocol, "protocol");
+            var inspector11 = ProtocolProcessor.LoadProtocol(new[] { DeploymentItems.Inspector11 }, "inspector-1.1");
+            var protocol = ProtocolProcessor.LoadProtocol(new[] { DeploymentItems.BrowserProtocol, DeploymentItems.JsProtocol }, "protocol");
 
             ProtocolProcessor.ResolveTypeReferences(inspector11, new Dictionary<string, string>());
             ProtocolProcessor.ResolveTypeReferences(protocol, new Dictionary<string, string>());

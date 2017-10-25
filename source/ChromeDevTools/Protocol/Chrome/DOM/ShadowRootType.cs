@@ -13,6 +13,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM{
 	{
 			[EnumMember(Value = "user-agent")]
 			User_agent,
-			Author,
+			Open,
+			Closed,
 	}
 }

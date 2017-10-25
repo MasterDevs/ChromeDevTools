@@ -6,7 +6,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Database
 {
 	[Command(ProtocolName.Database.ExecuteSQL)]
 	[SupportedBy("iOS")]
-	public class ExecuteSQLCommand
+	public class ExecuteSQLCommand: ICommand<ExecuteSQLCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets DatabaseId

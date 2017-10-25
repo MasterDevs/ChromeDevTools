@@ -1,12 +1,7 @@
-﻿using MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger;
-using MasterDevs.ChromeDevTools.Protocol.Chrome.DOM;
+﻿using MasterDevs.ChromeDevTools.Protocol.Chrome.DOM;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime;
 
 namespace MasterDevs.ChromeDevTools.Tests
 {

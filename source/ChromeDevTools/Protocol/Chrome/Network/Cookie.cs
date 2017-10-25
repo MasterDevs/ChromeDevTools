@@ -27,7 +27,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 		/// </summary>
 		public string Path { get; set; }
 		/// <summary>
-		/// Gets or sets Cookie expires.
+		/// Gets or sets Cookie expiration date as the number of seconds since the UNIX epoch.
 		/// </summary>
 		public double Expires { get; set; }
 		/// <summary>
@@ -46,5 +46,10 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 		/// Gets or sets True in case of session cookie.
 		/// </summary>
 		public bool Session { get; set; }
+		/// <summary>
+		/// Gets or sets Cookie SameSite type.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public CookieSameSite SameSite { get; set; }
 	}
 }

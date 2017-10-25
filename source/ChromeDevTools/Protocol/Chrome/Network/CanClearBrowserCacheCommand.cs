@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 	/// </summary>
 	[Command(ProtocolName.Network.CanClearBrowserCache)]
 	[SupportedBy("Chrome")]
-	public class CanClearBrowserCacheCommand
+	public class CanClearBrowserCacheCommand: ICommand<CanClearBrowserCacheCommandResponse>
 	{
 	}
 }

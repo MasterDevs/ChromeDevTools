@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Page
 	/// </summary>
 	[Command(ProtocolName.Page.SetEmulatedMedia)]
 	[SupportedBy("iOS")]
-	public class SetEmulatedMediaCommand
+	public class SetEmulatedMediaCommand: ICommand<SetEmulatedMediaCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Media type to emulate. Empty string disables the override.

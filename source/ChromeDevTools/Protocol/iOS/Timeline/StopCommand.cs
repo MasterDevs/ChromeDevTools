@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Timeline
 	/// </summary>
 	[Command(ProtocolName.Timeline.Stop)]
 	[SupportedBy("iOS")]
-	public class StopCommand
+	public class StopCommand: ICommand<StopCommandResponse>
 	{
 	}
 }

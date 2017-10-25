@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Emulation
 	/// </summary>
 	[Command(ProtocolName.Emulation.SetTouchEmulationEnabled)]
 	[SupportedBy("Chrome")]
-	public class SetTouchEmulationEnabledCommand
+	public class SetTouchEmulationEnabledCommand: ICommand<SetTouchEmulationEnabledCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Whether the touch event emulation should be enabled.

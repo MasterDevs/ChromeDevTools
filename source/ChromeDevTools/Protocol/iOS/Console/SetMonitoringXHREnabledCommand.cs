@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Console
 	/// </summary>
 	[Command(ProtocolName.Console.SetMonitoringXHREnabled)]
 	[SupportedBy("iOS")]
-	public class SetMonitoringXHREnabledCommand
+	public class SetMonitoringXHREnabledCommand: ICommand<SetMonitoringXHREnabledCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Monitoring enabled state.

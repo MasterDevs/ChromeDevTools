@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.LayerTree
 	/// </summary>
 	[Command(ProtocolName.LayerTree.LayersForNode)]
 	[SupportedBy("iOS")]
-	public class LayersForNodeCommand
+	public class LayersForNodeCommand: ICommand<LayersForNodeCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Root of the subtree for which we want to gather layers.

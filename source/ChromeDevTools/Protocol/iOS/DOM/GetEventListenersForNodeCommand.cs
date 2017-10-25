@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.GetEventListenersForNode)]
 	[SupportedBy("iOS")]
-	public class GetEventListenersForNodeCommand
+	public class GetEventListenersForNodeCommand: ICommand<GetEventListenersForNodeCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Id of the node to get listeners for.

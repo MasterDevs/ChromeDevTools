@@ -6,7 +6,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 {
 	[Command(ProtocolName.Page.RemoveScriptToEvaluateOnLoad)]
 	[SupportedBy("Chrome")]
-	public class RemoveScriptToEvaluateOnLoadCommand
+	public class RemoveScriptToEvaluateOnLoadCommand: ICommand<RemoveScriptToEvaluateOnLoadCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Identifier

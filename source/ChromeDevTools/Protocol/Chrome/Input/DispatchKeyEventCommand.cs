@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Input
 	/// </summary>
 	[Command(ProtocolName.Input.DispatchKeyEvent)]
 	[SupportedBy("Chrome")]
-	public class DispatchKeyEventCommand
+	public class DispatchKeyEventCommand: ICommand<DispatchKeyEventCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Type of the key event.
@@ -45,6 +45,11 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Input
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string Code { get; set; }
+		/// <summary>
+		/// Gets or sets Unique DOM defined string value describing the meaning of the key in the context of active modifiers, keyboard layout, etc (e.g., 'AltGr') (default: "").
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public string Key { get; set; }
 		/// <summary>
 		/// Gets or sets Windows virtual key code (default: 0).
 		/// </summary>

@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Tracing
 	/// </summary>
 	[Command(ProtocolName.Tracing.GetCategories)]
 	[SupportedBy("Chrome")]
-	public class GetCategoriesCommand
+	public class GetCategoriesCommand: ICommand<GetCategoriesCommandResponse>
 	{
 	}
 }

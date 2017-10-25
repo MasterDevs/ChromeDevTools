@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 {
 	/// <summary>
-	/// Screencast frame metadata
+	/// Screencast frame metadata.
 	/// </summary>
 	[SupportedBy("Chrome")]
 	public class ScreencastFrameMetadata

@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 	/// </summary>
 	[Command(ProtocolName.Page.SetDeviceMetricsOverride)]
 	[SupportedBy("Chrome")]
-	public class SetDeviceMetricsOverrideCommand
+	public class SetDeviceMetricsOverrideCommand: ICommand<SetDeviceMetricsOverrideCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Overriding width value in pixels (minimum 0, maximum 10000000). 0 disables the override.
@@ -46,5 +46,30 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public double OffsetY { get; set; }
+		/// <summary>
+		/// Gets or sets Overriding screen width value in pixels (minimum 0, maximum 10000000). Only used for |mobile==true|.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? ScreenWidth { get; set; }
+		/// <summary>
+		/// Gets or sets Overriding screen height value in pixels (minimum 0, maximum 10000000). Only used for |mobile==true|.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? ScreenHeight { get; set; }
+		/// <summary>
+		/// Gets or sets Overriding view X position on screen in pixels (minimum 0, maximum 10000000). Only used for |mobile==true|.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? PositionX { get; set; }
+		/// <summary>
+		/// Gets or sets Overriding view Y position on screen in pixels (minimum 0, maximum 10000000). Only used for |mobile==true|.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? PositionY { get; set; }
+		/// <summary>
+		/// Gets or sets Screen orientation override.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public Emulation.ScreenOrientation ScreenOrientation { get; set; }
 	}
 }

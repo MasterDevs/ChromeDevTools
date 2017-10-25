@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 	/// </summary>
 	[Command(ProtocolName.Debugger.RestartFrame)]
 	[SupportedBy("Chrome")]
-	public class RestartFrameCommand
+	public class RestartFrameCommand: ICommand<RestartFrameCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Call frame identifier to evaluate on.

@@ -9,7 +9,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Runtime
 	/// </summary>
 	[Command(ProtocolName.Runtime.CallFunctionOn)]
 	[SupportedBy("iOS")]
-	public class CallFunctionOnCommand
+	public class CallFunctionOnCommand: ICommand<CallFunctionOnCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Identifier of the object to call function on.

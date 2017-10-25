@@ -12,7 +12,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 	public class CaptureScreenshotCommandResponse
 	{
 		/// <summary>
-		/// Gets or sets Base64-encoded image data (PNG).
+		/// Gets or sets Base64-encoded image data.
 		/// </summary>
 		public string Data { get; set; }
 	}

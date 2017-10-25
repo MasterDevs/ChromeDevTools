@@ -6,7 +6,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.ServiceWorker
 {
 	[Command(ProtocolName.ServiceWorker.StopWorker)]
 	[SupportedBy("Chrome")]
-	public class StopWorkerCommand
+	public class StopWorkerCommand: ICommand<StopWorkerCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets VersionId
