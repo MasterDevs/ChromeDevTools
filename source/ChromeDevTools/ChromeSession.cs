@@ -81,17 +81,17 @@ namespace MasterDevs.ChromeDevTools
             return SendCommand(command, cancellationToken);
         }
 
-        public Task<CommandResponse<T>> SendAsync<T>(ICommand<T> parameter, CancellationToken cancellationToken)
+        public Task<ICommandResponseWrapper<T>> SendAsync<T>(ICommand<T> parameter, CancellationToken cancellationToken)
         {
             var command = _commandFactory.Create(parameter);
             var task = SendCommand(command, cancellationToken);
-            return CastTaskResult<ICommandResponse, CommandResponse<T>>(task);
+            return TransformTaskResult(task, response => (ICommandResponseWrapper<T>)new CommandResponseWrapper<T>(response));
         }
 
-        private Task<TDerived> CastTaskResult<TBase, TDerived>(Task<TBase> task) where TDerived: TBase
+        private Task<TDerived> TransformTaskResult<TBase, TDerived>(Task<TBase> task, Func<TBase, TDerived> transform)
         {
             var tcs = new TaskCompletionSource<TDerived>();
-            task.ContinueWith(t => tcs.SetResult((TDerived)t.Result),
+            task.ContinueWith(t => tcs.SetResult(transform(t.Result)),
                 TaskContinuationOptions.OnlyOnRanToCompletion);
             task.ContinueWith(t => tcs.SetException(t.Exception.InnerExceptions),
                 TaskContinuationOptions.OnlyOnFaulted);

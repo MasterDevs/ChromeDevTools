@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools
     }
     public interface IChromeSession
     {
-        Task<CommandResponse<TResponse>> SendAsync<TResponse>(ICommand<TResponse> parameter, CancellationToken cancellationToken);
+        Task<ICommandResponseWrapper<TResponse>> SendAsync<TResponse>(ICommand<TResponse> parameter, CancellationToken cancellationToken);
 
         Task<ICommandResponse> SendAsync<T>(CancellationToken cancellationToken);
 
