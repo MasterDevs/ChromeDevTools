@@ -1,5 +1,6 @@
 using MasterDevs.ChromeDevTools;
 using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
@@ -21,6 +22,11 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public long? Quality { get; set; }
+		/// <summary>
+		/// Gets or sets Capture the screenshot of a given region only.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public Viewport Clip { get; set; }
 		/// <summary>
 		/// Gets or sets Capture the screenshot from the surface, rather than the view. Defaults to true.
 		/// </summary>

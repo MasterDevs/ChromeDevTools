@@ -1,4 +1,6 @@
-using MasterDevs.ChromeDevTools;using Newtonsoft.Json;
+using MasterDevs.ChromeDevTools;
+using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 {
@@ -30,5 +32,10 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public StackTrace StackTrace { get; set; }
+		/// <summary>
+		/// Gets or sets Console context descriptor for calls on non-default console context (not console.*): 'anonymous#unique-logger-id' for call on unnamed context, 'name#unique-logger-id' for call on named context.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public string Context { get; set; }
 	}
 }

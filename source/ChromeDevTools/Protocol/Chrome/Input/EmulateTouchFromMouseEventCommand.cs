@@ -1,5 +1,6 @@
 using MasterDevs.ChromeDevTools;
 using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Input
@@ -24,7 +25,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Input
 		/// </summary>
 		public long Y { get; set; }
 		/// <summary>
-		/// Gets or sets Time at which the event occurred. Measured in UTC time in seconds since January 1, 1970.
+		/// Gets or sets Time at which the event occurred.
 		/// </summary>
 		public double Timestamp { get; set; }
 		/// <summary>

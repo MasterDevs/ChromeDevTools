@@ -23,8 +23,12 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Security
 		/// </summary>
 		public string Description { get; set; }
 		/// <summary>
-		/// Gets or sets True if the page has a certificate.
+		/// Gets or sets The type of mixed content described by the explanation.
 		/// </summary>
-		public bool HasCertificate { get; set; }
+		public MixedContentType MixedContentType { get; set; }
+		/// <summary>
+		/// Gets or sets Page certificate.
+		/// </summary>
+		public string[] Certificate { get; set; }
 	}
 }

@@ -1,5 +1,6 @@
 using MasterDevs.ChromeDevTools;
 using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Profiler
@@ -16,5 +17,10 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Profiler
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public bool? CallCount { get; set; }
+		/// <summary>
+		/// Gets or sets Collect block-based coverage.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? Detailed { get; set; }
 	}
 }
