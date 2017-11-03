@@ -32,7 +32,7 @@ namespace MasterDevs.ChromeDevTools.Sample
                         // STEP 3 - Create a debugging session
                         var sessionInfo = (await chromeProcess.GetSessionInfo()).LastOrDefault();
                         var chromeSessionFactory = new ChromeSessionFactory();
-                        var chromeSession = chromeSessionFactory.Create(sessionInfo.WebSocketDebuggerUrl);
+                        var chromeSession = chromeSessionFactory.Create(sessionInfo.WebSocketDebuggerUrl,OnError );
 
                         // STEP 4 - Send a command
                         //
@@ -99,6 +99,12 @@ namespace MasterDevs.ChromeDevTools.Sample
                     Console.WriteLine("Exiting ..");
                 }
             }).Wait();
+        }
+
+        private static void OnError(Exception exception)
+        {
+            Console.WriteLine("Error during communication:");
+            Console.WriteLine(exception);
         }
     }
 }

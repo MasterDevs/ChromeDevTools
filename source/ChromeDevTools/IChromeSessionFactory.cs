@@ -1,7 +1,9 @@
-﻿namespace MasterDevs.ChromeDevTools
+﻿using System;
+
+namespace MasterDevs.ChromeDevTools
 {
     public interface IChromeSessionFactory
     {
-        IChromeSession Create(string endpointUrl);
+        IChromeSession Create(string endpointUrl, Action<Exception> onError);
     }
 }

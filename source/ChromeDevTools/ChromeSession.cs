@@ -16,6 +16,7 @@ namespace MasterDevs.ChromeDevTools
         private readonly ConcurrentDictionary<string, ConcurrentBag<Action<object>>> _handlers = new ConcurrentDictionary<string, ConcurrentBag<Action<object>>>();
         private ICommandFactory _commandFactory;
         private IEventFactory _eventFactory;
+        private readonly Action<Exception> _onError;
         private ManualResetEvent _openEvent = new ManualResetEvent(false);
         private ManualResetEvent _publishEvent = new ManualResetEvent(false);
         private ConcurrentDictionary<long, ManualResetEventSlim> _requestWaitHandles = new ConcurrentDictionary<long, ManualResetEventSlim>();
@@ -24,12 +25,13 @@ namespace MasterDevs.ChromeDevTools
         private WebSocket _webSocket;
         private static object _Lock = new object();
 
-        public ChromeSession(string endpoint, ICommandFactory commandFactory, ICommandResponseFactory responseFactory, IEventFactory eventFactory)
+        public ChromeSession(string endpoint, ICommandFactory commandFactory, ICommandResponseFactory responseFactory, IEventFactory eventFactory, Action<Exception> onError)
         {
             _endpoint = endpoint;
             _commandFactory = commandFactory;
             _responseFactory = responseFactory;
             _eventFactory = eventFactory;
+            _onError = onError;
         }
 
         public void Dispose()
@@ -235,12 +237,12 @@ namespace MasterDevs.ChromeDevTools
                 HandleEvent(evnt);
                 return;
             }
-            throw new Exception("Don't know what to do with response: " + e.Data);
+            _onError(new Exception("Don't know what to do with response: " + e.Data));
         }
 
         private void WebSocket_Error(object sender, SuperSocket.ClientEngine.ErrorEventArgs e)
         {
-            throw e.Exception;
+            _onError(e.Exception);
         }
 
         private void WebSocket_MessageReceived(object sender, MessageReceivedEventArgs e)
@@ -257,7 +259,7 @@ namespace MasterDevs.ChromeDevTools
                 HandleEvent(evnt);
                 return;
             }
-            throw new Exception("Don't know what to do with response: " + e.Message);
+            _onError(new Exception("Don't know what to do with response: " + e.Message));
         }
 
         private void WebSocket_Opened(object sender, EventArgs e)
