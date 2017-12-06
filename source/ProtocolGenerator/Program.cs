@@ -221,20 +221,14 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
         {
             var className = ToCamelCase(eventName) + EventSubclass;
             var sb = new StringBuilder();
-            sb.AppendFormat("using MasterDevs.ChromeDevTools;");
-            sb.AppendFormat("using Newtonsoft.Json;");
-            sb.AppendLine();
+            sb.AppendLine("using MasterDevs.ChromeDevTools;");
+            sb.AppendLine("using Newtonsoft.Json;");
+            sb.AppendLine("using System.Collections.Generic;");
             sb.AppendLine();
             sb.AppendFormat("namespace {0}.{1}.{2}", RootNamespace, ns, domainDirectoryInfo.Name);
             sb.AppendLine();
             sb.AppendLine("{");
-            if (!String.IsNullOrEmpty(description))
-            {
-                sb.AppendLine("\t/// <summary>");
-                sb.AppendFormat("\t/// {0}", description);
-                sb.AppendLine();
-                sb.AppendLine("\t/// </summary>");
-            }
+            WriteSummary(sb, description);
             sb.AppendFormat("\t[{0}({1}.{2}.{3})]", EventAttribute, ProtocolNameClass, domainDirectoryInfo.Name, ToCamelCase(eventName));
             sb.AppendLine();
             WriteSupportedBy(sb, supportedBy);
@@ -258,28 +252,25 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
             var parameters = command.Parameters;
             var returnObject = command.Returns;
             _DomainCommands[domainDirectoryInfo.Name].Add(commandName);
-            WriteCommand(domainDirectoryInfo, ns, commandName, description, parameters, command.SupportedBy);
-            WriteCommandResponse(domainDirectoryInfo, ns, commandName, description, returnObject, command.SupportedBy);
+            WriteCommand(domainDirectoryInfo, ns, commandName, description, command.IsDeprecated, parameters, command.SupportedBy);
+            WriteCommandResponse(domainDirectoryInfo, ns, commandName, description, command.IsDeprecated, returnObject, command.SupportedBy);
         }
 
-        private static void WriteCommandResponse(DirectoryInfo domainDirectoryInfo, string ns, string commandName, string description, IEnumerable<Property> returnObject, IEnumerable<string> supportedBy)
+        private static void WriteCommandResponse(DirectoryInfo domainDirectoryInfo, string ns, string commandName, string description, bool isDeprecated, IEnumerable<Property> returnObject, IEnumerable<string> supportedBy)
         {
             var className = ToCamelCase(commandName) + CommandResponseSubclass;
             var sb = new StringBuilder();
             sb.AppendLine("using MasterDevs.ChromeDevTools;");
             sb.AppendLine("using Newtonsoft.Json;");
+            sb.AppendLine("using System;");
             sb.AppendLine("using System.Collections.Generic;");
             sb.AppendLine();
             sb.AppendFormat("namespace {0}.{1}.{2}", RootNamespace, ns, domainDirectoryInfo.Name);
             sb.AppendLine();
             sb.AppendLine("{");
-            if (!String.IsNullOrEmpty(description))
-            {
-                sb.AppendLine("\t/// <summary>");
-                sb.AppendFormat("\t/// {0}", description);
-                sb.AppendLine();
-                sb.AppendLine("\t/// </summary>");
-            }
+            WriteSummary(sb, description);
+            if (isDeprecated)
+                WriteObsoleteAttribute(sb, description);
             sb.AppendFormat("\t[{0}({1}.{2}.{3})]", CommandResponseAttribute, ProtocolNameClass, domainDirectoryInfo.Name, ToCamelCase(commandName));
             sb.AppendLine();
             WriteSupportedBy(sb, supportedBy);
@@ -295,26 +286,22 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
             WriteToFile(domainDirectoryInfo, className, sb.ToString());
         }
 
-        private static void WriteCommand(DirectoryInfo domainDirectoryInfo, string ns, string commandName, string description, IEnumerable<Property> parameters, IEnumerable<string> supportedBy)
+        private static void WriteCommand(DirectoryInfo domainDirectoryInfo, string ns, string commandName, string description, bool isDeprecated, IEnumerable<Property> parameters, IEnumerable<string> supportedBy)
         {
             var className = ToCamelCase(commandName) + CommandSubclass;
             var responseClassName = ToCamelCase(commandName) + CommandResponseSubclass;
             var sb = new StringBuilder();
-            sb.AppendFormat("using MasterDevs.ChromeDevTools;");
-            sb.AppendLine();
+            sb.AppendLine("using MasterDevs.ChromeDevTools;");
             sb.AppendLine("using Newtonsoft.Json;");
+            sb.AppendLine("using System;");
             sb.AppendLine("using System.Collections.Generic;");
             sb.AppendLine();
             sb.AppendFormat("namespace {0}.{1}.{2}", RootNamespace, ns, domainDirectoryInfo.Name);
             sb.AppendLine();
             sb.AppendLine("{");
-            if (!String.IsNullOrEmpty(description))
-            {
-                sb.AppendLine("\t/// <summary>");
-                sb.AppendFormat("\t/// {0}", description);
-                sb.AppendLine();
-                sb.AppendLine("\t/// </summary>");
-            }
+            WriteSummary(sb, description);
+            if (isDeprecated)
+                WriteObsoleteAttribute(sb, description);
             sb.AppendFormat("\t[{0}({1}.{2}.{3})]", CommandAttribute, ProtocolNameClass, domainDirectoryInfo.Name, ToCamelCase(commandName));
             sb.AppendLine();
             WriteSupportedBy(sb, supportedBy);
@@ -328,6 +315,28 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
             sb.AppendLine("\t}");
             sb.AppendLine("}");
             WriteToFile(domainDirectoryInfo, className, sb.ToString());
+        }
+
+        private static void WriteSummary(StringBuilder sb, string description)
+        {
+            if (!String.IsNullOrEmpty(description))
+            {
+                sb.AppendLine("\t/// <summary>");
+                sb.AppendFormat("\t/// {0}", description);
+                sb.AppendLine();
+                sb.AppendLine("\t/// </summary>");
+            }
+        }
+
+        private static void WriteObsoleteAttribute(StringBuilder sb, string description)
+        {
+            if (String.IsNullOrEmpty(description) || !description.StartsWith("Deprecated"))
+                sb.AppendLine("\t[Obsolete]");
+            else
+            {
+                sb.AppendFormat("\t[Obsolete(\"{0}\")]", description);
+                sb.AppendLine();
+            }
         }
 
         private static void WriteType(DirectoryInfo domainDirectoryInfo, string ns, Type type)
@@ -357,10 +366,7 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
             sb.AppendFormat("namespace {0}.{1}.{2}", RootNamespace, ns, domainDirectoryInfo.Name);
             sb.AppendLine();
             sb.AppendLine("{");
-            sb.AppendLine("\t/// <summary>");
-            sb.AppendFormat("\t/// {0}", type.Description);
-            sb.AppendLine();
-            sb.AppendLine("\t/// </summary>");
+            WriteSummary(sb, type.Description);
             WriteSupportedBy(sb, type);
             sb.AppendFormat("\tpublic class {0}", className);
             sb.AppendLine();

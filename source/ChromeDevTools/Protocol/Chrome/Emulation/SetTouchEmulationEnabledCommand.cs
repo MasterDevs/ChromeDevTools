@@ -1,11 +1,12 @@
 using MasterDevs.ChromeDevTools;
 using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Emulation
 {
 	/// <summary>
-	/// Toggles mouse event-based touch event emulation.
+	/// Enables touch on platforms which do not support them.
 	/// </summary>
 	[Command(ProtocolName.Emulation.SetTouchEmulationEnabled)]
 	[SupportedBy("Chrome")]
@@ -16,9 +17,9 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Emulation
 		/// </summary>
 		public bool Enabled { get; set; }
 		/// <summary>
-		/// Gets or sets Touch/gesture events configuration. Default: current platform.
+		/// Gets or sets Maximum touch points supported. Defaults to one.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public string Configuration { get; set; }
+		public long? MaxTouchPoints { get; set; }
 	}
 }

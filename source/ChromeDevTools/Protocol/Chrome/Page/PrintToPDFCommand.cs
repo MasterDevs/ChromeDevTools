@@ -1,5 +1,6 @@
 using MasterDevs.ChromeDevTools;
 using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
@@ -66,5 +67,10 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string PageRanges { get; set; }
+		/// <summary>
+		/// Gets or sets Whether to silently ignore invalid but successfully parsed page ranges, such as '3-2'. Defaults to false.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? IgnoreInvalidPageRanges { get; set; }
 	}
 }

@@ -21,5 +21,6 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Storage{
 			Service_workers,
 			Cache_storage,
 			All,
+			Other,
 	}
 }

@@ -4,9 +4,6 @@ using System.Collections.Generic;
 
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 {
-	/// <summary>
-	/// 
-	/// </summary>
 	[SupportedBy("Chrome")]
 	public class BreakLocation
 	{

@@ -4,9 +4,6 @@ using System.Collections.Generic;
 
 namespace MasterDevs.ChromeDevTools.Protocol.iOS.Runtime
 {
-	/// <summary>
-	/// 
-	/// </summary>
 	[SupportedBy("iOS")]
 	public class PropertyPreview
 	{

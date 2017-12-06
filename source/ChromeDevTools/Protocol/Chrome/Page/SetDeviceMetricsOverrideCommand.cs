@@ -1,5 +1,6 @@
 using MasterDevs.ChromeDevTools;
 using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
@@ -28,24 +29,10 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 		/// </summary>
 		public bool Mobile { get; set; }
 		/// <summary>
-		/// Gets or sets Whether a view that exceeds the available browser window area should be scaled down to fit.
-		/// </summary>
-		public bool FitWindow { get; set; }
-		/// <summary>
 		/// Gets or sets Scale to apply to resulting view image. Ignored in |fitWindow| mode.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public double Scale { get; set; }
-		/// <summary>
-		/// Gets or sets X offset to shift resulting view image by. Ignored in |fitWindow| mode.
-		/// </summary>
-		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double OffsetX { get; set; }
-		/// <summary>
-		/// Gets or sets Y offset to shift resulting view image by. Ignored in |fitWindow| mode.
-		/// </summary>
-		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double OffsetY { get; set; }
 		/// <summary>
 		/// Gets or sets Overriding screen width value in pixels (minimum 0, maximum 10000000). Only used for |mobile==true|.
 		/// </summary>
@@ -66,6 +53,11 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public long? PositionY { get; set; }
+		/// <summary>
+		/// Gets or sets Do not set visible view size, rely upon explicit setVisibleSize call.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? DontSetVisibleSize { get; set; }
 		/// <summary>
 		/// Gets or sets Screen orientation override.
 		/// </summary>
