@@ -14,7 +14,6 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Security{
 			Unknown,
 			Neutral,
 			Insecure,
-			Warning,
 			Secure,
 			Info,
 	}

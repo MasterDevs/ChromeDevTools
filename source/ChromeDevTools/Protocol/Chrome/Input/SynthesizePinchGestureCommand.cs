@@ -1,5 +1,6 @@
 using MasterDevs.ChromeDevTools;
 using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Input
@@ -14,11 +15,11 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Input
 		/// <summary>
 		/// Gets or sets X coordinate of the start of the gesture in CSS pixels.
 		/// </summary>
-		public long X { get; set; }
+		public double X { get; set; }
 		/// <summary>
 		/// Gets or sets Y coordinate of the start of the gesture in CSS pixels.
 		/// </summary>
-		public long Y { get; set; }
+		public double Y { get; set; }
 		/// <summary>
 		/// Gets or sets Relative scale factor after zooming (>1.0 zooms in, <1.0 zooms out).
 		/// </summary>

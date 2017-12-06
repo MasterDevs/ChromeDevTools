@@ -1,4 +1,6 @@
-using MasterDevs.ChromeDevTools;using Newtonsoft.Json;
+using MasterDevs.ChromeDevTools;
+using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace MasterDevs.ChromeDevTools.Protocol.iOS.Debugger
 {
