@@ -11,32 +11,12 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CacheStorage
 	public class DataEntry
 	{
 		/// <summary>
-		/// Gets or sets Request URL.
+		/// Gets or sets Request url spec.
 		/// </summary>
-		public string RequestURL { get; set; }
+		public string Request { get; set; }
 		/// <summary>
-		/// Gets or sets Request method.
+		/// Gets or sets Response stataus text.
 		/// </summary>
-		public string RequestMethod { get; set; }
-		/// <summary>
-		/// Gets or sets Request headers
-		/// </summary>
-		public Header[] RequestHeaders { get; set; }
-		/// <summary>
-		/// Gets or sets Number of seconds since epoch.
-		/// </summary>
-		public double ResponseTime { get; set; }
-		/// <summary>
-		/// Gets or sets HTTP response status code.
-		/// </summary>
-		public long ResponseStatus { get; set; }
-		/// <summary>
-		/// Gets or sets HTTP response status text.
-		/// </summary>
-		public string ResponseStatusText { get; set; }
-		/// <summary>
-		/// Gets or sets Response headers
-		/// </summary>
-		public Header[] ResponseHeaders { get; set; }
+		public string Response { get; set; }
 	}
 }

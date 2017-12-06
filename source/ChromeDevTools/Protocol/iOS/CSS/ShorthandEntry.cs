@@ -4,6 +4,9 @@ using System.Collections.Generic;
 
 namespace MasterDevs.ChromeDevTools.Protocol.iOS.CSS
 {
+	/// <summary>
+	/// 
+	/// </summary>
 	[SupportedBy("iOS")]
 	public class ShorthandEntry
 	{

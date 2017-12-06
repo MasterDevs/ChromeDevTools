@@ -1,6 +1,4 @@
-using MasterDevs.ChromeDevTools;
-using Newtonsoft.Json;
-using System.Collections.Generic;
+using MasterDevs.ChromeDevTools;using Newtonsoft.Json;
 
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 {
@@ -12,10 +10,6 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 	public class JavascriptDialogOpeningEvent
 	{
 		/// <summary>
-		/// Gets or sets Frame url.
-		/// </summary>
-		public string Url { get; set; }
-		/// <summary>
 		/// Gets or sets Message that will be displayed by the dialog.
 		/// </summary>
 		public string Message { get; set; }
@@ -23,10 +17,5 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 		/// Gets or sets Dialog type.
 		/// </summary>
 		public DialogType Type { get; set; }
-		/// <summary>
-		/// Gets or sets Default dialog prompt.
-		/// </summary>
-		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public string DefaultPrompt { get; set; }
 	}
 }

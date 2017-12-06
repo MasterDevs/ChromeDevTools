@@ -1,6 +1,5 @@
 using MasterDevs.ChromeDevTools;
 using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.IO
@@ -12,11 +11,6 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.IO
 	[SupportedBy("Chrome")]
 	public class ReadCommandResponse
 	{
-		/// <summary>
-		/// Gets or sets Set if the data is base64-encoded
-		/// </summary>
-		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public bool? Base64Encoded { get; set; }
 		/// <summary>
 		/// Gets or sets Data that were read.
 		/// </summary>

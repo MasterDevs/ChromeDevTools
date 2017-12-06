@@ -1,12 +1,11 @@
 using MasterDevs.ChromeDevTools;
 using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 {
 	/// <summary>
-	/// Resolves the JavaScript node object for a given NodeId or BackendNodeId.
+	/// Resolves JavaScript node object for given node id.
 	/// </summary>
 	[CommandResponse(ProtocolName.DOM.ResolveNode)]
 	[SupportedBy("Chrome")]

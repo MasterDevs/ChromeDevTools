@@ -78,10 +78,5 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.LayerTree
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public ScrollRect[] ScrollRects { get; set; }
-		/// <summary>
-		/// Gets or sets Sticky position constraint information
-		/// </summary>
-		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public StickyPositionConstraint StickyPositionConstraint { get; set; }
 	}
 }

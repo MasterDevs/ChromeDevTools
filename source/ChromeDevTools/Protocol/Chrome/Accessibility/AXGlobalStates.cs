@@ -11,7 +11,6 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Accessibility{
 	[JsonConverter(typeof(StringEnumConverter))]
 	public enum AXGlobalStates
 	{
-			Busy,
 			Disabled,
 			Hidden,
 			HiddenRoot,

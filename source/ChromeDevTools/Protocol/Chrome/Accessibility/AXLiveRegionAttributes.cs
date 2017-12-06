@@ -14,6 +14,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Accessibility{
 			Live,
 			Atomic,
 			Relevant,
+			Busy,
 			Root,
 	}
 }

@@ -4,6 +4,9 @@ using System.Collections.Generic;
 
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Accessibility
 {
+	/// <summary>
+	/// 
+	/// </summary>
 	[SupportedBy("Chrome")]
 	public class AXRelatedNode
 	{

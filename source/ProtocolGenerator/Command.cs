@@ -58,13 +58,6 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
         [JsonProperty("experimental")]
         public bool IsExperimental { get; set; }
 
-        [JsonProperty("deprecated")]
-        public bool IsDeprecated
-        {
-            get;
-            set;
-        }
-
         public override bool Equals(object obj)
         {
             var other = obj as Command;
