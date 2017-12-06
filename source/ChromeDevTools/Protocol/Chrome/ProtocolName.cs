@@ -24,6 +24,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome
 			public const string SetCustomObjectFormatterEnabled = "Runtime.setCustomObjectFormatterEnabled";
 			public const string CompileScript = "Runtime.compileScript";
 			public const string RunScript = "Runtime.runScript";
+			public const string QueryObjects = "Runtime.queryObjects";
 			public const string ExecutionContextCreated = "Runtime.executionContextCreated";
 			public const string ExecutionContextDestroyed = "Runtime.executionContextDestroyed";
 			public const string ExecutionContextsCleared = "Runtime.executionContextsCleared";
@@ -121,8 +122,17 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome
 		public static class Memory
 		{
 			public const string GetDOMCounters = "Memory.getDOMCounters";
+			public const string PrepareForLeakDetection = "Memory.prepareForLeakDetection";
 			public const string SetPressureNotificationsSuppressed = "Memory.setPressureNotificationsSuppressed";
 			public const string SimulatePressureNotification = "Memory.simulatePressureNotification";
+		}
+
+		public static class Performance
+		{
+			public const string Enable = "Performance.enable";
+			public const string Disable = "Performance.disable";
+			public const string GetMetrics = "Performance.getMetrics";
+			public const string Metrics = "Performance.metrics";
 		}
 
 		public static class Page
@@ -131,8 +141,11 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome
 			public const string Disable = "Page.disable";
 			public const string AddScriptToEvaluateOnLoad = "Page.addScriptToEvaluateOnLoad";
 			public const string RemoveScriptToEvaluateOnLoad = "Page.removeScriptToEvaluateOnLoad";
+			public const string AddScriptToEvaluateOnNewDocument = "Page.addScriptToEvaluateOnNewDocument";
+			public const string RemoveScriptToEvaluateOnNewDocument = "Page.removeScriptToEvaluateOnNewDocument";
 			public const string SetAutoAttachToCreatedPages = "Page.setAutoAttachToCreatedPages";
 			public const string Reload = "Page.reload";
+			public const string SetAdBlockingEnabled = "Page.setAdBlockingEnabled";
 			public const string Navigate = "Page.navigate";
 			public const string StopLoading = "Page.stopLoading";
 			public const string GetNavigationHistory = "Page.getNavigationHistory";
@@ -158,12 +171,13 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome
 			public const string HandleJavaScriptDialog = "Page.handleJavaScriptDialog";
 			public const string GetAppManifest = "Page.getAppManifest";
 			public const string RequestAppBanner = "Page.requestAppBanner";
-			public const string SetControlNavigations = "Page.setControlNavigations";
-			public const string ProcessNavigation = "Page.processNavigation";
 			public const string GetLayoutMetrics = "Page.getLayoutMetrics";
 			public const string CreateIsolatedWorld = "Page.createIsolatedWorld";
+			public const string BringToFront = "Page.bringToFront";
+			public const string SetDownloadBehavior = "Page.setDownloadBehavior";
 			public const string DomContentEventFired = "Page.domContentEventFired";
 			public const string LoadEventFired = "Page.loadEventFired";
+			public const string LifecycleEvent = "Page.lifecycleEvent";
 			public const string FrameAttached = "Page.frameAttached";
 			public const string FrameNavigated = "Page.frameNavigated";
 			public const string FrameDetached = "Page.frameDetached";
@@ -178,7 +192,6 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome
 			public const string ScreencastVisibilityChanged = "Page.screencastVisibilityChanged";
 			public const string InterstitialShown = "Page.interstitialShown";
 			public const string InterstitialHidden = "Page.interstitialHidden";
-			public const string NavigationRequested = "Page.navigationRequested";
 		}
 
 		public static class Overlay
@@ -201,14 +214,13 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome
 			public const string GetHighlightObjectForTest = "Overlay.getHighlightObjectForTest";
 			public const string NodeHighlightRequested = "Overlay.nodeHighlightRequested";
 			public const string InspectNodeRequested = "Overlay.inspectNodeRequested";
+			public const string ScreenshotRequested = "Overlay.screenshotRequested";
 		}
 
 		public static class Emulation
 		{
 			public const string SetDeviceMetricsOverride = "Emulation.setDeviceMetricsOverride";
 			public const string ClearDeviceMetricsOverride = "Emulation.clearDeviceMetricsOverride";
-			public const string ForceViewport = "Emulation.forceViewport";
-			public const string ResetViewport = "Emulation.resetViewport";
 			public const string ResetPageScaleFactor = "Emulation.resetPageScaleFactor";
 			public const string SetPageScaleFactor = "Emulation.setPageScaleFactor";
 			public const string SetVisibleSize = "Emulation.setVisibleSize";
@@ -216,23 +228,29 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome
 			public const string SetGeolocationOverride = "Emulation.setGeolocationOverride";
 			public const string ClearGeolocationOverride = "Emulation.clearGeolocationOverride";
 			public const string SetTouchEmulationEnabled = "Emulation.setTouchEmulationEnabled";
+			public const string SetEmitTouchEventsForMouse = "Emulation.setEmitTouchEventsForMouse";
 			public const string SetEmulatedMedia = "Emulation.setEmulatedMedia";
 			public const string SetCPUThrottlingRate = "Emulation.setCPUThrottlingRate";
 			public const string CanEmulate = "Emulation.canEmulate";
 			public const string SetVirtualTimePolicy = "Emulation.setVirtualTimePolicy";
 			public const string SetDefaultBackgroundColorOverride = "Emulation.setDefaultBackgroundColorOverride";
 			public const string VirtualTimeBudgetExpired = "Emulation.virtualTimeBudgetExpired";
+			public const string VirtualTimePaused = "Emulation.virtualTimePaused";
 		}
 
 		public static class Security
 		{
 			public const string Enable = "Security.enable";
 			public const string Disable = "Security.disable";
-			public const string ShowCertificateViewer = "Security.showCertificateViewer";
 			public const string HandleCertificateError = "Security.handleCertificateError";
 			public const string SetOverrideCertificateErrors = "Security.setOverrideCertificateErrors";
 			public const string SecurityStateChanged = "Security.securityStateChanged";
 			public const string CertificateError = "Security.certificateError";
+		}
+
+		public static class Audits
+		{
+			public const string GetEncodedResponse = "Audits.getEncodedResponse";
 		}
 
 		public static class Network
@@ -250,14 +268,17 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome
 			public const string ClearBrowserCookies = "Network.clearBrowserCookies";
 			public const string GetCookies = "Network.getCookies";
 			public const string GetAllCookies = "Network.getAllCookies";
-			public const string DeleteCookie = "Network.deleteCookie";
+			public const string DeleteCookies = "Network.deleteCookies";
 			public const string SetCookie = "Network.setCookie";
+			public const string SetCookies = "Network.setCookies";
 			public const string CanEmulateNetworkConditions = "Network.canEmulateNetworkConditions";
 			public const string EmulateNetworkConditions = "Network.emulateNetworkConditions";
 			public const string SetCacheDisabled = "Network.setCacheDisabled";
 			public const string SetBypassServiceWorker = "Network.setBypassServiceWorker";
 			public const string SetDataSizeLimitsForTest = "Network.setDataSizeLimitsForTest";
 			public const string GetCertificate = "Network.getCertificate";
+			public const string SetRequestInterceptionEnabled = "Network.setRequestInterceptionEnabled";
+			public const string ContinueInterceptedRequest = "Network.continueInterceptedRequest";
 			public const string ResourceChangedPriority = "Network.resourceChangedPriority";
 			public const string RequestWillBeSent = "Network.requestWillBeSent";
 			public const string RequestServedFromCache = "Network.requestServedFromCache";
@@ -273,6 +294,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome
 			public const string WebSocketFrameError = "Network.webSocketFrameError";
 			public const string WebSocketFrameSent = "Network.webSocketFrameSent";
 			public const string EventSourceMessageReceived = "Network.eventSourceMessageReceived";
+			public const string RequestIntercepted = "Network.requestIntercepted";
 		}
 
 		public static class Database
@@ -301,6 +323,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome
 			public const string RequestEntries = "CacheStorage.requestEntries";
 			public const string DeleteCache = "CacheStorage.deleteCache";
 			public const string DeleteEntry = "CacheStorage.deleteEntry";
+			public const string RequestCachedResponse = "CacheStorage.requestCachedResponse";
 		}
 
 		public static class DOMStorage
@@ -367,6 +390,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome
 			public const string GetBoxModel = "DOM.getBoxModel";
 			public const string GetNodeForLocation = "DOM.getNodeForLocation";
 			public const string GetRelayoutBoundary = "DOM.getRelayoutBoundary";
+			public const string DescribeNode = "DOM.describeNode";
 			public const string DocumentUpdated = "DOM.documentUpdated";
 			public const string SetChildNodes = "DOM.setChildNodes";
 			public const string AttributeModified = "DOM.attributeModified";
@@ -404,7 +428,6 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome
 			public const string GetMediaQueries = "CSS.getMediaQueries";
 			public const string SetEffectivePropertyValueForNode = "CSS.setEffectivePropertyValueForNode";
 			public const string GetBackgroundColors = "CSS.getBackgroundColors";
-			public const string GetLayoutTreeAndStyles = "CSS.getLayoutTreeAndStyles";
 			public const string StartRuleUsageTracking = "CSS.startRuleUsageTracking";
 			public const string TakeCoverageDelta = "CSS.takeCoverageDelta";
 			public const string StopRuleUsageTracking = "CSS.stopRuleUsageTracking";
@@ -415,10 +438,16 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome
 			public const string StyleSheetRemoved = "CSS.styleSheetRemoved";
 		}
 
+		public static class DOMSnapshot
+		{
+			public const string GetSnapshot = "DOMSnapshot.getSnapshot";
+		}
+
 		public static class IO
 		{
 			public const string Read = "IO.read";
 			public const string Close = "IO.close";
+			public const string ResolveBlob = "IO.resolveBlob";
 		}
 
 		public static class DOMDebugger
@@ -451,6 +480,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome
 			public const string CreateTarget = "Target.createTarget";
 			public const string GetTargets = "Target.getTargets";
 			public const string TargetCreated = "Target.targetCreated";
+			public const string TargetInfoChanged = "Target.targetInfoChanged";
 			public const string TargetDestroyed = "Target.targetDestroyed";
 			public const string AttachedToTarget = "Target.attachedToTarget";
 			public const string DetachedFromTarget = "Target.detachedFromTarget";
@@ -545,6 +575,11 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome
 		public static class Storage
 		{
 			public const string ClearDataForOrigin = "Storage.clearDataForOrigin";
+			public const string GetUsageAndQuota = "Storage.getUsageAndQuota";
+			public const string TrackCacheStorageForOrigin = "Storage.trackCacheStorageForOrigin";
+			public const string UntrackCacheStorageForOrigin = "Storage.untrackCacheStorageForOrigin";
+			public const string CacheStorageListUpdated = "Storage.cacheStorageListUpdated";
+			public const string CacheStorageContentUpdated = "Storage.cacheStorageContentUpdated";
 		}
 
 		public static class Log
@@ -572,6 +607,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome
 		public static class Browser
 		{
 			public const string GetWindowForTarget = "Browser.getWindowForTarget";
+			public const string GetVersion = "Browser.getVersion";
 			public const string SetWindowBounds = "Browser.setWindowBounds";
 			public const string GetWindowBounds = "Browser.getWindowBounds";
 		}

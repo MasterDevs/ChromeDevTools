@@ -1,5 +1,6 @@
 using MasterDevs.ChromeDevTools;
 using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Target
@@ -12,8 +13,8 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Target
 	public class AttachToTargetCommandResponse
 	{
 		/// <summary>
-		/// Gets or sets Whether attach succeeded.
+		/// Gets or sets Id assigned to the session.
 		/// </summary>
-		public bool Success { get; set; }
+		public string SessionId { get; set; }
 	}
 }

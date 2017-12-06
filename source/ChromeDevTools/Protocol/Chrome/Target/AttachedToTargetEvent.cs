@@ -1,4 +1,6 @@
-using MasterDevs.ChromeDevTools;using Newtonsoft.Json;
+using MasterDevs.ChromeDevTools;
+using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Target
 {
@@ -9,6 +11,10 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Target
 	[SupportedBy("Chrome")]
 	public class AttachedToTargetEvent
 	{
+		/// <summary>
+		/// Gets or sets Identifier assigned to the session used to send/receive messages.
+		/// </summary>
+		public string SessionId { get; set; }
 		/// <summary>
 		/// Gets or sets TargetInfo
 		/// </summary>

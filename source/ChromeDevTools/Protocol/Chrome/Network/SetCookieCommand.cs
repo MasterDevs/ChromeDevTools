@@ -1,5 +1,6 @@
 using MasterDevs.ChromeDevTools;
 using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
@@ -12,46 +13,47 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 	public class SetCookieCommand: ICommand<SetCookieCommandResponse>
 	{
 		/// <summary>
-		/// Gets or sets The request-URI to associate with the setting of the cookie. This value can affect the default domain and path values of the created cookie.
-		/// </summary>
-		public string Url { get; set; }
-		/// <summary>
-		/// Gets or sets The name of the cookie.
+		/// Gets or sets Cookie name.
 		/// </summary>
 		public string Name { get; set; }
 		/// <summary>
-		/// Gets or sets The value of the cookie.
+		/// Gets or sets Cookie value.
 		/// </summary>
 		public string Value { get; set; }
 		/// <summary>
-		/// Gets or sets If omitted, the cookie becomes a host-only cookie.
+		/// Gets or sets The request-URI to associate with the setting of the cookie. This value can affect the default domain and path values of the created cookie.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public string Url { get; set; }
+		/// <summary>
+		/// Gets or sets Cookie domain.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string Domain { get; set; }
 		/// <summary>
-		/// Gets or sets Defaults to the path portion of the url parameter.
+		/// Gets or sets Cookie path.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string Path { get; set; }
 		/// <summary>
-		/// Gets or sets Defaults ot false.
+		/// Gets or sets True if cookie is secure.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public bool? Secure { get; set; }
 		/// <summary>
-		/// Gets or sets Defaults to false.
+		/// Gets or sets True if cookie is http-only.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public bool? HttpOnly { get; set; }
 		/// <summary>
-		/// Gets or sets Defaults to browser default behavior.
+		/// Gets or sets Cookie SameSite type.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string SameSite { get; set; }
 		/// <summary>
-		/// Gets or sets If omitted, the cookie becomes a session cookie.
+		/// Gets or sets Cookie expiration date, session cookie if not set
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double ExpirationDate { get; set; }
+		public double Expires { get; set; }
 	}
 }

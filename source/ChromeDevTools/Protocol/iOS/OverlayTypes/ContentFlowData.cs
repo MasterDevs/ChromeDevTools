@@ -4,9 +4,6 @@ using System.Collections.Generic;
 
 namespace MasterDevs.ChromeDevTools.Protocol.iOS.OverlayTypes
 {
-	/// <summary>
-	/// 
-	/// </summary>
 	[SupportedBy("iOS")]
 	public class ContentFlowData
 	{

@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 	public class CallArgument
 	{
 		/// <summary>
-		/// Gets or sets Primitive value.
+		/// Gets or sets Primitive value or serializable javascript object.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public object Value { get; set; }
