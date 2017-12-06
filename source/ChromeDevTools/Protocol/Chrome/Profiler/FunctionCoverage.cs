@@ -18,9 +18,5 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Profiler
 		/// Gets or sets Source ranges inside the function with coverage data.
 		/// </summary>
 		public CoverageRange[] Ranges { get; set; }
-		/// <summary>
-		/// Gets or sets Whether coverage data for this function has block granularity.
-		/// </summary>
-		public bool IsBlockCoverage { get; set; }
 	}
 }

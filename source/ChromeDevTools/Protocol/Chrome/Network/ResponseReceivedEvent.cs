@@ -1,6 +1,4 @@
-using MasterDevs.ChromeDevTools;
-using Newtonsoft.Json;
-using System.Collections.Generic;
+using MasterDevs.ChromeDevTools;using Newtonsoft.Json;
 
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 {
@@ -16,7 +14,11 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 		/// </summary>
 		public string RequestId { get; set; }
 		/// <summary>
-		/// Gets or sets Loader identifier. Empty string if the request is fetched form worker.
+		/// Gets or sets Frame identifier.
+		/// </summary>
+		public string FrameId { get; set; }
+		/// <summary>
+		/// Gets or sets Loader identifier.
 		/// </summary>
 		public string LoaderId { get; set; }
 		/// <summary>
@@ -31,10 +33,5 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 		/// Gets or sets Response data.
 		/// </summary>
 		public Response Response { get; set; }
-		/// <summary>
-		/// Gets or sets Frame identifier.
-		/// </summary>
-		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public string FrameId { get; set; }
 	}
 }

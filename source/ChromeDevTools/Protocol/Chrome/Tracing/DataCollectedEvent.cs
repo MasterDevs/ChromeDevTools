@@ -1,6 +1,4 @@
-using MasterDevs.ChromeDevTools;
-using Newtonsoft.Json;
-using System.Collections.Generic;
+using MasterDevs.ChromeDevTools;using Newtonsoft.Json;
 
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Tracing
 {

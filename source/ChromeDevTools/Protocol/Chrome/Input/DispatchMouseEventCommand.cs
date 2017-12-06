@@ -1,6 +1,5 @@
 using MasterDevs.ChromeDevTools;
 using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Input
@@ -17,20 +16,20 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Input
 		/// </summary>
 		public string Type { get; set; }
 		/// <summary>
-		/// Gets or sets X coordinate of the event relative to the main frame's viewport in CSS pixels.
+		/// Gets or sets X coordinate of the event relative to the main frame's viewport.
 		/// </summary>
-		public double X { get; set; }
+		public long X { get; set; }
 		/// <summary>
-		/// Gets or sets Y coordinate of the event relative to the main frame's viewport in CSS pixels. 0 refers to the top of the viewport and Y increases as it proceeds towards the bottom of the viewport.
+		/// Gets or sets Y coordinate of the event relative to the main frame's viewport. 0 refers to the top of the viewport and Y increases as it proceeds towards the bottom of the viewport.
 		/// </summary>
-		public double Y { get; set; }
+		public long Y { get; set; }
 		/// <summary>
 		/// Gets or sets Bit field representing pressed modifier keys. Alt=1, Ctrl=2, Meta/Command=4, Shift=8 (default: 0).
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public long? Modifiers { get; set; }
 		/// <summary>
-		/// Gets or sets Time at which the event occurred.
+		/// Gets or sets Time at which the event occurred. Measured in UTC time in seconds since January 1, 1970 (default: current time).
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public double Timestamp { get; set; }
@@ -44,15 +43,5 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Input
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public long? ClickCount { get; set; }
-		/// <summary>
-		/// Gets or sets X delta in CSS pixels for mouse wheel event (default: 0).
-		/// </summary>
-		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double DeltaX { get; set; }
-		/// <summary>
-		/// Gets or sets Y delta in CSS pixels for mouse wheel event (default: 0).
-		/// </summary>
-		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double DeltaY { get; set; }
 	}
 }

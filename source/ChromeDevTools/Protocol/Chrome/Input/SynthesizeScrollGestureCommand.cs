@@ -1,6 +1,5 @@
 using MasterDevs.ChromeDevTools;
 using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Input
@@ -15,31 +14,31 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Input
 		/// <summary>
 		/// Gets or sets X coordinate of the start of the gesture in CSS pixels.
 		/// </summary>
-		public double X { get; set; }
+		public long X { get; set; }
 		/// <summary>
 		/// Gets or sets Y coordinate of the start of the gesture in CSS pixels.
 		/// </summary>
-		public double Y { get; set; }
+		public long Y { get; set; }
 		/// <summary>
 		/// Gets or sets The distance to scroll along the X axis (positive to scroll left).
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double XDistance { get; set; }
+		public long? XDistance { get; set; }
 		/// <summary>
 		/// Gets or sets The distance to scroll along the Y axis (positive to scroll up).
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double YDistance { get; set; }
+		public long? YDistance { get; set; }
 		/// <summary>
 		/// Gets or sets The number of additional pixels to scroll back along the X axis, in addition to the given distance.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double XOverscroll { get; set; }
+		public long? XOverscroll { get; set; }
 		/// <summary>
 		/// Gets or sets The number of additional pixels to scroll back along the Y axis, in addition to the given distance.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double YOverscroll { get; set; }
+		public long? YOverscroll { get; set; }
 		/// <summary>
 		/// Gets or sets Prevent fling (default: true).
 		/// </summary>
