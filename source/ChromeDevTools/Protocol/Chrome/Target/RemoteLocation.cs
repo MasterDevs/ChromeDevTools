@@ -4,9 +4,6 @@ using System.Collections.Generic;
 
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Target
 {
-	/// <summary>
-	/// 
-	/// </summary>
 	[SupportedBy("Chrome")]
 	public class RemoteLocation
 	{

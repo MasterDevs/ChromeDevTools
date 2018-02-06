@@ -4,9 +4,6 @@ using System.Collections.Generic;
 
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 {
-	/// <summary>
-	/// 
-	/// </summary>
 	[SupportedBy("Chrome")]
 	public class EntryPreview
 	{

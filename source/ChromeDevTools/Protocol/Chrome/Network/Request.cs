@@ -28,10 +28,10 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string PostData { get; set; }
 		/// <summary>
-		/// Gets or sets The mixed content status of the request, as defined in http://www.w3.org/TR/mixed-content/
+		/// Gets or sets The mixed content type of the request.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public string MixedContentType { get; set; }
+		public Security.MixedContentType MixedContentType { get; set; }
 		/// <summary>
 		/// Gets or sets Priority of the resource request at the time request is sent.
 		/// </summary>

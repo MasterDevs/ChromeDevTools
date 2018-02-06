@@ -1,5 +1,6 @@
 using MasterDevs.ChromeDevTools;
 using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CSS
@@ -13,5 +14,20 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CSS
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string[] BackgroundColors { get; set; }
+		/// <summary>
+		/// Gets or sets The computed font size for this node, as a CSS computed value string (e.g. '12px').
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public string ComputedFontSize { get; set; }
+		/// <summary>
+		/// Gets or sets The computed font weight for this node, as a CSS computed value string (e.g. 'normal' or '100').
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public string ComputedFontWeight { get; set; }
+		/// <summary>
+		/// Gets or sets The computed font size for the document body, as a computed CSS value string (e.g. '16px').
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public string ComputedBodyFontSize { get; set; }
 	}
 }

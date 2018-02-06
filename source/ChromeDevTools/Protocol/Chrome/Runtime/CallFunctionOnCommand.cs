@@ -1,5 +1,6 @@
 using MasterDevs.ChromeDevTools;
 using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
@@ -45,7 +46,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public bool? UserGesture { get; set; }
 		/// <summary>
-		/// Gets or sets Whether execution should wait for promise to be resolved. If the result of evaluation is not a Promise, it's considered to be an error.
+		/// Gets or sets Whether execution should <code>await</code> for resulting value and return once awaited promise is resolved.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public bool? AwaitPromise { get; set; }

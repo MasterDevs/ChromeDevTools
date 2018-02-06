@@ -4,9 +4,6 @@ using System.Collections.Generic;
 
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Target
 {
-	/// <summary>
-	/// 
-	/// </summary>
 	[SupportedBy("Chrome")]
 	public class TargetInfo
 	{
@@ -26,5 +23,9 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Target
 		/// Gets or sets Url
 		/// </summary>
 		public string Url { get; set; }
+		/// <summary>
+		/// Gets or sets Whether the target has an attached client.
+		/// </summary>
+		public bool Attached { get; set; }
 	}
 }

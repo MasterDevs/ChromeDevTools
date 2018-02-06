@@ -70,5 +70,10 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Overlay
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string SelectorList { get; set; }
+		/// <summary>
+		/// Gets or sets The grid layout color (default: transparent).
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public DOM.RGBA CssGridColor { get; set; }
 	}
 }

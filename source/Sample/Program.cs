@@ -4,7 +4,6 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using MasterDevs.ChromeDevTools.Protocol.Chrome.DOM;
-using MasterDevs.ChromeDevTools.Protocol.Chrome.Emulation;
 using Task = System.Threading.Tasks.Task;
 
 namespace MasterDevs.ChromeDevTools.Sample
@@ -38,10 +37,11 @@ namespace MasterDevs.ChromeDevTools.Sample
                         //
                         // Here we are sending a commands to tell chrome to set the viewport size 
                         // and navigate to the specified URL
-                        await chromeSession.SendAsync(new SetVisibleSizeCommand
+                        await chromeSession.SendAsync(new SetDeviceMetricsOverrideCommand
                         {
                             Width = ViewPortWidth,
-                            Height = ViewPortHeight
+                            Height = ViewPortHeight,
+                            Scale = 1
                         });
 
                         var navigateResponse = await chromeSession.SendAsync(new NavigateCommand
@@ -81,8 +81,12 @@ namespace MasterDevs.ChromeDevTools.Sample
                         var height = (await chromeSession.SendAsync(new GetBoxModelCommand {NodeId = bodyNodeId}))
                             .Result.Model.Height;
 
-                        await chromeSession.SendAsync(
-                            new SetVisibleSizeCommand {Width = ViewPortWidth, Height = height});
+                        await chromeSession.SendAsync(new SetDeviceMetricsOverrideCommand
+                        {
+                            Width = ViewPortWidth,
+                            Height = height,
+                            Scale = 1
+                        });
 
                         Console.WriteLine("Taking screenshot");
                         var screenshot = await chromeSession.SendAsync(new CaptureScreenshotCommand {Format = "png"});

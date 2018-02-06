@@ -40,5 +40,10 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 		/// Gets or sets Frame document's mimeType as determined by the browser.
 		/// </summary>
 		public string MimeType { get; set; }
+		/// <summary>
+		/// Gets or sets If the frame failed to load, this contains the URL that could not be loaded.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public string UnreachableUrl { get; set; }
 	}
 }

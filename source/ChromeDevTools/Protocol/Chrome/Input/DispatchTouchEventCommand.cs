@@ -1,5 +1,6 @@
 using MasterDevs.ChromeDevTools;
 using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Input
@@ -12,11 +13,11 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Input
 	public class DispatchTouchEventCommand: ICommand<DispatchTouchEventCommandResponse>
 	{
 		/// <summary>
-		/// Gets or sets Type of the touch event.
+		/// Gets or sets Type of the touch event. TouchEnd and TouchCancel must not contain any touch points, while TouchStart and TouchMove must contains at least one.
 		/// </summary>
 		public string Type { get; set; }
 		/// <summary>
-		/// Gets or sets Touch points.
+		/// Gets or sets Active touch points on the touch device. One event per any changed point (compared to previous touch event in a sequence) is generated, emulating pressing/moving/releasing points one by one.
 		/// </summary>
 		public TouchPoint[] TouchPoints { get; set; }
 		/// <summary>
@@ -25,7 +26,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Input
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public long? Modifiers { get; set; }
 		/// <summary>
-		/// Gets or sets Time at which the event occurred. Measured in UTC time in seconds since January 1, 1970 (default: current time).
+		/// Gets or sets Time at which the event occurred.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public double Timestamp { get; set; }
