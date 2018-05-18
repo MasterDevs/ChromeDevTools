@@ -16,6 +16,7 @@ namespace MasterDevs.ChromeDevTools
         private readonly ConcurrentDictionary<string, ConcurrentBag<Action<object>>> _handlers = new ConcurrentDictionary<string, ConcurrentBag<Action<object>>>();
         private ICommandFactory _commandFactory;
         private IEventFactory _eventFactory;
+        private readonly Action<Exception> _onError;
         private ManualResetEvent _openEvent = new ManualResetEvent(false);
         private ManualResetEvent _publishEvent = new ManualResetEvent(false);
         private ConcurrentDictionary<long, ManualResetEventSlim> _requestWaitHandles = new ConcurrentDictionary<long, ManualResetEventSlim>();
@@ -24,12 +25,13 @@ namespace MasterDevs.ChromeDevTools
         private WebSocket _webSocket;
         private static object _Lock = new object();
 
-        public ChromeSession(string endpoint, ICommandFactory commandFactory, ICommandResponseFactory responseFactory, IEventFactory eventFactory)
+        public ChromeSession(string endpoint, ICommandFactory commandFactory, ICommandResponseFactory responseFactory, IEventFactory eventFactory, Action<Exception> onError)
         {
             _endpoint = endpoint;
             _commandFactory = commandFactory;
             _responseFactory = responseFactory;
             _eventFactory = eventFactory;
+            _onError = onError;
         }
 
         public void Dispose()
@@ -81,17 +83,17 @@ namespace MasterDevs.ChromeDevTools
             return SendCommand(command, cancellationToken);
         }
 
-        public Task<CommandResponse<T>> SendAsync<T>(ICommand<T> parameter, CancellationToken cancellationToken)
+        public Task<ICommandResponseWrapper<T>> SendAsync<T>(ICommand<T> parameter, CancellationToken cancellationToken)
         {
             var command = _commandFactory.Create(parameter);
             var task = SendCommand(command, cancellationToken);
-            return CastTaskResult<ICommandResponse, CommandResponse<T>>(task);
+            return TransformTaskResult(task, response => (ICommandResponseWrapper<T>)new CommandResponseWrapper<T>(response));
         }
 
-        private Task<TDerived> CastTaskResult<TBase, TDerived>(Task<TBase> task) where TDerived: TBase
+        private Task<TDerived> TransformTaskResult<TBase, TDerived>(Task<TBase> task, Func<TBase, TDerived> transform)
         {
             var tcs = new TaskCompletionSource<TDerived>();
-            task.ContinueWith(t => tcs.SetResult((TDerived)t.Result),
+            task.ContinueWith(t => tcs.SetResult(transform(t.Result)),
                 TaskContinuationOptions.OnlyOnRanToCompletion);
             task.ContinueWith(t => tcs.SetException(t.Exception.InnerExceptions),
                 TaskContinuationOptions.OnlyOnFaulted);
@@ -235,12 +237,12 @@ namespace MasterDevs.ChromeDevTools
                 HandleEvent(evnt);
                 return;
             }
-            throw new Exception("Don't know what to do with response: " + e.Data);
+            _onError(new Exception("Don't know what to do with response: " + e.Data));
         }
 
         private void WebSocket_Error(object sender, SuperSocket.ClientEngine.ErrorEventArgs e)
         {
-            throw e.Exception;
+            _onError(e.Exception);
         }
 
         private void WebSocket_MessageReceived(object sender, MessageReceivedEventArgs e)
@@ -257,7 +259,7 @@ namespace MasterDevs.ChromeDevTools
                 HandleEvent(evnt);
                 return;
             }
-            throw new Exception("Don't know what to do with response: " + e.Message);
+            _onError(new Exception("Don't know what to do with response: " + e.Message));
         }
 
         private void WebSocket_Opened(object sender, EventArgs e)

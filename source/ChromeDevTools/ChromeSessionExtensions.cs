@@ -5,7 +5,7 @@ namespace MasterDevs.ChromeDevTools
 {
     public static class ChromeSessionExtensions
     {
-        public static Task<CommandResponse<T>> SendAsync<T>(this IChromeSession session, ICommand<T> parameter)
+        public static Task<ICommandResponseWrapper<T>> SendAsync<T>(this IChromeSession session, ICommand<T> parameter)
         {
             return session.SendAsync(parameter, CancellationToken.None);
         }

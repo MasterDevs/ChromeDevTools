@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChromeProcessFactory.cs" />
+    <Compile Include="CommandResponseWrapper.cs" />
     <Compile Include="IDirectoryCleaner.cs" />
     <Compile Include="LocalChromeProcess.cs" />
     <Compile Include="ChromeSession.cs" />
