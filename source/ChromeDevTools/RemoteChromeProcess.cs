@@ -43,5 +43,10 @@ namespace MasterDevs.ChromeDevTools
             string json = await http.GetStringAsync("/json/new");
             return JsonConvert.DeserializeObject<ChromeSessionInfo>(json);
         }
+
+        public async Task CloseSession(string sessionId)
+        {
+            await http.GetAsync($"/json/close/{sessionId}");
+        }
     }
 }

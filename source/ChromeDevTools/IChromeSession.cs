@@ -8,7 +8,7 @@ namespace MasterDevs.ChromeDevTools
     {
 
     }
-    public interface IChromeSession
+    public interface IChromeSession : IDisposable
     {
         Task<CommandResponse<TResponse>> SendAsync<TResponse>(ICommand<TResponse> parameter, CancellationToken cancellationToken);
 

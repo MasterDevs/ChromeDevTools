@@ -9,6 +9,8 @@ namespace MasterDevs.ChromeDevTools
 
         Task<ChromeSessionInfo> StartNewSession();
 
+        Task CloseSession(string sessionId);
+
         Uri RemoteDebuggingUri { get; }
     }
 }
