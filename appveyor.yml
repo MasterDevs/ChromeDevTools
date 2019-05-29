@@ -10,6 +10,7 @@ build:
 - dotnet pack source\ChromeDevTools\MasterDevs.ChromeDevTools.Core.csproj -c Release
 artifacts:
 - path: 'source\ChromeDevTools\bin\Release\*.nupkg'
+- path: 'source\ChromeDevTools\bin\Release\*.snupkg'
 deploy:
 - provider: GitHub
   auth_token:
