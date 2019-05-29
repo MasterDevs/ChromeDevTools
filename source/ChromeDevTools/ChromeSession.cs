@@ -1,4 +1,4 @@
-﻿#if !NETSTANDARD1_5
+﻿#if !NETSTANDARD
 using MasterDevs.ChromeDevTools.Serialization;
 using Newtonsoft.Json;
 using System;
