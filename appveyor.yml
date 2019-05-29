@@ -4,7 +4,7 @@ skip_tags: false
 nuget:
   account_feed: true
   project_feed: true
-build:
+build_script:
 - nuget restore source\MasterDevs.ChromeDevTools.sln
 - dotnet restore source\ChromeDevTools\MasterDevs.ChromeDevTools.Core.csproj
 - dotnet pack source\ChromeDevTools\MasterDevs.ChromeDevTools.Core.csproj -c Release
