@@ -1,19 +1,22 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.5</TargetFramework>
-    <TargetFrameworks>netstandard1.5;net45</TargetFrameworks>
-    <VersionPrefix>1.0.3</VersionPrefix>
+    <TargetFrameworks>netstandard2.0;netstandard1.5;net45</TargetFrameworks>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 
     <RootNamespace>MasterDevs.ChromeDevTools</RootNamespace>
     <AssemblyName>MasterDevs.ChromeDevTools</AssemblyName>
 
     <Authors>MasterDevs</Authors>
+    <Company>MasterDevs</Company>
+    <Product>MasterDevs.ChromeWebTools</Product>
+    <Copyright>Copyright ©  2015 MasterDevs</Copyright>
     <Description>Contains the classes and utilities used to interact with the Chrome Developer Tools</Description>
-    <PackageProjectUrl>https://github.com/MasterDevs/ChromeDevTools</PackageProjectUrl>
-    <PackageLicenseUrl>https://github.com/MasterDevs/ChromeDevTools/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageIconUrl>http://masterdevs.com/images/FavIcon_144.png</PackageIconUrl>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
 
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>MasterDevs.ChromeDevTools.snk</AssemblyOriginatorKeyFile>
@@ -21,10 +24,12 @@
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
-    <PackageReference Include="System.Net.Http" Version="4.3.0" />
+    <PackageReference Include="Nerdbank.GitVersioning" Version="2.3.167" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0-beta2-19270-01" PrivateAssets="All" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard1.5'">
+    <PackageReference Include="System.Net.Http" Version="4.3.0" />
     <PackageReference Include="System.Reflection" Version="4.3.0" />
     <PackageReference Include="System.Runtime" Version="4.3.0" />
     <PackageReference Include="System.Collections.Concurrent" Version="4.3.0" />
@@ -36,6 +41,8 @@
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net45'">
+    <PackageReference Include="System.Net.Http" Version="4.3.0" />
     <PackageReference Include="WebSocket4Net" Version="0.14.1" />
+    <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
 </Project>
