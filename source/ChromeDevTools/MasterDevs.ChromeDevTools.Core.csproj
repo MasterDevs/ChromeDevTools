@@ -3,7 +3,6 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <TargetFrameworks>netstandard2.0;netstandard1.5;net45</TargetFrameworks>
-    <VersionPrefix>1.0.3</VersionPrefix>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 
     <RootNamespace>MasterDevs.ChromeDevTools</RootNamespace>
@@ -21,6 +20,7 @@
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
+    <PackageReference Include="Nerdbank.GitVersioning" Version="2.3.167" PrivateAssets="All" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard1.5'">

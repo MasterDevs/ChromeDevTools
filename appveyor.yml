@@ -1,80 +1,14 @@
 # Great reference:  http://www.appveyor.com/docs/appveyor-yml
 
-version: 1.0.{build}
 skip_tags: false
-configuration: Release
-init:
-- ps: >-
-    $parsedReleaseBuildVersion = $env:APPVEYOR_REPO_TAG_NAME -Match "(\d+.\d+.\d+(.\d+)?)"
-    
-    If($env:appveyor_repo_tag -AND $parsedReleaseBuildVersion) {
-      $env:BuildVersion = $matches[0]
-      $env:IsGithubRelease = $TRUE
-    }
-    else {
-      $env:BuildVersion = $env:appveyor_build_version
-      $env:IsGithubRelease = ""
-    }
-    
-    Write-Host "Build Version: " $env:BuildVersion
-    
-    Write-Host "appveyor_build_version Variable: " $env:appveyor_build_version
-    
-install:
-- ps: >-
-    try
-    {
-        if($env:IsGithubRelease)
-        {
-            $origin = git config --get remote.origin.url
-            if ($origin -like "https://github.com/*.git")
-            {
-                $startToTrim = "https://github.com/"
-                $endToTrim = ".git"
-
-                $releaseUrl = $origin.Substring($startToTrim.Length, $origin.Length - $startToTrim.Length - $endToTrim.Length)
-                
-                $releaseUrl = "https://api.github.com/repos/" + $releaseUrl + "/releases/tags/" + $env:APPVEYOR_REPO_TAG_NAME
-
-                $resp = invoke-webrequest $releaseUrl
-                $release = $resp.Content | ConvertFrom-Json
-
-                $nuspecPath = (Get-ChildItem -Filter *.nuspec -Recurse )[0].FullName
-                [xml]$nuspec = Get-Content $nuspecPath
-
-                $nuspec.package.metadata.releaseNotes = $release.Body
-                $nuspec.Save( $nuspecPath )
-            }
-        }
-    }
-    catch 
-    {
-        Write-Host $_.Exception.GetType().FullName, $_.Exception.Message
-    }
-assembly_info:
-  patch: true
-  file: '**\AssemblyInfo.*'
-  assembly_version: $(BuildVersion)
-  assembly_file_version: $(BuildVersion)
-  assembly_informational_version: $(BuildVersion)
 nuget:
   account_feed: true
   project_feed: true
-before_build:
-- cmd: choco install wget
-- wget -q https://download.microsoft.com/download/8/F/9/8F9659B9-E628-4D1A-B6BF-C3004C8C954B/dotnet-1.1.1-sdk-win-x64.exe
-- dotnet-1.1.1-sdk-win-x64.exe /install /quiet /log dotnetinstall.log
-- ps: Push-AppveyorArtifact "dotnetinstall.log"
+build:
 - nuget restore source\MasterDevs.ChromeDevTools.sln
 - dotnet restore source\ChromeDevTools\MasterDevs.ChromeDevTools.Core.csproj
-- dotnet pack source\ChromeDevTools\MasterDevs.ChromeDevTools.Core.csproj --version-suffix r%APPVEYOR_BUILD_NUMBER%
-build:
-  project: source\MasterDevs.ChromeDevTools.sln
-  publish_nuget: true
-  publish_nuget_symbols: false
-  verbosity: minimal
+- dotnet pack source\ChromeDevTools\MasterDevs.ChromeDevTools.Core.csproj -c Release
 artifacts:
-- path: '*.nupkg'
 - path: 'source\ChromeDevTools\bin\Release\*.nupkg'
 deploy:
 - provider: GitHub
