@@ -12,7 +12,7 @@
     <Authors>MasterDevs</Authors>
     <Description>Contains the classes and utilities used to interact with the Chrome Developer Tools</Description>
     <PackageProjectUrl>https://github.com/MasterDevs/ChromeDevTools</PackageProjectUrl>
-    <PackageLicenseUrl>https://github.com/MasterDevs/ChromeDevTools/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageIconUrl>http://masterdevs.com/images/FavIcon_144.png</PackageIconUrl>
 
     <SignAssembly>true</SignAssembly>
