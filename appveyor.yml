@@ -1,9 +1,6 @@
 # Great reference:  http://www.appveyor.com/docs/appveyor-yml
 
 skip_tags: false
-nuget:
-  account_feed: true
-  project_feed: true
 build_script:
 - nuget restore source\MasterDevs.ChromeDevTools.sln
 - dotnet restore source\ChromeDevTools\MasterDevs.ChromeDevTools.Core.csproj
