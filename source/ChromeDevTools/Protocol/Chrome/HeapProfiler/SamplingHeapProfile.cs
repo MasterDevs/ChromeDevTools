@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.HeapProfiler
 {
 	/// <summary>
-	/// Profile.
+	/// Sampling profile.
 	/// </summary>
 	[SupportedBy("Chrome")]
 	public class SamplingHeapProfile
@@ -14,5 +14,9 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.HeapProfiler
 		/// Gets or sets Head
 		/// </summary>
 		public SamplingHeapProfileNode Head { get; set; }
+		/// <summary>
+		/// Gets or sets Samples
+		/// </summary>
+		public SamplingHeapProfileSample[] Samples { get; set; }
 	}
 }

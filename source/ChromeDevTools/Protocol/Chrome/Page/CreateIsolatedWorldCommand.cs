@@ -22,7 +22,8 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string WorldName { get; set; }
 		/// <summary>
-		/// Gets or sets Whether or not universal access should be granted to the isolated world. This is a powerful option, use with caution.
+		/// Gets or sets Whether or not universal access should be granted to the isolated world. This is a powerful
+		/// option, use with caution.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public bool? GrantUniveralAccess { get; set; }

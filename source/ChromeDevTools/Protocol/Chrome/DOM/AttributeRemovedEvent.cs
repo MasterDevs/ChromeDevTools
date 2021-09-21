@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 {
 	/// <summary>
-	/// Fired when <code>Element</code>'s attribute is removed.
+	/// Fired when `Element`'s attribute is removed.
 	/// </summary>
 	[Event(ProtocolName.DOM.AttributeRemoved)]
 	[SupportedBy("Chrome")]

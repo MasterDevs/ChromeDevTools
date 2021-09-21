@@ -15,5 +15,9 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 		/// Gets or sets Frame object.
 		/// </summary>
 		public Frame Frame { get; set; }
+		/// <summary>
+		/// Gets or sets Type
+		/// </summary>
+		public NavigationType Type { get; set; }
 	}
 }

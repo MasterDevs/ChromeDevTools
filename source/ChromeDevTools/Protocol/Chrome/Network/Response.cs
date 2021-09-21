@@ -17,7 +17,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 		/// <summary>
 		/// Gets or sets HTTP response status code.
 		/// </summary>
-		public double Status { get; set; }
+		public long Status { get; set; }
 		/// <summary>
 		/// Gets or sets HTTP response status text.
 		/// </summary>
@@ -27,7 +27,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 		/// </summary>
 		public Dictionary<string, string> Headers { get; set; }
 		/// <summary>
-		/// Gets or sets HTTP response headers text.
+		/// Gets or sets HTTP response headers text. This has been replaced by the headers in Network.responseReceivedExtraInfo.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string HeadersText { get; set; }
@@ -41,7 +41,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public Dictionary<string, string> RequestHeaders { get; set; }
 		/// <summary>
-		/// Gets or sets HTTP request headers text.
+		/// Gets or sets HTTP request headers text. This has been replaced by the headers in Network.requestWillBeSentExtraInfo.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string RequestHeadersText { get; set; }
@@ -74,6 +74,11 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public bool? FromServiceWorker { get; set; }
 		/// <summary>
+		/// Gets or sets Specifies that the request was served from the prefetch cache.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? FromPrefetchCache { get; set; }
+		/// <summary>
 		/// Gets or sets Total number of bytes received for this request so far.
 		/// </summary>
 		public double EncodedDataLength { get; set; }
@@ -82,6 +87,21 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public ResourceTiming Timing { get; set; }
+		/// <summary>
+		/// Gets or sets Response source of response from ServiceWorker.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public ServiceWorkerResponseSource ServiceWorkerResponseSource { get; set; }
+		/// <summary>
+		/// Gets or sets The time at which the returned response was generated.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public double ResponseTime { get; set; }
+		/// <summary>
+		/// Gets or sets Cache Storage Cache Name.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public string CacheStorageCacheName { get; set; }
 		/// <summary>
 		/// Gets or sets Protocol used to fetch this request.
 		/// </summary>

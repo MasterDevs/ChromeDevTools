@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 {
 	/// <summary>
-	/// Fired when the page with currently enabled screencast was shown or hidden </code>.
+	/// Fired when the page with currently enabled screencast was shown or hidden `.
 	/// </summary>
 	[Event(ProtocolName.Page.ScreencastVisibilityChanged)]
 	[SupportedBy("Chrome")]

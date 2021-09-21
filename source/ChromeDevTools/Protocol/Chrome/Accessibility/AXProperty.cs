@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Accessibility
 		/// <summary>
 		/// Gets or sets The name of this property.
 		/// </summary>
-		public string Name { get; set; }
+		public AXPropertyName Name { get; set; }
 		/// <summary>
 		/// Gets or sets The value of this property.
 		/// </summary>

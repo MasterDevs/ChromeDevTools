@@ -17,7 +17,8 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Browser
 		/// </summary>
 		public long WindowId { get; set; }
 		/// <summary>
-		/// Gets or sets New window bounds. The 'minimized', 'maximized' and 'fullscreen' states cannot be combined with 'left', 'top', 'width' or 'height'. Leaves unspecified fields unchanged.
+		/// Gets or sets New window bounds. The 'minimized', 'maximized' and 'fullscreen' states cannot be combined
+		/// with 'left', 'top', 'width' or 'height'. Leaves unspecified fields unchanged.
 		/// </summary>
 		public Bounds Bounds { get; set; }
 	}

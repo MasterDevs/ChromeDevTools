@@ -17,8 +17,9 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CacheStorage
 		/// </summary>
 		public DataEntry[] CacheDataEntries { get; set; }
 		/// <summary>
-		/// Gets or sets If true, there are more entries to fetch in the given range.
+		/// Gets or sets Count of returned entries from this storage. If pathFilter is empty, it
+		/// is the count of all entries from this storage.
 		/// </summary>
-		public bool HasMore { get; set; }
+		public double ReturnCount { get; set; }
 	}
 }

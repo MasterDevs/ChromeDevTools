@@ -17,7 +17,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 		/// <summary>
 		/// Gets or sets Type of this resource.
 		/// </summary>
-		public Page.ResourceType Type { get; set; }
+		public ResourceType Type { get; set; }
 		/// <summary>
 		/// Gets or sets Cached response data.
 		/// </summary>

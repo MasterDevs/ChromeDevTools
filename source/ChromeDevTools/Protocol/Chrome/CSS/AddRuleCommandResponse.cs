@@ -6,7 +6,8 @@ using System.Collections.Generic;
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CSS
 {
 	/// <summary>
-	/// Inserts a new rule with the given <code>ruleText</code> in a stylesheet with given <code>styleSheetId</code>, at the position specified by <code>location</code>.
+	/// Inserts a new rule with the given `ruleText` in a stylesheet with given `styleSheetId`, at the
+	/// position specified by `location`.
 	/// </summary>
 	[CommandResponse(ProtocolName.CSS.AddRule)]
 	[SupportedBy("Chrome")]

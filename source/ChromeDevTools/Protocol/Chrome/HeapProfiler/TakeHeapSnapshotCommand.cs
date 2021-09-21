@@ -14,5 +14,10 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.HeapProfiler
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public bool? ReportProgress { get; set; }
+		/// <summary>
+		/// Gets or sets If true, a raw snapshot without artifical roots will be generated
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? TreatGlobalObjectsAsRoots { get; set; }
 	}
 }

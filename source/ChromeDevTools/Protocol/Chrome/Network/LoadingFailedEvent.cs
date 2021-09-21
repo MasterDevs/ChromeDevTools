@@ -22,7 +22,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 		/// <summary>
 		/// Gets or sets Resource type.
 		/// </summary>
-		public Page.ResourceType Type { get; set; }
+		public ResourceType Type { get; set; }
 		/// <summary>
 		/// Gets or sets User friendly error message.
 		/// </summary>
@@ -37,5 +37,10 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public BlockedReason BlockedReason { get; set; }
+		/// <summary>
+		/// Gets or sets The reason why loading was blocked by CORS, if any.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public CorsErrorStatus CorsErrorStatus { get; set; }
 	}
 }

@@ -17,7 +17,8 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 		/// </summary>
 		public string Name { get; set; }
 		/// <summary>
-		/// Gets or sets If specified, deletes all the cookies with the given name where domain and path match provided URL.
+		/// Gets or sets If specified, deletes all the cookies with the given name where domain and path match
+		/// provided URL.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string Url { get; set; }

@@ -13,12 +13,16 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CacheStorage
 	public class RequestCachedResponseCommand: ICommand<RequestCachedResponseCommandResponse>
 	{
 		/// <summary>
-		/// Gets or sets Id of cache that contains the enty.
+		/// Gets or sets Id of cache that contains the entry.
 		/// </summary>
 		public string CacheId { get; set; }
 		/// <summary>
 		/// Gets or sets URL spec of the request.
 		/// </summary>
 		public string RequestURL { get; set; }
+		/// <summary>
+		/// Gets or sets headers of the request.
+		/// </summary>
+		public Header[] RequestHeaders { get; set; }
 	}
 }

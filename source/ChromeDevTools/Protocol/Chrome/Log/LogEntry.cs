@@ -23,6 +23,11 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Log
 		/// </summary>
 		public string Text { get; set; }
 		/// <summary>
+		/// Gets or sets Category
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public string Category { get; set; }
+		/// <summary>
 		/// Gets or sets Timestamp when this entry was added.
 		/// </summary>
 		public double Timestamp { get; set; }
@@ -51,5 +56,10 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Log
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string WorkerId { get; set; }
+		/// <summary>
+		/// Gets or sets Call arguments.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public Runtime.RemoteObject[] Args { get; set; }
 	}
 }

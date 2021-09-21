@@ -1,18 +1,18 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NUnit.Framework;
 
 namespace MasterDevs.ChromeDevTools.ProtocolGenerator.Tests
 {
-    [TestClass]
+    [TestFixture]
     public class TypeTests
     {
 
-        [TestMethod]
-        [DeploymentItem(DeploymentItems.Inspector10)]
+        [Test]
         public void TypeNameTest()
         {
             Protocol p = ProtocolProcessor.LoadProtocol(new[] { DeploymentItems.Inspector10 }, "Chrome-1.0");
@@ -23,8 +23,7 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator.Tests
             Assert.AreEqual("SearchMatch[]", result.TypeName.ToString());
         }
 
-        [TestMethod]
-        [DeploymentItem(DeploymentItems.Inspector10)]
+        [Test]
         public void ToStringTest()
         {
             Protocol p = ProtocolProcessor.LoadProtocol(new[] { DeploymentItems.Inspector10 }, "Chrome-1.0");

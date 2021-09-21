@@ -19,10 +19,17 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CacheStorage
 		/// <summary>
 		/// Gets or sets Number of records to skip.
 		/// </summary>
-		public long SkipCount { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? SkipCount { get; set; }
 		/// <summary>
 		/// Gets or sets Number of records to fetch.
 		/// </summary>
-		public long PageSize { get; set; }
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? PageSize { get; set; }
+		/// <summary>
+		/// Gets or sets If present, only return the entries containing this substring in the path
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public string PathFilter { get; set; }
 	}
 }

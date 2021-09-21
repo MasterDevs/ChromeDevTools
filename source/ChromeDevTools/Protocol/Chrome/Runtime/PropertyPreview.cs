@@ -26,7 +26,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public ObjectPreview ValuePreview { get; set; }
 		/// <summary>
-		/// Gets or sets Object subtype hint. Specified for <code>object</code> type values only.
+		/// Gets or sets Object subtype hint. Specified for `object` type values only.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string Subtype { get; set; }

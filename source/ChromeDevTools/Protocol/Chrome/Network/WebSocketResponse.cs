@@ -13,7 +13,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 		/// <summary>
 		/// Gets or sets HTTP response status code.
 		/// </summary>
-		public double Status { get; set; }
+		public long Status { get; set; }
 		/// <summary>
 		/// Gets or sets HTTP response status text.
 		/// </summary>

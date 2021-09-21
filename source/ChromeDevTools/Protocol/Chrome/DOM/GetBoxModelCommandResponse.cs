@@ -6,7 +6,7 @@ using System.Collections.Generic;
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 {
 	/// <summary>
-	/// Returns boxes for the currently selected nodes.
+	/// Returns boxes for the given node.
 	/// </summary>
 	[CommandResponse(ProtocolName.DOM.GetBoxModel)]
 	[SupportedBy("Chrome")]

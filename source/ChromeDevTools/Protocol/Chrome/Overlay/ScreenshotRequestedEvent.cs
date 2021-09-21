@@ -12,7 +12,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Overlay
 	public class ScreenshotRequestedEvent
 	{
 		/// <summary>
-		/// Gets or sets Viewport to capture, in CSS.
+		/// Gets or sets Viewport to capture, in device independent pixels (dip).
 		/// </summary>
 		public Page.Viewport Viewport { get; set; }
 	}

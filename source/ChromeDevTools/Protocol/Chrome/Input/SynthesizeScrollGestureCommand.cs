@@ -31,12 +31,14 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Input
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public double YDistance { get; set; }
 		/// <summary>
-		/// Gets or sets The number of additional pixels to scroll back along the X axis, in addition to the given distance.
+		/// Gets or sets The number of additional pixels to scroll back along the X axis, in addition to the given
+		/// distance.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public double XOverscroll { get; set; }
 		/// <summary>
-		/// Gets or sets The number of additional pixels to scroll back along the Y axis, in addition to the given distance.
+		/// Gets or sets The number of additional pixels to scroll back along the Y axis, in addition to the given
+		/// distance.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public double YOverscroll { get; set; }
@@ -51,7 +53,8 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Input
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public long? Speed { get; set; }
 		/// <summary>
-		/// Gets or sets Which type of input events to be generated (default: 'default', which queries the platform for the preferred input type).
+		/// Gets or sets Which type of input events to be generated (default: 'default', which queries the platform
+		/// for the preferred input type).
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string GestureSourceType { get; set; }

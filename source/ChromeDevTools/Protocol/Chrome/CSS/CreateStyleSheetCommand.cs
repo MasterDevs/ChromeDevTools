@@ -6,7 +6,7 @@ using System.Collections.Generic;
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CSS
 {
 	/// <summary>
-	/// Creates a new special "via-inspector" stylesheet in the frame with given <code>frameId</code>.
+	/// Creates a new special "via-inspector" stylesheet in the frame with given `frameId`.
 	/// </summary>
 	[Command(ProtocolName.CSS.CreateStyleSheet)]
 	[SupportedBy("Chrome")]

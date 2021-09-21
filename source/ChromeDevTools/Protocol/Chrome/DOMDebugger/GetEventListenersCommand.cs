@@ -17,12 +17,14 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOMDebugger
 		/// </summary>
 		public string ObjectId { get; set; }
 		/// <summary>
-		/// Gets or sets The maximum depth at which Node children should be retrieved, defaults to 1. Use -1 for the entire subtree or provide an integer larger than 0.
+		/// Gets or sets The maximum depth at which Node children should be retrieved, defaults to 1. Use -1 for the
+		/// entire subtree or provide an integer larger than 0.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public long? Depth { get; set; }
 		/// <summary>
-		/// Gets or sets Whether or not iframes and shadow roots should be traversed when returning the subtree (default is false). Reports listeners for all contexts if pierce is enabled.
+		/// Gets or sets Whether or not iframes and shadow roots should be traversed when returning the subtree
+		/// (default is false). Reports listeners for all contexts if pierce is enabled.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public bool? Pierce { get; set; }

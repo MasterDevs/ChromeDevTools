@@ -15,6 +15,10 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Security
 		/// </summary>
 		public SecurityState SecurityState { get; set; }
 		/// <summary>
+		/// Gets or sets Title describing the type of factor.
+		/// </summary>
+		public string Title { get; set; }
+		/// <summary>
 		/// Gets or sets Short phrase describing the type of factor.
 		/// </summary>
 		public string Summary { get; set; }
@@ -30,5 +34,10 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Security
 		/// Gets or sets Page certificate.
 		/// </summary>
 		public string[] Certificate { get; set; }
+		/// <summary>
+		/// Gets or sets Recommendations to fix any issues.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public string[] Recommendations { get; set; }
 	}
 }

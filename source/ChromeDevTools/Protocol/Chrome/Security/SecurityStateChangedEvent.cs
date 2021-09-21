@@ -20,7 +20,8 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Security
 		/// </summary>
 		public bool SchemeIsCryptographic { get; set; }
 		/// <summary>
-		/// Gets or sets List of explanations for the security state. If the overall security state is `insecure` or `warning`, at least one corresponding explanation should be included.
+		/// Gets or sets List of explanations for the security state. If the overall security state is `insecure` or
+		/// `warning`, at least one corresponding explanation should be included.
 		/// </summary>
 		public SecurityStateExplanation[] Explanations { get; set; }
 		/// <summary>

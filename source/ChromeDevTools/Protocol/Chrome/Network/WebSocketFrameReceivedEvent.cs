@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 {
 	/// <summary>
-	/// Fired when WebSocket frame is received.
+	/// Fired when WebSocket message is received.
 	/// </summary>
 	[Event(ProtocolName.Network.WebSocketFrameReceived)]
 	[SupportedBy("Chrome")]

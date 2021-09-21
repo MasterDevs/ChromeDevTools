@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 {
 	/// <summary>
-	/// Fired when <code>Container</code>'s child node count has changed.
+	/// Fired when `Container`'s child node count has changed.
 	/// </summary>
 	[Event(ProtocolName.DOM.ChildNodeCountUpdated)]
 	[SupportedBy("Chrome")]

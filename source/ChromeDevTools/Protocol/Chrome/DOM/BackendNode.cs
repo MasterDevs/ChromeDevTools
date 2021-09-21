@@ -11,11 +11,11 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 	public class BackendNode
 	{
 		/// <summary>
-		/// Gets or sets <code>Node</code>'s nodeType.
+		/// Gets or sets `Node`'s nodeType.
 		/// </summary>
 		public long NodeType { get; set; }
 		/// <summary>
-		/// Gets or sets <code>Node</code>'s nodeName.
+		/// Gets or sets `Node`'s nodeName.
 		/// </summary>
 		public string NodeName { get; set; }
 		/// <summary>

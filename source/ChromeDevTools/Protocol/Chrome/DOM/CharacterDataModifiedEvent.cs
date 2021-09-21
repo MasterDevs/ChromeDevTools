@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 {
 	/// <summary>
-	/// Mirrors <code>DOMCharacterDataModified</code> event.
+	/// Mirrors `DOMCharacterDataModified` event.
 	/// </summary>
 	[Event(ProtocolName.DOM.CharacterDataModified)]
 	[SupportedBy("Chrome")]

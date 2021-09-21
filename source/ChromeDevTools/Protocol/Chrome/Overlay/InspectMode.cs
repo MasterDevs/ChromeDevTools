@@ -13,6 +13,8 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Overlay{
 	{
 			SearchForNode,
 			SearchForUAShadowDOM,
+			CaptureAreaScreenshot,
+			ShowDistances,
 			None,
 	}
 }

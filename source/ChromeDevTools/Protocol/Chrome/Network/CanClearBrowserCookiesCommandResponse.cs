@@ -8,6 +8,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 	/// <summary>
 	/// Tells whether clearing browser cookies is supported.
 	/// </summary>
+	[Obsolete]
 	[CommandResponse(ProtocolName.Network.CanClearBrowserCookies)]
 	[SupportedBy("Chrome")]
 	public class CanClearBrowserCookiesCommandResponse

@@ -6,7 +6,8 @@ using System.Collections.Generic;
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Target
 {
 	/// <summary>
-	/// Creates a new empty BrowserContext. Similar to an incognito profile but you can have more than one.
+	/// Creates a new empty BrowserContext. Similar to an incognito profile but you can have more than
+	/// one.
 	/// </summary>
 	[CommandResponse(ProtocolName.Target.CreateBrowserContext)]
 	[SupportedBy("Chrome")]

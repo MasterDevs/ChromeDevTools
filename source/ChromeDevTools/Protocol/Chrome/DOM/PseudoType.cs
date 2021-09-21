@@ -17,8 +17,16 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM{
 			First_letter,
 			Before,
 			After,
+			Marker,
 			Backdrop,
 			Selection,
+			[EnumMember(Value = "target-text")]
+			Target_text,
+			[EnumMember(Value = "spelling-error")]
+			Spelling_error,
+			[EnumMember(Value = "grammar-error")]
+			Grammar_error,
+			Highlight,
 			[EnumMember(Value = "first-line-inherited")]
 			First_line_inherited,
 			Scrollbar,

@@ -29,7 +29,8 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Profiler
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public long[] Children { get; set; }
 		/// <summary>
-		/// Gets or sets The reason of being not optimized. The function may be deoptimized or marked as don't optimize.
+		/// Gets or sets The reason of being not optimized. The function may be deoptimized or marked as don't
+		/// optimize.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string DeoptReason { get; set; }

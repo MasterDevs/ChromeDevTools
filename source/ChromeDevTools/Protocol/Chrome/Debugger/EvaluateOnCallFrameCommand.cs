@@ -21,17 +21,20 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 		/// </summary>
 		public string Expression { get; set; }
 		/// <summary>
-		/// Gets or sets String object group name to put result into (allows rapid releasing resulting object handles using <code>releaseObjectGroup</code>).
+		/// Gets or sets String object group name to put result into (allows rapid releasing resulting object handles
+		/// using `releaseObjectGroup`).
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string ObjectGroup { get; set; }
 		/// <summary>
-		/// Gets or sets Specifies whether command line API should be available to the evaluated expression, defaults to false.
+		/// Gets or sets Specifies whether command line API should be available to the evaluated expression, defaults
+		/// to false.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public bool? IncludeCommandLineAPI { get; set; }
 		/// <summary>
-		/// Gets or sets In silent mode exceptions thrown during evaluation are not reported and do not pause execution. Overrides <code>setPauseOnException</code> state.
+		/// Gets or sets In silent mode exceptions thrown during evaluation are not reported and do not pause
+		/// execution. Overrides `setPauseOnException` state.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public bool? Silent { get; set; }
@@ -50,5 +53,10 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public bool? ThrowOnSideEffect { get; set; }
+		/// <summary>
+		/// Gets or sets Terminate execution after timing out (number of milliseconds).
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public double Timeout { get; set; }
 	}
 }

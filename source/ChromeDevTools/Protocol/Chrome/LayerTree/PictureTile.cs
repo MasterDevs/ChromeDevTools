@@ -19,7 +19,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.LayerTree
 		/// </summary>
 		public double Y { get; set; }
 		/// <summary>
-		/// Gets or sets Base64-encoded snapshot data.
+		/// Gets or sets Base64-encoded snapshot data. (Encoded as a base64 string when passed over JSON)
 		/// </summary>
 		public string Picture { get; set; }
 	}

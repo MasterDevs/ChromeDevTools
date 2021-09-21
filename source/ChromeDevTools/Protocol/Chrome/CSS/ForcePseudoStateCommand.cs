@@ -6,7 +6,8 @@ using System.Collections.Generic;
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CSS
 {
 	/// <summary>
-	/// Ensures that the given node will have specified pseudo-classes whenever its style is computed by the browser.
+	/// Ensures that the given node will have specified pseudo-classes whenever its style is computed by
+	/// the browser.
 	/// </summary>
 	[Command(ProtocolName.CSS.ForcePseudoState)]
 	[SupportedBy("Chrome")]

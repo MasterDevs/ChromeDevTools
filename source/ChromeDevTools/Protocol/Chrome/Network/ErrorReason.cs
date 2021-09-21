@@ -23,5 +23,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network{
 			NameNotResolved,
 			InternetDisconnected,
 			AddressUnreachable,
+			BlockedByClient,
+			BlockedByResponse,
 	}
 }

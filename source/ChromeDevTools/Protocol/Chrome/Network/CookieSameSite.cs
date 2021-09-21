@@ -6,12 +6,14 @@ using System.Runtime.Serialization;
 
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network{
 	/// <summary>
-	/// Represents the cookie's 'SameSite' status: https://tools.ietf.org/html/draft-west-first-party-cookies
+	/// Represents the cookie's 'SameSite' status:
+	/// https://tools.ietf.org/html/draft-west-first-party-cookies
 	/// </summary>
 	[JsonConverter(typeof(StringEnumConverter))]
 	public enum CookieSameSite
 	{
 			Strict,
 			Lax,
+			None,
 	}
 }

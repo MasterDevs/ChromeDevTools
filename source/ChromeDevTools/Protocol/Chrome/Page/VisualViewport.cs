@@ -38,5 +38,10 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 		/// Gets or sets Scale relative to the ideal viewport (size at width=device-width).
 		/// </summary>
 		public double Scale { get; set; }
+		/// <summary>
+		/// Gets or sets Page zoom factor (CSS to device independent pixels ratio).
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public double Zoom { get; set; }
 	}
 }

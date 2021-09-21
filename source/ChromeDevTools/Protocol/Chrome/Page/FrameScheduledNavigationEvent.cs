@@ -16,13 +16,14 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 		/// </summary>
 		public string FrameId { get; set; }
 		/// <summary>
-		/// Gets or sets Delay (in seconds) until the navigation is scheduled to begin. The navigation is not guaranteed to start.
+		/// Gets or sets Delay (in seconds) until the navigation is scheduled to begin. The navigation is not
+		/// guaranteed to start.
 		/// </summary>
 		public double Delay { get; set; }
 		/// <summary>
 		/// Gets or sets The reason for the navigation.
 		/// </summary>
-		public string Reason { get; set; }
+		public ClientNavigationReason Reason { get; set; }
 		/// <summary>
 		/// Gets or sets The destination URL for the scheduled navigation.
 		/// </summary>

@@ -13,5 +13,10 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 		/// Gets or sets Identifier of the prototype to return objects for.
 		/// </summary>
 		public string PrototypeObjectId { get; set; }
+		/// <summary>
+		/// Gets or sets Symbolic group name that can be used to release the results.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public string ObjectGroup { get; set; }
 	}
 }

@@ -65,7 +65,8 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.LayerTree
 		/// </summary>
 		public long PaintCount { get; set; }
 		/// <summary>
-		/// Gets or sets Indicates whether this layer hosts any content, rather than being used for transform/scrolling purposes only.
+		/// Gets or sets Indicates whether this layer hosts any content, rather than being used for
+		/// transform/scrolling purposes only.
 		/// </summary>
 		public bool DrawsContent { get; set; }
 		/// <summary>

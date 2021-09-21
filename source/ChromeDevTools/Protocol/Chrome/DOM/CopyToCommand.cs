@@ -6,7 +6,8 @@ using System.Collections.Generic;
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 {
 	/// <summary>
-	/// Creates a deep copy of the specified node and places it into the target container before the given anchor.
+	/// Creates a deep copy of the specified node and places it into the target container before the
+	/// given anchor.
 	/// </summary>
 	[Command(ProtocolName.DOM.CopyTo)]
 	[SupportedBy("Chrome")]
@@ -21,7 +22,8 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 		/// </summary>
 		public long TargetNodeId { get; set; }
 		/// <summary>
-		/// Gets or sets Drop the copy before this node (if absent, the copy becomes the last child of <code>targetNodeId</code>).
+		/// Gets or sets Drop the copy before this node (if absent, the copy becomes the last child of
+		/// `targetNodeId`).
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public long? InsertBeforeNodeId { get; set; }

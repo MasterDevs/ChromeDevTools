@@ -17,7 +17,8 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.IO
 		/// </summary>
 		public string Handle { get; set; }
 		/// <summary>
-		/// Gets or sets Seek to the specified offset before reading (if not specificed, proceed with offset following the last read).
+		/// Gets or sets Seek to the specified offset before reading (if not specificed, proceed with offset
+		/// following the last read). Some types of streams may only support sequential reads.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public long? Offset { get; set; }

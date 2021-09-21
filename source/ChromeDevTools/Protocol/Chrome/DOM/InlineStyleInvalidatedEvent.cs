@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 {
 	/// <summary>
-	/// Fired when <code>Element</code>'s inline style is modified via a CSS property modification.
+	/// Fired when `Element`'s inline style is modified via a CSS property modification.
 	/// </summary>
 	[Event(ProtocolName.DOM.InlineStyleInvalidated)]
 	[SupportedBy("Chrome")]

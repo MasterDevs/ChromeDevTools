@@ -11,7 +11,8 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 	public class ResourceTiming
 	{
 		/// <summary>
-		/// Gets or sets Timing's requestTime is a baseline in seconds, while the other numbers are ticks in milliseconds relatively to this requestTime.
+		/// Gets or sets Timing's requestTime is a baseline in seconds, while the other numbers are ticks in
+		/// milliseconds relatively to this requestTime.
 		/// </summary>
 		public double RequestTime { get; set; }
 		/// <summary>
@@ -54,6 +55,14 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 		/// Gets or sets Finished Starting ServiceWorker.
 		/// </summary>
 		public double WorkerReady { get; set; }
+		/// <summary>
+		/// Gets or sets Started fetch event.
+		/// </summary>
+		public double WorkerFetchStart { get; set; }
+		/// <summary>
+		/// Gets or sets Settled fetch event respondWith promise.
+		/// </summary>
+		public double WorkerRespondWithSettled { get; set; }
 		/// <summary>
 		/// Gets or sets Started sending request.
 		/// </summary>

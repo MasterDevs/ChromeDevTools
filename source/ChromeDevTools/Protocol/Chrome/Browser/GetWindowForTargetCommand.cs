@@ -13,8 +13,9 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Browser
 	public class GetWindowForTargetCommand: ICommand<GetWindowForTargetCommandResponse>
 	{
 		/// <summary>
-		/// Gets or sets Devtools agent host id.
+		/// Gets or sets Devtools agent host id. If called as a part of the session, associated targetId is used.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string TargetId { get; set; }
 	}
 }

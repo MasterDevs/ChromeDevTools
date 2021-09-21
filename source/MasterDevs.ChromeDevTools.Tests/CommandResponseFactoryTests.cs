@@ -1,15 +1,15 @@
 ﻿using System;
 using MasterDevs.ChromeDevTools.Protocol.iOS.DOM;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+
 using System.IO;
+using NUnit.Framework;
 
 namespace MasterDevs.ChromeDevTools.Tests
 {
-    [TestClass]
+    [TestFixture]
     public class CommandResponseFactoryTests
     {
-        [TestMethod]
-        [DeploymentItem("response-1.json")]
+        [Test]
         public void CreateTest()
         {
             string json = File.ReadAllText("response-1.json");
@@ -21,7 +21,7 @@ namespace MasterDevs.ChromeDevTools.Tests
             var command = commandFactory.Create<GetDocumentCommand>();
             var response = responseFactory.Create(json);
 
-            Assert.IsInstanceOfType(response, typeof(CommandResponse<GetDocumentCommandResponse>));
+            Assert.IsInstanceOf<CommandResponse<GetDocumentCommandResponse>>(response);
 
             var responseTyped = (CommandResponse<GetDocumentCommandResponse>)response;
 

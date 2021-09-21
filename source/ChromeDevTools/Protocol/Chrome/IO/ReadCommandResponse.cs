@@ -22,7 +22,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.IO
 		/// </summary>
 		public string Data { get; set; }
 		/// <summary>
-		/// Gets or sets Set if the end-of-file condition occured while reading.
+		/// Gets or sets Set if the end-of-file condition occurred while reading.
 		/// </summary>
 		public bool Eof { get; set; }
 	}

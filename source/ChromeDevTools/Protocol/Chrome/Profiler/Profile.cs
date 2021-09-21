@@ -28,7 +28,8 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Profiler
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public long[] Samples { get; set; }
 		/// <summary>
-		/// Gets or sets Time intervals between adjacent samples in microseconds. The first delta is relative to the profile startTime.
+		/// Gets or sets Time intervals between adjacent samples in microseconds. The first delta is relative to the
+		/// profile startTime.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public long[] TimeDeltas { get; set; }

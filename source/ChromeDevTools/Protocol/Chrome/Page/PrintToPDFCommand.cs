@@ -63,14 +63,45 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public double MarginRight { get; set; }
 		/// <summary>
-		/// Gets or sets Paper ranges to print, e.g., '1-5, 8, 11-13'. Defaults to the empty string, which means print all pages.
+		/// Gets or sets Paper ranges to print, e.g., '1-5, 8, 11-13'. Defaults to the empty string, which means
+		/// print all pages.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string PageRanges { get; set; }
 		/// <summary>
-		/// Gets or sets Whether to silently ignore invalid but successfully parsed page ranges, such as '3-2'. Defaults to false.
+		/// Gets or sets Whether to silently ignore invalid but successfully parsed page ranges, such as '3-2'.
+		/// Defaults to false.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public bool? IgnoreInvalidPageRanges { get; set; }
+		/// <summary>
+		/// Gets or sets HTML template for the print header. Should be valid HTML markup with following
+		/// classes used to inject printing values into them:
+		/// - `date`: formatted print date
+		/// - `title`: document title
+		/// - `url`: document location
+		/// - `pageNumber`: current page number
+		/// - `totalPages`: total pages in the document
+
+		/// For example, `<span class=title></span>` would generate span containing the title.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public string HeaderTemplate { get; set; }
+		/// <summary>
+		/// Gets or sets HTML template for the print footer. Should use the same format as the `headerTemplate`.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public string FooterTemplate { get; set; }
+		/// <summary>
+		/// Gets or sets Whether or not to prefer page size as defined by css. Defaults to false,
+		/// in which case the content will be scaled to fit the paper size.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? PreferCSSPageSize { get; set; }
+		/// <summary>
+		/// Gets or sets return as stream
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public string TransferMode { get; set; }
 	}
 }

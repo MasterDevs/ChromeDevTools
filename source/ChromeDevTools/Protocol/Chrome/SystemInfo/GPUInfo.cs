@@ -28,5 +28,17 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.SystemInfo
 		/// Gets or sets An optional array of GPU driver bug workarounds.
 		/// </summary>
 		public string[] DriverBugWorkarounds { get; set; }
+		/// <summary>
+		/// Gets or sets Supported accelerated video decoding capabilities.
+		/// </summary>
+		public VideoDecodeAcceleratorCapability[] VideoDecoding { get; set; }
+		/// <summary>
+		/// Gets or sets Supported accelerated video encoding capabilities.
+		/// </summary>
+		public VideoEncodeAcceleratorCapability[] VideoEncoding { get; set; }
+		/// <summary>
+		/// Gets or sets Supported accelerated image decoding capabilities.
+		/// </summary>
+		public ImageDecodeAcceleratorCapability[] ImageDecoding { get; set; }
 	}
 }

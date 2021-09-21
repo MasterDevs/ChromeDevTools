@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Target
 {
 	/// <summary>
-	/// Issued when attached to target because of auto-attach or <code>attachToTarget</code> command.
+	/// Issued when attached to target because of auto-attach or `attachToTarget` command.
 	/// </summary>
 	[Event(ProtocolName.Target.AttachedToTarget)]
 	[SupportedBy("Chrome")]

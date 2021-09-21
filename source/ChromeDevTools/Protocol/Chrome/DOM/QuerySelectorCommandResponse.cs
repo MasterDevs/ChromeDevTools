@@ -6,7 +6,7 @@ using System.Collections.Generic;
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 {
 	/// <summary>
-	/// Executes <code>querySelector</code> on a given node.
+	/// Executes `querySelector` on a given node.
 	/// </summary>
 	[CommandResponse(ProtocolName.DOM.QuerySelector)]
 	[SupportedBy("Chrome")]

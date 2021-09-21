@@ -6,7 +6,8 @@ using System.Collections.Generic;
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Profiler
 {
 	/// <summary>
-	/// Disable precise code coverage. Disabling releases unnecessary execution count records and allows executing optimized code.
+	/// Disable precise code coverage. Disabling releases unnecessary execution count records and allows
+	/// executing optimized code.
 	/// </summary>
 	[CommandResponse(ProtocolName.Profiler.StopPreciseCoverage)]
 	[SupportedBy("Chrome")]

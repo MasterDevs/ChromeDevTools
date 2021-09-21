@@ -13,6 +13,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page{
 	{
 			Link,
 			Typed,
+			Address_bar,
 			Auto_bookmark,
 			Auto_subframe,
 			Manual_subframe,

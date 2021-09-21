@@ -13,7 +13,8 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Accessibility
 	public class GetPartialAXTreeCommandResponse
 	{
 		/// <summary>
-		/// Gets or sets The <code>Accessibility.AXNode</code> for this DOM node, if it exists, plus its ancestors, siblings and children, if requested.
+		/// Gets or sets The `Accessibility.AXNode` for this DOM node, if it exists, plus its ancestors, siblings and
+		/// children, if requested.
 		/// </summary>
 		public AXNode[] Nodes { get; set; }
 	}

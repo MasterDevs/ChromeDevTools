@@ -11,7 +11,8 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CSS
 	public class CSSKeyframeRule
 	{
 		/// <summary>
-		/// Gets or sets The css style sheet identifier (absent for user agent stylesheet and user-specified stylesheet rules) this rule came from.
+		/// Gets or sets The css style sheet identifier (absent for user agent stylesheet and user-specified
+		/// stylesheet rules) this rule came from.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string StyleSheetId { get; set; }

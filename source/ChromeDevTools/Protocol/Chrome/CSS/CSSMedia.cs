@@ -15,7 +15,10 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CSS
 		/// </summary>
 		public string Text { get; set; }
 		/// <summary>
-		/// Gets or sets Source of the media query: "mediaRule" if specified by a @media rule, "importRule" if specified by an @import rule, "linkedSheet" if specified by a "media" attribute in a linked stylesheet's LINK tag, "inlineSheet" if specified by a "media" attribute in an inline stylesheet's STYLE tag.
+		/// Gets or sets Source of the media query: "mediaRule" if specified by a @media rule, "importRule" if
+		/// specified by an @import rule, "linkedSheet" if specified by a "media" attribute in a linked
+		/// stylesheet's LINK tag, "inlineSheet" if specified by a "media" attribute in an inline
+		/// stylesheet's STYLE tag.
 		/// </summary>
 		public string Source { get; set; }
 		/// <summary>
@@ -24,7 +27,8 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CSS
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string SourceURL { get; set; }
 		/// <summary>
-		/// Gets or sets The associated rule (@media or @import) header range in the enclosing stylesheet (if available).
+		/// Gets or sets The associated rule (@media or @import) header range in the enclosing stylesheet (if
+		/// available).
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public SourceRange Range { get; set; }

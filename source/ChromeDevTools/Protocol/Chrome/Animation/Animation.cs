@@ -11,43 +11,45 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Animation
 	public class Animation
 	{
 		/// <summary>
-		/// Gets or sets <code>Animation</code>'s id.
+		/// Gets or sets `Animation`'s id.
 		/// </summary>
 		public string Id { get; set; }
 		/// <summary>
-		/// Gets or sets <code>Animation</code>'s name.
+		/// Gets or sets `Animation`'s name.
 		/// </summary>
 		public string Name { get; set; }
 		/// <summary>
-		/// Gets or sets <code>Animation</code>'s internal paused state.
+		/// Gets or sets `Animation`'s internal paused state.
 		/// </summary>
 		public bool PausedState { get; set; }
 		/// <summary>
-		/// Gets or sets <code>Animation</code>'s play state.
+		/// Gets or sets `Animation`'s play state.
 		/// </summary>
 		public string PlayState { get; set; }
 		/// <summary>
-		/// Gets or sets <code>Animation</code>'s playback rate.
+		/// Gets or sets `Animation`'s playback rate.
 		/// </summary>
 		public double PlaybackRate { get; set; }
 		/// <summary>
-		/// Gets or sets <code>Animation</code>'s start time.
+		/// Gets or sets `Animation`'s start time.
 		/// </summary>
 		public double StartTime { get; set; }
 		/// <summary>
-		/// Gets or sets <code>Animation</code>'s current time.
+		/// Gets or sets `Animation`'s current time.
 		/// </summary>
 		public double CurrentTime { get; set; }
 		/// <summary>
-		/// Gets or sets <code>Animation</code>'s source animation node.
-		/// </summary>
-		public AnimationEffect Source { get; set; }
-		/// <summary>
-		/// Gets or sets Animation type of <code>Animation</code>.
+		/// Gets or sets Animation type of `Animation`.
 		/// </summary>
 		public string Type { get; set; }
 		/// <summary>
-		/// Gets or sets A unique ID for <code>Animation</code> representing the sources that triggered this CSS animation/transition.
+		/// Gets or sets `Animation`'s source animation node.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public AnimationEffect Source { get; set; }
+		/// <summary>
+		/// Gets or sets A unique ID for `Animation` representing the sources that triggered this CSS
+		/// animation/transition.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string CssId { get; set; }

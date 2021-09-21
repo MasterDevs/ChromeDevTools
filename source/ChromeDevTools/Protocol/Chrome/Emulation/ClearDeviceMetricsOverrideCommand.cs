@@ -6,7 +6,7 @@ using System.Collections.Generic;
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Emulation
 {
 	/// <summary>
-	/// Clears the overriden device metrics.
+	/// Clears the overridden device metrics.
 	/// </summary>
 	[Command(ProtocolName.Emulation.ClearDeviceMetricsOverride)]
 	[SupportedBy("Chrome")]

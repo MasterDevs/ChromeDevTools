@@ -21,7 +21,8 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 		/// </summary>
 		public string ScriptSource { get; set; }
 		/// <summary>
-		/// Gets or sets  If true the change will not actually be applied. Dry run may be used to get result description without actually modifying the code.
+		/// Gets or sets If true the change will not actually be applied. Dry run may be used to get result
+		/// description without actually modifying the code.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public bool? DryRun { get; set; }

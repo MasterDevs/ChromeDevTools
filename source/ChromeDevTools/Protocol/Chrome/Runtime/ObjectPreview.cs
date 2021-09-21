@@ -15,7 +15,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 		/// </summary>
 		public string Type { get; set; }
 		/// <summary>
-		/// Gets or sets Object subtype hint. Specified for <code>object</code> type values only.
+		/// Gets or sets Object subtype hint. Specified for `object` type values only.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string Subtype { get; set; }
@@ -33,7 +33,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 		/// </summary>
 		public PropertyPreview[] Properties { get; set; }
 		/// <summary>
-		/// Gets or sets List of the entries. Specified for <code>map</code> and <code>set</code> subtype values only.
+		/// Gets or sets List of the entries. Specified for `map` and `set` subtype values only.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public EntryPreview[] Entries { get; set; }

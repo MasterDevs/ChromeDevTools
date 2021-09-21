@@ -12,6 +12,14 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 	public class LifecycleEventEvent
 	{
 		/// <summary>
+		/// Gets or sets Id of the frame.
+		/// </summary>
+		public string FrameId { get; set; }
+		/// <summary>
+		/// Gets or sets Loader identifier. Empty string if the request is fetched from worker.
+		/// </summary>
+		public string LoaderId { get; set; }
+		/// <summary>
 		/// Gets or sets Name
 		/// </summary>
 		public string Name { get; set; }

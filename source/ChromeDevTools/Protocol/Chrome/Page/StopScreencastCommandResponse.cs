@@ -6,7 +6,7 @@ using System.Collections.Generic;
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 {
 	/// <summary>
-	/// Stops sending each frame in the <code>screencastFrame</code>.
+	/// Stops sending each frame in the `screencastFrame`.
 	/// </summary>
 	[CommandResponse(ProtocolName.Page.StopScreencast)]
 	[SupportedBy("Chrome")]

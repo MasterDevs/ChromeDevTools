@@ -22,5 +22,10 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public long? MaxResourceBufferSize { get; set; }
+		/// <summary>
+		/// Gets or sets Longest post body size (in bytes) that would be included in requestWillBeSent notification
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? MaxPostDataSize { get; set; }
 	}
 }

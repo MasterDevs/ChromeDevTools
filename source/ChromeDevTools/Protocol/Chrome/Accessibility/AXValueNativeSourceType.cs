@@ -16,6 +16,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Accessibility{
 			Labelfor,
 			Labelwrapped,
 			Legend,
+			Rubyannotation,
 			Tablecaption,
 			Title,
 			Other,

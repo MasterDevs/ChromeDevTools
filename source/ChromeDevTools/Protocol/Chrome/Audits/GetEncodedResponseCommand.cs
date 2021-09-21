@@ -6,7 +6,8 @@ using System.Collections.Generic;
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Audits
 {
 	/// <summary>
-	/// Returns the response body and size if it were re-encoded with the specified settings. Only applies to images.
+	/// Returns the response body and size if it were re-encoded with the specified settings. Only
+	/// applies to images.
 	/// </summary>
 	[Command(ProtocolName.Audits.GetEncodedResponse)]
 	[SupportedBy("Chrome")]

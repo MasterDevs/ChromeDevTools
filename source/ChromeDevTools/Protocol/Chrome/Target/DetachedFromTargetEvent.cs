@@ -5,7 +5,8 @@ using System.Collections.Generic;
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Target
 {
 	/// <summary>
-	/// Issued when detached from target for any reason (including <code>detachFromTarget</code> command). Can be issued multiple times per target if multiple sessions have been attached to it.
+	/// Issued when detached from target for any reason (including `detachFromTarget` command). Can be
+	/// issued multiple times per target if multiple sessions have been attached to it.
 	/// </summary>
 	[Event(ProtocolName.Target.DetachedFromTarget)]
 	[SupportedBy("Chrome")]

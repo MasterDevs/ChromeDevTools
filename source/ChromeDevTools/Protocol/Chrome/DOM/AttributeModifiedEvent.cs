@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 {
 	/// <summary>
-	/// Fired when <code>Element</code>'s attribute is modified.
+	/// Fired when `Element`'s attribute is modified.
 	/// </summary>
 	[Event(ProtocolName.DOM.AttributeModified)]
 	[SupportedBy("Chrome")]

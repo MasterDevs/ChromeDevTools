@@ -21,6 +21,10 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Storage
 		/// </summary>
 		public double Quota { get; set; }
 		/// <summary>
+		/// Gets or sets Whether or not the origin has an active storage quota override
+		/// </summary>
+		public bool OverrideActive { get; set; }
+		/// <summary>
 		/// Gets or sets Storage usage per type (bytes).
 		/// </summary>
 		public UsageForType[] UsageBreakdown { get; set; }

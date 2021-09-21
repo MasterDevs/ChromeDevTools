@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 {
 	/// <summary>
-	/// Mirrors <code>DOMNodeRemoved</code> event.
+	/// Mirrors `DOMNodeRemoved` event.
 	/// </summary>
 	[Event(ProtocolName.DOM.ChildNodeRemoved)]
 	[SupportedBy("Chrome")]

@@ -16,7 +16,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 		/// </summary>
 		public string RequestId { get; set; }
 		/// <summary>
-		/// Gets or sets Loader identifier. Empty string if the request is fetched form worker.
+		/// Gets or sets Loader identifier. Empty string if the request is fetched from worker.
 		/// </summary>
 		public string LoaderId { get; set; }
 		/// <summary>
@@ -48,11 +48,16 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 		/// Gets or sets Type of this resource.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public Page.ResourceType Type { get; set; }
+		public ResourceType Type { get; set; }
 		/// <summary>
 		/// Gets or sets Frame identifier.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string FrameId { get; set; }
+		/// <summary>
+		/// Gets or sets Whether the request is initiated by a user gesture. Defaults to false.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? HasUserGesture { get; set; }
 	}
 }

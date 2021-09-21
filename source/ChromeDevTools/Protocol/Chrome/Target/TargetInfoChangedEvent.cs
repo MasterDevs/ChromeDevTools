@@ -5,7 +5,8 @@ using System.Collections.Generic;
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Target
 {
 	/// <summary>
-	/// Issued when some information about a target has changed. This only happens between <code>targetCreated</code> and <code>targetDestroyed</code>.
+	/// Issued when some information about a target has changed. This only happens between
+	/// `targetCreated` and `targetDestroyed`.
 	/// </summary>
 	[Event(ProtocolName.Target.TargetInfoChanged)]
 	[SupportedBy("Chrome")]

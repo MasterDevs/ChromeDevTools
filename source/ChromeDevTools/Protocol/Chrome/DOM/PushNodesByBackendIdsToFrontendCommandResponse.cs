@@ -13,7 +13,8 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 	public class PushNodesByBackendIdsToFrontendCommandResponse
 	{
 		/// <summary>
-		/// Gets or sets The array of ids of pushed nodes that correspond to the backend ids specified in backendNodeIds.
+		/// Gets or sets The array of ids of pushed nodes that correspond to the backend ids specified in
+		/// backendNodeIds.
 		/// </summary>
 		public long[] NodeIds { get; set; }
 	}

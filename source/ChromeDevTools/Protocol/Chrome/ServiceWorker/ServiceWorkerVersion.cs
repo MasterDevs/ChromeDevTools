@@ -36,7 +36,8 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.ServiceWorker
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public double ScriptLastModified { get; set; }
 		/// <summary>
-		/// Gets or sets The time at which the response headers of the main script were received from the server.  For cached script it is the last time the cache entry was validated.
+		/// Gets or sets The time at which the response headers of the main script were received from the server.
+		/// For cached script it is the last time the cache entry was validated.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public double ScriptResponseTime { get; set; }

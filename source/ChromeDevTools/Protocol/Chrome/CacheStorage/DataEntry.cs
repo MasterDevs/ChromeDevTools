@@ -35,6 +35,10 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CacheStorage
 		/// </summary>
 		public string ResponseStatusText { get; set; }
 		/// <summary>
+		/// Gets or sets HTTP response type
+		/// </summary>
+		public CachedResponseType ResponseType { get; set; }
+		/// <summary>
 		/// Gets or sets Response headers
 		/// </summary>
 		public Header[] ResponseHeaders { get; set; }

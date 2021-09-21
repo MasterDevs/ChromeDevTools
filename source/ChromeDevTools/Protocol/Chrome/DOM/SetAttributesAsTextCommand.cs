@@ -6,7 +6,8 @@ using System.Collections.Generic;
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 {
 	/// <summary>
-	/// Sets attributes on element with given id. This method is useful when user edits some existing attribute value and types in several attribute name/value pairs.
+	/// Sets attributes on element with given id. This method is useful when user edits some existing
+	/// attribute value and types in several attribute name/value pairs.
 	/// </summary>
 	[Command(ProtocolName.DOM.SetAttributesAsText)]
 	[SupportedBy("Chrome")]
@@ -21,7 +22,8 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 		/// </summary>
 		public string Text { get; set; }
 		/// <summary>
-		/// Gets or sets Attribute name to replace with new attributes derived from text in case text parsed successfully.
+		/// Gets or sets Attribute name to replace with new attributes derived from text in case text parsed
+		/// successfully.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string Name { get; set; }

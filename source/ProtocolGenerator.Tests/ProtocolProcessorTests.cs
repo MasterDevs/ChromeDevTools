@@ -1,19 +1,19 @@
 ﻿using System;
 using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+
 using System.Collections.Generic;
+using NUnit.Framework;
 
 namespace MasterDevs.ChromeDevTools.ProtocolGenerator.Tests
 {
-    [TestClass]
+    [TestFixture]
     public class ProtocolProcessorTests
     {
         /// <summary>
         /// Loads the Chrome-1.0 protocol and makes sure the type <c>Network.FrameId</c> type reference in the
         /// <c>Runtime.Evaluate</c> command is resolved correctly to the <c>string</c> primitive.
         /// </summary>
-        [TestMethod]
-        [DeploymentItem(DeploymentItems.Inspector10)]
+        [Test]
         public void ResolveTypeReferencesCommandParameterTest()
         {
             Protocol p = ProtocolProcessor.LoadProtocol(new[] { DeploymentItems.Inspector10 }, "Chrome-1.0");
@@ -25,8 +25,7 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator.Tests
             Assert.AreEqual("string", frameIdParameter.TypeName);
         }
 
-        [TestMethod]
-        [DeploymentItem(DeploymentItems.Inspector10)]
+        [Test]
         public void ResolveTypeReferencesCommandParameterTest2()
         {
             Protocol p = ProtocolProcessor.LoadProtocol(new[] { DeploymentItems.Inspector10 }, "Chrome-1.0");
@@ -38,8 +37,7 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator.Tests
             Assert.AreEqual("integer", nodeId.TypeName);
         }
 
-        [TestMethod]
-        [DeploymentItem(DeploymentItems.InspectoriOS8)]
+        [Test]
         public void ResolveTypeReferencesCommandReturnValueTest()
         {
             Dictionary<string, string> explicitMappings = new Dictionary<string, string>();
@@ -54,8 +52,7 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator.Tests
             Assert.AreEqual("Network.Cookie[]", cookieArray.TypeName);
         }
 
-        [TestMethod]
-        [DeploymentItem(DeploymentItems.InspectoriOS8)]
+        [Test]
         public void ResolveTypeReferencesCommandReturnValueTest2()
         {
             Dictionary<string, string> explicitMappings = new Dictionary<string, string>();

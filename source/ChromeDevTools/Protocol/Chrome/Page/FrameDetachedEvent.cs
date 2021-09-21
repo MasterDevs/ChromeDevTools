@@ -15,5 +15,9 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 		/// Gets or sets Id of the frame that has been detached.
 		/// </summary>
 		public string FrameId { get; set; }
+		/// <summary>
+		/// Gets or sets Reason
+		/// </summary>
+		public string Reason { get; set; }
 	}
 }

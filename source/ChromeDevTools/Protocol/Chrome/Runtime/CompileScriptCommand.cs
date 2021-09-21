@@ -25,7 +25,8 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 		/// </summary>
 		public bool PersistScript { get; set; }
 		/// <summary>
-		/// Gets or sets Specifies in which execution context to perform script run. If the parameter is omitted the evaluation will be performed in the context of the inspected page.
+		/// Gets or sets Specifies in which execution context to perform script run. If the parameter is omitted the
+		/// evaluation will be performed in the context of the inspected page.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public long? ExecutionContextId { get; set; }

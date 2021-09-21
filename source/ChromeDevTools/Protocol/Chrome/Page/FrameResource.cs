@@ -17,7 +17,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 		/// <summary>
 		/// Gets or sets Type of this resource.
 		/// </summary>
-		public ResourceType Type { get; set; }
+		public Network.ResourceType Type { get; set; }
 		/// <summary>
 		/// Gets or sets Resource mimeType as determined by the browser.
 		/// </summary>

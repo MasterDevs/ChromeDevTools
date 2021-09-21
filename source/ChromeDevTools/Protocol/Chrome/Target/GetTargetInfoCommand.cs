@@ -15,6 +15,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Target
 		/// <summary>
 		/// Gets or sets TargetId
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string TargetId { get; set; }
 	}
 }

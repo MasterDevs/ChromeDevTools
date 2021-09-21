@@ -73,5 +73,20 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public Runtime.StackTrace StackTrace { get; set; }
+		/// <summary>
+		/// Gets or sets If the scriptLanguage is WebAssembly, the code section offset in the module.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? CodeOffset { get; set; }
+		/// <summary>
+		/// Gets or sets The language of the script.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public Debugger.ScriptLanguage ScriptLanguage { get; set; }
+		/// <summary>
+		/// Gets or sets The name the embedder supplied for this script.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public string EmbedderName { get; set; }
 	}
 }

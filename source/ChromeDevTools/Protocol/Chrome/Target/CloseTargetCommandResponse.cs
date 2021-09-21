@@ -13,7 +13,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Target
 	public class CloseTargetCommandResponse
 	{
 		/// <summary>
-		/// Gets or sets Success
+		/// Gets or sets Always set to true. If an error occurs, the response indicates protocol error.
 		/// </summary>
 		public bool Success { get; set; }
 	}

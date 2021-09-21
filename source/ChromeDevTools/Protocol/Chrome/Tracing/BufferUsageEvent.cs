@@ -9,7 +9,8 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Tracing
 	public class BufferUsageEvent
 	{
 		/// <summary>
-		/// Gets or sets A number in range [0..1] that indicates the used size of event buffer as a fraction of its total size.
+		/// Gets or sets A number in range [0..1] that indicates the used size of event buffer as a fraction of its
+		/// total size.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public double PercentFull { get; set; }
@@ -19,7 +20,8 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Tracing
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public double EventCount { get; set; }
 		/// <summary>
-		/// Gets or sets A number in range [0..1] that indicates the used size of event buffer as a fraction of its total size.
+		/// Gets or sets A number in range [0..1] that indicates the used size of event buffer as a fraction of its
+		/// total size.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public double Value { get; set; }

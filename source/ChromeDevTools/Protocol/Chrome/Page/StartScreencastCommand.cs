@@ -6,7 +6,7 @@ using System.Collections.Generic;
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 {
 	/// <summary>
-	/// Starts sending each frame using the <code>screencastFrame</code> event.
+	/// Starts sending each frame using the `screencastFrame` event.
 	/// </summary>
 	[Command(ProtocolName.Page.StartScreencast)]
 	[SupportedBy("Chrome")]

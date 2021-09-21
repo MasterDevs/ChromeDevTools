@@ -8,7 +8,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 	public class BreakLocation
 	{
 		/// <summary>
-		/// Gets or sets Script identifier as reported in the <code>Debugger.scriptParsed</code>.
+		/// Gets or sets Script identifier as reported in the `Debugger.scriptParsed`.
 		/// </summary>
 		public string ScriptId { get; set; }
 		/// <summary>

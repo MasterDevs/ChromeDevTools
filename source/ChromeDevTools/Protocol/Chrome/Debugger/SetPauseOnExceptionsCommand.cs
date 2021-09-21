@@ -6,7 +6,8 @@ using System.Collections.Generic;
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 {
 	/// <summary>
-	/// Defines pause on exceptions state. Can be set to stop on all exceptions, uncaught exceptions or no exceptions. Initial pause on exceptions state is <code>none</code>.
+	/// Defines pause on exceptions state. Can be set to stop on all exceptions, uncaught exceptions or
+	/// no exceptions. Initial pause on exceptions state is `none`.
 	/// </summary>
 	[Command(ProtocolName.Debugger.SetPauseOnExceptions)]
 	[SupportedBy("Chrome")]

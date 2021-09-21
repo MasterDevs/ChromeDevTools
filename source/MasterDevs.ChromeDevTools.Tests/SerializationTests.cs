@@ -1,14 +1,15 @@
 ﻿using MasterDevs.ChromeDevTools.Protocol.Chrome.DOM;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+
 using Newtonsoft.Json;
 using MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime;
+using NUnit.Framework;
 
 namespace MasterDevs.ChromeDevTools.Tests
 {
-    [TestClass]
+    [TestFixture]
     public class SerializationTests
     {
-        [TestMethod]
+        [Test]
         public void ShadowRootTypeTest()
         {
             // Makes sure the "user-agent" property in the ShadowRootType class is serialized as "user-agent" and not
@@ -16,7 +17,7 @@ namespace MasterDevs.ChromeDevTools.Tests
             var value = JsonConvert.DeserializeObject<ShadowRootType>("\"user-agent\"");
         }
 
-        [TestMethod]
+        [Test]
         public void RunScriptCommandTest()
         {
             // The RunScriptCommand class has optional, non-nullable properties. This test makes sure they

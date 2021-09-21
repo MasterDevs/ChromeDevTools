@@ -17,7 +17,8 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 		/// </summary>
 		public bool Accept { get; set; }
 		/// <summary>
-		/// Gets or sets The text to enter into the dialog prompt before accepting. Used only if this is a prompt dialog.
+		/// Gets or sets The text to enter into the dialog prompt before accepting. Used only if this is a prompt
+		/// dialog.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string PromptText { get; set; }

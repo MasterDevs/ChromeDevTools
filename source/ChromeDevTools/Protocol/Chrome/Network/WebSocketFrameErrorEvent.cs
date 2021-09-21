@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 {
 	/// <summary>
-	/// Fired when WebSocket frame error occurs.
+	/// Fired when WebSocket message error occurs.
 	/// </summary>
 	[Event(ProtocolName.Network.WebSocketFrameError)]
 	[SupportedBy("Chrome")]
@@ -20,7 +20,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 		/// </summary>
 		public double Timestamp { get; set; }
 		/// <summary>
-		/// Gets or sets WebSocket frame error message.
+		/// Gets or sets WebSocket error message.
 		/// </summary>
 		public string ErrorMessage { get; set; }
 	}

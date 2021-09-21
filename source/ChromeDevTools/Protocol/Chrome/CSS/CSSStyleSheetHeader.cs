@@ -19,7 +19,9 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CSS
 		/// </summary>
 		public string FrameId { get; set; }
 		/// <summary>
-		/// Gets or sets Stylesheet resource URL.
+		/// Gets or sets Stylesheet resource URL. Empty if this is a constructed stylesheet created using
+		/// new CSSStyleSheet() (but non-empty if this is a constructed sylesheet imported
+		/// as a CSS module script).
 		/// </summary>
 		public string SourceURL { get; set; }
 		/// <summary>
@@ -50,9 +52,22 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CSS
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public bool? HasSourceURL { get; set; }
 		/// <summary>
-		/// Gets or sets Whether this stylesheet is created for STYLE tag by parser. This flag is not set for document.written STYLE tags.
+		/// Gets or sets Whether this stylesheet is created for STYLE tag by parser. This flag is not set for
+		/// document.written STYLE tags.
 		/// </summary>
 		public bool IsInline { get; set; }
+		/// <summary>
+		/// Gets or sets Whether this stylesheet is mutable. Inline stylesheets become mutable
+		/// after they have been modified via CSSOM API.
+		/// <link> element's stylesheets become mutable only if DevTools modifies them.
+		/// Constructed stylesheets (new CSSStyleSheet()) are mutable immediately after creation.
+		/// </summary>
+		public bool IsMutable { get; set; }
+		/// <summary>
+		/// Gets or sets True if this stylesheet is created through new CSSStyleSheet() or imported as a
+		/// CSS module script.
+		/// </summary>
+		public bool IsConstructed { get; set; }
 		/// <summary>
 		/// Gets or sets Line offset of the stylesheet within the resource (zero based).
 		/// </summary>
@@ -65,5 +80,13 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CSS
 		/// Gets or sets Size of the content (in characters).
 		/// </summary>
 		public double Length { get; set; }
+		/// <summary>
+		/// Gets or sets Line offset of the end of the stylesheet within the resource (zero based).
+		/// </summary>
+		public double EndLine { get; set; }
+		/// <summary>
+		/// Gets or sets Column offset of the end of the stylesheet within the resource (zero based).
+		/// </summary>
+		public double EndColumn { get; set; }
 	}
 }

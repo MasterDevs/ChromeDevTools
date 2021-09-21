@@ -16,7 +16,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 		/// </summary>
 		public string Reason { get; set; }
 		/// <summary>
-		/// Gets or sets The id of revoked exception, as reported in <code>exceptionUnhandled</code>.
+		/// Gets or sets The id of revoked exception, as reported in `exceptionThrown`.
 		/// </summary>
 		public long ExceptionId { get; set; }
 	}

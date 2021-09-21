@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 {
 	/// <summary>
-	/// Mirrors <code>DOMNodeInserted</code> event.
+	/// Mirrors `DOMNodeInserted` event.
 	/// </summary>
 	[Event(ProtocolName.DOM.ChildNodeInserted)]
 	[SupportedBy("Chrome")]

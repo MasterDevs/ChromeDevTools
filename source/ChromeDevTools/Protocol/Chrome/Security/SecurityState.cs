@@ -16,5 +16,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Security{
 			Insecure,
 			Secure,
 			Info,
+			[EnumMember(Value = "insecure-broken")]
+			Insecure_broken,
 	}
 }

@@ -6,7 +6,8 @@ using System.Collections.Generic;
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Overlay
 {
 	/// <summary>
-	/// Highlights DOM node with given id or with the given JavaScript object wrapper. Either nodeId or objectId must be specified.
+	/// Highlights DOM node with given id or with the given JavaScript object wrapper. Either nodeId or
+	/// objectId must be specified.
 	/// </summary>
 	[Command(ProtocolName.Overlay.HighlightNode)]
 	[SupportedBy("Chrome")]
@@ -31,5 +32,10 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Overlay
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string ObjectId { get; set; }
+		/// <summary>
+		/// Gets or sets Selectors to highlight relevant nodes.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public string Selector { get; set; }
 	}
 }

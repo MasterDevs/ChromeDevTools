@@ -6,7 +6,8 @@ using System.Collections.Generic;
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 {
 	/// <summary>
-	/// Returns search results from given <code>fromIndex</code> to given <code>toIndex</code> from the sarch with the given identifier.
+	/// Returns search results from given `fromIndex` to given `toIndex` from the search with the given
+	/// identifier.
 	/// </summary>
 	[Command(ProtocolName.DOM.GetSearchResults)]
 	[SupportedBy("Chrome")]

@@ -6,7 +6,8 @@ using System.Collections.Generic;
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Target
 {
 	/// <summary>
-	/// Enables target discovery for the specified locations, when <code>setDiscoverTargets</code> was set to <code>true</code>.
+	/// Enables target discovery for the specified locations, when `setDiscoverTargets` was set to
+	/// `true`.
 	/// </summary>
 	[Command(ProtocolName.Target.SetRemoteLocations)]
 	[SupportedBy("Chrome")]

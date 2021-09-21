@@ -6,27 +6,32 @@ using System.Collections.Generic;
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 {
 	/// <summary>
-	/// Calls function with given declaration on the given object. Object group of the result is inherited from the target object.
+	/// Calls function with given declaration on the given object. Object group of the result is
+	/// inherited from the target object.
 	/// </summary>
 	[Command(ProtocolName.Runtime.CallFunctionOn)]
 	[SupportedBy("Chrome")]
 	public class CallFunctionOnCommand: ICommand<CallFunctionOnCommandResponse>
 	{
 		/// <summary>
-		/// Gets or sets Identifier of the object to call function on.
-		/// </summary>
-		public string ObjectId { get; set; }
-		/// <summary>
 		/// Gets or sets Declaration of the function to call.
 		/// </summary>
 		public string FunctionDeclaration { get; set; }
 		/// <summary>
-		/// Gets or sets Call arguments. All call arguments must belong to the same JavaScript world as the target object.
+		/// Gets or sets Identifier of the object to call function on. Either objectId or executionContextId should
+		/// be specified.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public string ObjectId { get; set; }
+		/// <summary>
+		/// Gets or sets Call arguments. All call arguments must belong to the same JavaScript world as the target
+		/// object.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public CallArgument[] Arguments { get; set; }
 		/// <summary>
-		/// Gets or sets In silent mode exceptions thrown during evaluation are not reported and do not pause execution. Overrides <code>setPauseOnException</code> state.
+		/// Gets or sets In silent mode exceptions thrown during evaluation are not reported and do not pause
+		/// execution. Overrides `setPauseOnException` state.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public bool? Silent { get; set; }
@@ -46,9 +51,22 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public bool? UserGesture { get; set; }
 		/// <summary>
-		/// Gets or sets Whether execution should <code>await</code> for resulting value and return once awaited promise is resolved.
+		/// Gets or sets Whether execution should `await` for resulting value and return once awaited promise is
+		/// resolved.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public bool? AwaitPromise { get; set; }
+		/// <summary>
+		/// Gets or sets Specifies execution context which global object will be used to call function on. Either
+		/// executionContextId or objectId should be specified.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? ExecutionContextId { get; set; }
+		/// <summary>
+		/// Gets or sets Symbolic group name that can be used to release multiple objects. If objectGroup is not
+		/// specified and objectId is, objectGroup will be inherited from object.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public string ObjectGroup { get; set; }
 	}
 }

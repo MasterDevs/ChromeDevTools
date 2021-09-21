@@ -11,19 +11,19 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 	public class Viewport
 	{
 		/// <summary>
-		/// Gets or sets X offset in CSS pixels.
+		/// Gets or sets X offset in device independent pixels (dip).
 		/// </summary>
 		public double X { get; set; }
 		/// <summary>
-		/// Gets or sets Y offset in CSS pixels
+		/// Gets or sets Y offset in device independent pixels (dip).
 		/// </summary>
 		public double Y { get; set; }
 		/// <summary>
-		/// Gets or sets Rectangle width in CSS pixels
+		/// Gets or sets Rectangle width in device independent pixels (dip).
 		/// </summary>
 		public double Width { get; set; }
 		/// <summary>
-		/// Gets or sets Rectangle height in CSS pixels
+		/// Gets or sets Rectangle height in device independent pixels (dip).
 		/// </summary>
 		public double Height { get; set; }
 		/// <summary>

@@ -19,6 +19,10 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.HeapProfiler
 		/// </summary>
 		public double SelfSize { get; set; }
 		/// <summary>
+		/// Gets or sets Node id. Ids are unique across all profiles collected between startSampling and stopSampling.
+		/// </summary>
+		public long Id { get; set; }
+		/// <summary>
 		/// Gets or sets Child nodes.
 		/// </summary>
 		public SamplingHeapProfileNode[] Children { get; set; }

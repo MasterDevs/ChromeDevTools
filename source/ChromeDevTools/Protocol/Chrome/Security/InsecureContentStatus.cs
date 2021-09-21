@@ -11,31 +11,31 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Security
 	public class InsecureContentStatus
 	{
 		/// <summary>
-		/// Gets or sets True if the page was loaded over HTTPS and ran mixed (HTTP) content such as scripts.
+		/// Gets or sets Always false.
 		/// </summary>
 		public bool RanMixedContent { get; set; }
 		/// <summary>
-		/// Gets or sets True if the page was loaded over HTTPS and displayed mixed (HTTP) content such as images.
+		/// Gets or sets Always false.
 		/// </summary>
 		public bool DisplayedMixedContent { get; set; }
 		/// <summary>
-		/// Gets or sets True if the page was loaded over HTTPS and contained a form targeting an insecure url.
+		/// Gets or sets Always false.
 		/// </summary>
 		public bool ContainedMixedForm { get; set; }
 		/// <summary>
-		/// Gets or sets True if the page was loaded over HTTPS without certificate errors, and ran content such as scripts that were loaded with certificate errors.
+		/// Gets or sets Always false.
 		/// </summary>
 		public bool RanContentWithCertErrors { get; set; }
 		/// <summary>
-		/// Gets or sets True if the page was loaded over HTTPS without certificate errors, and displayed content such as images that were loaded with certificate errors.
+		/// Gets or sets Always false.
 		/// </summary>
 		public bool DisplayedContentWithCertErrors { get; set; }
 		/// <summary>
-		/// Gets or sets Security state representing a page that ran insecure content.
+		/// Gets or sets Always set to unknown.
 		/// </summary>
 		public SecurityState RanInsecureContentStyle { get; set; }
 		/// <summary>
-		/// Gets or sets Security state representing a page that displayed insecure content.
+		/// Gets or sets Always set to unknown.
 		/// </summary>
 		public SecurityState DisplayedInsecureContentStyle { get; set; }
 	}

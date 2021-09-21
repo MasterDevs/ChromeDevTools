@@ -6,7 +6,8 @@ using System.Collections.Generic;
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Emulation
 {
 	/// <summary>
-	/// Overrides the Geolocation Position or Error. Omitting any of the parameters emulates position unavailable.
+	/// Overrides the Geolocation Position or Error. Omitting any of the parameters emulates position
+	/// unavailable.
 	/// </summary>
 	[Command(ProtocolName.Emulation.SetGeolocationOverride)]
 	[SupportedBy("Chrome")]

@@ -6,7 +6,8 @@ using System.Collections.Generic;
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 {
 	/// <summary>
-	/// Returns node id at given location.
+	/// Returns node id at given location. Depending on whether DOM domain is enabled, nodeId is
+	/// either returned or not.
 	/// </summary>
 	[Command(ProtocolName.DOM.GetNodeForLocation)]
 	[SupportedBy("Chrome")]
@@ -25,5 +26,10 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public bool? IncludeUserAgentShadowDOM { get; set; }
+		/// <summary>
+		/// Gets or sets Whether to ignore pointer-events: none on elements and hit test them.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? IgnorePointerEventsNone { get; set; }
 	}
 }

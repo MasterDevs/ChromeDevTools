@@ -6,7 +6,8 @@ using System.Collections.Generic;
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Log
 {
 	/// <summary>
-	/// Enables log domain, sends the entries collected so far to the client by means of the <code>entryAdded</code> notification.
+	/// Enables log domain, sends the entries collected so far to the client by means of the
+	/// `entryAdded` notification.
 	/// </summary>
 	[Command(ProtocolName.Log.Enable)]
 	[SupportedBy("Chrome")]

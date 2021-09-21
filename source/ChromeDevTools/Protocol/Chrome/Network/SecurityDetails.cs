@@ -60,5 +60,9 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 		/// Gets or sets List of signed certificate timestamps (SCTs).
 		/// </summary>
 		public SignedCertificateTimestamp[] SignedCertificateTimestampList { get; set; }
+		/// <summary>
+		/// Gets or sets Whether the request complied with Certificate Transparency policy
+		/// </summary>
+		public CertificateTransparencyCompliance CertificateTransparencyCompliance { get; set; }
 	}
 }

@@ -17,7 +17,8 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 		/// </summary>
 		public string ScriptId { get; set; }
 		/// <summary>
-		/// Gets or sets Specifies in which execution context to perform script run. If the parameter is omitted the evaluation will be performed in the context of the inspected page.
+		/// Gets or sets Specifies in which execution context to perform script run. If the parameter is omitted the
+		/// evaluation will be performed in the context of the inspected page.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public long? ExecutionContextId { get; set; }
@@ -27,7 +28,8 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string ObjectGroup { get; set; }
 		/// <summary>
-		/// Gets or sets In silent mode exceptions thrown during evaluation are not reported and do not pause execution. Overrides <code>setPauseOnException</code> state.
+		/// Gets or sets In silent mode exceptions thrown during evaluation are not reported and do not pause
+		/// execution. Overrides `setPauseOnException` state.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public bool? Silent { get; set; }
@@ -47,7 +49,8 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public bool? GeneratePreview { get; set; }
 		/// <summary>
-		/// Gets or sets Whether execution should <code>await</code> for resulting value and return once awaited promise is resolved.
+		/// Gets or sets Whether execution should `await` for resulting value and return once awaited promise is
+		/// resolved.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public bool? AwaitPromise { get; set; }

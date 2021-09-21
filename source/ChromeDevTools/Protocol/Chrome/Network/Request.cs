@@ -11,9 +11,14 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 	public class Request
 	{
 		/// <summary>
-		/// Gets or sets Request URL.
+		/// Gets or sets Request URL (without fragment).
 		/// </summary>
 		public string Url { get; set; }
+		/// <summary>
+		/// Gets or sets Fragment of the requested URL starting with hash, if present.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public string UrlFragment { get; set; }
 		/// <summary>
 		/// Gets or sets HTTP request method.
 		/// </summary>
@@ -27,6 +32,16 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string PostData { get; set; }
+		/// <summary>
+		/// Gets or sets True when the request has POST data. Note that postData might still be omitted when this flag is true when the data is too long.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? HasPostData { get; set; }
+		/// <summary>
+		/// Gets or sets Request body elements. This will be converted from base64 to binary
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public PostDataEntry[] PostDataEntries { get; set; }
 		/// <summary>
 		/// Gets or sets The mixed content type of the request.
 		/// </summary>
@@ -45,5 +60,17 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public bool? IsLinkPreload { get; set; }
+		/// <summary>
+		/// Gets or sets Set for requests when the TrustToken API is used. Contains the parameters
+		/// passed by the developer (e.g. via "fetch") as understood by the backend.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public TrustTokenParams TrustTokenParams { get; set; }
+		/// <summary>
+		/// Gets or sets True if this resource request is considered to be the 'same site' as the
+		/// request correspondinfg to the main frame.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? IsSameSite { get; set; }
 	}
 }

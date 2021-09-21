@@ -25,13 +25,14 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Input
 		/// </summary>
 		public long Y { get; set; }
 		/// <summary>
-		/// Gets or sets Time at which the event occurred.
-		/// </summary>
-		public double Timestamp { get; set; }
-		/// <summary>
-		/// Gets or sets Mouse button.
+		/// Gets or sets Mouse button. Only "none", "left", "right" are supported.
 		/// </summary>
 		public string Button { get; set; }
+		/// <summary>
+		/// Gets or sets Time at which the event occurred (default: current time).
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public double Timestamp { get; set; }
 		/// <summary>
 		/// Gets or sets X delta in DIP for mouse wheel event (default: 0).
 		/// </summary>
@@ -43,7 +44,8 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Input
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public double DeltaY { get; set; }
 		/// <summary>
-		/// Gets or sets Bit field representing pressed modifier keys. Alt=1, Ctrl=2, Meta/Command=4, Shift=8 (default: 0).
+		/// Gets or sets Bit field representing pressed modifier keys. Alt=1, Ctrl=2, Meta/Command=4, Shift=8
+		/// (default: 0).
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public long? Modifiers { get; set; }

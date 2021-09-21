@@ -13,7 +13,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 	public class SetCookieCommandResponse
 	{
 		/// <summary>
-		/// Gets or sets True if successfully set cookie.
+		/// Gets or sets Always set to true. If an error occurs, the response indicates protocol error.
 		/// </summary>
 		public bool Success { get; set; }
 	}

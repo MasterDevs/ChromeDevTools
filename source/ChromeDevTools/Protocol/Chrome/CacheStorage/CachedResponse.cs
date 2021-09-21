@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CacheStorage
 	public class CachedResponse
 	{
 		/// <summary>
-		/// Gets or sets Entry content, base64-encoded.
+		/// Gets or sets Entry content, base64-encoded. (Encoded as a base64 string when passed over JSON)
 		/// </summary>
 		public string Body { get; set; }
 	}

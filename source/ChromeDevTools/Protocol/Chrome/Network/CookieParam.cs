@@ -19,7 +19,8 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 		/// </summary>
 		public string Value { get; set; }
 		/// <summary>
-		/// Gets or sets The request-URI to associate with the setting of the cookie. This value can affect the default domain and path values of the created cookie.
+		/// Gets or sets The request-URI to associate with the setting of the cookie. This value can affect the
+		/// default domain, path, source port, and source scheme values of the created cookie.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string Url { get; set; }
@@ -53,5 +54,27 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public double Expires { get; set; }
+		/// <summary>
+		/// Gets or sets Cookie Priority.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public CookiePriority Priority { get; set; }
+		/// <summary>
+		/// Gets or sets True if cookie is SameParty.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? SameParty { get; set; }
+		/// <summary>
+		/// Gets or sets Cookie source scheme type.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public CookieSourceScheme SourceScheme { get; set; }
+		/// <summary>
+		/// Gets or sets Cookie source port. Valid values are {-1, [1, 65535]}, -1 indicates an unspecified port.
+		/// An unspecified port value allows protocol clients to emulate legacy cookie scope for the port.
+		/// This is a temporary ability and it will be removed in the future.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? SourcePort { get; set; }
 	}
 }

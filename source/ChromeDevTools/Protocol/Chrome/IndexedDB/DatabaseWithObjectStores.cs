@@ -15,9 +15,10 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.IndexedDB
 		/// </summary>
 		public string Name { get; set; }
 		/// <summary>
-		/// Gets or sets Database version.
+		/// Gets or sets Database version (type is not 'integer', as the standard
+		/// requires the version number to be 'unsigned long long')
 		/// </summary>
-		public long Version { get; set; }
+		public double Version { get; set; }
 		/// <summary>
 		/// Gets or sets Object stores in this database.
 		/// </summary>

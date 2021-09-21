@@ -5,7 +5,8 @@ using System.Collections.Generic;
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 {
 	/// <summary>
-	/// Fired when backend wants to provide client with the missing DOM structure. This happens upon most of the calls requesting node ids.
+	/// Fired when backend wants to provide client with the missing DOM structure. This happens upon
+	/// most of the calls requesting node ids.
 	/// </summary>
 	[Event(ProtocolName.DOM.SetChildNodes)]
 	[SupportedBy("Chrome")]

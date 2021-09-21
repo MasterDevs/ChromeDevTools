@@ -26,5 +26,15 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string TransitionType { get; set; }
+		/// <summary>
+		/// Gets or sets Frame id to navigate, if not specified navigates the top frame.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public string FrameId { get; set; }
+		/// <summary>
+		/// Gets or sets Referrer-policy used for the navigation.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public string ReferrerPolicy { get; set; }
 	}
 }

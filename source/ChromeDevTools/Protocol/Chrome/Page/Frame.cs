@@ -29,9 +29,21 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string Name { get; set; }
 		/// <summary>
-		/// Gets or sets Frame document's URL.
+		/// Gets or sets Frame document's URL without fragment.
 		/// </summary>
 		public string Url { get; set; }
+		/// <summary>
+		/// Gets or sets Frame document's URL fragment including the '#'.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public string UrlFragment { get; set; }
+		/// <summary>
+		/// Gets or sets Frame document's registered domain, taking the public suffixes list into account.
+		/// Extracted from the Frame's url.
+		/// Example URLs: http://www.google.com/file.html -> "google.com"
+		/// http://a.b.co.uk/file.html      -> "b.co.uk"
+		/// </summary>
+		public string DomainAndRegistry { get; set; }
 		/// <summary>
 		/// Gets or sets Frame document's security origin.
 		/// </summary>
@@ -41,9 +53,26 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 		/// </summary>
 		public string MimeType { get; set; }
 		/// <summary>
-		/// Gets or sets If the frame failed to load, this contains the URL that could not be loaded.
+		/// Gets or sets If the frame failed to load, this contains the URL that could not be loaded. Note that unlike url above, this URL may contain a fragment.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string UnreachableUrl { get; set; }
+		/// <summary>
+		/// Gets or sets Indicates whether this frame was tagged as an ad and why.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public AdFrameStatus AdFrameStatus { get; set; }
+		/// <summary>
+		/// Gets or sets Indicates whether the main document is a secure context and explains why that is the case.
+		/// </summary>
+		public SecureContextType SecureContextType { get; set; }
+		/// <summary>
+		/// Gets or sets Indicates whether this is a cross origin isolated context.
+		/// </summary>
+		public CrossOriginIsolatedContextType CrossOriginIsolatedContextType { get; set; }
+		/// <summary>
+		/// Gets or sets Indicated which gated APIs / features are available.
+		/// </summary>
+		public GatedAPIFeatures[] GatedAPIFeatures { get; set; }
 	}
 }

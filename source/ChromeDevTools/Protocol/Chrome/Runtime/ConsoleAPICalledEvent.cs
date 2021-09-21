@@ -28,12 +28,16 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 		/// </summary>
 		public double Timestamp { get; set; }
 		/// <summary>
-		/// Gets or sets Stack trace captured when the call was made.
+		/// Gets or sets Stack trace captured when the call was made. The async stack chain is automatically reported for
+		/// the following call types: `assert`, `error`, `trace`, `warning`. For other types the async call
+		/// chain can be retrieved using `Debugger.getStackTrace` and `stackTrace.parentId` field.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public StackTrace StackTrace { get; set; }
 		/// <summary>
-		/// Gets or sets Console context descriptor for calls on non-default console context (not console.*): 'anonymous#unique-logger-id' for call on unnamed context, 'name#unique-logger-id' for call on named context.
+		/// Gets or sets Console context descriptor for calls on non-default console context (not console.*):
+		/// 'anonymous#unique-logger-id' for call on unnamed context, 'name#unique-logger-id' for call
+		/// on named context.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public string Context { get; set; }

@@ -8,25 +8,16 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 	public class CustomPreview
 	{
 		/// <summary>
-		/// Gets or sets Header
+		/// Gets or sets The JSON-stringified result of formatter.header(object, config) call.
+		/// It contains json ML array that represents RemoteObject.
 		/// </summary>
 		public string Header { get; set; }
 		/// <summary>
-		/// Gets or sets HasBody
-		/// </summary>
-		public bool HasBody { get; set; }
-		/// <summary>
-		/// Gets or sets FormatterObjectId
-		/// </summary>
-		public string FormatterObjectId { get; set; }
-		/// <summary>
-		/// Gets or sets BindRemoteObjectFunctionId
-		/// </summary>
-		public string BindRemoteObjectFunctionId { get; set; }
-		/// <summary>
-		/// Gets or sets ConfigObjectId
+		/// Gets or sets If formatter returns true as a result of formatter.hasBody call then bodyGetterId will
+		/// contain RemoteObjectId for the function that returns result of formatter.body(object, config) call.
+		/// The result value is json ML array.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public string ConfigObjectId { get; set; }
+		public string BodyGetterId { get; set; }
 	}
 }

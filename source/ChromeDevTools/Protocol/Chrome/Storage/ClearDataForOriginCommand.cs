@@ -17,7 +17,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Storage
 		/// </summary>
 		public string Origin { get; set; }
 		/// <summary>
-		/// Gets or sets Comma separated origin names.
+		/// Gets or sets Comma separated list of StorageType to clear.
 		/// </summary>
 		public string StorageTypes { get; set; }
 	}

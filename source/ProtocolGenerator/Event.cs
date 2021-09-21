@@ -22,12 +22,7 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
             get;
             set;
         }
-
-        public bool Deprecated
-        {
-            get;
-            set;
-        }
+        
 
         [JsonProperty("experimental")]
         public bool IsExperimental { get; set; }

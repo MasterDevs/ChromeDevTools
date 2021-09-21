@@ -11,19 +11,19 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOMDebugger
 	public class EventListener
 	{
 		/// <summary>
-		/// Gets or sets <code>EventListener</code>'s type.
+		/// Gets or sets `EventListener`'s type.
 		/// </summary>
 		public string Type { get; set; }
 		/// <summary>
-		/// Gets or sets <code>EventListener</code>'s useCapture.
+		/// Gets or sets `EventListener`'s useCapture.
 		/// </summary>
 		public bool UseCapture { get; set; }
 		/// <summary>
-		/// Gets or sets <code>EventListener</code>'s passive flag.
+		/// Gets or sets `EventListener`'s passive flag.
 		/// </summary>
 		public bool Passive { get; set; }
 		/// <summary>
-		/// Gets or sets <code>EventListener</code>'s once flag.
+		/// Gets or sets `EventListener`'s once flag.
 		/// </summary>
 		public bool Once { get; set; }
 		/// <summary>

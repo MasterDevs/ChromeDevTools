@@ -6,7 +6,7 @@ using System.Runtime.Serialization;
 
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network{
 	/// <summary>
-	/// Loading priority of a resource request.
+	/// The underlying connection technology that the browser is supposedly using.
 	/// </summary>
 	[JsonConverter(typeof(StringEnumConverter))]
 	public enum ConnectionType
