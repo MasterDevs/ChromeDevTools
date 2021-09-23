@@ -71,3 +71,4 @@ If you didn't read the entire README (I don't blame you, I wouldn't), I've inclu
     * [https://developer.chrome.com/devtools/docs/debugger-protocol](https://developer.chrome.com/devtools/docs/debugger-protocol)
   * Some cool apps that other developers have built using the Chrome Debugging Protocol
     * [https://developer.chrome.com/devtools/docs/debugging-clients](https://developer.chrome.com/devtools/docs/debugging-clients)
+
