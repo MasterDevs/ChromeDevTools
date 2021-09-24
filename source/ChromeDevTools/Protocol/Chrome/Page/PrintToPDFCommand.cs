@@ -27,47 +27,55 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public bool? PrintBackground { get; set; }
+
 		/// <summary>
 		/// Gets or sets Scale of the webpage rendering. Defaults to 1.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double Scale { get; set; }
+		public double Scale { get; set; } = 1.0;
+
 		/// <summary>
 		/// Gets or sets Paper width in inches. Defaults to 8.5 inches.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double PaperWidth { get; set; }
+		public double PaperWidth { get; set; } = 8.5;
+
 		/// <summary>
 		/// Gets or sets Paper height in inches. Defaults to 11 inches.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double PaperHeight { get; set; }
+		public double PaperHeight { get; set; } = 11.0;
+
 		/// <summary>
 		/// Gets or sets Top margin in inches. Defaults to 1cm (~0.4 inches).
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double MarginTop { get; set; }
+		public double MarginTop { get; set; } = 0.4;
+
 		/// <summary>
 		/// Gets or sets Bottom margin in inches. Defaults to 1cm (~0.4 inches).
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double MarginBottom { get; set; }
+		public double MarginBottom { get; set; } = 0.4;
+
 		/// <summary>
 		/// Gets or sets Left margin in inches. Defaults to 1cm (~0.4 inches).
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double MarginLeft { get; set; }
+		public double MarginLeft { get; set; } = 0.4;
+
 		/// <summary>
 		/// Gets or sets Right margin in inches. Defaults to 1cm (~0.4 inches).
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double MarginRight { get; set; }
+		public double MarginRight { get; set; } = 0.4;
+
 		/// <summary>
 		/// Gets or sets Paper ranges to print, e.g., '1-5, 8, 11-13'. Defaults to the empty string, which means
 		/// print all pages.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public string PageRanges { get; set; }
+		public string PageRanges { get; set; } = "";
 		/// <summary>
 		/// Gets or sets Whether to silently ignore invalid but successfully parsed page ranges, such as '3-2'.
 		/// Defaults to false.
